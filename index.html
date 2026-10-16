@@ -155,7 +155,7 @@ html, body {
 .progress > span {
   display: block;
   height: 100%;
-  width: 4.76%;
+  width: 5%;
   background: var(--accent);
   transition: width .25s ease-out;
 }
@@ -245,10 +245,10 @@ main {
   line-height: 1.68;
 }
 
-/* Presenter Banner */
+/* Presenter Banner with Small Photo Avatar */
 .presenter-banner {
   margin-top: clamp(20px, 3vh, 32px);
-  padding: 20px 26px;
+  padding: 18px 24px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -262,17 +262,31 @@ main {
 .presenter-badge {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 .p-label {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .08em;
   font-weight: 700;
 }
+.p-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.presenter-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
 .p-name {
-  font-size: clamp(22px, 2.4vw, 30px);
+  font-size: clamp(22px, 2.3vw, 28px);
   font-weight: 800;
   color: var(--accent);
 }
@@ -292,65 +306,6 @@ main {
   font-size: clamp(13px, 1.15vw, 15px);
   font-weight: 600;
   color: var(--text);
-}
-
-/* Bio Layout */
-.bio-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 32px;
-  align-items: center;
-  margin-top: 10px;
-  max-width: 1240px;
-}
-.bio-avatar-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.bio-photo {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--accent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-}
-.bio-name {
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 800;
-  margin-top: 14px;
-  color: var(--accent);
-}
-.bio-role {
-  font-size: clamp(13px, 1.1vw, 15px);
-  color: var(--muted);
-  font-weight: 600;
-  margin-top: 4px;
-}
-.bio-facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
-}
-.bio-facts > div {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 16px 20px;
-}
-.bio-facts p {
-  margin: 8px 0 0;
-  font-size: clamp(14px, 1.25vw, 17px);
-  color: var(--text-sub);
-  line-height: 1.6;
-}
-.bio-facts a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 /* Acronym Letter Grid */
@@ -589,21 +544,11 @@ html[data-bigscreen="true"] .eyebrow {
   font-size: clamp(15px, 1.3vw, 19px) !important;
 }
 html[data-bigscreen="true"] .p-name {
-  font-size: clamp(25px, 2.8vw, 36px) !important;
+  font-size: clamp(24px, 2.6vw, 32px) !important;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
-  .bio-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .bio-avatar-col {
-    margin-bottom: 12px;
-  }
-  .bio-facts {
-    grid-template-columns: 1fr;
-  }
   .acronym-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -684,7 +629,7 @@ html[data-bigscreen="true"] .p-name {
     page-break-after: avoid !important;
     break-after: avoid !important;
   }
-  .card, .callout, .presenter-banner, .letter-card, .bio-facts > div {
+  .card, .callout, .presenter-banner, .letter-card {
     background: #f8fafc !important;
     color: #0f172a !important;
     border: 1px solid #cbd5e1 !important;
@@ -692,8 +637,9 @@ html[data-bigscreen="true"] .p-name {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
-  .bio-photo {
-    max-height: 38vh !important;
+  .presenter-thumb {
+    width: 38px !important;
+    height: 38px !important;
     border-color: #077969 !important;
   }
   .eyebrow {
@@ -771,7 +717,7 @@ html[data-bigscreen="true"] .p-name {
       <span class="meta">កម្ពុជា · Sophat CHY</span>
     </div>
     <div class="tools">
-      <span id="counterTop" class="counter">01 / 21</span>
+      <span id="counterTop" class="counter">01 / 20</span>
       <button class="tool" id="bigScreenBtn" title="ប្ដូរទំហំអក្សរធំសម្រាប់បញ្ចាំងអេក្រង់ (B)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> 🔍 Big Screen</button>
       <button class="tool" id="pdfBtn" title="ទាញយកស្លាយជា PDF គុណភាពខ្ពស់ (P)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 📥 ទាញយក PDF</button>
       <button class="tool" id="themeBtn" aria-pressed="false" title="ប្ដូរពន្លឺ Day/Night"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> ☼ Day</button>
@@ -785,8 +731,8 @@ html[data-bigscreen="true"] .p-name {
   <main id="deck" tabindex="0" aria-label="Slide Presentation">
 
   <!-- SLIDE 01: TITLE -->
-  <section class="slide active" aria-label="Slide 01 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 01 / ២១ · បើកបទបង្ហាញ · DIGITAL SAFETY & OCSEA</div>
+  <section class="slide active" aria-label="Slide 01 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 01 / ២០ · បើកបទបង្ហាញ · DIGITAL SAFETY & OCSEA</div>
     <h1 class="hero-title">
       សុវត្ថិភាពឌីជីថល និង<span class="km-en" style="color:var(--text); font-size: inherit; font-weight: inherit; margin: 0; display: inline;">ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ</span>
       <span class="km-en">Online Child Sexual Exploitation and Abuse · Cambodia</span>
@@ -797,8 +743,11 @@ html[data-bigscreen="true"] .p-name {
 
     <div class="presenter-banner">
       <div class="presenter-badge">
-        <span class="p-label">ធ្វើបទបង្ហាញដោយ / Presented by</span>
-        <span class="p-name">ជី សុផាត (Sophat CHY)</span>
+        <span class="p-label">ធ្វើបទបង្ហាញដោយ / Presented by:</span>
+        <div class="p-author">
+          <img src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/468360037_1074603117456411_7269761210649519852_n.jpg?stp=dst-jpg_tt6&cstp=mx1279x1279&ctp=s1279x1279&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zeoUdHb_9YkQ7kNvwFH3h9_&_nc_oc=AdptFE4kMACYKw4VoR90XPyVoGPmGyrEUUadYBD2ONCKTiwer2V9OxHZA7vPSvvhREM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=vMNkwKIQUzvE_WEChsxhwA&_nc_ss=7b2a8&oh=00_AQMvx9SGVAAFetXHThPQT4DxcLiaHhs-gQ3XhYaIASEb5A&oe=6AD7FFB9" alt="Sophat CHY" class="presenter-thumb" />
+          <span class="p-name">ជី សុផាត (Sophat CHY)</span>
+        </div>
       </div>
       <div class="presenter-tags">
         <span class="pill"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> អ្នកបង្កើតមាតិកាឌីជីថល & គ្រូបណ្ដុះបណ្ដាល ICT</span>
@@ -810,48 +759,14 @@ html[data-bigscreen="true"] .p-name {
     <div class="callout">
       <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       <div>
-        <strong>ព័ត៌មានបទបង្ហាញ៖</strong> រយៈពេល ១៥–២០ នាទី · ២១ ស្លាយ · ភាសាខ្មែរជាចម្បង (Khmer-first with official international terms) · បញ្ចាំងបានស្អាតលើអេក្រង់ធំ និងអាចទាញយកជា PDF ស្តង់ដារ។
+        <strong>ព័ត៌មានបទបង្ហាញ៖</strong> រយៈពេល ១៥–២០ នាទី · ២០ ស្លាយ · ភាសាខ្មែរជាចម្បង (Khmer-first with official international terms) · បញ្ចាំងបានស្អាតលើអេក្រង់ធំ និងអាចទាញយកជា PDF ស្តង់ដារ។
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 02: ABOUT PRESENTER -->
-  <section class="slide" aria-label="Slide 02 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ស្លាយ 02 / ២១ · សេចក្ដីណែនាំអំពីអ្នកធ្វើបទបង្ហាញ · ABOUT THE PRESENTER</div>
-    <div class="bio-grid">
-      <div class="bio-avatar-col">
-        <img src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/468360037_1074603117456411_7269761210649519852_n.jpg?stp=dst-jpg_tt6&cstp=mx1279x1279&ctp=s1279x1279&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zeoUdHb_9YkQ7kNvwFH3h9_&_nc_oc=AdptFE4kMACYKw4VoR90XPyVoGPmGyrEUUadYBD2ONCKTiwer2V9OxHZA7vPSvvhREM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=vMNkwKIQUzvE_WEChsxhwA&_nc_ss=7b2a8&oh=00_AQMvx9SGVAAFetXHThPQT4DxcLiaHhs-gQ3XhYaIASEb5A&oe=6AD7FFB9" alt="Sophat CHY - ជី សុផាត" class="bio-photo" loading="eager" />
-        <div class="bio-name">ជី សុផាត (Sophat CHY)</div>
-        <div class="bio-role">ICT Trainer & Digital Safety Educator</div>
-      </div>
-      <div class="bio-info-col">
-        <h2 class="sectionhead" style="font-size: clamp(26px, 2.8vw, 42px); margin-bottom: 12px;">បេសកកម្មអក្ខរកម្មឌីជីថល & សុវត្ថិភាពអនឡាញ</h2>
-        <p class="subhead" style="margin-top: 0; font-size: clamp(17px, 1.6vw, 22px);">
-          អ្នកលើកកម្ពស់ចំណេះដឹងឌីជីថល និងសុវត្ថិភាពអ៊ីនធឺណិតនៅកម្ពុជាអស់រយៈពេលជាងមួយទសវត្សរ៍ ក្នុងការបណ្តុះបណ្តាលយុវជន លោកគ្រូអ្នកគ្រូ និងសហគមន៍ឱ្យចេះការពារខ្លួនពីគ្រោះថ្នាក់លើប្រព័ន្ធឌីជីថល។
-        </p>
-        <div class="bio-facts">
-          <div>
-            <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ចាប់ពីឆ្នាំ ២០១២</div>
-            <p><strong>BarCamp Cambodia៖</strong> ដឹកនាំរៀបចំព្រឹត្តិការណ៍បច្ចេកវិទ្យាធំបំផុតនៅកម្ពុជា និងបណ្តុះបណ្តាលជំនាញ ICT ទូទាំងរាជធានី-ខេត្ត។</p>
-          </div>
-          <div>
-            <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Sophat.Space</div>
-            <p><strong>ធនធានសុវត្ថិភាពឌីជីថល៖</strong> បង្កើតឧបករណ៍ Digital Check-up, វាក្យសព្ទបច្ចេកវិទ្យា និងមជ្ឈមណ្ឌលជំនួយ <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">sophat.space/help ↗</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="callout">
-      <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-      <div>
-        <strong>គោលជំហរ៖</strong> «ការយល់ដឹងអំពីសុវត្ថិភាពឌីជីថល មិនមែនគ្រាន់តែការពារគណនីប៉ុណ្ណោះទេ គឺដើម្បីការពារអនាគត សុខុមាលភាព និងសេចក្តីថ្លៃថ្នូររបស់កុមារ និងយុវជនយើង!»
-      </div>
-    </div>
-  </section>
-
-  <!-- SLIDE 03: OBJECTIVES -->
-  <section class="slide" aria-label="Slide 03 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> ស្លាយ 03 / ២១ · គោលបំណងនៃបទបង្ហាញ</div>
+  <!-- SLIDE 02: OBJECTIVES -->
+  <section class="slide" aria-label="Slide 02 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> ស្លាយ 02 / ២០ · គោលបំណងនៃបទបង្ហាញ</div>
     <h2 class="sectionhead">ក្រោយបទបង្ហាញនេះ អ្នកនឹងអាច…</h2>
     <p class="subhead">
       បំពាក់បំប៉នសមត្ថភាពស្នូលចំនួន ៤ ដើម្បីក្លាយជាខែលការពារខ្លួនឯង ក្រុមគ្រួសារ និងសិស្សានុសិស្សក្នុងយុគសម័យឌីជីថល៖
@@ -886,9 +801,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 04: FULL OCSEA DEFINITION -->
-  <section class="slide" aria-label="Slide 04 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ស្លាយ 04 / ២១ · និយមន័យពេញលេញនៃ OCSEA</div>
+  <!-- SLIDE 03: FULL OCSEA DEFINITION -->
+  <section class="slide" aria-label="Slide 03 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ស្លាយ 03 / ២០ · និយមន័យពេញលេញនៃ OCSEA</div>
     <h2 class="sectionhead">តើ OCSEA មានន័យពេញលេញដូចម្តេច?</h2>
     <p class="subhead">
       <strong>OCSEA</strong> ជាពាក្យស្តង់ដារអន្តរជាតិ (UNICEF / ECPAT / INTERPOL / WeProtect Global Alliance) មកពី៖<br>
@@ -935,9 +850,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 05: CATEGORIZATION -->
-  <section class="slide" aria-label="Slide 05 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> ស្លាយ 05 / ២១ · ការបែងចែកប្រភេទបញ្ហា</div>
+  <!-- SLIDE 04: CATEGORIZATION -->
+  <section class="slide" aria-label="Slide 04 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> ស្លាយ 04 / ២០ · ការបែងចែកប្រភេទបញ្ហា</div>
     <h2 class="sectionhead">OCSEA ខុសពីបញ្ហាឌីជីថលទូទៅយ៉ាងដូចម្តេច?</h2>
     <p class="subhead">
       ការយល់ច្រឡំថា OCSEA ដូចគ្នានឹងការ Hack គណនី ឬ Scam លុយ ធ្វើឱ្យយើងដោះស្រាយខុសទិសដៅ។ ចូរពិនិត្យការបែងចែកឱ្យដាច់ស្រឡះ៖
@@ -966,9 +881,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 06: TYPE 1 - GROOMING -->
-  <section class="slide" aria-label="Slide 06 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ស្លាយ 06 / ២១ · ប្រភេទ ១ នៃ OCSEA</div>
+  <!-- SLIDE 05: TYPE 1 - GROOMING -->
+  <section class="slide" aria-label="Slide 05 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ស្លាយ 05 / ២០ · ប្រភេទ ១ នៃ OCSEA</div>
     <h2 class="sectionhead">ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Online Grooming)</h2>
     <p class="subhead">
       ដំណើរការបង្កើតទំនុកចិត្ត ឬទំនាក់ទំនងស្និទ្ធស្នាលជាមួយកុមារជាជំហានៗ ដើម្បីត្រួសត្រាយផ្លូវឆ្ពោះទៅរកការកេងប្រវ័ញ្ចផ្លូវភេទ។
@@ -997,9 +912,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 07: TYPE 2 - CSAM -->
-  <section class="slide" aria-label="Slide 07 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> ស្លាយ 07 / ២១ · ប្រភេទ ២ នៃ OCSEA</div>
+  <!-- SLIDE 06: TYPE 2 - CSAM -->
+  <section class="slide" aria-label="Slide 06 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> ស្លាយ 06 / ២០ · ប្រភេទ ២ នៃ OCSEA</div>
     <h2 class="sectionhead">សម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ (CSAM)</h2>
     <p class="subhead">
       <strong>CSAM = Child Sexual Abuse Material</strong> សំដៅលើរូបភាព វីដេអូ ឬឯកសារឌីជីថលដែលបង្ហាញពីការរំលោភបំពានផ្លូវភេទ ឬរូបភាពអាសអាភាសលើកុមារ។
@@ -1026,9 +941,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 08: TYPE 3 - LIVE-STREAMING -->
-  <section class="slide" aria-label="Slide 08 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> ស្លាយ 08 / ២១ · ប្រភេទ ៣ នៃ OCSEA</div>
+  <!-- SLIDE 07: TYPE 3 - LIVE-STREAMING -->
+  <section class="slide" aria-label="Slide 07 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> ស្លាយ 07 / ២០ · ប្រភេទ ៣ នៃ OCSEA</div>
     <h2 class="sectionhead">ការផ្សាយផ្ទាល់ការរំលោភបំពាន (Live-streaming of Abuse)</h2>
     <p class="subhead">
       ការប្រើប្រាស់បច្ចេកវិទ្យាវីដេអូខល (Video Call) ឬការ Live ផ្ទាល់តាមអ៊ីនធឺណិត ដើម្បីឱ្យអ្នកដទៃទស្សនា ឬបញ្ជាឱ្យមានសកម្មភាពរំលោភបំពានផ្លូវភេទលើកុមារក្នុងពេលជាក់ស្តែង។
@@ -1055,9 +970,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 09: TYPE 4 - SEXTORTION -->
-  <section class="slide" aria-label="Slide 09 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 09 / ២១ · ប្រភេទ ៤ នៃ OCSEA</div>
+  <!-- SLIDE 08: TYPE 4 - SEXTORTION -->
+  <section class="slide" aria-label="Slide 08 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 08 / ២០ · ប្រភេទ ៤ នៃ OCSEA</div>
     <h2 class="sectionhead">ការគំរាមកំហែងផ្លូវភេទ (Sextortion)</h2>
     <p class="subhead">
       អ្នកប្រព្រឹត្តប្រើប្រាស់រូបភាពពិត រូបភាពកាត់ត ឬសារសម្ងាត់ ដើម្បីគំរាមកំហែងបង្ខិតបង្ខំកុមារឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ឬធ្វើសកម្មភាពផ្លូវភេទ។
@@ -1084,9 +999,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 10: TYPE 5 - FINANCIAL/MATERIAL EXPLOITATION -->
-  <section class="slide" aria-label="Slide 10 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> ស្លាយ 10 / ២១ · ប្រភេទ ៥ នៃ OCSEA</div>
+  <!-- SLIDE 09: TYPE 5 - FINANCIAL/MATERIAL EXPLOITATION -->
+  <section class="slide" aria-label="Slide 09 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> ស្លាយ 09 / ២០ · ប្រភេទ ៥ នៃ OCSEA</div>
     <h2 class="sectionhead">ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍</h2>
     <p class="subhead">
       អ្នកប្រព្រឹត្តទាញយកប្រយោជន៍ពីភាពទន់ខ្សោយ កង្វះខាតជីវភាព ឬការចង់បានរបស់កុមារ ដោយផ្តល់លុយកាក់ អំណោយ ឬរបស់ក្នុងហ្គេមជាថ្នូរនឹងរូបភាព ឬសកម្មភាពផ្លូវភេទ។
@@ -1113,9 +1028,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 11: TYPE 6 - AI DEEPFAKES -->
-  <section class="slide" aria-label="Slide 11 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> ស្លាយ 11 / ២១ · ប្រភេទ ៦ នៃ OCSEA</div>
+  <!-- SLIDE 10: TYPE 6 - AI DEEPFAKES -->
+  <section class="slide" aria-label="Slide 10 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> ស្លាយ 10 / ២០ · ប្រភេទ ៦ នៃ OCSEA</div>
     <h2 class="sectionhead">រូបភាពក្លែងក្លាយដោយ AI (Deepfake / GenAI)</h2>
     <p class="subhead">
       ការប្រើប្រាស់បច្ចេកវិទ្យាបញ្ញាសិប្បនិម្មិត (AI) ដើម្បីកែច្នៃរូបថតធម្មតារបស់កុមារពីបណ្ដាញសង្គមឱ្យទៅជារូបភាព ឬវីដេអូផ្លូវភេទក្លែងក្លាយ (Non-Consensual Deepfakes)។
@@ -1142,9 +1057,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 12: WARNING SIGNS -->
-  <section class="slide" aria-label="Slide 12 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 12 / ២១ · សញ្ញាព្រមានដំបូង</div>
+  <!-- SLIDE 11: WARNING SIGNS -->
+  <section class="slide" aria-label="Slide 11 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 11 / ២០ · សញ្ញាព្រមានដំបូង</div>
     <h2 class="sectionhead">តើគួរយកចិត្តទុកដាក់លើសញ្ញាអ្វីខ្លះ?</h2>
     <p class="subhead">
       កុមារកម្រនឹងប្រាប់មនុស្សធំដោយផ្ទាល់នៅពេលជួបបញ្ហា OCSEA ដោយសារការភ័យខ្លាច និងភាពអាម៉ាស់។ ចូរតាមដានសញ្ញាព្រមានទាំងនេះ៖
@@ -1173,9 +1088,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 13: CAMBODIA REPORTED CASES -->
-  <section class="slide" aria-label="Slide 13 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ស្លាយ 13 / ២១ · ករណីជាក់ស្តែងដែលបានរាយការណ៍នៅកម្ពុជា</div>
+  <!-- SLIDE 12: CAMBODIA REPORTED CASES -->
+  <section class="slide" aria-label="Slide 12 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ស្លាយ 12 / ២០ · ករណីជាក់ស្តែងដែលបានរាយការណ៍នៅកម្ពុជា</div>
     <h2 class="sectionhead">ឧទាហរណ៍៖ ការបង្ក្រាបបណ្តាញ CSAM តាម Telegram</h2>
     <p class="subhead">
       ក្នុងខែកុម្ភៈ ឆ្នាំ២០២៤ Fresh News បានរាយការណ៍ថា អាជ្ញាធរបានចាប់ខ្លួនស្ត្រីអាយុ ៣៣ ឆ្នាំម្នាក់ ដែលត្រូវបានចោទប្រកាន់ពីការចែកចាយសម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ។ ការស៊ើបអង្កេតចាប់ផ្តើមពីព័ត៌មានរាយការណ៍របស់ APLE Cambodia។ តាមរបាយការណ៍ សមត្ថកិច្ចបានរកឃើញ Telegram channel/group ចំនួន ៣៤ និងឯកសារផ្លូវភេទជាង ១៩,០០០ ដែលរួមមានរូបភាព និងវីដេអូរបស់មនុស្សពេញវ័យ និងកុមារ។
@@ -1203,9 +1118,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 14: SCAM COMPOUNDS -->
-  <section class="slide" aria-label="Slide 14 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ស្លាយ 14 / ២១ · បញ្ហាប្រឈមពាក់ព័ន្ធនឹង Scam Compounds</div>
+  <!-- SLIDE 13: SCAM COMPOUNDS -->
+  <section class="slide" aria-label="Slide 13 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ស្លាយ 13 / ២០ · បញ្ហាប្រឈមពាក់ព័ន្ធនឹង Scam Compounds</div>
     <h2 class="sectionhead">Scam Compounds៖ ការជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ច</h2>
     <p class="subhead">
       របាយការណ៍ Amnesty International ឆ្នាំ២០២៥ និងបច្ចុប្បន្នភាពខែមិថុនា ២០២៦ បានកត់ត្រាការជួញដូរមនុស្ស ការបង្ខំឱ្យធ្វើការ ការឃុំឃាំង និងអំពើហិង្សា នៅក្នុង scam compounds មួយចំនួនក្នុងកម្ពុជា។ របាយការណ៍ឆ្នាំ២០២៦ ក៏បានបង្ហាញសក្ខីកម្មអំពីអំពើហិង្សាផ្លូវភេទលើស្ត្រីនៅក្នុងបរិវេណទាំងនេះ។ នេះជាបញ្ហាដែលពាក់ព័ន្ធនឹងការការពារជនរងគ្រោះ និងការជួញដូរមនុស្ស ប៉ុន្តែមិនគួរយកមកអះអាងថាជាករណី OCSEA ទេ ប្រសិនបើមិនមានព័ត៌មានបញ្ជាក់ថាជាកុមារ។
@@ -1232,9 +1147,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 15: DARK WEB REALITIES -->
-  <section class="slide" aria-label="Slide 15 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg> ស្លាយ 15 / ២១ · Dark Web និងសុវត្ថិភាពកុមារ</div>
+  <!-- SLIDE 14: DARK WEB REALITIES -->
+  <section class="slide" aria-label="Slide 14 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg> ស្លាយ 14 / ២០ · Dark Web និងសុវត្ថិភាពកុមារ</div>
     <h2 class="sectionhead">Dark Web៖ ការពិត vs ការយល់ច្រឡំ</h2>
     <p class="subhead">
       មនុស្សជាច្រើនគិតថា OCSEA កើតឡើងតែនៅលើ Dark Web ដ៏អាថ៌កំបាំង។ ចូរពិនិត្យមើលការពិតជាក់ស្តែង ដើម្បីការពារកុមារឱ្យចំគោលដៅ៖
@@ -1261,9 +1176,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 16: REPORTING BARRIERS -->
-  <section class="slide" aria-label="Slide 16 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 16 / ២១ · បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍</div>
+  <!-- SLIDE 15: REPORTING BARRIERS -->
+  <section class="slide" aria-label="Slide 15 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 15 / ២០ · បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍</div>
     <h2 class="sectionhead">ហេតុអ្វីបានជាករណី OCSEA ពិបាករកឃើញ?</h2>
     <p class="subhead">
       នៅប្រទេសកម្ពុជា ករណី OCSEA ជាច្រើនត្រូវបានលាក់បាំងរហូតដល់មានគ្រោះថ្នាក់ធ្ងន់ធ្ងរ។ ឧបសគ្គធំបំផុតរួមមាន៖
@@ -1292,9 +1207,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 17: PRACTICAL DIGITAL SAFETY -->
-  <section class="slide" aria-label="Slide 17 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ស្លាយ 17 / ២១ · ការការពារបច្ចេកទេសជាក់ស្តែង</div>
+  <!-- SLIDE 16: PRACTICAL DIGITAL SAFETY -->
+  <section class="slide" aria-label="Slide 16 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ស្លាយ 16 / ២០ · ការការពារបច្ចេកទេសជាក់ស្តែង</div>
     <h2 class="sectionhead">វិធានការសុវត្ថិភាពឌីជីថល (Digital Safety Checklist)</h2>
     <p class="subhead">
       ជំហានសន្តិសុខបច្ចេកវិទ្យាសំខាន់ៗដែលគ្រប់គ្នាត្រូវអនុវត្តភ្លាមៗលើទូរស័ព្ទដៃ និងបណ្តាញសង្គម៖
@@ -1324,9 +1239,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 18: 4-STEP RESPONSE FRAMEWORK -->
-  <section class="slide" aria-label="Slide 18 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 18 / ២១ · ការឆ្លើយតបជាបន្ទាន់</div>
+  <!-- SLIDE 17: 4-STEP RESPONSE FRAMEWORK -->
+  <section class="slide" aria-label="Slide 17 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 17 / ២០ · ការឆ្លើយតបជាបន្ទាន់</div>
     <h2 class="sectionhead">៤ ជំហានឆ្លើយតប៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ</h2>
     <p class="subhead">
       រូបមន្តសកម្មភាព ៤ ជំហានស្តង់ដារ នៅពេលកុមារ ឬមិត្តភក្តិជួបប្រទះការគំរាមកំហែង ឬការរំលោភបំពានតាមអនឡាញ៖
@@ -1361,9 +1276,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 19: CAMBODIA SUPPORT SERVICES -->
-  <section class="slide" aria-label="Slide 19 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> ស្លាយ 19 / ២១ · សេវាជំនួយនៅកម្ពុជា</div>
+  <!-- SLIDE 18: CAMBODIA SUPPORT SERVICES -->
+  <section class="slide" aria-label="Slide 18 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> ស្លាយ 18 / ២០ · សេវាជំនួយនៅកម្ពុជា</div>
     <h2 class="sectionhead">ស្វែងរកជំនួយនៅកម្ពុជា (Cambodia Help Resources)</h2>
     <p class="subhead">
       បណ្តាញសេវាជំនួយ និងលេខទូរស័ព្ទទាន់ហេតុការណ៍ផ្លូវការដែលអាចទុកចិត្តបាននៅកម្ពុជា៖
@@ -1399,9 +1314,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 20: COLLECTIVE RESPONSIBILITY -->
-  <section class="slide" aria-label="Slide 20 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> ស្លាយ 20 / ២១ · តួនាទីរួមគ្នារបស់សង្គម</div>
+  <!-- SLIDE 19: COLLECTIVE RESPONSIBILITY -->
+  <section class="slide" aria-label="Slide 19 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> ស្លាយ 19 / ២០ · តួនាទីរួមគ្នារបស់សង្គម</div>
     <h2 class="sectionhead">តើអ្នកណាខ្លះមានតួនាទីក្នុងការការពារ?</h2>
     <p class="subhead">
       ការការពារកុមារពី OCSEA មិនមែនជាការទទួលខុសត្រូវរបស់បុគ្គលណាម្នាក់ឡើយ គឺជាកាតព្វកិច្ចរួមគ្នារបស់សង្គមទាំងមូល៖
@@ -1440,9 +1355,9 @@ html[data-bigscreen="true"] .p-name {
     </div>
   </section>
 
-  <!-- SLIDE 21: SOURCES & CLOSING -->
-  <section class="slide" aria-label="Slide 21 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ស្លាយ 21 / ២១ · ប្រភពឯកសារ & សារបិទបទបង្ហាញ</div>
+  <!-- SLIDE 20: SOURCES & CLOSING -->
+  <section class="slide" aria-label="Slide 20 of 20">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ស្លាយ 20 / ២០ · ប្រភពឯកសារ & សារបិទបទបង្ហាញ</div>
     <h2 class="sectionhead">ប្រភពឯកសារយោង និងសារបិទបទបង្ហាញ</h2>
     <p class="subhead">
       ឯកសារយោងផ្លូវការជាតិ និងអន្តរជាតិដែលបានដកស្រង់ក្នុងបទបង្ហាញនេះ៖
@@ -1480,7 +1395,7 @@ html[data-bigscreen="true"] .p-name {
   </main>
 
   <aside class="notes" id="notesPanel" aria-hidden="true" aria-live="polite">
-    <h2><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Speaker notes · ស្លាយ <span id="notesNum">1</span> / 21</h2>
+    <h2><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Speaker notes · ស្លាយ <span id="notesNum">1</span> / 20</h2>
     <p id="notesText"></p>
   </aside>
 
@@ -1490,7 +1405,7 @@ html[data-bigscreen="true"] .p-name {
     </div>
     <div class="nav">
       <button class="navbtn" id="prevBtn" aria-label="Previous slide">← ថយក្រោយ</button>
-      <span class="counter" id="counterBottom">01 / 21</span>
+      <span class="counter" id="counterBottom">01 / 20</span>
       <button class="navbtn primary" id="nextBtn" aria-label="Next slide">បន្ទាប់ →</button>
     </div>
   </footer>
@@ -1503,7 +1418,7 @@ const slides = Array.from(document.querySelectorAll('.slide'));
 const total = slides.length;
 let index = 0;
 
-const speakerNotes = ['០១. ស្លាយបើកបទបង្ហាញ៖ ស្វាគមន៍អ្នកចូលរួមទាំងអស់គ្នា។ ណែនាំប្រធានបទ «សុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា»។ បញ្ជាក់ថា អ៊ីនធឺណិតផ្តល់ឱកាសរៀនសូត្រជាច្រើនដល់យុវជន ប៉ុន្តែក៏បង្កប់ហានិភ័យធ្ងន់ធ្ងរដែលយើងមិនអាចមើលរំលង។ បទបង្ហាញនេះមាន ២១ ស្លាយ រយៈពេលប្រមាណ ១៥ ទៅ ២០ នាទី ផ្តោតលើចំណេះដឹងជាក់ស្តែង វិធានការការពារបច្ចេកទេស និងកន្លែងស្វែងរកជំនួយនៅកម្ពុជា។', '០២. អំពីអ្នកធ្វើបទបង្ហាញ (Sophat CHY)៖ ណែនាំខ្លួនដោយសង្ខេប។ ក្នុងនាមជាគ្រូបណ្តុះបណ្តាល ICT និងអ្នករៀបចំ BarCamp Cambodia តាំងពីឆ្នាំ ២០១២ ខ្ញុំបានធ្វើការយ៉ាងជិតស្និទ្ធជាមួយយុវជន និងលោកគ្រូអ្នកគ្រូទូទាំងប្រទេស។ តាមរយៈ Sophat.Space យើងបង្កើតធនធានបង្រៀនសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ។ គោលបំណងរបស់ខ្ញុំថ្ងៃនេះ គឺផ្តល់ចំណេះដឹងដែលបងប្អូនអាចយកទៅអនុវត្តភ្លាមៗដើម្បីការពារខ្លួន កូនៗ និងសហគមន៍។', '០៣. គោលបំណងបទបង្ហាញ៖ បញ្ជាក់លទ្ធផលរំពឹងទុក ៤ ចំណុច៖ ១. យល់ដឹងច្បាស់ពី OCSEA និងបែងចែកដាច់ពីការ Hack ធម្មតា, ២. ចំណាំបាន ៦ ប្រភេទសំខាន់ៗ និងសញ្ញាព្រមានដំបូង, ៣. ចេះកំណត់ Privacy និង Security លើ Telegram/Facebook/TikTok, និង ៤. ដឹងពី ៤ ជំហានឆ្លើយតប និងស្គាល់ Hotline APLE 092 311 511 / 1280។', '០៤. និយមន័យពេញលេញនៃ OCSEA៖ ពន្យល់អក្សរកាត់ Online Child Sexual Exploitation and Abuse (ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ)។ សង្កត់ធ្ងន់លើពាក្យនីមួយៗ (O-C-S-E-A) និងបញ្ជាក់ថា តាមច្បាប់កម្ពុជា និងអនុសញ្ញាសិទ្ធិកុមារ កុមារគឺជាបុគ្គលគ្រប់រូបដែលមានអាយុក្រោម ១៨ ឆ្នាំ។ ណែនាំពាក្យបច្ចេកទេស CSAM, CSAE និង COP ឱ្យស្គាល់ជាមូលដ្ឋាន។', '០៥. ការបែងចែករវាង Cybercrime ទូទៅ និង OCSEA៖ ជួយឱ្យអ្នកស្តាប់មើលឃើញភាពខុសគ្នាដាច់ស្រឡះ។ ការលួចគណនី ឬ Scam លុយ គឺជាបទល្មើសលើទ្រព្យ ឬទិន្នន័យ។ ចំណែក OCSEA គឺជាការរំលោភបំពានលើរាងកាយ ផ្លូវចិត្ត និងសេចក្តីថ្លៃថ្នូររបស់កុមារ។ ហេតុនេះ ការដោះស្រាយ OCSEA មិនមែនគ្រាន់តែផ្លាស់ប្តូរលេខសម្ងាត់ទេ គឺត្រូវការការសង្គ្រោះផ្លូវចិត្ត និងកិច្ចការពារផ្លូវច្បាប់ជាបន្ទាន់។', '០៦. ប្រភេទ ១: Online Grooming (ការលួងលោមបោកបញ្ឆោត)៖ ពន្យល់ថា Grooming មិនកើតឡើងភ្លាមៗទេ គឺដើរតាម ៣ ជំហាន៖ បង្កើតទំនុកចិត្ត (សរសើរ ជជែកលេងក្នុងហ្គេម Roblox/MLBB) -> ញែកកុមារចេញពីគ្រួសារ (បបួល Chat សម្ងាត់ សុំកុំប្រាប់ម៉ាក់ប៉ា) -> ស្នើសុំរូបភាពស្រាត ឬសកម្មភាពផ្លូវភេទ។ ដាស់តឿនថា អ្នកប្រព្រឹត្តច្រើនតែក្លែងបន្លំជាក្មេងវ័យដូចគ្នា។', '០៧. ប្រភេទ ២: CSAM (Child Sexual Abuse Material)៖ ពន្យល់ពីមូលហេតុដែលពិភពលោកឈប់ប្រើពាក្យ Child Pornography ហើយប្តូរមកប្រើ CSAM វិញ ព្រោះកុមារមិនអាចផ្តល់ការយល់ព្រមបានឡើយ។ គ្រប់រូបភាពផ្លូវភេទកុមារគឺជាភស្តុតាងនៃការរំលោភបំពាន។ ដាស់តឿនយ៉ាងម៉ឺងម៉ាត់៖ ការទាញយក រក្សាទុក ឬ Share បន្ត (ទោះបី Share ដើម្បីដាស់តឿនគ្នាក៏ដោយ) គឺជាបទល្មើសព្រហ្មទណ្ឌ និងធ្វើឱ្យជនរងគ្រោះរងគ្រោះម្តងហើយម្តងទៀត! ឃើញភ្លាម ត្រូវរាយការណ៍ភ្លាម។', '០៨. ប្រភេទ ៣: Live-streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភបំពាន)៖ ការប្រើវីដេអូខល ឬការ Live ផ្ទាល់តាម Telegram/Webcam ដើម្បីឱ្យអ្នកទស្សនា ឬអ្នកបញ្ជាពីចម្ងាយ (ច្រើនតែឆ្លងព្រំដែន) បង់ប្រាក់ដើម្បីបញ្ជាឱ្យមានការរំលោភបំពាន។ ករណីនេះគ្រោះថ្នាក់បំផុត និងត្រូវការការសហការបន្ទាន់រវាងសមត្ថកិច្ច និងអង្គការការពារកុមារ (APLE) ដើម្បីជួយសង្គ្រោះកុមារទាន់ពេលវេលា។', '០៩. ប្រភេទ ៤: Sextortion (ការគំរាមកំហែងផ្លូវភេទ)៖ បញ្ជាក់ច្បាស់ពីទម្រង់ Financial Sextortion (ទារលុយ ABA/Wing) និង Coercive Sextortion (ទាររូបថែម)។ បញ្ជាក់សារគន្លឹះដែលត្រូវចាំ៖ «ការបង់ប្រាក់មិនដែលបញ្ចប់ការគំរាមឡើយ!» ព្រោះអ្នកគំរាមនឹងទារកាន់តែច្រើន។ កុមារមិនមែនជាអ្នកខុសឡើយ ត្រូវបញ្ឈប់ការទាក់ទង រក្សាភស្តុតាង និងប្រាប់មនុស្សធំជាបន្ទាន់។', '១០. ប្រភេទ ៥: ការកេងប្រវ័ញ្ចដោយប្រាក់ ឬអំណោយ (Financial/Material Exploitation)៖ ពន្យល់ពីវិធីសាស្ត្រប្រើនុយ៖ Top-up ហ្គេម (Free Fire, Mobile Legends, Robux), ទិញទូរស័ព្ទ, ផ្ញើកាត, ឬសន្យាថានឹងឱ្យធ្វើតារាម៉ូដែល។ បញ្ជាក់ថា ទោះបីជាកុមារព្រមទទួលអំណោយ ក៏មិនមែនមានន័យថាកុមារយល់ព្រមឱ្យកេងប្រវ័ញ្ចផ្លូវភេទដែរ។ ច្បាប់ការពារកុមារជានិច្ច។', '១១. ប្រភេទ ៦: AI Deepfakes / GenAI Abuse៖ លើកឡើងពីបញ្ហាថ្មីបំផុតដែល UNICEF បានចេញការព្រមានក្នុងឆ្នាំ ២០២៦។ ការប្រើ AI Nudify tools ឬ Telegram Bots ដើម្បីកែច្នៃរូបថតធម្មតារបស់សិស្ស (រូបពាក់ឯកសណ្ឋានសាលា រូបដើរលេង) ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយក្នុងពេលប៉ុន្មានវិនាទី។ ទោះបីជារូបក្លែងក្លាយ តែការឈឺចាប់ និងផលប៉ះពាល់ផ្លូវចិត្តគឺពិតប្រាកដ ១០០%។', '១២. សញ្ញាព្រមានមិនមែនជាភស្តុតាងទេ។ កុមារអាចលាក់អេក្រង់ ឬផ្លាស់ប្ដូរអារម្មណ៍ដោយហេតុផលជាច្រើន។ កុំដកហូតទូរស័ព្ទភ្លាមៗ ឬបង្ខំឱ្យបង្ហាញអ្វីៗ; សួរថា «តើមានអ្វីធ្វើឱ្យអ្នកមិនស្រួលចិត្ត? ខ្ញុំនៅទីនេះដើម្បីជួយ»។', '១៣. ករណីជាក់ស្តែងនៅកម្ពុជា៖ Fresh News រាយការណ៍ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ ថា ស្ត្រីអាយុ ៣៣ ឆ្នាំត្រូវបានចាប់ខ្លួន និងចោទប្រកាន់ក្រោយការស៊ើបអង្កេតដែលចាប់ផ្តើមពី tip-off របស់ APLE។ របាយការណ៍និយាយពី ៣៤ Telegram channels/groups មានអ្នកជាវ ៣,០០០–១៧,០០០ នាក់ និងឯកសារផ្លូវភេទជាង ១៩,០០០ ដែលរួមមានមនុស្សពេញវ័យ និងកុមារ។ មិនត្រូវនិយាយថាឯកសារទាំងអស់ជារបស់កុមារទេ។ កុំបង្ហាញរូបភាព ឬតំណទៅសម្ភារៈខុសច្បាប់។', '១៤. Scam compounds៖ Amnesty International បានចេញរបាយការណ៍ឆ្នាំ២០២៥ ហើយធ្វើបច្ចុប្បន្នភាពថ្ងៃទី ៨ មិថុនា ២០២៦។ ករណីទាំងនេះបង្ហាញពីការជួញដូរមនុស្ស ការបង្ខំឱ្យធ្វើការបោកប្រាស់ ការឃុំឃាំង និងអំពើហិង្សា រួមទាំងសក្ខីកម្មអំពីអំពើហិង្សាផ្លូវភេទលើស្ត្រី។ បំបែកច្បាស់ពី OCSEA លុះត្រាតែប្រភពបញ្ជាក់ថាជាកុមារ។', '១៥. Dark Web៖ ពន្យល់កម្រិតទូទៅ មិនផ្តល់ការណែនាំចូលប្រើ ឬស្វែងរកសម្ភារៈ។ សង្កត់ធ្ងន់ថា មិនចាំបាច់ចូល Dark Web ដើម្បីយល់ពីហានិភ័យទេ; ករណីនៅកម្ពុជាត្រូវបានរាយការណ៍លើ Telegram ដែលជាវេទិកាធម្មតា។', '១៦. បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍៖ ពិភាក្សាដោយស្មោះត្រង់ពីឧបសគ្គក្នុងសង្គមកម្ពុជា៖ ការភ័យខ្លាចបាក់មុខ (Shame), ការបន្ទោសជនរងគ្រោះ (Victim-blaming: «មកពីឯងល្ងង់ផ្ញើរូបឱ្យគេ»), និងការភ័យខ្លាចឪពុកម្តាយដាក់ទណ្ឌកម្ម។ ផ្លាស់ប្តូរផ្នត់គំនិតរួមគ្នា៖ «ជនរងគ្រោះគ្មានកំហុសឡើយ — អ្នកគំរាមទើបជាជនល្មើស!»', '១៧. វិធានការការពារបច្ចេកទេស (Digital Safety Checklist)៖ ណែនាំការអនុវត្តជាក់ស្តែងភ្លាមៗ៖ បើក 2-Step Verification លើ Telegram, Facebook, TikTok; កំណត់ Privacy: Phone Number (Nobody), Groups (My Contacts), Calls (My Contacts)។ ចងចាំច្បាប់មាស៖ «បើរូបណាអ្នកមិនហ៊ានបិទលើជញ្ជាំងសាលារៀនទេ សូមកុំផ្ញើតាម Chat ឱ្យសោះ!»', '១៨. រូបមន្ត ៤ ជំហានឆ្លើយតប (Stop, Record, Report, Support)៖ សង្ខេបជំហានសកម្មភាព៖ ១. បញ្ឈប់ (កុំតប កុំផ្ញើលុយ Block ភ្លាម), ២. រក្សាទុក (ថត Screenshot ឈ្មោះ Username, Link, លេខកុងធនាគារ និងសារគំរាម), ៣. រាយការណ៍ (រាយការណ៍លើ App និងទាក់ទង APLE / សមត្ថកិច្ច), ៤. គាំទ្រ (ស្តាប់ដោយក្តីស្រឡាញ់ មិនស្តីបន្ទោស និងជួយស្តារផ្លូវចិត្ត)។', '១៩. បណ្តាញជំនួយ និង Hotline នៅកម្ពុជា៖ ណែនាំលេខទូរស័ព្ទផ្លូវការដែលត្រូវកត់ទុក៖ APLE Cambodia (092 311 511) - ជំនាញប្រឆាំងការកេងប្រវ័ញ្ចផ្លូវភេទលើកុមារ; Child Helpline Cambodia (1280 ឥតគិតថ្លៃ) - ប្រឹក្សាផ្លូវចិត្ត និងសង្គ្រោះកុមារទូទាំង ២៥ ខេត្ត-ក្រុង; និង Sophat.Space Help (sophat.space/help) សម្រាប់ធនធានសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ។', '២០. តួនាទីរួមគ្នារបស់សង្គម (Collective Responsibility)៖ ការពារកុមារមិនមែនជាការងាររបស់ម្នាក់ឯងទេ៖ យុវជន (កុំសើចចំអក កុំ Share បន្ត ជួយការពារមិត្ត), មាតាបិតា (បង្កើត Safe Haven ស្តាប់ដោយមិនបន្ទោស), លោកគ្រូអ្នកគ្រូ (បង្កើតប្រព័ន្ធរាយការណ៍សម្ងាត់នៅសាលា), និងសហគមន៍ (លុបបំបាត់ការបន្ទោសជនរងគ្រោះ)។', '២១. ប្រភព៖ Fresh News ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ (ករណី Telegram); UNICEF Cambodia ថ្ងៃទី ២២ សីហា ២០២៥ (រឿងយុវតីពីរនាក់នៅបាត់ដំបង ដែលឈ្មោះត្រូវបានប្ដូរ); Amnesty International ថ្ងៃទី ៨ មិថុនា ២០២៦ (scam compounds និងការជួញដូរមនុស្ស)។ បញ្ជាក់ថាករណីទាំងនេះមានប្រភេទ និងស្ថានភាពផ្លូវច្បាប់ខុសៗគ្នា។ បើក Q&A ដោយសួរ៖ «តើក្នុងតួនាទីរបស់អ្នក អ្នកអាចធ្វើអ្វីបានក្នុង ២៤ ម៉ោងដំបូង?»'];
+const speakerNotes = ['០១. ស្លាយបើកបទបង្ហាញ៖ ស្វាគមន៍អ្នកចូលរួមទាំងអស់គ្នា។ ណែនាំខ្លួនដោយសង្ខេប៖ ខ្ញុំបាទ ជី សុផាត (Sophat CHY) គ្រូបណ្តុះបណ្តាល ICT និងជាអ្នករៀបចំ BarCamp Cambodia តាំងពីឆ្នាំ ២០១២ ព្រមទាំងជាស្ថាបនិក Sophat.Space។ ថ្ងៃនេះខ្ញុំសូមលើកយកប្រធានបទ «សុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា» មកធ្វើបទបង្ហាញ។ បទបង្ហាញនេះមាន ២០ ស្លាយ រយៈពេលប្រមាណ ១៥ ទៅ ២០ នាទី ផ្តោតលើចំណេះដឹងជាក់ស្តែង វិធានការការពារបច្ចេកទេស និងកន្លែងស្វែងរកជំនួយនៅកម្ពុជា។', '០២. គោលបំណងបទបង្ហាញ៖ បញ្ជាក់លទ្ធផលរំពឹងទុក ៤ ចំណុច៖ ១. យល់ដឹងច្បាស់ពី OCSEA និងបែងចែកដាច់ពីការ Hack ធម្មតា, ២. ចំណាំបាន ៦ ប្រភេទសំខាន់ៗ និងសញ្ញាព្រមានដំបូង, ៣. ចេះកំណត់ Privacy និង Security លើ Telegram/Facebook/TikTok, និង ៤. ដឹងពី ៤ ជំហានឆ្លើយតប និងស្គាល់ Hotline APLE 092 311 511 / 1280។', '០៣. និយមន័យពេញលេញនៃ OCSEA៖ ពន្យល់អក្សរកាត់ Online Child Sexual Exploitation and Abuse (ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ)។ សង្កត់ធ្ងន់លើពាក្យនីមួយៗ (O-C-S-E-A) និងបញ្ជាក់ថា តាមច្បាប់កម្ពុជា និងអនុសញ្ញាសិទ្ធិកុមារ កុមារគឺជាបុគ្គលគ្រប់រូបដែលមានអាយុក្រោម ១៨ ឆ្នាំ។ ណែនាំពាក្យបច្ចេកទេស CSAM, CSAE និង COP ឱ្យស្គាល់ជាមូលដ្ឋាន។', '០៤. ការបែងចែករវាង Cybercrime ទូទៅ និង OCSEA៖ ជួយឱ្យអ្នកស្តាប់មើលឃើញភាពខុសគ្នាដាច់ស្រឡះ។ ការលួចគណនី ឬ Scam លុយ គឺជាបទល្មើសលើទ្រព្យ ឬទិន្នន័យ។ ចំណែក OCSEA គឺជាការរំលោភបំពានលើរាងកាយ ផ្លូវចិត្ត និងសេចក្តីថ្លៃថ្នូររបស់កុមារ។ ហេតុនេះ ការដោះស្រាយ OCSEA មិនមែនគ្រាន់តែផ្លាស់ប្តូរលេខសម្ងាត់ទេ គឺត្រូវការការសង្គ្រោះផ្លូវចិត្ត និងកិច្ចការពារផ្លូវច្បាប់ជាបន្ទាន់។', '០៥. ប្រភេទ ១: Online Grooming (ការលួងលោមបោកបញ្ឆោត)៖ ពន្យល់ថា Grooming មិនកើតឡើងភ្លាមៗទេ គឺដើរតាម ៣ ជំហាន៖ បង្កើតទំនុកចិត្ត (សរសើរ ជជែកលេងក្នុងហ្គេម Roblox/MLBB) -> ញែកកុមារចេញពីគ្រួសារ (បបួល Chat សម្ងាត់ សុំកុំប្រាប់ម៉ាក់ប៉ា) -> ស្នើសុំរូបភាពស្រាត ឬសកម្មភាពផ្លូវភេទ។ ដាស់តឿនថា អ្នកប្រព្រឹត្តច្រើនតែក្លែងបន្លំជាក្មេងវ័យដូចគ្នា។', '០៦. ប្រភេទ ២: CSAM (Child Sexual Abuse Material)៖ ពន្យល់ពីមូលហេតុដែលពិភពលោកឈប់ប្រើពាក្យ Child Pornography ហើយប្តូរមកប្រើ CSAM វិញ ព្រោះកុមារមិនអាចផ្តល់ការយល់ព្រមបានឡើយ។ គ្រប់រូបភាពផ្លូវភេទកុមារគឺជាភស្តុតាងនៃការរំលោភបំពាន។ ដាស់តឿនយ៉ាងម៉ឺងម៉ាត់៖ ការទាញយក រក្សាទុក ឬ Share បន្ត (ទោះបី Share ដើម្បីដាស់តឿនគ្នាក៏ដោយ) គឺជាបទល្មើសព្រហ្មទណ្ឌ និងធ្វើឱ្យជនរងគ្រោះរងគ្រោះម្តងហើយម្តងទៀត! ឃើញភ្លាម ត្រូវរាយការណ៍ភ្លាម។', '០៧. ប្រភេទ ៣: Live-streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភបំពាន)៖ ការប្រើវីដេអូខល ឬការ Live ផ្ទាល់តាម Telegram/Webcam ដើម្បីឱ្យអ្នកទស្សនា ឬអ្នកបញ្ជាពីចម្ងាយ (ច្រើនតែឆ្លងព្រំដែន) បង់ប្រាក់ដើម្បីបញ្ជាឱ្យមានការរំលោភបំពាន។ ករណីនេះគ្រោះថ្នាក់បំផុត និងត្រូវការការសហការបន្ទាន់រវាងសមត្ថកិច្ច និងអង្គការការពារកុមារ (APLE) ដើម្បីជួយសង្គ្រោះកុមារទាន់ពេលវេលា។', '០៨. ប្រភេទ ៤: Sextortion (ការគំរាមកំហែងផ្លូវភេទ)៖ បញ្ជាក់ច្បាស់ពីទម្រង់ Financial Sextortion (ទារលុយ ABA/Wing) និង Coercive Sextortion (ទាររូបថែម)។ បញ្ជាក់សារគន្លឹះដែលត្រូវចាំ៖ «ការបង់ប្រាក់មិនដែលបញ្ចប់ការគំរាមឡើយ!» ព្រោះអ្នកគំរាមនឹងទារកាន់តែច្រើន។ កុមារមិនមែនជាអ្នកខុសឡើយ ត្រូវបញ្ឈប់ការទាក់ទង រក្សាភស្តុតាង និងប្រាប់មនុស្សធំជាបន្ទាន់។', '០៩. ប្រភេទ ៥: ការកេងប្រវ័ញ្ចដោយប្រាក់ ឬអំណោយ (Financial/Material Exploitation)៖ ពន្យល់ពីវិធីសាស្ត្រប្រើនុយ៖ Top-up ហ្គេម (Free Fire, Mobile Legends, Robux), ទិញទូរស័ព្ទ, ផ្ញើកាត, ឬសន្យាថានឹងឱ្យធ្វើតារាម៉ូដែល។ បញ្ជាក់ថា ទោះបីជាកុមារព្រមទទួលអំណោយ ក៏មិនមែនមានន័យថាកុមារយល់ព្រមឱ្យកេងប្រវ័ញ្ចផ្លូវភេទដែរ។ ច្បាប់ការពារកុមារជានិច្ច។', '១០. ប្រភេទ ៦: AI Deepfakes / GenAI Abuse៖ លើកឡើងពីបញ្ហាថ្មីបំផុតដែល UNICEF បានចេញការព្រមានក្នុងឆ្នាំ ២០២៦។ ការប្រើ AI Nudify tools ឬ Telegram Bots ដើម្បីកែច្នៃរូបថតធម្មតារបស់សិស្ស (រូបពាក់ឯកសណ្ឋានសាលា រូបដើរលេង) ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយក្នុងពេលប៉ុន្មានវិនាទី។ ទោះបីជារូបក្លែងក្លាយ តែការឈឺចាប់ និងផលប៉ះពាល់ផ្លូវចិត្តគឺពិតប្រាកដ ១០០%។', '១១. សញ្ញាព្រមានមិនមែនជាភស្តុតាងទេ។ កុមារអាចលាក់អេក្រង់ ឬផ្លាស់ប្ដូរអារម្មណ៍ដោយហេតុផលជាច្រើន។ កុំដកហូតទូរស័ព្ទភ្លាមៗ ឬបង្ខំឱ្យបង្ហាញអ្វីៗ; សួរថា «តើមានអ្វីធ្វើឱ្យអ្នកមិនស្រួលចិត្ត? ខ្ញុំនៅទីនេះដើម្បីជួយ»។', '១២. ករណីជាក់ស្តែងនៅកម្ពុជា៖ Fresh News រាយការណ៍ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ ថា ស្ត្រីអាយុ ៣៣ ឆ្នាំត្រូវបានចាប់ខ្លួន និងចោទប្រកាន់ក្រោយការស៊ើបអង្កេតដែលចាប់ផ្តើមពី tip-off របស់ APLE។ របាយការណ៍និយាយពី ៣៤ Telegram channels/groups មានអ្នកជាវ ៣,០០០–១៧,០០០ នាក់ និងឯកសារផ្លូវភេទជាង ១៩,០០០ ដែលរួមមានមនុស្សពេញវ័យ និងកុមារ។ មិនត្រូវនិយាយថាឯកសារទាំងអស់ជារបស់កុមារទេ។ កុំបង្ហាញរូបភាព ឬតំណទៅសម្ភារៈខុសច្បាប់។', '១៣. Scam compounds៖ Amnesty International បានចេញរបាយការណ៍ឆ្នាំ២០២៥ ហើយធ្វើបច្ចុប្បន្នភាពថ្ងៃទី ៨ មិថុនា ២០២៦។ ករណីទាំងនេះបង្ហាញពីការជួញដូរមនុស្ស ការបង្ខំឱ្យធ្វើការបោកប្រាស់ ការឃុំឃាំង និងអំពើហិង្សា រួមទាំងសក្ខីកម្មអំពីអំពើហិង្សាផ្លូវភេទលើស្ត្រី។ បំបែកច្បាស់ពី OCSEA លុះត្រាតែប្រភពបញ្ជាក់ថាជាកុមារ។', '១៤. Dark Web៖ ពន្យល់កម្រិតទូទៅ មិនផ្តល់ការណែនាំចូលប្រើ ឬស្វែងរកសម្ភារៈ។ សង្កត់ធ្ងន់ថា មិនចាំបាច់ចូល Dark Web ដើម្បីយល់ពីហានិភ័យទេ; ករណីនៅកម្ពុជាត្រូវបានរាយការណ៍លើ Telegram ដែលជាវេទិកាធម្មតា។', '១៥. បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍៖ ពិភាក្សាដោយស្មោះត្រង់ពីឧបសគ្គក្នុងសង្គមកម្ពុជា៖ ការភ័យខ្លាចបាក់មុខ (Shame), ការបន្ទោសជនរងគ្រោះ (Victim-blaming: «មកពីឯងល្ងង់ផ្ញើរូបឱ្យគេ»), និងការភ័យខ្លាចឪពុកម្តាយដាក់ទណ្ឌកម្ម។ ផ្លាស់ប្តូរផ្នត់គំនិតរួមគ្នា៖ «ជនរងគ្រោះគ្មានកំហុសឡើយ — អ្នកគំរាមទើបជាជនល្មើស!»', '១៦. វិធានការការពារបច្ចេកទេស (Digital Safety Checklist)៖ ណែនាំការអនុវត្តជាក់ស្តែងភ្លាមៗ៖ បើក 2-Step Verification លើ Telegram, Facebook, TikTok; កំណត់ Privacy: Phone Number (Nobody), Groups (My Contacts), Calls (My Contacts)។ ចងចាំច្បាប់មាស៖ «បើរូបណាអ្នកមិនហ៊ានបិទលើជញ្ជាំងសាលារៀនទេ សូមកុំផ្ញើតាម Chat ឱ្យសោះ!»', '១៧. រូបមន្ត ៤ ជំហានឆ្លើយតប (Stop, Record, Report, Support)៖ សង្ខេបជំហានសកម្មភាព៖ ១. បញ្ឈប់ (កុំតប កុំផ្ញើលុយ Block ភ្លាម), ២. រក្សាទុក (ថត Screenshot ឈ្មោះ Username, Link, លេខកុងធនាគារ និងសារគំរាម), ៣. រាយការណ៍ (រាយការណ៍លើ App និងទាក់ទង APLE / សមត្ថកិច្ច), ៤. គាំទ្រ (ស្តាប់ដោយក្តីស្រឡាញ់ មិនស្តីបន្ទោស និងជួយស្តារផ្លូវចិត្ត)។', '១៨. ស្វែងរកជំនួយនៅកម្ពុជា\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។', '១៩. តួនាទីរួមគ្នារបស់សង្គម (Collective Responsibility)៖ ការពារកុមារមិនមែនជាការងាររបស់ម្នាក់ឯងទេ៖ យុវជន (កុំសើចចំអក កុំ Share បន្ត ជួយការពារមិត្ត), មាតាបិតា (បង្កើត Safe Haven ស្តាប់ដោយមិនបន្ទោស), លោកគ្រូអ្នកគ្រូ (បង្កើតប្រព័ន្ធរាយការណ៍សម្ងាត់នៅសាលា), និងសហគមន៍ (លុបបំបាត់ការបន្ទោសជនរងគ្រោះ)។', '២០. ប្រភព៖ Fresh News ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ (ករណី Telegram); UNICEF Cambodia ថ្ងៃទី ២២ សីហា ២០២៥ (រឿងយុវតីពីរនាក់នៅបាត់ដំបង ដែលឈ្មោះត្រូវបានប្ដូរ); Amnesty International ថ្ងៃទី ៨ មិថុនា ២០២៦ (scam compounds និងការជួញដូរមនុស្ស)។ បញ្ជាក់ថាករណីទាំងនេះមានប្រភេទ និងស្ថានភាពផ្លូវច្បាប់ខុសៗគ្នា។ បើក Q&A ដោយសួរ៖ «តើក្នុងតួនាទីរបស់អ្នក អ្នកអាចធ្វើអ្វីបានក្នុង ២៤ ម៉ោងដំបូង?»'];
 
 const counterTop = document.getElementById("counterTop");
 const counterBottom = document.getElementById("counterBottom");
