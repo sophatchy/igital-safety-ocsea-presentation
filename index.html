@@ -105,6 +105,34 @@ main{flex:1;min-height:0;width:100%;padding:clamp(18px,4vh,48px) clamp(22px,5vw,
  .callout{display:block!important;background:#fff!important;color:#333!important;border-top:1px solid #bbb!important}
  .callout strong{display:none}
 }
+
+/* Balanced centered content grid: consistent left/right edges on projector */
+main{padding:clamp(22px,4.2vw,76px) clamp(26px,6.5vw,120px);align-items:center}
+.slide{width:min(100%,1440px);margin-inline:auto;padding:0}
+.slide>*{max-width:100%}
+.eyebrow{margin-bottom:clamp(20px,3vh,34px)}
+.sectionhead{max-width:1240px;text-wrap:balance;overflow-wrap:anywhere}
+.subhead{max-width:1120px;text-wrap:pretty}
+.callout{max-width:1050px;margin-top:clamp(28px,4vh,46px);padding:20px 0 0}
+.title{max-width:1240px;text-wrap:balance}
+.title .km{max-width:1150px}
+.grid,.flow,.action-grid,.sources,.rule{max-width:1240px}
+.grid,.flow,.action-grid{margin-inline:0}
+.slide .card,.slide .step,.slide .action{height:100%}
+.slide .slide-icon{vertical-align:middle}
+@media(min-width:1200px){
+ main{padding-inline:clamp(80px,8vw,160px)}
+ .slide{width:min(100%,1380px)}
+ .sectionhead{font-size:clamp(48px,4.5vw,78px)}
+ .subhead{font-size:clamp(24px,1.9vw,32px)}
+}
+@media(max-width:760px){
+ main{padding:24px 20px;align-items:flex-start}
+ .slide{width:100%;margin:auto}
+ .sectionhead{font-size:clamp(32px,7.1vw,50px)}
+ .subhead{font-size:clamp(19px,4.4vw,25px)}
+ .callout{max-width:100%;padding-top:16px}
+}
 </style></head>
 <body><div class="app">
 <header class="top"><div class="brand">សុវត្ថិភាពឌីជីថល <span class="meta">/ Online Child Sexual Exploitation and Abuse កម្ពុជា · v1.4 · OCT 2026</span></div>
