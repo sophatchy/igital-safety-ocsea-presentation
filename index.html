@@ -1,45 +1,925 @@
 <!doctype html>
 <html lang="km" data-theme="night">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0e12"><meta name="description" content="បទបង្ហាញជាភាសាខ្មែរ អំពីសុវត្ថិភាពឌីជីថល ប្រភេទ OCSEA និងវិធីការពារ/ស្វែងរកជំនួយនៅកម្ពុជា។">
-<title>សុវត្ថិភាពឌីជីថល និង OCSEA — កម្ពុជា | v1.3</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0e12">
+<meta name="description" content="បទបង្ហាញជាភាសាខ្មែរ អំពីសុវត្ថិភាពឌីជីថល ប្រភេទ OCSEA និងវិធីការពារ/ស្វែងរកជំនួយនៅកម្ពុជា — ធ្វើបទបង្ហាញដោយ ជី សុផាត (Sophat CHY)">
+<title>សុវត្ថិភាពឌីជីថល និង OCSEA — កម្ពុជា | Presented by Sophat CHY</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700&display=swap');
-:root{color-scheme:dark;--bg:#0b0e12;--bg2:#10151c;--panel:#151b23;--panel2:#1b2430;--line:#2a3543;--text:#f2f5f9;--muted:#aab6c5;--accent:#9fe7d5;--accent-ink:#142a27;--soft:#202d38;--shadow:0 24px 80px #0004;--radius:28px}
-html[data-theme="day"]{color-scheme:light;--bg:#f2f5f8;--bg2:#e8eef3;--panel:#fff;--panel2:#f5f8fb;--line:#d6dee7;--text:#14202e;--muted:#586879;--accent:#087e6d;--accent-ink:#fff;--soft:#e2eee9;--shadow:0 24px 80px #1b2e3b14}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:'Kantumruy Pro',Inter,system-ui,sans-serif}body{overflow:hidden;background:radial-gradient(ellipse at 50% -20%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 55%),var(--bg);transition:background .25s,color .25s}
-button,a{font:inherit}button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-.app{height:100dvh;display:flex;flex-direction:column}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,56px);border-bottom:1px solid var(--line);flex-shrink:0;gap:16px}.brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);white-space:nowrap}.meta{color:var(--muted);font-size:12px;margin-left:10px;letter-spacing:0}.tools{display:flex;align-items:center;gap:8px}.tool,.navbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:10px 14px;font-size:13px;font-weight:650;transition:transform .16s,border-color .16s,background .16s}.tool:hover,.navbtn:hover{transform:translateY(-1px);border-color:var(--accent)}.tool[aria-pressed="true"]{background:var(--soft);border-color:var(--accent)}.counter{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:52px;text-align:center}
-.progress{height:3px;background:var(--line);flex-shrink:0}.progress>span{display:block;height:100%;width:12.5%;background:var(--accent);transition:width .25s}
-main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:clamp(18px,3.2vw,42px);overflow:hidden}.slide{display:none;max-width:1160px;width:100%;max-height:100%;overflow:auto;animation:rise .28s ease both;padding:clamp(6px,1.2vw,16px)}.slide.active{display:block}
-@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--accent);margin-bottom:20px}.title{font-size:clamp(36px,6.4vw,76px);line-height:1.1;letter-spacing:-.05em;margin:0 0 22px;font-weight:800;max-width:1000px}.title .km{letter-spacing:-.02em;display:block;font-size:clamp(28px,4.8vw,56px);line-height:1.26;margin-top:18px}.lead{font-size:clamp(18px,2.3vw,27px);line-height:1.55;color:var(--muted);max-width:850px;margin:0}.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:10px 14px;font-size:13px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:clamp(18px,2.2vw,28px);border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);min-width:0}.card .num{font-size:clamp(30px,5vw,58px);line-height:1;font-weight:800;letter-spacing:-.05em;color:var(--accent);margin-bottom:14px}.card h3{font-size:clamp(19px,2vw,25px);margin:0 0 10px;line-height:1.3}.card p{font-size:clamp(15px,1.45vw,18px);line-height:1.55;color:var(--muted);margin:0}.card .tag{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin-bottom:13px}.sectionhead{font-size:clamp(30px,4.8vw,53px);line-height:1.14;letter-spacing:-.04em;margin:0;max-width:950px}.subhead{font-size:clamp(16px,1.7vw,21px);color:var(--muted);line-height:1.55;margin:14px 0 0;max-width:900px}
-.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:32px}.step{padding:22px 18px;border:1px solid var(--line);background:var(--panel);border-radius:22px;position:relative}.step .num{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800;margin-bottom:18px}.step h3{font-size:clamp(17px,1.7vw,22px);margin:0 0 9px}.step p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
-.callout{border-left:4px solid var(--accent);padding:18px 22px;background:var(--panel);border-radius:0 18px 18px 0;color:var(--muted);font-size:clamp(16px,1.6vw,20px);line-height:1.6;margin-top:22px}.callout strong{color:var(--text)}.rule{border:1px solid var(--line);border-radius:22px;padding:20px;background:var(--panel);margin-top:18px}.rule h3{margin:0 0 8px;font-size:19px}.rule p{margin:0;color:var(--muted);line-height:1.55}
-.action-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}.action{border-radius:22px;padding:22px 18px;background:var(--soft);border:1px solid var(--line)}.action b{display:block;font-size:18px;margin-bottom:10px;color:var(--accent)}.action p{margin:0;font-size:15px;line-height:1.55;color:var(--muted)}
-.sources{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.source{display:block;padding:15px 16px;border-radius:16px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:var(--text);font-size:14px;line-height:1.45}.source span{display:block;color:var(--muted);font-size:12px;margin-top:5px}.source:hover{border-color:var(--accent)}
-.footer{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,56px);border-top:1px solid var(--line);flex-shrink:0;gap:12px}.nav{display:flex;align-items:center;gap:8px}.navbtn{padding:12px 18px}.navbtn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.hint{font-size:12px;color:var(--muted)}.notes{display:none;position:fixed;z-index:5;left:0;right:0;bottom:78px;max-height:38vh;overflow:auto;padding:22px clamp(20px,5vw,68px);background:var(--panel2);border-top:1px solid var(--line);box-shadow:var(--shadow)}.notes.open{display:block}.notes h2{margin:0 0 10px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}.notes p{margin:0;max-width:1000px;color:var(--muted);font-size:15px;line-height:1.7;white-space:pre-line}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:760px){.top{height:62px;padding:0 14px}.brand{font-size:10px;letter-spacing:.08em}.meta{display:none}.tool{padding:9px 11px;font-size:12px}.tools{gap:6px}main{padding:12px}.slide{padding:4px}.grid,.grid.three{grid-template-columns:1fr}.card{padding:18px}.flow{grid-template-columns:1fr 1fr;gap:9px}.step{padding:16px}.step p{font-size:14px}.action-grid{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr}.footer{height:70px;padding:0 14px}.hint{display:none}.navbtn{padding:11px 15px}.counter{min-width:44px}.notes{bottom:70px;max-height:42vh;padding:18px}}
-@media(max-height:650px){.top{height:56px}.footer{height:62px}main{padding:12px 24px}.slide{padding:0}.eyebrow{margin-bottom:12px}.title{font-size:clamp(32px,5vw,58px)}.title .km{font-size:clamp(25px,3.5vw,42px);margin-top:9px}.card{padding:16px}.grid{margin-top:16px}.flow{margin-top:20px}.step{padding:14px}.step .num{margin-bottom:9px}.notes{bottom:62px}}
-@media print{body{overflow:visible;background:#fff;color:#111}.app{height:auto}.top,.progress,.footer,.notes,.tools{display:none!important}main{display:block;padding:0;overflow:visible}.slide{display:block!important;max-height:none;overflow:visible;page-break-after:always;break-after:page;color:#111;padding:18mm 14mm}.slide:last-child{page-break-after:auto}.card,.step,.action,.callout,.rule,.source{background:#fff!important;color:#111!important;border-color:#bbb!important;box-shadow:none!important}.subhead,.card p,.step p,.action p,.callout,.rule p,.source span{color:#333!important}.sectionhead{font-size:30pt}.title{font-size:38pt}.slide a{color:#111}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-</style></head>
-<body><div class="app">
-<header class="top"><div class="brand">សុវត្ថិភាពឌីជីថល <span class="meta">/ OCSEA កម្ពុជា · v1.4 · OCT 2026</span></div>
-<div class="tools"><span id="counterTop" class="counter">01 / 21</span><button class="tool" id="pdfBtn" title="Print or save as PDF">PDF ↓</button><button class="tool" id="themeBtn" aria-pressed="false" title="Switch day or night theme">☼ Day</button><button class="tool" id="notesBtn" aria-pressed="false">Notes</button><button class="tool" id="fullBtn" title="Toggle full screen">Full screen</button></div></header>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0e12;
+  --bg2: #10151c;
+  --panel: #151b23;
+  --panel2: #1b2430;
+  --line: #2a3543;
+  --text: #f4f7fb;
+  --text-sub: #c5d2e0;
+  --muted: #9bb0c6;
+  --accent: #9fe7d5;
+  --accent-hover: #baf2e4;
+  --accent-ink: #0c201e;
+  --soft: #192732;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  --radius: 24px;
+}
+
+html[data-theme="day"] {
+  color-scheme: light;
+  --bg: #f3f6fa;
+  --bg2: #e7eff6;
+  --panel: #ffffff;
+  --panel2: #f2f7fc;
+  --line: #d1dde9;
+  --text: #111e2d;
+  --text-sub: #2c3e53;
+  --muted: #56697d;
+  --accent: #077969;
+  --accent-hover: #0a9481;
+  --accent-ink: #ffffff;
+  --soft: #def0ea;
+  --shadow: 0 24px 80px rgba(27, 46, 59, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Kantumruy Pro', Inter, system-ui, -apple-system, sans-serif;
+  letter-spacing: 0;
+}
+
+body {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% -20%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%), var(--bg);
+  transition: background .25s, color .25s;
+}
+
+button, a { font: inherit; }
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* App layout */
+.app {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.top {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.brand strong {
+  color: var(--text);
+}
+.meta {
+  color: var(--accent);
+  font-size: 12px;
+  margin-left: 10px;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool, .navbtn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .16s, border-color .16s, background .16s;
+}
+
+.tool:hover, .navbtn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+.tool[aria-pressed="true"] {
+  background: var(--soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.counter {
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 58px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.progress {
+  height: 3px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+.progress > span {
+  display: block;
+  height: 100%;
+  width: 4.76%;
+  background: var(--accent);
+  transition: width .25s ease-out;
+}
+
+/* Main presentation deck */
+main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3.2vw, 44px);
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  max-width: min(1360px, 92vw);
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  animation: rise .24s ease both;
+  padding: clamp(10px, 1.6vw, 24px);
+}
+.slide.active {
+  display: block;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography optimized for Big Screens & Khmer Script */
+.eyebrow {
+  font-size: clamp(13px, 1.2vw, 15px);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.sectionhead {
+  font-size: clamp(34px, 4.8vw, 62px);
+  line-height: 1.34;
+  margin: 0;
+  max-width: 1100px;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+.hero-title {
+  font-size: clamp(40px, 5.8vw, 76px);
+  line-height: 1.28;
+}
+
+.km-en {
+  display: block;
+  font-size: clamp(18px, 2.3vw, 30px);
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 10px;
+  letter-spacing: .02em;
+}
+
+.subhead {
+  font-size: clamp(19px, 2.1vw, 29px);
+  color: var(--text-sub);
+  line-height: 1.68;
+  margin: 18px 0 0;
+  max-width: 1050px;
+}
+
+.hero-subhead {
+  font-size: clamp(20px, 2.3vw, 32px);
+  line-height: 1.68;
+}
+
+/* Presenter Banner on Slide 1 */
+.presenter-banner {
+  margin-top: 28px;
+  padding: 18px 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.presenter-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.p-label {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+.p-name {
+  font-size: clamp(20px, 2.3vw, 28px);
+  font-weight: 800;
+  color: var(--accent);
+}
+.presenter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  border: 1px solid var(--line);
+  background: var(--soft);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Grid & Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  padding: clamp(20px, 2.3vw, 30px);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  min-width: 0;
+}
+.card .tag {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.card h3 {
+  font-size: clamp(21px, 2.2vw, 29px);
+  margin: 0 0 12px;
+  line-height: 1.38;
+  font-weight: 700;
+}
+.card p {
+  font-size: clamp(16px, 1.6vw, 21px);
+  line-height: 1.68;
+  color: var(--text-sub);
+  margin: 0;
+}
+.card a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+/* Callout Box */
+.callout {
+  border-left: 5px solid var(--accent);
+  padding: 20px 26px;
+  background: var(--panel);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-sub);
+  font-size: clamp(17px, 1.75vw, 23px);
+  line-height: 1.68;
+  margin-top: 26px;
+}
+.callout strong {
+  color: var(--accent);
+}
+
+/* Footer & Navigation */
+.footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(18px, 4vw, 56px);
+  border-top: 1px solid var(--line);
+  flex-shrink: 0;
+  gap: 12px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbtn {
+  padding: 12px 22px;
+  font-size: 14px;
+}
+.navbtn.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+.hint kbd {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+/* Speaker Notes */
+.notes {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  max-height: 38vh;
+  overflow: auto;
+  padding: 24px clamp(20px, 5vw, 68px);
+  background: var(--panel2);
+  border-top: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.notes.open { display: block; }
+.notes h2 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.notes p {
+  margin: 0;
+  max-width: 1050px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.72;
+  white-space: pre-line;
+}
+
+/* ========================================================
+   BIG SCREEN MODE & FULLSCREEN TYPOGRAPHY
+   (Makes Khmer text massive and ultra readable on TVs/projectors)
+   ======================================================== */
+:fullscreen .slide,
+:-webkit-full-screen .slide,
+html[data-bigscreen="true"] .slide {
+  max-width: min(1500px, 94vw);
+}
+
+:fullscreen .sectionhead,
+:-webkit-full-screen .sectionhead,
+html[data-bigscreen="true"] .sectionhead {
+  font-size: clamp(38px, 5.5vw, 74px);
+  line-height: 1.34;
+}
+
+:fullscreen .hero-title,
+:-webkit-full-screen .hero-title,
+html[data-bigscreen="true"] .hero-title {
+  font-size: clamp(48px, 6.8vw, 88px);
+  line-height: 1.28;
+}
+
+:fullscreen .subhead,
+:-webkit-full-screen .subhead,
+html[data-bigscreen="true"] .subhead {
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.7;
+}
+
+:fullscreen .card h3,
+:-webkit-full-screen .card h3,
+html[data-bigscreen="true"] .card h3 {
+  font-size: clamp(24px, 2.6vw, 34px);
+}
+
+:fullscreen .card p,
+:-webkit-full-screen .card p,
+html[data-bigscreen="true"] .card p {
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.7;
+}
+
+:fullscreen .callout,
+:-webkit-full-screen .callout,
+html[data-bigscreen="true"] .callout {
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.7;
+  padding: 24px 32px;
+}
+
+:fullscreen .pill,
+:-webkit-full-screen .pill,
+html[data-bigscreen="true"] .pill {
+  font-size: clamp(15px, 1.4vw, 18px);
+  padding: 10px 18px;
+}
+
+/* Mobile & Small screens */
+@media (max-width: 768px) {
+  .top { height: 62px; padding: 0 14px; }
+  .brand { font-size: 11px; }
+  .meta { display: none; }
+  .tool { padding: 8px 12px; font-size: 12px; }
+  .tools { gap: 6px; }
+  main { padding: 12px; }
+  .slide { padding: 8px; }
+  .grid, .grid.three { grid-template-columns: 1fr; }
+  .presenter-banner { flex-direction: column; align-items: flex-start; }
+  .footer { height: 70px; padding: 0 14px; }
+  .hint { display: none; }
+  .navbtn { padding: 10px 16px; font-size: 13px; }
+  .notes { bottom: 70px; max-height: 42vh; padding: 18px; }
+}
+
+/* Print / PDF view */
+@media print {
+  body { overflow: visible; background: #fff; color: #111; }
+  .app { height: auto; }
+  .top, .progress, .footer, .notes, .tools { display: none !important; }
+  main { display: block; padding: 0; overflow: visible; }
+  .slide {
+    display: block !important;
+    max-height: none;
+    overflow: visible;
+    page-break-after: always;
+    break-after: page;
+    color: #111;
+    padding: 16mm 14mm;
+  }
+  .slide:last-child { page-break-after: auto; }
+  .card, .callout, .presenter-banner {
+    background: #fff !important;
+    color: #111 !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
+  .subhead, .card p, .callout, .p-label { color: #333 !important; }
+  .sectionhead { font-size: 28pt; }
+  .hero-title { font-size: 34pt; }
+  .slide a { color: #111; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<header class="top">
+  <div class="brand">
+    សុវត្ថិភាពឌីជីថល <strong>/ OCSEA កម្ពុជា</strong>
+    <span class="meta">· Sophat CHY</span>
+  </div>
+  <div class="tools">
+    <span id="counterTop" class="counter">01 / 21</span>
+    <button class="tool" id="bigScreenBtn" aria-pressed="false" title="Toggle Big Screen Khmer font scale (Key: B)">🔍 Big Screen</button>
+    <button class="tool" id="pdfBtn" title="Print or save as PDF">PDF ↓</button>
+    <button class="tool" id="themeBtn" aria-pressed="false" title="Switch day or night theme">☼ Day</button>
+    <button class="tool" id="notesBtn" aria-pressed="false" title="Speaker notes (Key: N)">Notes</button>
+    <button class="tool" id="fullBtn" title="Toggle full screen (Key: F)">Full screen</button>
+  </div>
+</header>
+
 <div class="progress" aria-hidden="true"><span id="bar"></span></div>
-<main id="deck" aria-label="បទបង្ហាញសុវត្ថិភាពឌីជីថល"><section class="slide active" aria-label="Slide 1 of 21"><div class="eyebrow">ស្លាយ 01 / ២១ · បើកបទបង្ហាញ</div><h2 class="sectionhead">សុវត្ថិភាពឌីជីថល និង OCSEA</h2><p class="subhead">ស្គាល់ប្រភេទនៃការរំលោភបំពានផ្លូវភេទលើកុមារដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យា និងដឹងពីវិធីការពារ ឆ្លើយតប និងស្វែងរកជំនួយ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> 15 នាទី · 21 ស្លាយ · ភាសាខ្មែរ ជាចម្បង</div></section><section class="slide" aria-label="Slide 2 of 21"><div class="eyebrow">ស្លាយ 02 / ២១ · គោលបំណង</div><h2 class="sectionhead">ក្រោយបទបង្ហាញ អ្នកនឹងអាច…</h2><p class="subhead">១. ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ ២. ស្គាល់ប្រភេទ និងសញ្ញាព្រមាន។ ៣. ដឹងពីជំហានការពារ និងឆ្លើយតប។ ៤. ស្គាល់ប្រភព និងសេវាជំនួយនៅកម្ពុជា។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> មិនមែនជាការបណ្ដុះបណ្ដាលផ្នែកច្បាប់ ឬការស៊ើបអង្កេតករណីទេ។</div></section><section class="slide" aria-label="Slide 3 of 21"><div class="eyebrow">ស្លាយ 03 / ២១ · និយមន័យ OCSEA</div><h2 class="sectionhead">តើ OCSEA ជាអ្វី?</h2><p class="subhead">OCSEA = Online Child Sexual Exploitation and Abuse។ វាសំដៅលើស្ថានការណ៍ដែលបច្ចេកវិទ្យាឌីជីថល ឬអ៊ីនធឺណិតត្រូវបានប្រើក្នុងដំណើរការនៃការកេងប្រវ័ញ្ច ឬរំលោភបំពានផ្លូវភេទលើកុមារ។ អាចកើតឡើងទាំងអនឡាញសុទ្ធ ឬភ្ជាប់ជាមួយការជួបផ្ទាល់។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> បញ្ជាក់ថាបច្ចេកវិទ្យាអាចជាឧបករណ៍ក្នុងការរំលោភបំពាន មិនមែនគ្រប់បញ្ហាអនឡាញទាំងអស់សុទ្ធតែជា OCSEA ទេ។</div></section><section class="slide" aria-label="Slide 4 of 21"><div class="eyebrow">ស្លាយ 04 / ២១ · ការបែងចែក</div><h2 class="sectionhead">OCSEA ខុសពីបញ្ហាឌីជីថលទូទៅយ៉ាងដូចម្តេច?</h2><p class="subhead">ការលួចគណនី ឬការបោកប្រាក់គឺជាបញ្ហាសុវត្ថិភាពឌីជីថលទូទៅ។ វាអាចពាក់ព័ន្ធនឹង OCSEA ប្រសិនបើត្រូវបានប្រើដើម្បីទាក់ទង កេងប្រវ័ញ្ច គំរាម ឬផ្សព្វផ្សាយសម្ភារៈផ្លូវភេទពាក់ព័ន្ធនឹងកុមារ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំដាក់ស្លាកករណីដោយខ្លួនឯង។ ផ្តោតលើសុវត្ថិភាព និងស្វែងរកជំនួយពីអ្នកជំនាញ។</div></section><section class="slide" aria-label="Slide 5 of 21"><div class="eyebrow">ស្លាយ 05 / ២១ · ប្រភេទ ១</div><h2 class="sectionhead">ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Grooming)</h2><p class="subhead">អ្នកប្រព្រឹត្តអាចបង្កើតទំនុកចិត្ត សរសើរខ្លាំង ផ្តល់អំណោយ ស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅជជែកឯកជន ដើម្បីឆ្ពោះទៅរកការកេងប្រវ័ញ្ច។ អ្នកប្រព្រឹត្តអាចជាមនុស្សចម្លែក ឬមនុស្សដែលកុមារស្គាល់។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> សញ្ញាមួយមិនមែនជាភស្តុតាងតែមួយគត់ទេ។ សង្កេតការផ្លាស់ប្ដូរអាកប្បកិរិយា និងស្តាប់ដោយមិនបន្ទោស។</div></section><section class="slide" aria-label="Slide 6 of 21"><div class="eyebrow">ស្លាយ 06 / ២១ · ប្រភេទ ២</div><h2 class="sectionhead">សម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ (CSAM)</h2><p class="subhead">សម្ភារៈរូបភាព ឬវីដេអូដែលបង្ហាញការរំលោភបំពានផ្លូវភេទលើកុមារ។ ការផលិត កាន់កាប់ ឬចែកចាយសម្ភារៈបែបនេះអាចបង្កគ្រោះថ្នាក់បន្ថែមដល់កុមារ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំទាញយក រក្សាទុក ចម្លង ឬបញ្ជូនបន្តសម្ភារៈ។ រាយការណ៍តាមមធ្យោបាយផ្លូវការដោយមិនចែកចាយរូបភាព។</div></section><section class="slide" aria-label="Slide 7 of 21"><div class="eyebrow">ស្លាយ 07 / ២១ · ប្រភេទ ៣</div><h2 class="sectionhead">ការផ្សាយផ្ទាល់ការរំលោភបំពាន</h2><p class="subhead">បច្ចេកវិទ្យាវីដេអូខល ឬ Live អាចត្រូវបានប្រើដើម្បីឱ្យអ្នកដទៃមើល ឬបញ្ជាឱ្យមានការរំលោភបំពានក្នុងពេលជាក់ស្តែង។ អ្នកមើលអាចស្ថិតនៅកន្លែងផ្សេងពីកុមារ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំចូលមើល ឬថតទុក។ ស្វែងរកជំនួយពីសេវាការពារកុមារ និងអាជ្ញាធរដែលសមស្រប។</div></section><section class="slide" aria-label="Slide 8 of 21"><div class="eyebrow">ស្លាយ 08 / ២១ · ប្រភេទ ៤</div><h2 class="sectionhead">ការគំរាមកំហែងផ្លូវភេទ (Sextortion)</h2><p class="subhead">អ្នកគំរាមប្រើរូបភាពពិត រូបភាពក្លែងក្លាយ ឬការអះអាងថាមានរូបភាព ដើម្បីបង្ខំឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬរក្សាការសម្ងាត់។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> ការបង់ប្រាក់មិនធានាថាការគំរាមនឹងឈប់ទេ។ កុំបន្ទោសជនរងគ្រោះ; ត្រូវរកជំនួយ។</div></section><section class="slide" aria-label="Slide 9 of 21"><div class="eyebrow">ស្លាយ 09 / ២១ · ប្រភេទ ៥</div><h2 class="sectionhead">ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍</h2><p class="subhead">អ្នកប្រព្រឹត្តអាចសន្យាផ្តល់ប្រាក់ ទំនិញ ការងារ ឬអំណោយ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពដែលបង្កគ្រោះថ្នាក់។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> អំណោយ ឬទំនាក់ទំនងស្និទ្ធស្នាលមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។ សូមមើលបរិបទនៃការបង្ខិតបង្ខំ និងអំណាច។</div></section><section class="slide" aria-label="Slide 10 of 21"><div class="eyebrow">ស្លាយ 10 / ២១ · ប្រភេទ ៦</div><h2 class="sectionhead">រូបភាពក្លែងក្លាយដោយ AI (Deepfake)</h2><p class="subhead">AI អាចកែរូបថតកុមារឱ្យទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាព/វីដេអូក្លែងក្លាយដើម្បីបំបាក់មុខ គំរាម ឬជំរិតទារប្រាក់។ រូបភាពក្លែងក្លាយក៏អាចបង្កគ្រោះថ្នាក់ពិតដែរ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> UNICEF បានព្រមានពីហានិភ័យនេះក្នុងខែកុម្ភៈ ២០២៦។ តួលេខអន្តរជាតិមិនមែនជាតួលេខកម្ពុជា។</div></section><section class="slide" aria-label="Slide 11 of 21"><div class="eyebrow">ស្លាយ 11 / ២១ · សញ្ញាព្រមាន</div><h2 class="sectionhead">តើគួរយកចិត្តទុកដាក់លើអ្វីខ្លះ?</h2><p class="subhead">ការស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅ private chat; សំណើរូបភាពឯកជន; ការគំរាមបង្ហោះ; សំណើប្រាក់ ឬអំណោយដែលភ្ជាប់នឹងការរួមភេទ; ការភ័យខ្លាច ឬបារម្ភខ្លាំងក្រោយទទួលសារ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំសន្និដ្ឋានតាមសញ្ញាមួយ។ សួរដោយបើកចំហ ហើយកុំយកទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាការឆ្លើយតបដំបូង។</div></section><section class="slide" aria-label="Slide 12 of 21"><div class="eyebrow">ស្លាយ 12 / ២១ · ទិន្នន័យកម្ពុជា</div><h2 class="sectionhead">អ្វីដែលការសិក្សាបានរកឃើញ</h2><p class="subhead">ការសិក្សា Disrupting Harm Cambodia (២០២២) រកឃើញថា ១១% នៃកុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំបានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងឆ្នាំមុនការស្ទង់មតិ; ប៉ាន់ប្រមាណប្រហែល ១៦០,០០០ នាក់។ ១៦% ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត; ១៦% ទទួលរូបភាពផ្លូវភេទដែលមិនចង់បាន; ៩% ទទួលសំណើមិនចង់បានឱ្យផ្ញើរូបភាពផ្លូវភេទ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> ទាំងនេះជាលទ្ធផលសិក្សាឆ្នាំ ២០២២ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៥/២០២៦ ទេ។ ត្រូវបង្ហាញឆ្នាំ និងក្រុមអាយុជានិច្ច។</div></section><section class="slide" aria-label="Slide 13 of 21"><div class="eyebrow">ស្លាយ 13 / ២១ · បរិបទថ្មី ២០២៥–២០២៦</div><h2 class="sectionhead">របៀបប្រើប្រភពថ្មីឱ្យត្រឹមត្រូវ</h2><p class="subhead">សៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញរបស់ UNICEF Cambodia និងក្រសួងអប់រំ ចេញផ្សាយខែមករា ២០២៥។ UNICEF ចេញផ្សាយ issue brief អំពី AI និងការរំលោភបំពានផ្លូវភេទលើកុមារខែកុម្ភៈ ២០២៦។ របាយការណ៍អន្តរជាតិខែកញ្ញា ២០២៦ និយាយអំពីកុមារក្នុង ២១ ប្រទេស។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំបង្ហាញស្ថិតិពហុប្រទេសជាអត្រារបស់កម្ពុជា។ ក្នុងបទបង្ហាញនេះ តួលេខកម្ពុជាច្បាស់លាស់នៅតែត្រូវបានដាក់ជាមូលដ្ឋានឆ្នាំ ២០២២។</div></section><section class="slide" aria-label="Slide 14 of 21"><div class="eyebrow">ស្លាយ 14 / ២១ · ការការពារ</div><h2 class="sectionhead">ការពារគណនី និងឯកជនភាព</h2><p class="subhead">កំណត់គណនីឯកជន; ពិនិត្យសំណើមិត្តភក្តិ; បិទការចែករំលែកទីតាំងសាធារណៈ; ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា; បើក 2FA; ធ្វើបច្ចុប្បន្នភាពកម្មវិធី; កុំចែករំលែក OTP ឬលេខសម្ងាត់។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំធ្វើឱ្យកុមារទទួលខុសត្រូវតែម្នាក់ឯង។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។</div></section><section class="slide" aria-label="Slide 15 of 21"><div class="eyebrow">ស្លាយ 15 / ២១ · ការការពារ</div><h2 class="sectionhead">រូបភាពឯកជន សម្ពាធ និង AI</h2><p class="subhead">កុមារអាចបដិសេធសំណើរូបភាព ឬវីដេអូ។ ការផ្ញើរូបភាពមិនមែនជាការយល់ព្រមឱ្យចែកចាយបន្តទេ។ កុំជឿថា AI deepfake មិនអាចបង្កគ្រោះថ្នាក់ ហើយកុំប្រើឧបករណ៍ដើម្បីស្វែងរក ឬបង្កើតរូបភាពផ្លូវភេទរបស់កុមារ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> ពិភាក្សាអំពីព្រំដែន និងទំនុកចិត្ត។ បញ្ជាក់ថាកុមារអាចប្រាប់អ្នកពេញវ័យដែលទុកចិត្តបានដោយមិនខ្លាចការស្តីបន្ទោស។</div></section><section class="slide" aria-label="Slide 16 of 21"><div class="eyebrow">ស្លាយ 16 / ២១ · សេណារីយ៉ូ</div><h2 class="sectionhead">ករណីសិក្សាសម្រាប់ពិភាក្សា</h2><p class="subhead">ក្មេងជំទង់ម្នាក់ទទួលសារថា «បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះរូបភាព»។ មិនទាន់ដឹងថារូបភាពពិត កែដោយ AI ឬគ្រាន់តែជាការអះអាងទេ។ តើអ្នកនឹងនិយាយអ្វីជាមុន? តើអ្វីខ្លះដែលគួរធ្វើ និងមិនគួរធ្វើ?</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> ករណីនេះជាសេណារីយ៉ូប្រឌិត មិនមែនករណីពិត។ ឧទាហរណ៍ពាក្យគាំទ្រ៖ «អរគុណដែលប្រាប់ខ្ញុំ។ វាមិនមែនជាកំហុសរបស់អ្នកទេ។ យើងនឹងរកវិធីសុវត្ថិភាពជាមួយគ្នា»។</div></section><section class="slide" aria-label="Slide 17 of 21"><div class="eyebrow">ស្លាយ 17 / ២១ · ឆ្លើយតប</div><h2 class="sectionhead">៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ</h2><p class="subhead">បញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំទាញយក ចម្លង ឬបញ្ជូនរូបភាពផ្លូវភេទរបស់កុមារ។ កុំស៊ើបអង្កេតជាសាធារណៈ ឬសន្យាថារក្សាការសម្ងាត់ទាំងស្រុង ប្រសិនបើមានហានិភ័យដល់សុវត្ថិភាព។</div></section><section class="slide" aria-label="Slide 18 of 21"><div class="eyebrow">ស្លាយ 18 / ២១ · សេវាជំនួយ</div><h2 class="sectionhead">ស្វែងរកជំនួយនៅកម្ពុជា</h2><p class="subhead">APLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> មុនពេលបង្ហាញ សូមផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ ម៉ោងបម្រើ និងវិធីបញ្ជូនករណីម្ដងទៀត។ ប្រសិនបើកុមារកំពុងមានគ្រោះថ្នាក់ភ្លាមៗ សូមទាក់ទងសេវាបន្ទាន់/អាជ្ញាធរដែលសមស្រប។</div></section><section class="slide" aria-label="Slide 19 of 21"><div class="eyebrow">ស្លាយ 19 / ២១ · តួនាទីរួម</div><h2 class="sectionhead">តើអ្នកណាខ្លះមានតួនាទី?</h2><p class="subhead">គ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> សួរអ្នកចូលរួមឱ្យនិយាយពីសកម្មភាពជាក់ស្តែងមួយដែលពួកគេអាចធ្វើបាន។</div></section><section class="slide" aria-label="Slide 20 of 21"><div class="eyebrow">ស្លាយ 20 / ២១ · អំពីអ្នកធ្វើបទបង្ហាញ</div><h2 class="sectionhead">ជី សុផាត</h2><p class="subhead">អ្នកបង្កើតមាតិកាឌីជីថល · គ្រូបណ្ដុះបណ្ដាល និងសម្របសម្រួល ICT ជាន់ខ្ពស់ · អ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល</p><div class="grid"><div class="card"><div class="tag">បទពិសោធន៍</div><h3>ការអប់រំ និងសហគមន៍ឌីជីថល</h3><p>ដឹកនាំការរៀបចំ BarCamp Cambodia ចាប់ពីឆ្នាំ ២០១២ និងចូលរួមបណ្ដុះបណ្ដាលជំនាញឌីជីថល សុវត្ថិភាពអនឡាញ និងការប្រើប្រាស់បច្ចេកវិទ្យាដោយមានការទទួលខុសត្រូវ។</p></div><div class="card"><div class="tag">គម្រោង</div><h3>Sophat.Space</h3><p>បង្កើតធនធានអប់រំឌីជីថលជាភាសាខ្មែរ ដូចជា Digital Check-up, ធនធានជំនួយ និងវាក្យសព្ទឌីជីថលខ្មែរ ដើម្បីជួយឱ្យប្រជាពលរដ្ឋយល់ដឹង និងអនុវត្តសុវត្ថិភាពឌីជីថលបានកាន់តែងាយស្រួល។</p><p style="margin-top:12px"><a href="https://sophat.space/" target="_blank" rel="noopener noreferrer">sophat.space ↗</a> · <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">ធនធានជំនួយ ↗</a></p></div></div><div class="callout"><strong>គោលបំណង៖</strong> ជួយសហគមន៍ស្គាល់ហានិភ័យឌីជីថល និងដឹងពីជំហានសុវត្ថិភាពដែលអាចអនុវត្តបាន។</div></section><section class="slide" aria-label="Slide 21 of 21"><div class="eyebrow">ស្លាយ 21 / ២១ · ប្រភព និងការបិទបទបង្ហាញ</div><h2 class="sectionhead">ប្រភពសំខាន់ៗ និងកំណត់សម្គាល់</h2><p class="subhead">Disrupting Harm Cambodia (2022) · UNICEF Cambodia Guidebook on Child Safety Online (Jan 2025) · UNICEF issue brief on AI and child sexual abuse/exploitation (Feb 2026) · UNICEF multi-country report (Sep 2026) · Cambodian Child Online Protection Guidelines (2023) · Sophat.Space Help.</p><div class="callout"><strong>ចំណុចសំខាន់៖</strong> បញ្ជាក់ឆ្នាំ និងវិសាលភាពភូមិសាស្ត្រនៃប្រភព។ គោលការណ៍ណែនាំឆ្នាំ ២០២៣ នៅតែអាចប្រើជាប្រភពគោលនយោបាយ; កុំហៅវាថាជាឯកសារថ្មីឆ្នាំ ២០២៦។</div></section></main>
-<aside class="notes" id="notesPanel" aria-live="polite"><h2>Speaker notes · slide <span id="notesNum">1</span></h2><p id="notesText"></p></aside>
-<footer class="footer"><div class="hint">← → or Space to navigate · N = notes · F = fullscreen</div><div class="nav"><button class="navbtn" id="prevBtn" aria-label="Previous slide">← Back</button><span class="counter" id="counterBottom">01 / 21</span><button class="navbtn primary" id="nextBtn" aria-label="Next slide">Next →</button></div></footer></div>
+
+<main id="deck" aria-label="បទបង្ហាញសុវត្ថិភាពឌីជីថល">
+
+  <!-- SLIDE 1 -->
+  <section class="slide active" aria-label="Slide 01 of 21">
+    <div class="eyebrow">ស្លាយ 01 / ២១ · បើកបទបង្ហាញ · DIGITAL SAFETY & OCSEA</div>
+    <h1 class="sectionhead hero-title">សុវត្ថិភាពឌីជីថល និង OCSEA<span class="km-en">Digital Safety & Child Protection Online in Cambodia</span></h1>
+    <p class="subhead hero-subhead">ស្គាល់ប្រភេទនៃការរំលោភបំពានផ្លូវភេទលើកុមារដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យា និងដឹងពីវិធីការពារ ឆ្លើយតប និងស្វែងរកជំនួយ។</p>
+    
+    <div class="presenter-banner">
+      <div class="presenter-badge">
+        <span class="p-label">ធ្វើបទបង្ហាញដោយ / Presented by:</span>
+        <span class="p-name">ជី សុផាត (Sophat CHY)</span>
+      </div>
+      <div class="presenter-tags">
+        <span class="pill">អ្នកបង្កើតមាតិកាឌីជីថល & គ្រូបណ្ដុះបណ្ដាល ICT</span>
+        <span class="pill">BarCamp Cambodia</span>
+        <span class="pill">Sophat.Space</span>
+      </div>
+    </div>
+
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> រយៈពេល ១៥–២០ នាទី · ២១ ស្លាយ · ភាសាខ្មែរ ជាចម្បង (Khmer-first)</div>
+  </section>
+
+  <!-- SLIDE 2: INTRODUCTION ABOUT ME -->
+  <section class="slide" aria-label="Slide 02 of 21">
+    <div class="eyebrow">ស្លាយ 02 / ២១ · សេចក្ដីណែនាំអំពីអ្នកធ្វើបទបង្ហាញ · ABOUT THE PRESENTER</div>
+    <h2 class="sectionhead">ជី សុផាត <span style="color:var(--accent); font-weight:700;">(Sophat CHY)</span></h2>
+    <p class="subhead">អ្នកបង្កើតមាតិកាឌីជីថល · គ្រូបណ្ដុះបណ្ដាល និងសម្របសម្រួល ICT ជាន់ខ្ពស់ · អ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល និងសុវត្ថិភាពអនឡាញនៅកម្ពុជា</p>
+    <div class="grid three">
+      <div class="card">
+        <div class="tag">បទពិសោធន៍ / EXPERIENCE</div>
+        <h3>សហគមន៍ & ការអប់រំ ICT</h3>
+        <p>ដឹកនាំការរៀបចំ <strong>BarCamp Cambodia</strong> ចាប់តាំងពីឆ្នាំ ២០១២ មក និងចូលរួមបណ្ដុះបណ្ដាលជំនាញឌីជីថល សុវត្ថិភាពអនឡាញ និងការប្រើប្រាស់បច្ចេកវិទ្យាប្រកបដោយការទទួលខុសត្រូវ។</p>
+      </div>
+      <div class="card">
+        <div class="tag">គម្រោង / INITIATIVES</div>
+        <h3>Sophat.Space</h3>
+        <p>បង្កើតធនធានអប់រំឌីជីថលជាភាសាខ្មែរ ដូចជា <strong>Digital Check-up</strong>, ធនធានជំនួយបន្ទាន់ និង <strong>វាក្យសព្ទបច្ចេកវិទ្យាខ្មែរ</strong> ដើម្បីជួយឱ្យប្រជាពលរដ្ឋយល់ដឹង និងការពារខ្លួន។</p>
+        <p style="margin-top:14px"><a href="https://sophat.space/" target="_blank" rel="noopener noreferrer">sophat.space ↗</a> · <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">ធនធានជំនួយ /help ↗</a></p>
+      </div>
+      <div class="card">
+        <div class="tag">បេសកកម្ម / MISSION</div>
+        <h3>ការពារកុមារ និងសហគមន៍</h3>
+        <p>ជួយឱ្យសហគមន៍ មាតាបិតា លោកគ្រូអ្នកគ្រូ និងកុមារ/យុវជន ស្គាល់ហានិភ័យឌីជីថល យល់ដឹងពីសិទ្ធិ និងដឹងពីជំហានជាក់ស្ដែងដែលអាចអនុវត្តបានក្នុងការទប់ស្កាត់ OCSEA។</p>
+      </div>
+    </div>
+    <div class="callout"><strong>គោលបំណង៖</strong> ផ្ដល់ចំណេះដឹង និងវិធីសាស្ត្រងាយយល់ ដើម្បីឱ្យគ្រប់គ្នាយកទៅអនុវត្តការពារខ្លួន និងកុមារក្នុងសហគមន៍បានភ្លាមៗ។</div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide" aria-label="Slide 03 of 21">
+    <div class="eyebrow">ស្លាយ 03 / ២១ · គោលបំណង</div>
+    <h2 class="sectionhead">ក្រោយបទបង្ហាញ អ្នកនឹងអាច…</h2>
+    <p class="subhead">១. ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ ២. ស្គាល់ប្រភេទ និងសញ្ញាព្រមាន។ ៣. ដឹងពីជំហានការពារ និងឆ្លើយតប។ ៤. ស្គាល់ប្រភព និងសេវាជំនួយនៅកម្ពុជា។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> មិនមែនជាការបណ្ដុះបណ្ដាលផ្នែកច្បាប់ ឬការស៊ើបអង្កេតករណីទេ។</div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide" aria-label="Slide 04 of 21">
+    <div class="eyebrow">ស្លាយ 04 / ២១ · និយមន័យ OCSEA</div>
+    <h2 class="sectionhead">តើ OCSEA ជាអ្វី?</h2>
+    <p class="subhead">OCSEA = Online Child Sexual Exploitation and Abuse។ វាសំដៅលើស្ថានការណ៍ដែលបច្ចេកវិទ្យាឌីជីថល ឬអ៊ីនធឺណិតត្រូវបានប្រើក្នុងដំណើរការនៃការកេងប្រវ័ញ្ច ឬរំលោភបំពានផ្លូវភេទលើកុមារ។ អាចកើតឡើងទាំងអនឡាញសុទ្ធ ឬភ្ជាប់ជាមួយការជួបផ្ទាល់។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> បញ្ជាក់ថាបច្ចេកវិទ្យាអាចជាឧបករណ៍ក្នុងការរំលោភបំពាន មិនមែនគ្រប់បញ្ហាអនឡាញទាំងអស់សុទ្ធតែជា OCSEA ទេ។</div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide" aria-label="Slide 05 of 21">
+    <div class="eyebrow">ស្លាយ 05 / ២១ · ការបែងចែក</div>
+    <h2 class="sectionhead">OCSEA ខុសពីបញ្ហាឌីជីថលទូទៅយ៉ាងដូចម្តេច?</h2>
+    <p class="subhead">ការលួចគណនី ឬការបោកប្រាក់គឺជាបញ្ហាសុវត្ថិភាពឌីជីថលទូទៅ។ វាអាចពាក់ព័ន្ធនឹង OCSEA ប្រសិនបើត្រូវបានប្រើដើម្បីទាក់ទង កេងប្រវ័ញ្ច គំរាម ឬផ្សព្វផ្សាយសម្ភារៈផ្លូវភេទពាក់ព័ន្ធនឹងកុមារ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំដាក់ស្លាកករណីដោយខ្លួនឯង។ ផ្តោតលើសុវត្ថិភាព និងស្វែងរកជំនួយពីអ្នកជំនាញ។</div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide" aria-label="Slide 06 of 21">
+    <div class="eyebrow">ស្លាយ 06 / ២១ · ប្រភេទ ១</div>
+    <h2 class="sectionhead">ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Grooming)</h2>
+    <p class="subhead">អ្នកប្រព្រឹត្តអាចបង្កើតទំនុកចិត្ត សរសើរខ្លាំង ផ្តល់អំណោយ ស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅជជែកឯកជន ដើម្បីឆ្ពោះទៅរកការកេងប្រវ័ញ្ច។ អ្នកប្រព្រឹត្តអាចជាមនុស្សចម្លែក ឬមនុស្សដែលកុមារស្គាល់។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> សញ្ញាមួយមិនមែនជាភស្តុតាងតែមួយគត់ទេ។ សង្កេតការផ្លាស់ប្ដូរអាកប្បកិរិយា និងស្តាប់ដោយមិនបន្ទោស។</div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide" aria-label="Slide 07 of 21">
+    <div class="eyebrow">ស្លាយ 07 / ២១ · ប្រភេទ ២</div>
+    <h2 class="sectionhead">សម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ (CSAM)</h2>
+    <p class="subhead">សម្ភារៈរូបភាព ឬវីដេអូដែលបង្ហាញការរំលោភបំពានផ្លូវភេទលើកុមារ។ ការផលិត កាន់កាប់ ឬចែកចាយសម្ភារៈបែបនេះអាចបង្កគ្រោះថ្នាក់បន្ថែមដល់កុមារ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំទាញយក រក្សាទុក ចម្លង ឬបញ្ជូនបន្តសម្ភារៈ។ រាយការណ៍តាមមធ្យោបាយផ្លូវការដោយមិនចែកចាយរូបភាព។</div>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="slide" aria-label="Slide 08 of 21">
+    <div class="eyebrow">ស្លាយ 08 / ២១ · ប្រភេទ ៣</div>
+    <h2 class="sectionhead">ការផ្សាយផ្ទាល់ការរំលោភបំពាន</h2>
+    <p class="subhead">បច្ចេកវិទ្យាវីដេអូខល ឬ Live អាចត្រូវបានប្រើដើម្បីឱ្យអ្នកដទៃមើល ឬបញ្ជាឱ្យមានការរំលោភបំពានក្នុងពេលជាក់ស្តែង។ អ្នកមើលអាចស្ថិតនៅកន្លែងផ្សេងពីកុមារ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំចូលមើល ឬថតទុក។ ស្វែងរកជំនួយពីសេវាការពារកុមារ និងអាជ្ញាធរដែលសមស្រប។</div>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="slide" aria-label="Slide 09 of 21">
+    <div class="eyebrow">ស្លាយ 09 / ២១ · ប្រភេទ ៤</div>
+    <h2 class="sectionhead">ការគំរាមកំហែងផ្លូវភេទ (Sextortion)</h2>
+    <p class="subhead">អ្នកគំរាមប្រើរូបភាពពិត រូបភាពក្លែងក្លាយ ឬការអះអាងថាមានរូបភាព ដើម្បីបង្ខំឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬរក្សាការសម្ងាត់។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> ការបង់ប្រាក់មិនធានាថាការគំរាមនឹងឈប់ទេ។ កុំបន្ទោសជនរងគ្រោះ; ត្រូវរកជំនួយ។</div>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <section class="slide" aria-label="Slide 10 of 21">
+    <div class="eyebrow">ស្លាយ 10 / ២១ · ប្រភេទ ៥</div>
+    <h2 class="sectionhead">ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍</h2>
+    <p class="subhead">អ្នកប្រព្រឹត្តអាចសន្យាផ្តល់ប្រាក់ ទំនិញ ការងារ ឬអំណោយ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពដែលបង្កគ្រោះថ្នាក់។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> អំណោយ ឬទំនាក់ទំនងស្និទ្ធស្នាលមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។ សូមមើលបរិបទនៃការបង្ខិតបង្ខំ និងអំណាច។</div>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <section class="slide" aria-label="Slide 11 of 21">
+    <div class="eyebrow">ស្លាយ 11 / ២១ · ប្រភេទ ៦</div>
+    <h2 class="sectionhead">រូបភាពក្លែងក្លាយដោយ AI (Deepfake)</h2>
+    <p class="subhead">AI អាចកែរូបថតកុមារឱ្យទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាព/វីដេអូក្លែងក្លាយដើម្បីបំបាក់មុខ គំរាម ឬជំរិតទារប្រាក់។ រូបភាពក្លែងក្លាយក៏អាចបង្កគ្រោះថ្នាក់ពិតដែរ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> UNICEF បានព្រមានពីហានិភ័យនេះក្នុងខែកុម្ភៈ ២០២៦។ តួលេខអន្តរជាតិមិនមែនជាតួលេខកម្ពុជា។</div>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <section class="slide" aria-label="Slide 12 of 21">
+    <div class="eyebrow">ស្លាយ 12 / ២១ · សញ្ញាព្រមាន</div>
+    <h2 class="sectionhead">តើគួរយកចិត្តទុកដាក់លើអ្វីខ្លះ?</h2>
+    <p class="subhead">ការស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅ private chat; សំណើរូបភាពឯកជន; ការគំរាមបង្ហោះ; សំណើប្រាក់ ឬអំណោយដែលភ្ជាប់នឹងការរួមភេទ; ការភ័យខ្លាច ឬបារម្ភខ្លាំងក្រោយទទួលសារ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំសន្និដ្ឋានតាមសញ្ញាមួយ។ សួរដោយបើកចំហ ហើយកុំយកទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាការឆ្លើយតបដំបូង។</div>
+  </section>
+
+  <!-- SLIDE 13 -->
+  <section class="slide" aria-label="Slide 13 of 21">
+    <div class="eyebrow">ស្លាយ 13 / ២១ · ទិន្នន័យកម្ពុជា</div>
+    <h2 class="sectionhead">អ្វីដែលការសិក្សាបានរកឃើញ</h2>
+    <p class="subhead">ការសិក្សា Disrupting Harm Cambodia (២០២២) រកឃើញថា ១១% នៃកុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំបានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងឆ្នាំមុនការស្ទង់មតិ; ប៉ាន់ប្រមាណប្រហែល ១៦០,០០០ នាក់។ ១៦% ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត; ១៦% ទទួលរូបភាពផ្លូវភេទដែលមិនចង់បាន; ៩% ទទួលសំណើមិនចង់បានឱ្យផ្ញើរូបភាពផ្លូវភេទ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> ទាំងនេះជាលទ្ធផលសិក្សាឆ្នាំ ២០២២ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៥/២០២៦ ទេ។ ត្រូវបង្ហាញឆ្នាំ និងក្រុមអាយុជានិច្ច។</div>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <section class="slide" aria-label="Slide 14 of 21">
+    <div class="eyebrow">ស្លាយ 14 / ២១ · បរិបទថ្មី ២០២៥–២០២៦</div>
+    <h2 class="sectionhead">របៀបប្រើប្រភពថ្មីឱ្យត្រឹមត្រូវ</h2>
+    <p class="subhead">សៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញរបស់ UNICEF Cambodia និងក្រសួងអប់រំ ចេញផ្សាយខែមករា ២០២៥។ UNICEF ចេញផ្សាយ issue brief អំពី AI និងការរំលោភបំពានផ្លូវភេទលើកុមារខែកុម្ភៈ ២០២៦។ របាយការណ៍អន្តរជាតិខែកញ្ញា ២០២៦ និយាយអំពីកុមារក្នុង ២១ ប្រទេស។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំបង្ហាញស្ថិតិពហុប្រទេសជាអត្រារបស់កម្ពុជា។ ក្នុងបទបង្ហាញនេះ តួលេខកម្ពុជាច្បាស់លាស់នៅតែត្រូវបានដាក់ជាមូលដ្ឋានឆ្នាំ ២០២២។</div>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <section class="slide" aria-label="Slide 15 of 21">
+    <div class="eyebrow">ស្លាយ 15 / ២១ · ការការពារ</div>
+    <h2 class="sectionhead">ការពារគណនី និងឯកជនភាព</h2>
+    <p class="subhead">កំណត់គណនីឯកជន; ពិនិត្យសំណើមិត្តភក្តិ; បិទការចែករំលែកទីតាំងសាធារណៈ; ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា; បើក 2FA; ធ្វើបច្ចុប្បន្នភាពកម្មវិធី; កុំចែករំលែក OTP ឬលេខសម្ងាត់។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំធ្វើឱ្យកុមារទទួលខុសត្រូវតែម្នាក់ឯង។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។</div>
+  </section>
+
+  <!-- SLIDE 16 -->
+  <section class="slide" aria-label="Slide 16 of 21">
+    <div class="eyebrow">ស្លាយ 16 / ២១ · ការការពារ</div>
+    <h2 class="sectionhead">រូបភាពឯកជន សម្ពាធ និង AI</h2>
+    <p class="subhead">កុមារអាចបដិសេធសំណើរូបភាព ឬវីដេអូ។ ការផ្ញើរូបភាពមិនមែនជាការយល់ព្រមឱ្យចែកចាយបន្តទេ។ កុំជឿថា AI deepfake មិនអាចបង្កគ្រោះថ្នាក់ ហើយកុំប្រើឧបករណ៍ដើម្បីស្វែងរក ឬបង្កើតរូបភាពផ្លូវភេទរបស់កុមារ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> ពិភាក្សាអំពីព្រំដែន និងទំនុកចិត្ត។ បញ្ជាក់ថាកុមារអាចប្រាប់អ្នកពេញវ័យដែលទុកចិត្តបានដោយមិនខ្លាចការស្តីបន្ទោស។</div>
+  </section>
+
+  <!-- SLIDE 17 -->
+  <section class="slide" aria-label="Slide 17 of 21">
+    <div class="eyebrow">ស្លាយ 17 / ២១ · សេណារីយ៉ូ</div>
+    <h2 class="sectionhead">ករណីសិក្សាសម្រាប់ពិភាក្សា</h2>
+    <p class="subhead">ក្មេងជំទង់ម្នាក់ទទួលសារថា «បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះរូបភាព»។ មិនទាន់ដឹងថារូបភាពពិត កែដោយ AI ឬគ្រាន់តែជាការអះអាងទេ។ តើអ្នកនឹងនិយាយអ្វីជាមុន? តើអ្វីខ្លះដែលគួរធ្វើ និងមិនគួរធ្វើ?</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> ករណីនេះជាសេណារីយ៉ូប្រឌិត មិនមែនករណីពិត។ ឧទាហរណ៍ពាក្យគាំទ្រ៖ «អរគុណដែលប្រាប់ខ្ញុំ។ វាមិនមែនជាកំហុសរបស់អ្នកទេ។ យើងនឹងរកវិធីសុវត្ថិភាពជាមួយគ្នា»។</div>
+  </section>
+
+  <!-- SLIDE 18 -->
+  <section class="slide" aria-label="Slide 18 of 21">
+    <div class="eyebrow">ស្លាយ 18 / ២១ · ឆ្លើយតប</div>
+    <h2 class="sectionhead">៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ</h2>
+    <p class="subhead">បញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> កុំទាញយក ចម្លង ឬបញ្ជូនរូបភាពផ្លូវភេទរបស់កុមារ។ កុំស៊ើបអង្កេតជាសាធារណៈ ឬសន្យាថារក្សាការសម្ងាត់ទាំងស្រុង ប្រសិនបើមានហានិភ័យដល់សុវត្ថិភាព។</div>
+  </section>
+
+  <!-- SLIDE 19 -->
+  <section class="slide" aria-label="Slide 19 of 21">
+    <div class="eyebrow">ស្លាយ 19 / ២១ · សេវាជំនួយ</div>
+    <h2 class="sectionhead">ស្វែងរកជំនួយនៅកម្ពុជា</h2>
+    <p class="subhead">APLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> មុនពេលបង្ហាញ សូមផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ ម៉ោងបម្រើ និងវិធីបញ្ជូនករណីម្ដងទៀត។ ប្រសិនបើកុមារកំពុងមានគ្រោះថ្នាក់ភ្លាមៗ សូមទាក់ទងសេវាបន្ទាន់/អាជ្ញាធរដែលសមស្រប។</div>
+  </section>
+
+  <!-- SLIDE 20 -->
+  <section class="slide" aria-label="Slide 20 of 21">
+    <div class="eyebrow">ស្លាយ 20 / ២១ · តួនាទីរួម</div>
+    <h2 class="sectionhead">តើអ្នកណាខ្លះមានតួនាទី?</h2>
+    <p class="subhead">គ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> សួរអ្នកចូលរួមឱ្យនិយាយពីសកម្មភាពជាក់ស្តែងមួយដែលពួកគេអាចធ្វើបាន។</div>
+  </section>
+
+  <!-- SLIDE 21 -->
+  <section class="slide" aria-label="Slide 21 of 21">
+    <div class="eyebrow">ស្លាយ 21 / ២១ · ប្រភព និងការបិទបទបង្ហាញ</div>
+    <h2 class="sectionhead">ប្រភពសំខាន់ៗ និងកំណត់សម្គាល់</h2>
+    <p class="subhead">Disrupting Harm Cambodia (2022) · UNICEF Cambodia Guidebook on Child Safety Online (Jan 2025) · UNICEF issue brief on AI and child sexual abuse/exploitation (Feb 2026) · UNICEF multi-country report (Sep 2026) · Cambodian Child Online Protection Guidelines (2023) · Sophat.Space Help.</p>
+    <div class="callout"><strong>ចំណុចសំខាន់៖</strong> បញ្ជាក់ឆ្នាំ និងវិសាលភាពភូមិសាស្ត្រនៃប្រភព។ គោលការណ៍ណែនាំឆ្នាំ ២០២៣ នៅតែអាចប្រើជាប្រភពគោលនយោបាយ; កុំហៅវាថាជាឯកសារថ្មីឆ្នាំ ២០២៦។</div>
+  </section>
+
+</main>
+
+<aside class="notes" id="notesPanel" aria-live="polite">
+  <h2>Speaker notes · slide <span id="notesNum">1</span></h2>
+  <p id="notesText"></p>
+</aside>
+
+<footer class="footer">
+  <div class="hint">← → or Space · <kbd>B</kbd> Big Screen · <kbd>N</kbd> Notes · <kbd>F</kbd> Fullscreen</div>
+  <div class="nav">
+    <button class="navbtn" id="prevBtn" aria-label="Previous slide">← Back</button>
+    <span class="counter" id="counterBottom">01 / 21</span>
+    <button class="navbtn primary" id="nextBtn" aria-label="Next slide">Next →</button>
+  </div>
+</footer>
+
+</div>
+
 <script>
-const speakerNotes = ["1. សុវត្ថិភាពឌីជីថល និង OCSEA\\nស្គាល់ប្រភេទនៃការរំលោភបំពានផ្លូវភេទលើកុមារដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យា និងដឹងពីវិធីការពារ ឆ្លើយតប និងស្វែងរកជំនួយ។\\nអ្នកបង្ហាញ៖ 15 នាទី · 21 ស្លាយ · ភាសាខ្មែរ ជាចម្បង","2. ក្រោយបទបង្ហាញ អ្នកនឹងអាច…\\n១. ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ ២. ស្គាល់ប្រភេទ និងសញ្ញាព្រមាន។ ៣. ដឹងពីជំហានការពារ និងឆ្លើយតប។ ៤. ស្គាល់ប្រភព និងសេវាជំនួយនៅកម្ពុជា។\\nអ្នកបង្ហាញ៖ មិនមែនជាការបណ្ដុះបណ្ដាលផ្នែកច្បាប់ ឬការស៊ើបអង្កេតករណីទេ។","3. តើ OCSEA ជាអ្វី?\\nOCSEA = Online Child Sexual Exploitation and Abuse។ វាសំដៅលើស្ថានការណ៍ដែលបច្ចេកវិទ្យាឌីជីថល ឬអ៊ីនធឺណិតត្រូវបានប្រើក្នុងដំណើរការនៃការកេងប្រវ័ញ្ច ឬរំលោភបំពានផ្លូវភេទលើកុមារ។ អាចកើតឡើងទាំងអនឡាញសុទ្ធ ឬភ្ជាប់ជាមួយការជួបផ្ទាល់។\\nអ្នកបង្ហាញ៖ បញ្ជាក់ថាបច្ចេកវិទ្យាអាចជាឧបករណ៍ក្នុងការរំលោភបំពាន មិនមែនគ្រប់បញ្ហាអនឡាញទាំងអស់សុទ្ធតែជា OCSEA ទេ។","4. OCSEA ខុសពីបញ្ហាឌីជីថលទូទៅយ៉ាងដូចម្តេច?\\nការលួចគណនី ឬការបោកប្រាក់គឺជាបញ្ហាសុវត្ថិភាពឌីជីថលទូទៅ។ វាអាចពាក់ព័ន្ធនឹង OCSEA ប្រសិនបើត្រូវបានប្រើដើម្បីទាក់ទង កេងប្រវ័ញ្ច គំរាម ឬផ្សព្វផ្សាយសម្ភារៈផ្លូវភេទពាក់ព័ន្ធនឹងកុមារ។\\nអ្នកបង្ហាញ៖ កុំដាក់ស្លាកករណីដោយខ្លួនឯង។ ផ្តោតលើសុវត្ថិភាព និងស្វែងរកជំនួយពីអ្នកជំនាញ។","5. ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Grooming)\\nអ្នកប្រព្រឹត្តអាចបង្កើតទំនុកចិត្ត សរសើរខ្លាំង ផ្តល់អំណោយ ស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅជជែកឯកជន ដើម្បីឆ្ពោះទៅរកការកេងប្រវ័ញ្ច។ អ្នកប្រព្រឹត្តអាចជាមនុស្សចម្លែក ឬមនុស្សដែលកុមារស្គាល់។\\nអ្នកបង្ហាញ៖ សញ្ញាមួយមិនមែនជាភស្តុតាងតែមួយគត់ទេ។ សង្កេតការផ្លាស់ប្ដូរអាកប្បកិរិយា និងស្តាប់ដោយមិនបន្ទោស។","6. សម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ (CSAM)\\nសម្ភារៈរូបភាព ឬវីដេអូដែលបង្ហាញការរំលោភបំពានផ្លូវភេទលើកុមារ។ ការផលិត កាន់កាប់ ឬចែកចាយសម្ភារៈបែបនេះអាចបង្កគ្រោះថ្នាក់បន្ថែមដល់កុមារ។\\nអ្នកបង្ហាញ៖ កុំទាញយក រក្សាទុក ចម្លង ឬបញ្ជូនបន្តសម្ភារៈ។ រាយការណ៍តាមមធ្យោបាយផ្លូវការដោយមិនចែកចាយរូបភាព។","7. ការផ្សាយផ្ទាល់ការរំលោភបំពាន\\nបច្ចេកវិទ្យាវីដេអូខល ឬ Live អាចត្រូវបានប្រើដើម្បីឱ្យអ្នកដទៃមើល ឬបញ្ជាឱ្យមានការរំលោភបំពានក្នុងពេលជាក់ស្តែង។ អ្នកមើលអាចស្ថិតនៅកន្លែងផ្សេងពីកុមារ។\\nអ្នកបង្ហាញ៖ កុំចូលមើល ឬថតទុក។ ស្វែងរកជំនួយពីសេវាការពារកុមារ និងអាជ្ញាធរដែលសមស្រប។","8. ការគំរាមកំហែងផ្លូវភេទ (Sextortion)\\nអ្នកគំរាមប្រើរូបភាពពិត រូបភាពក្លែងក្លាយ ឬការអះអាងថាមានរូបភាព ដើម្បីបង្ខំឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬរក្សាការសម្ងាត់។\\nអ្នកបង្ហាញ៖ ការបង់ប្រាក់មិនធានាថាការគំរាមនឹងឈប់ទេ។ កុំបន្ទោសជនរងគ្រោះ; ត្រូវរកជំនួយ។","9. ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍\\nអ្នកប្រព្រឹត្តអាចសន្យាផ្តល់ប្រាក់ ទំនិញ ការងារ ឬអំណោយ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពដែលបង្កគ្រោះថ្នាក់។\\nអ្នកបង្ហាញ៖ អំណោយ ឬទំនាក់ទំនងស្និទ្ធស្នាលមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។ សូមមើលបរិបទនៃការបង្ខិតបង្ខំ និងអំណាច។","10. រូបភាពក្លែងក្លាយដោយ AI (Deepfake)\\nAI អាចកែរូបថតកុមារឱ្យទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាព/វីដេអូក្លែងក្លាយដើម្បីបំបាក់មុខ គំរាម ឬជំរិតទារប្រាក់។ រូបភាពក្លែងក្លាយក៏អាចបង្កគ្រោះថ្នាក់ពិតដែរ។\\nអ្នកបង្ហាញ៖ UNICEF បានព្រមានពីហានិភ័យនេះក្នុងខែកុម្ភៈ ២០២៦។ តួលេខអន្តរជាតិមិនមែនជាតួលេខកម្ពុជា។","11. តើគួរយកចិត្តទុកដាក់លើអ្វីខ្លះ?\\nការស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅ private chat; សំណើរូបភាពឯកជន; ការគំរាមបង្ហោះ; សំណើប្រាក់ ឬអំណោយដែលភ្ជាប់នឹងការរួមភេទ; ការភ័យខ្លាច ឬបារម្ភខ្លាំងក្រោយទទួលសារ។\\nអ្នកបង្ហាញ៖ កុំសន្និដ្ឋានតាមសញ្ញាមួយ។ សួរដោយបើកចំហ ហើយកុំយកទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាការឆ្លើយតបដំបូង។","12. អ្វីដែលការសិក្សាបានរកឃើញ\\nការសិក្សា Disrupting Harm Cambodia (២០២២) រកឃើញថា ១១% នៃកុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំបានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងឆ្នាំមុនការស្ទង់មតិ; ប៉ាន់ប្រមាណប្រហែល ១៦០,០០០ នាក់។ ១៦% ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត; ១៦% ទទួលរូបភាពផ្លូវភេទដែលមិនចង់បាន; ៩% ទទួលសំណើមិនចង់បានឱ្យផ្ញើរូបភាពផ្លូវភេទ។\\nអ្នកបង្ហាញ៖ ទាំងនេះជាលទ្ធផលសិក្សាឆ្នាំ ២០២២ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៥/២០២៦ ទេ។ ត្រូវបង្ហាញឆ្នាំ និងក្រុមអាយុជានិច្ច។","13. របៀបប្រើប្រភពថ្មីឱ្យត្រឹមត្រូវ\\nសៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញរបស់ UNICEF Cambodia និងក្រសួងអប់រំ ចេញផ្សាយខែមករា ២០២៥។ UNICEF ចេញផ្សាយ issue brief អំពី AI និងការរំលោភបំពានផ្លូវភេទលើកុមារខែកុម្ភៈ ២០២៦។ របាយការណ៍អន្តរជាតិខែកញ្ញា ២០២៦ និយាយអំពីកុមារក្នុង ២១ ប្រទេស។\\nអ្នកបង្ហាញ៖ កុំបង្ហាញស្ថិតិពហុប្រទេសជាអត្រារបស់កម្ពុជា។ ក្នុងបទបង្ហាញនេះ តួលេខកម្ពុជាច្បាស់លាស់នៅតែត្រូវបានដាក់ជាមូលដ្ឋានឆ្នាំ ២០២២។","14. ការពារគណនី និងឯកជនភាព\\nកំណត់គណនីឯកជន; ពិនិត្យសំណើមិត្តភក្តិ; បិទការចែករំលែកទីតាំងសាធារណៈ; ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា; បើក 2FA; ធ្វើបច្ចុប្បន្នភាពកម្មវិធី; កុំចែករំលែក OTP ឬលេខសម្ងាត់។\\nអ្នកបង្ហាញ៖ កុំធ្វើឱ្យកុមារទទួលខុសត្រូវតែម្នាក់ឯង។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។","15. រូបភាពឯកជន សម្ពាធ និង AI\\nកុមារអាចបដិសេធសំណើរូបភាព ឬវីដេអូ។ ការផ្ញើរូបភាពមិនមែនជាការយល់ព្រមឱ្យចែកចាយបន្តទេ។ កុំជឿថា AI deepfake មិនអាចបង្កគ្រោះថ្នាក់ ហើយកុំប្រើឧបករណ៍ដើម្បីស្វែងរក ឬបង្កើតរូបភាពផ្លូវភេទរបស់កុមារ។\\nអ្នកបង្ហាញ៖ ពិភាក្សាអំពីព្រំដែន និងទំនុកចិត្ត។ បញ្ជាក់ថាកុមារអាចប្រាប់អ្នកពេញវ័យដែលទុកចិត្តបានដោយមិនខ្លាចការស្តីបន្ទោស។","16. ករណីសិក្សាសម្រាប់ពិភាក្សា\\nក្មេងជំទង់ម្នាក់ទទួលសារថា «បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះរូបភាព»។ មិនទាន់ដឹងថារូបភាពពិត កែដោយ AI ឬគ្រាន់តែជាការអះអាងទេ។ តើអ្នកនឹងនិយាយអ្វីជាមុន? តើអ្វីខ្លះដែលគួរធ្វើ និងមិនគួរធ្វើ?\\nអ្នកបង្ហាញ៖ ករណីនេះជាសេណារីយ៉ូប្រឌិត មិនមែនករណីពិត។ ឧទាហរណ៍ពាក្យគាំទ្រ៖ «អរគុណដែលប្រាប់ខ្ញុំ។ វាមិនមែនជាកំហុសរបស់អ្នកទេ។ យើងនឹងរកវិធីសុវត្ថិភាពជាមួយគ្នា»។","17. ៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ\\nបញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។\\nអ្នកបង្ហាញ៖ កុំទាញយក ចម្លង ឬបញ្ជូនរូបភាពផ្លូវភេទរបស់កុមារ។ កុំស៊ើបអង្កេតជាសាធារណៈ ឬសន្យាថារក្សាការសម្ងាត់ទាំងស្រុង ប្រសិនបើមានហានិភ័យដល់សុវត្ថិភាព។","18. ស្វែងរកជំនួយនៅកម្ពុជា\\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។\\nអ្នកបង្ហាញ៖ មុនពេលបង្ហាញ សូមផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ ម៉ោងបម្រើ និងវិធីបញ្ជូនករណីម្ដងទៀត។ ប្រសិនបើកុមារកំពុងមានគ្រោះថ្នាក់ភ្លាមៗ សូមទាក់ទងសេវាបន្ទាន់/អាជ្ញាធរដែលសមស្រប។","19. តើអ្នកណាខ្លះមានតួនាទី?\\nគ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។\\nអ្នកបង្ហាញ៖ សួរអ្នកចូលរួមឱ្យនិយាយពីសកម្មភាពជាក់ស្តែងមួយដែលពួកគេអាចធ្វើបាន។","អំពីអ្នកធ្វើបទបង្ហាញ៖ ជី សុផាត ជាអ្នកបង្កើតមាតិកាឌីជីថល គ្រូបណ្ដុះបណ្ដាល ICT និងអ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល។ គាត់ដឹកនាំការរៀបចំ BarCamp Cambodia ចាប់ពីឆ្នាំ ២០១២ និងបង្កើត Sophat.Space ជាធនធានអប់រំសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ។","21. បិទបទបង្ហាញដោយសារសំខាន់៖ ការពារកុមារជាការទទួលខុសត្រូវរួម។ ស្គាល់ប្រភេទ OCSEA ការពារគណនី ស្តាប់ដោយមិនបន្ទោស និងភ្ជាប់កុមារទៅសេវាជំនួយ។ បង្ហាញប្រភព និងបញ្ជាក់ឆ្នាំ/វិសាលភាពនៃទិន្នន័យ។"];
-const slides=[...document.querySelectorAll(".slide")];let index=0;const notesPanel=document.getElementById("notesPanel"),notesBtn=document.getElementById("notesBtn"),themeBtn=document.getElementById("themeBtn");
-function render(){slides.forEach((s,i)=>{s.classList.toggle("active",i===index);s.setAttribute("aria-hidden",i===index?"false":"true")});const n=String(index+1).padStart(2,"0"),total=String(slides.length).padStart(2,"0");document.getElementById("counterTop").textContent=n+" / "+total;document.getElementById("counterBottom").textContent=n+" / "+total;document.getElementById("bar").style.width=((index+1)/slides.length*100)+"%";document.getElementById("prevBtn").disabled=index===0;document.getElementById("nextBtn").textContent=index===slides.length-1?"Finish ✓":"Next →";document.getElementById("notesNum").textContent=index+1;document.getElementById("notesText").textContent=speakerNotes[index];document.title=(index+1)+"/"+slides.length+" · Digital Safety & OCSEA — Cambodia"}
-function go(d){index=Math.max(0,Math.min(slides.length-1,index+d));render()}document.getElementById("nextBtn").addEventListener("click",()=>{if(index===slides.length-1){index=0}else go(1);render()});document.getElementById("prevBtn").addEventListener("click",()=>go(-1));
-notesBtn.addEventListener("click",()=>{const open=notesPanel.classList.toggle("open");notesBtn.setAttribute("aria-pressed",String(open));notesBtn.textContent=open?"Hide notes":"Notes"});
-function setTheme(t){document.documentElement.dataset.theme=t;const day=t==="day";themeBtn.textContent=day?"☾ Night":"☼ Day";themeBtn.setAttribute("aria-pressed",String(day));document.querySelector('meta[name="theme-color"]').content=day?"#f2f5f8":"#0b0e12";try{localStorage.setItem("ocsea-theme",t)}catch(e){}}
-try{setTheme(localStorage.getItem("ocsea-theme")==="day"?"day":"night")}catch(e){setTheme("night")}themeBtn.addEventListener("click",()=>setTheme(document.documentElement.dataset.theme==="night"?"day":"night"));
-document.getElementById("pdfBtn").addEventListener("click",()=>window.print());document.getElementById("fullBtn").addEventListener("click",async()=>{try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();else await document.exitFullscreen()}catch(e){}});
-document.addEventListener("keydown",e=>{if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();if(index===slides.length-1){index=0;render()}else go(1)}else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();go(-1)}else if(e.key==="Home"){index=0;render()}else if(e.key==="End"){index=slides.length-1;render()}else if(e.key.toLowerCase()==="n"&&!["INPUT","TEXTAREA"].includes(document.activeElement.tagName))notesBtn.click();else if(e.key.toLowerCase()==="f")document.getElementById("fullBtn").click()});
-let startX=null;document.getElementById("deck").addEventListener("touchstart",e=>{startX=e.changedTouches[0].clientX},{passive:true});document.getElementById("deck").addEventListener("touchend",e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>55)go(dx<0?1:-1);startX=null},{passive:true});render();
-</script></body></html>
+const speakerNotes = [
+  "1. សុវត្ថិភាពឌីជីថល និង OCSEA — ធ្វើបទបង្ហាញដោយ៖ ជី សុផាត (Sophat CHY)\nស្គាល់ប្រភេទនៃការរំលោភបំពានផ្លូវភេទលើកុមារដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យា និងដឹងពីវិធីការពារ ឆ្លើយតប និងស្វែងរកជំនួយ។\nអ្នកបង្ហាញ៖ រយៈពេល ១៥–២០ នាទី · ២១ ស្លាយ · ភាសាខ្មែរ ជាចម្បង (Khmer-first)",
+  "2. សេចក្ដីណែនាំអំពីអ្នកធ្វើបទបង្ហាញ៖ ជី សុផាត (Sophat CHY)\nអ្នកបង្កើតមាតិកាឌីជីថល គ្រូបណ្ដុះបណ្ដាល ICT ជាន់ខ្ពស់ និងអ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល។\n- ដឹកនាំការរៀបចំ BarCamp Cambodia តាំងពីឆ្នាំ ២០១២ មក។\n- ស្ថាបនិក Sophat.Space បង្កើតធនធានសុវត្ថិភាពឌីជីថល និងសេវាជំនួយជាភាសាខ្មែរ។\nគោលបំណង៖ ជួយឱ្យសហគមន៍ មាតាបិតា និងកុមារ/យុវជនស្គាល់ហានិភ័យ និងដឹងពីជំហានជាក់ស្ដែង។",
+  "3. ក្រោយបទបង្ហាញ អ្នកនឹងអាច…\n១. ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ ២. ស្គាល់ប្រភេទ និងសញ្ញាព្រមាន។ ៣. ដឹងពីជំហានការពារ និងឆ្លើយតប។ ៤. ស្គាល់ប្រភព និងសេវាជំនួយនៅកម្ពុជា។\nអ្នកបង្ហាញ៖ មិនមែនជាការបណ្ដុះបណ្ដាលផ្នែកច្បាប់ ឬការស៊ើបអង្កេតករណីទេ។",
+  "4. តើ OCSEA ជាអ្វី?\nOCSEA = Online Child Sexual Exploitation and Abuse។ វាសំដៅលើស្ថានការណ៍ដែលបច្ចេកវិទ្យាឌីជីថល ឬអ៊ីនធឺណិតត្រូវបានប្រើក្នុងដំណើរការនៃការកេងប្រវ័ញ្ច ឬរំលោភបំពានផ្លូវភេទលើកុមារ។ អាចកើតឡើងទាំងអនឡាញសុទ្ធ ឬភ្ជាប់ជាមួយការជួបផ្ទាល់។\nអ្នកបង្ហាញ៖ បញ្ជាក់ថាបច្ចេកវិទ្យាអាចជាឧបករណ៍ក្នុងការរំលោភបំពាន មិនមែនគ្រប់បញ្ហាអនឡាញទាំងអស់សុទ្ធតែជា OCSEA ទេ។",
+  "5. OCSEA ខុសពីបញ្ហាឌីជីថលទូទៅយ៉ាងដូចម្តេច?\nការលួចគណនី ឬការបោកប្រាក់គឺជាបញ្ហាសុវត្ថិភាពឌីជីថលទូទៅ។ វាអាចពាក់ព័ន្ធនឹង OCSEA ប្រសិនបើត្រូវបានប្រើដើម្បីទាក់ទង កេងប្រវ័ញ្ច គំរាម ឬផ្សព្វផ្សាយសម្ភារៈផ្លូវភេទពាក់ព័ន្ធនឹងកុមារ។\nអ្នកបង្ហាញ៖ កុំដាក់ស្លាកករណីដោយខ្លួនឯង។ ផ្តោតលើសុវត្ថិភាព និងស្វែងរកជំនួយពីអ្នកជំនាញ។",
+  "6. ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Grooming)\nអ្នកប្រព្រឹត្តអាចបង្កើតទំនុកចិត្ត សរសើរខ្លាំង ផ្តល់អំណោយ ស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅជជែកឯកជន ដើម្បីឆ្ពោះទៅរកការកេងប្រវ័ញ្ច។ អ្នកប្រព្រឹត្តអាចជាមនុស្សចម្លែក ឬមនុស្សដែលកុមារស្គាល់។\nអ្នកបង្ហាញ៖ សញ្ញាមួយមិនមែនជាភស្តុតាងតែមួយគត់ទេ។ សង្កេតការផ្លាស់ប្ដូរអាកប្បកិរិយា និងស្តាប់ដោយមិនបន្ទោស។",
+  "7. សម្ភារៈរំលោភបំពានផ្លូវភេទលើកុមារ (CSAM)\nសម្ភារៈរូបភាព ឬវីដេអូដែលបង្ហាញការរំលោភបំពានផ្លូវភេទលើកុមារ។ ការផលិត កាន់កាប់ ឬចែកចាយសម្ភារៈបែបនេះអាចបង្កគ្រោះថ្នាក់បន្ថែមដល់កុមារ។\nអ្នកបង្ហាញ៖ កុំទាញយក រក្សាទុក ចម្លង ឬបញ្ជូនបន្តសម្ភារៈ។ រាយការណ៍តាមមធ្យោបាយផ្លូវការដោយមិនចែកចាយរូបភាព។",
+  "8. ការផ្សាយផ្ទាល់ការរំលោភបំពាន\nបច្ចេកវិទ្យាវីដេអូខល ឬ Live អាចត្រូវបានប្រើដើម្បីឱ្យអ្នកដទៃមើល ឬបញ្ជាឱ្យមានការរំលោភបំពានក្នុងពេលជាក់ស្តែង។ អ្នកមើលអាចស្ថិតនៅកន្លែងផ្សេងពីកុមារ។\nអ្នកបង្ហាញ៖ កុំចូលមើល ឬថតទុក។ ស្វែងរកជំនួយពីសេវាការពារកុមារ និងអាជ្ញាធរដែលសមស្រប។",
+  "9. ការគំរាមកំហែងផ្លូវភេទ (Sextortion)\nអ្នកគំរាមប្រើរូបភាពពិត រូបភាពក្លែងក្លាយ ឬការអះអាងថាមានរូបភាព ដើម្បីបង្ខំឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬរក្សាការសម្ងាត់។\nអ្នកបង្ហាញ៖ ការបង់ប្រាក់មិនធានាថាការគំរាមនឹងឈប់ទេ។ កុំបន្ទោសជនរងគ្រោះ; ត្រូវរកជំនួយ។",
+  "10. ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍\nអ្នកប្រព្រឹត្តអាចសន្យាផ្តល់ប្រាក់ ទំនិញ ការងារ ឬអំណោយ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពដែលបង្កគ្រោះថ្នាក់។\nអ្នកបង្ហាញ៖ អំណោយ ឬទំនាក់ទំនងស្និទ្ធស្នាលមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។ សូមមើលបរិបទនៃការបង្ខិតបង្ខំ និងអំណាច។",
+  "11. រូបភាពក្លែងក្លាយដោយ AI (Deepfake)\nAI អាចកែរូបថតកុមារឱ្យទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាព/វីដេអូក្លែងក្លាយដើម្បីបំបាក់មុខ គំរាម ឬជំរិតទារប្រាក់។ រូបភាពក្លែងក្លាយក៏អាចបង្កគ្រោះថ្នាក់ពិតដែរ។\nអ្នកបង្ហាញ៖ UNICEF បានព្រមានពីហានិភ័យនេះក្នុងខែកុម្ភៈ ២០២៦។ តួលេខអន្តរជាតិមិនមែនជាតួលេខកម្ពុជា។",
+  "12. តើគួរយកចិត្តទុកដាក់លើអ្វីខ្លះ?\nការស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅ private chat; សំណើរូបភាពឯកជន; ការគំរាមបង្ហោះ; សំណើប្រាក់ ឬអំណោយដែលភ្ជាប់នឹងការរួមភេទ; ការភ័យខ្លាច ឬបារម្ភខ្លាំងក្រោយទទួលសារ។\nអ្នកបង្ហាញ៖ កុំសន្និដ្ឋានតាមសញ្ញាមួយ។ សួរដោយបើកចំហ ហើយកុំយកទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាការឆ្លើយតបដំបូង។",
+  "13. អ្វីដែលការសិក្សាបានរកឃើញ\nការសិក្សា Disrupting Harm Cambodia (២០២២) រកឃើញថា ១១% នៃកុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំបានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងឆ្នាំមុនការស្ទង់មតិ; ប៉ាន់ប្រមាណប្រហែល ១៦០,០០០ នាក់។ ១៦% ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត; ១៦% ទទួលរូបភាពផ្លូវភេទដែលមិនចង់បាន; ៩% ទទួលសំណើមិនចង់បានឱ្យផ្ញើរូបភាពផ្លូវភេទ។\nអ្នកបង្ហាញ៖ ទាំងនេះជាលទ្ធផលសិក្សាឆ្នាំ ២០២២ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៥/២០២៦ ទេ។ ត្រូវបង្ហាញឆ្នាំ និងក្រុមអាយុជានិច្ច។",
+  "14. របៀបប្រើប្រភពថ្មីឱ្យត្រឹមត្រូវ\nសៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញរបស់ UNICEF Cambodia និងក្រសួងអប់រំ ចេញផ្សាយខែមករា ២០២៥។ UNICEF ចេញផ្សាយ issue brief អំពី AI និងការរំលោភបំពានផ្លូវភេទលើកុមារខែកុម្ភៈ ២០២៦។ របាយការណ៍អន្តរជាតិខែកញ្ញា ២០២៦ និយាយអំពីកុមារក្នុង ២១ ប្រទេស។\nអ្នកបង្ហាញ៖ កុំបង្ហាញស្ថិតិពហុប្រទេសជាអត្រារបស់កម្ពុជា។ ក្នុងបទបង្ហាញនេះ តួលេខកម្ពុជាច្បាស់លាស់នៅតែត្រូវបានដាក់ជាមូលដ្ឋានឆ្នាំ ២០២២។",
+  "15. ការពារគណនី និងឯកជនភាព\nកំណត់គណនីឯកជន; ពិនិត្យសំណើមិត្តភក្តិ; បិទការចែករំលែកទីតាំងសាធារណៈ; ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា; បើក 2FA; ធ្វើបច្ចុប្បន្នភាពកម្មវិធី; កុំចែករំលែក OTP ឬលេខសម្ងាត់។\nអ្នកបង្ហាញ៖ កុំធ្វើឱ្យកុមារទទួលខុសត្រូវតែម្នាក់ឯង។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។",
+  "16. រូបភាពឯកជន សម្ពាធ និង AI\nកុមារអាចបដិសេធសំណើរូបភាព ឬវីដេអូ។ ការផ្ញើរូបភាពមិនមែនជាការយល់ព្រមឱ្យចែកចាយបន្តទេ។ កុំជឿថា AI deepfake មិនអាចបង្កគ្រោះថ្នាក់ ហើយកុំប្រើឧបករណ៍ដើម្បីស្វែងរក ឬបង្កើតរូបភាពផ្លូវភេទរបស់កុមារ។\nអ្នកបង្ហាញ៖ ពិភាក្សាអំពីព្រំដែន និងទំនុកចិត្ត។ បញ្ជាក់ថាកុមារអាចប្រាប់អ្នកពេញវ័យដែលទុកចិត្តបានដោយមិនខ្លាចការស្តីបន្ទោស។",
+  "17. ករណីសិក្សាសម្រាប់ពិភាក្សា\nក្មេងជំទង់ម្នាក់ទទួលសារថា «បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះរូបភាព»។ មិនទាន់ដឹងថារូបភាពពិត កែដោយ AI ឬគ្រាន់តែជាការអះអាងទេ។ តើអ្នកនឹងនិយាយអ្វីជាមុន? តើអ្វីខ្លះដែលគួរធ្វើ និងមិនគួរធ្វើ?\nអ្នកបង្ហាញ៖ ករណីនេះជាសេណារីយ៉ូប្រឌិត មិនមែនករណីពិត។ ឧទាហរណ៍ពាក្យគាំទ្រ៖ «អរគុណដែលប្រាប់ខ្ញុំ។ វាមិនមែនជាកំហុសរបស់អ្នកទេ។ យើងនឹងរកវិធីសុវត្ថិភាពជាមួយគ្នា»។",
+  "18. ៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ\nបញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។\nអ្នកបង្ហាញ៖ កុំទាញយក ចម្លង ឬបញ្ជូនរូបភាពផ្លូវភេទរបស់កុមារ។ កុំស៊ើបអង្កេតជាសាធារណៈ ឬសន្យាថារក្សាការសម្ងាត់ទាំងស្រុង ប្រសិនបើមានហានិភ័យដល់សុវត្ថិភាព។",
+  "19. ស្វែងរកជំនួយនៅកម្ពុជា\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។\nអ្នកបង្ហាញ៖ មុនពេលបង្ហាញ សូមផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ ម៉ោងបម្រើ និងវិធីបញ្ជូនករណីម្ដងទៀត។ ប្រសិនបើកុមារកំពុងមានគ្រោះថ្នាក់ភ្លាមៗ សូមទាក់ទងសេវាបន្ទាន់/អាជ្ញាធរដែលសមស្រប។",
+  "20. តើអ្នកណាខ្លះមានតួនាទី?\nគ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។\nអ្នកបង្ហាញ៖ សួរអ្នកចូលរួមឱ្យនិយាយពីសកម្មភាពជាក់ស្តែងមួយដែលពួកគេអាចធ្វើបាន។",
+  "21. បិទបទបង្ហាញដោយសារសំខាន់៖ ការពារកុមារជាការទទួលខុសត្រូវរួម។ ស្គាល់ប្រភេទ OCSEA ការពារគណនី ស្តាប់ដោយមិនបន្ទោស និងភ្ជាប់កុមារទៅសេវាជំនួយ។ បង្ហាញប្រភព និងបញ្ជាក់ឆ្នាំ/វិសាលភាពនៃទិន្នន័យ។"
+];
+
+const slides = [...document.querySelectorAll(".slide")];
+let index = 0;
+const notesPanel = document.getElementById("notesPanel");
+const notesBtn = document.getElementById("notesBtn");
+const themeBtn = document.getElementById("themeBtn");
+const bigScreenBtn = document.getElementById("bigScreenBtn");
+
+function render() {
+  slides.forEach((s, i) => {
+    s.classList.toggle("active", i === index);
+    s.setAttribute("aria-hidden", i === index ? "false" : "true");
+  });
+  const n = String(index + 1).padStart(2, "0");
+  const total = String(slides.length).padStart(2, "0");
+  document.getElementById("counterTop").textContent = `${n} / ${total}`;
+  document.getElementById("counterBottom").textContent = `${n} / ${total}`;
+  document.getElementById("bar").style.width = `${((index + 1) / slides.length) * 100}%`;
+  document.getElementById("prevBtn").disabled = index === 0;
+  document.getElementById("nextBtn").textContent = index === slides.length - 1 ? "Finish ✓" : "Next →";
+  document.getElementById("notesNum").textContent = index + 1;
+  document.getElementById("notesText").textContent = speakerNotes[index] || "";
+  document.title = `${index + 1}/${slides.length} · Digital Safety & OCSEA — Presented by Sophat CHY`;
+}
+
+function go(d) {
+  index = Math.max(0, Math.min(slides.length - 1, index + d));
+  render();
+}
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  if (index === slides.length - 1) {
+    index = 0;
+  } else {
+    go(1);
+  }
+  render();
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => go(-1));
+
+notesBtn.addEventListener("click", () => {
+  const open = notesPanel.classList.toggle("open");
+  notesBtn.setAttribute("aria-pressed", String(open));
+  notesBtn.textContent = open ? "Hide notes" : "Notes";
+});
+
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  const day = t === "day";
+  themeBtn.textContent = day ? "☾ Night" : "☼ Day";
+  themeBtn.setAttribute("aria-pressed", String(day));
+  document.querySelector('meta[name="theme-color"]').content = day ? "#f3f6fa" : "#0b0e12";
+  try { localStorage.setItem("ocsea-theme", t); } catch(e) {}
+}
+
+try {
+  setTheme(localStorage.getItem("ocsea-theme") === "day" ? "day" : "night");
+} catch(e) {
+  setTheme("night");
+}
+
+themeBtn.addEventListener("click", () => {
+  setTheme(document.documentElement.dataset.theme === "night" ? "day" : "night");
+});
+
+function setBigScreen(b) {
+  document.documentElement.dataset.bigscreen = b ? "true" : "false";
+  bigScreenBtn.setAttribute("aria-pressed", String(b));
+  bigScreenBtn.textContent = b ? "🔍 Normal Text" : "🔍 Big Screen";
+  try { localStorage.setItem("ocsea-bigscreen", b ? "true" : "false"); } catch(e) {}
+}
+
+try {
+  const savedBig = localStorage.getItem("ocsea-bigscreen") === "true";
+  setBigScreen(savedBig);
+} catch(e) {}
+
+bigScreenBtn.addEventListener("click", () => {
+  const current = document.documentElement.dataset.bigscreen === "true";
+  setBigScreen(!current);
+});
+
+document.getElementById("pdfBtn").addEventListener("click", () => window.print());
+
+document.getElementById("fullBtn").addEventListener("click", async () => {
+  try {
+    if (!document.fullscreenElement) {
+      await document.documentElement.requestFullscreen();
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch(e) {}
+});
+
+document.addEventListener("keydown", (e) => {
+  if (["ArrowRight", "PageDown", " "].includes(e.key)) {
+    e.preventDefault();
+    if (index === slides.length - 1) {
+      index = 0;
+      render();
+    } else {
+      go(1);
+    }
+  } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
+    e.preventDefault();
+    go(-1);
+  } else if (e.key === "Home") {
+    index = 0;
+    render();
+  } else if (e.key === "End") {
+    index = slides.length - 1;
+    render();
+  } else if (e.key.toLowerCase() === "n" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+    notesBtn.click();
+  } else if (e.key.toLowerCase() === "f") {
+    document.getElementById("fullBtn").click();
+  } else if (e.key.toLowerCase() === "b" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+    bigScreenBtn.click();
+  }
+});
+
+let startX = null;
+document.getElementById("deck").addEventListener("touchstart", (e) => {
+  startX = e.changedTouches[0].clientX;
+}, { passive: true });
+
+document.getElementById("deck").addEventListener("touchend", (e) => {
+  if (startX === null) return;
+  const dx = e.changedTouches[0].clientX - startX;
+  if (Math.abs(dx) > 55) {
+    go(dx < 0 ? 1 : -1);
+  }
+  startX = null;
+}, { passive: true });
+
+render();
+</script>
+</body>
+</html>
