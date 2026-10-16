@@ -552,31 +552,126 @@ html[data-bigscreen="true"] .callout {
   .notes { bottom: 70px; max-height: 42vh; padding: 18px; }
 }
 
+@page {
+  size: A4 landscape;
+  margin: 10mm 12mm;
+}
+
 @media print {
-  body { overflow: visible; background: #fff; color: #111; }
-  .app { height: auto; }
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-family: 'Kantumruy Pro', Inter, system-ui, sans-serif !important;
+    overflow: visible !important;
+  }
+  .app { height: auto !important; overflow: visible !important; }
   .top, .progress, .footer, .notes, .tools { display: none !important; }
-  main { display: block; padding: 0; overflow: visible; }
-  .slide {
+  main {
     display: block !important;
-    max-height: none;
-    overflow: visible;
-    page-break-after: always;
-    break-after: page;
-    color: #111;
-    padding: 16mm 14mm;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
   }
-  .slide:last-child { page-break-after: auto; }
+  .slide {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: calc(100vh - 20mm) !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding: 8mm 6mm !important;
+    box-sizing: border-box !important;
+  }
+  .slide:first-child {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+  .slide:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
   .card, .callout, .presenter-banner, .letter-card {
-    background: #fff !important;
-    color: #111 !important;
-    border-color: #ccc !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
     box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
-  .subhead, .card p, .callout, .p-label { color: #333 !important; }
-  .sectionhead { font-size: 26pt; }
-  .hero-title { font-size: 32pt; }
-  .slide a { color: #111; }
+  .eyebrow {
+    color: #077969 !important;
+    font-weight: 800 !important;
+    font-size: 11pt !important;
+    margin-bottom: 8pt !important;
+  }
+  .sectionhead {
+    font-size: 24pt !important;
+    line-height: 1.3 !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+  }
+  .hero-title {
+    font-size: 28pt !important;
+    line-height: 1.25 !important;
+  }
+  .km-en {
+    font-size: 14pt !important;
+    color: #475569 !important;
+  }
+  .subhead {
+    color: #334155 !important;
+    font-size: 13pt !important;
+    line-height: 1.6 !important;
+    margin-top: 8pt !important;
+  }
+  .hero-subhead {
+    font-size: 14pt !important;
+  }
+  .card h3 {
+    font-size: 14pt !important;
+    color: #0f172a !important;
+    margin-bottom: 6pt !important;
+  }
+  .card p {
+    font-size: 11pt !important;
+    color: #334155 !important;
+    line-height: 1.55 !important;
+  }
+  .callout {
+    border-left: 5px solid #077969 !important;
+    background: #f0fdf9 !important;
+    color: #1e293b !important;
+    font-size: 12pt !important;
+    padding: 10pt 16pt !important;
+    margin-top: 10pt !important;
+  }
+  .callout strong {
+    color: #077969 !important;
+  }
+  .char {
+    color: #077969 !important;
+    font-size: 24pt !important;
+  }
+  .pill {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    font-size: 10pt !important;
+  }
+  .slide a { color: #077969 !important; text-decoration: underline !important; }
 }
 </style>
 </head>
@@ -593,7 +688,7 @@ html[data-bigscreen="true"] .callout {
   <div class="tools">
     <span id="counterTop" class="counter">01 / 21</span>
     <button class="tool" id="bigScreenBtn" aria-pressed="false" title="Toggle Big Screen Khmer font scale (Key: B)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Big Screen</button>
-    <button class="tool" id="pdfBtn" title="Print or save as PDF"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> PDF ↓</button>
+    <button class="tool" id="pdfBtn" title="Print or save as PDF"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ទាញយក PDF</button>
     <button class="tool" id="themeBtn" aria-pressed="false" title="Switch day or night theme"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> <span id="themeText">Day</span></button>
     <button class="tool" id="notesBtn" aria-pressed="false" title="Speaker notes (Key: N)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Notes</button>
     <button class="tool" id="fullBtn" title="Toggle full screen (Key: F)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><polyline points="21 15 21 21 15 21"/><polyline points="3 9 3 3 9 3"/></svg> Full screen</button>
@@ -1121,7 +1216,7 @@ html[data-bigscreen="true"] .callout {
 </aside>
 
 <footer class="footer">
-  <div class="hint">← → or Space · <kbd>B</kbd> Big Screen · <kbd>N</kbd> Notes · <kbd>F</kbd> Fullscreen</div>
+  <div class="hint">← → or Space · <kbd>P</kbd> ទាញយក PDF · <kbd>B</kbd> Big Screen · <kbd>N</kbd> Notes · <kbd>F</kbd> Fullscreen</div>
   <div class="nav">
     <button class="navbtn" id="prevBtn" aria-label="Previous slide">← Back</button>
     <span class="counter" id="counterBottom">01 / 21</span>
@@ -1237,7 +1332,18 @@ bigScreenBtn.addEventListener("click", () => {
   setBigScreen(!current);
 });
 
-document.getElementById("pdfBtn").addEventListener("click", () => window.print());
+async function downloadPDF() {
+  const origTitle = document.title;
+  if (document.fonts && document.fonts.ready) {
+    await document.fonts.ready;
+  }
+  document.title = "សុវត្ថិភាពឌីជីថល-និង-OCSEA-ជី-សុផាត-Sophat-CHY";
+  window.print();
+  setTimeout(() => {
+    document.title = origTitle;
+  }, 1500);
+}
+document.getElementById("pdfBtn").addEventListener("click", downloadPDF);
 
 document.getElementById("fullBtn").addEventListener("click", async () => {
   try {
@@ -1271,6 +1377,8 @@ document.addEventListener("keydown", (e) => {
     notesBtn.click();
   } else if (e.key.toLowerCase() === "f") {
     document.getElementById("fullBtn").click();
+  } else if (e.key.toLowerCase() === "p" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+    document.getElementById("pdfBtn").click();
   } else if (e.key.toLowerCase() === "b" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
     bigScreenBtn.click();
   }
