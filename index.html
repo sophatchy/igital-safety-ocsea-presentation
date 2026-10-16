@@ -2,13 +2,13 @@
 <html lang="km" data-theme="night">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0e12"><meta name="description" content="Bilingual Khmer-English presentation on digital safety and online child sexual exploitation and abuse (OCSEA) in Cambodia. Updated October 2026.">
-<title>Digital Safety & OCSEA — Cambodia | v1.2</title>
+<meta name="theme-color" content="#0b0e12"><meta name="description" content="បទបង្ហាញជាភាសាខ្មែរ អំពីសុវត្ថិភាពឌីជីថល ប្រភេទ OCSEA និងវិធីការពារ/ស្វែងរកជំនួយនៅកម្ពុជា។">
+<title>សុវត្ថិភាពឌីជីថល និង OCSEA — កម្ពុជា | v1.3</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700&display=swap');
 :root{color-scheme:dark;--bg:#0b0e12;--bg2:#10151c;--panel:#151b23;--panel2:#1b2430;--line:#2a3543;--text:#f2f5f9;--muted:#aab6c5;--accent:#9fe7d5;--accent-ink:#142a27;--soft:#202d38;--shadow:0 24px 80px #0004;--radius:28px}
 html[data-theme="day"]{color-scheme:light;--bg:#f2f5f8;--bg2:#e8eef3;--panel:#fff;--panel2:#f5f8fb;--line:#d6dee7;--text:#14202e;--muted:#586879;--accent:#087e6d;--accent-ink:#fff;--soft:#e2eee9;--shadow:0 24px 80px #1b2e3b14}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,'Noto Sans Khmer',system-ui,sans-serif}body{overflow:hidden;background:radial-gradient(ellipse at 50% -20%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 55%),var(--bg);transition:background .25s,color .25s}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:'Kantumruy Pro',Inter,system-ui,sans-serif}body{overflow:hidden;background:radial-gradient(ellipse at 50% -20%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 55%),var(--bg);transition:background .25s,color .25s}
 button,a{font:inherit}button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .app{height:100dvh;display:flex;flex-direction:column}.top{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,56px);border-bottom:1px solid var(--line);flex-shrink:0;gap:16px}.brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);white-space:nowrap}.meta{color:var(--muted);font-size:12px;margin-left:10px;letter-spacing:0}.tools{display:flex;align-items:center;gap:8px}.tool,.navbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:10px 14px;font-size:13px;font-weight:650;transition:transform .16s,border-color .16s,background .16s}.tool:hover,.navbtn:hover{transform:translateY(-1px);border-color:var(--accent)}.tool[aria-pressed="true"]{background:var(--soft);border-color:var(--accent)}.counter{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:52px;text-align:center}
 .progress{height:3px;background:var(--line);flex-shrink:0}.progress>span{display:block;height:100%;width:12.5%;background:var(--accent);transition:width .25s}
@@ -25,98 +25,100 @@ main{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head>
 <body><div class="app">
-<header class="top"><div class="brand">DIGITAL SAFETY <span class="meta">/ OCSEA CAMBODIA · v1.2 · OCT 2026</span></div>
+<header class="top"><div class="brand">សុវត្ថិភាពឌីជីថល <span class="meta">/ OCSEA កម្ពុជា · v1.3 · OCT 2026</span></div>
 <div class="tools"><span id="counterTop" class="counter">01 / 08</span><button class="tool" id="themeBtn" aria-pressed="false" title="Switch day or night theme">☼ Day</button><button class="tool" id="notesBtn" aria-pressed="false">Notes</button><button class="tool" id="fullBtn" title="Toggle full screen">Full screen</button></div></header>
 <div class="progress" aria-hidden="true"><span id="bar"></span></div>
-<main id="deck" aria-label="Digital safety presentation">
+<main id="deck" aria-label="បទបង្ហាញសុវត្ថិភាពឌីជីថល">
 <section class="slide active" aria-label="Slide 1 of 8">
-<div class="eyebrow">15-minute briefing · Cambodia · 2026 review</div>
-<h1 class="title">Digital Safety<br>&amp; OCSEA <span class="km">សុវត្ថិភាពឌីជីថល និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមអ៊ីនធឺណិត</span></h1>
-<p class="lead">A practical guide to recognising harm, responding safely, and protecting children online.<br>មគ្គុទ្ទេសក៍អនុវត្តសម្រាប់ការសម្គាល់ហានិភ័យ ការឆ្លើយតបប្រកបដោយសុវត្ថិភាព និងការការពារកុមារតាមអ៊ីនធឺណិត។</p>
-<div class="pills"><span class="pill">8 slides · 15 minutes</span><span class="pill">Khmer + English</span><span class="pill">Evidence reviewed: Oct 2026</span></div></section>
+<div class="eyebrow">បទបង្ហាញ ១៥ នាទី · កម្ពុជា · កែសម្រួល តុលា ២០២៦</div>
+<h1 class="title">សុវត្ថិភាពឌីជីថល <span class="km">ការយល់ដឹងអំពី OCSEA និងវិធីការពារកុមារ</span></h1>
+<p class="lead">ស្គាល់ហានិភ័យ • ការពារខ្លួន • ឆ្លើយតបដោយមិនបន្ទោសជនរងគ្រោះ<br><span lang="en">Recognise harm · Protect children · Respond without blame</span></p>
+<div class="pills"><span class="pill">៨ ស្លាយ · ១៥ នាទី</span><span class="pill">ភាសាខ្មែរ ជាចម្បង</span><span class="pill">ផ្នែកទី១៖ ស្គាល់ OCSEA</span><span class="pill">ផ្នែកទី២៖ ការពារ និងស្វែងរកជំនួយ</span></div></section>
 <section class="slide" aria-label="Slide 2 of 8">
-<div class="eyebrow">01 / Understand the issue</div><h2 class="sectionhead">What is OCSEA?</h2><p class="subhead">Online Child Sexual Exploitation and Abuse — online tools may be used to contact, manipulate, threaten, exploit, or share sexual material involving a child.</p>
-<div class="grid three">
-<div class="card"><div class="tag">Contact</div><h3>Grooming &amp; manipulation</h3><p>Building trust, asking for secrecy, moving to private chats, or testing boundaries to exploit a child.</p></div>
-<div class="card"><div class="tag">Coercion</div><h3>Sextortion &amp; threats</h3><p>Using images, fabricated images, or threats to demand money, more images, sexual acts, or silence.</p></div>
-<div class="card"><div class="tag">Distribution</div><h3>Image-based abuse</h3><p>Creating, possessing, or sharing sexual images of children, including AI-manipulated material, without a child’s safety or consent.</p></div>
-</div><div class="callout"><strong>Remember:</strong> a child is never to blame for being manipulated or threatened. Responsibility belongs to the person causing the harm.<br><span lang="km">កុមារមិនមែនជាអ្នកមានកំហុសឡើយ។ អ្នកប្រព្រឹត្តិការគំរាមកំហែង និងការរំលោភបំពានជាអ្នកទទួលខុសត្រូវ។</span></div>
+<div class="eyebrow">ផ្នែកទី១ · ស្គាល់បញ្ហា</div><h2 class="sectionhead">តើ OCSEA ជាអ្វី?</h2><p class="subhead">OCSEA = Online Child Sexual Exploitation and Abuse · ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យាឌីជីថល។</p>
+<div class="grid">
+<div class="card"><div class="tag">និយមន័យ</div><h3>អាចកើតឡើងតាមអនឡាញ ឬក្រៅអនឡាញ</h3><p>បច្ចេកវិទ្យាអាចត្រូវបានប្រើដើម្បីទាក់ទង បោកបញ្ឆោត គំរាមកំហែង កេងប្រវ័ញ្ច កត់ត្រា ឬផ្សព្វផ្សាយការរំលោភបំពានលើកុមារ។</p></div>
+<div class="card"><div class="tag">ចំណុចសំខាន់</div><h3>មិនមែនមានតែជនចម្លែកទេ</h3><p>ការសិក្សា Disrupting Harm នៅកម្ពុជាបង្ហាញថា អ្នកប្រព្រឹត្តជាច្រើនជាមនុស្សដែលកុមារស្គាល់ ដូចជា មិត្តភក្តិ មនុស្សពេញវ័យដែលស្គាល់ ឬដៃគូស្នេហា។</p></div>
+</div><div class="callout"><strong>សូមចងចាំ៖</strong> កុមារមិនមែនជាអ្នកត្រូវបន្ទោសទេ ទោះបីជាពួកគេធ្លាប់ជឿទុកចិត្ត ឬផ្ញើរូបភាពក៏ដោយ។ ការគំរាម ការបង្ខិតបង្ខំ និងការចែកចាយដោយគ្មានការយល់ព្រម គឺជាបញ្ហារបស់អ្នកប្រព្រឹត្ត។</div>
 </section>
 <section class="slide" aria-label="Slide 3 of 8">
-<div class="eyebrow">02 / What the evidence says</div><h2 class="sectionhead">Cambodia evidence, correctly dated</h2><p class="subhead">A clear distinction between Cambodia-specific research and newer multi-country findings.</p>
+<div class="eyebrow">ផ្នែកទី១ · ប្រភេទ OCSEA</div><h2 class="sectionhead">ប្រភេទសំខាន់ៗដែលគួរស្គាល់</h2><p class="subhead">ប្រភេទទាំងនេះអាចកើតឡើងរួមគ្នា ឬបន្តពីមួយទៅមួយ។ បញ្ជីនេះជាការពន្យល់សម្រាប់ការអប់រំ មិនមែនជាបញ្ជីច្បាប់ពេញលេញទេ។</p>
 <div class="grid">
-<div class="card"><div class="num">11%</div><h3>Internet-using children aged 12–17</h3><p>Experienced clear examples of online sexual exploitation and abuse in the year before the survey, according to the <em>Disrupting Harm in Cambodia</em> study.</p><div class="tag" style="margin-top:18px">Research published 2022 · still cited in UNICEF Cambodia 2025</div></div>
-<div class="card"><div class="num">≈160,000</div><h3>Estimated number of children</h3><p>Population estimate derived from the 2022 Cambodia study; it is not a new 2025 or 2026 survey result.</p><div class="tag" style="margin-top:18px">Cambodia-specific baseline</div></div>
-<div class="card"><div class="num">1 in 5</div><h3>Across 21 countries</h3><p>A UNICEF report released in September 2026 estimated about 20 million internet-using children aged 12–17 experienced at least one form of technology-facilitated sexual exploitation or abuse in a single year.</p><div class="tag" style="margin-top:18px">Multi-country finding · not Cambodia prevalence</div></div>
-<div class="card"><div class="num">1.2 million</div><h3>AI sexualised deepfakes</h3><p>In an 11-country UNICEF, ECPAT and INTERPOL study, at least 1.2 million children disclosed that their images had been manipulated into sexually explicit deepfakes in the past year.</p><div class="tag" style="margin-top:18px">Multi-country finding · published Feb 2026</div></div>
-</div><div class="callout"><strong>Data integrity:</strong> each number has a year and geographic scope. Do not describe global findings as Cambodia-only figures or call older survey results “new 2026 data.”</div>
+<div class="card"><div class="num">01</div><h3>ការបោកបញ្ឆោតកុមារ (Online grooming)</h3><p>បង្កើតទំនុកចិត្ត ការសម្ងាត់ ឬការពឹងផ្អែក ដើម្បីនាំទៅរកសំណើផ្លូវភេទ ការរំលោភបំពាន ឬការជួបផ្ទាល់ដែលមានហានិភ័យ។</p></div>
+<div class="card"><div class="num">02</div><h3>រូបភាព/វីដេអូរំលោភបំពានកុមារ (CSAM)</h3><p>ការផលិត កាន់កាប់ ឬចែកចាយសម្ភារៈបង្ហាញការរំលោភបំពានផ្លូវភេទលើកុមារ។ កុំទាញយក រក្សាទុក ឬបញ្ជូនបន្តសម្ភារៈបែបនេះ។</p></div>
+<div class="card"><div class="num">03</div><h3>ការផ្សាយផ្ទាល់ការរំលោភបំពាន</h3><p>ប្រើវីដេអូខល ឬ Live ដើម្បីឱ្យអ្នកដទៃមើល ឬបញ្ជាឱ្យមានការរំលោភបំពានក្នុងពេលជាក់ស្តែង។</p></div>
+<div class="card"><div class="num">04</div><h3>ការគំរាមកំហែងផ្លូវភេទ (Sextortion)</h3><p>គំរាមបង្ហោះ ឬចែកចាយរូបភាព/ព័ត៌មាន ដើម្បីបង្ខំឱ្យផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬបង់ប្រាក់។</p></div>
+<div class="card"><div class="num">05</div><h3>ការកេងប្រវ័ញ្ចដោយប្រាក់ ឬអំណោយ</h3><p>ផ្តល់ប្រាក់ អំណោយ ឬផលប្រយោជន៍ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលឱ្យកុមារជួបធ្វើសកម្មភាពផ្លូវភេទ។</p></div>
+<div class="card"><div class="tag">ហានិភ័យកំពុងវិវត្ត</div><h3>រូបភាពក្លែងក្លាយដោយ AI</h3><p>AI អាចកែរូបភាពឱ្យមើលទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាពក្លែងក្លាយ ដើម្បីបំបាក់មុខ គំរាមកំហែង ឬជំរិតទារប្រាក់។</p></div>
+</div><div class="callout"><strong>ចំណាំអំពីប្រភព៖</strong> Disrupting Harm Cambodia (2022) ពន្យល់អំពី grooming, CSAM និង livestreaming ហើយវាស់ស្ទង់សញ្ញា OCSEA ជាក់លាក់ចំនួន ៤ រួមទាំងការផ្តល់ប្រាក់/អំណោយ ការចែកចាយរូបភាពដោយគ្មានការយល់ព្រម និងការគំរាមកំហែង។</div>
 </section>
 <section class="slide" aria-label="Slide 4 of 8">
-<div class="eyebrow">03 / Recognise the pattern</div><h2 class="sectionhead">How manipulation can escalate</h2><p class="subhead">Not every case follows the same path, but these warning signs can help adults intervene early.</p>
+<div class="eyebrow">ផ្នែកទី១ · សម្គាល់សញ្ញាព្រមាន</div><h2 class="sectionhead">តើស្ថានការណ៍អាចកាន់តែធ្ងន់ធ្ងរយ៉ាងដូចម្តេច?</h2>
 <div class="flow">
-<div class="step"><div class="num">1</div><h3>Contact</h3><p>A stranger or acquaintance approaches through a game, group, social platform, or messaging app.</p></div>
-<div class="step"><div class="num">2</div><h3>Trust &amp; secrecy</h3><p>Excessive attention, gifts, flattery, requests to hide the chat, or pressure to move to a private channel.</p></div>
-<div class="step"><div class="num">3</div><h3>Boundary testing</h3><p>Requests for personal details, intimate images, live video, or increasingly sexual conversations.</p></div>
-<div class="step"><div class="num">4</div><h3>Threats or control</h3><p>Blackmail, demands, impersonation, threats to share content, or attempts to isolate the child.</p></div>
-</div><div class="callout"><strong>Warning signs are not proof by themselves.</strong> Listen calmly, ask open questions, and focus on the child’s safety rather than blame or punishment.<br><span lang="km">សញ្ញាព្រមានមិនមែនជាភស្តុតាងច្បាស់លាស់ដោយខ្លួនឯងទេ។ ស្តាប់ដោយស្ងប់ស្ងាត់ និងផ្តោតលើសុវត្ថិភាពកុមារ។</span></div>
+<div class="step"><div class="num">1</div><h3>ទាក់ទង</h3><p>ចាប់ផ្តើមពីហ្គេម បណ្ដាញសង្គម ក្រុមជជែក ឬមនុស្សដែលស្គាល់។</p></div>
+<div class="step"><div class="num">2</div><h3>បង្កើតទំនុកចិត្ត</h3><p>សរសើរខ្លាំងពេក ផ្តល់អំណោយ ស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅជជែកឯកជន។</p></div>
+<div class="step"><div class="num">3</div><h3>សាកល្បងព្រំដែន</h3><p>សួរព័ត៌មានផ្ទាល់ខ្លួន ស្នើរូបភាពឯកជន ឬដាក់សម្ពាធឱ្យធ្វើអ្វីដែលមិនស្រួលចិត្ត។</p></div>
+<div class="step"><div class="num">4</div><h3>គំរាម ឬគ្រប់គ្រង</h3><p>ប្រើរូបភាព សារ ឬបញ្ជីមិត្តភក្តិដើម្បីគំរាម បង្ខំឱ្យបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។</p></div>
+</div><div class="callout"><strong>សញ្ញាព្រមានមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។</strong> ស្តាប់ដោយស្ងប់ស្ងាត់ សួរដោយមិនដាក់សម្ពាធ និងផ្តោតលើសុវត្ថិភាពរបស់កុមារ។</div>
 </section>
 <section class="slide" aria-label="Slide 5 of 8">
-<div class="eyebrow">04 / Technology &amp; misconceptions</div><h2 class="sectionhead">AI, private chats &amp; the Dark Web</h2><div class="grid">
-<div class="card"><div class="tag">Generative AI</div><h3>Fabricated imagery can still cause real harm</h3><p>AI may manipulate a real child’s photo into sexualised content or create fake material used for humiliation, coercion, or sextortion. A fake image is not “harmless” simply because it is synthetic.</p></div>
-<div class="card"><div class="tag">Encryption</div><h3>Privacy tools are not the problem by themselves</h3><p>End-to-end encryption protects legitimate private communication, but can make harmful content harder for platforms to detect. Avoid claiming encryption alone proves wrongdoing or makes a service unsafe.</p></div>
-<div class="card"><div class="tag">Private messaging</div><h3>Secret chats and disappearing messages</h3><p>Disappearing messages do not guarantee that a recipient cannot save, photograph, or share the content. Report features and evidence availability differ by service.</p></div>
-<div class="card"><div class="tag">Dark Web</div><h3>A network, not a synonym for all crime</h3><p>Some hidden services are abused for illegal activity, including child sexual abuse material. Do not explore, download, or redistribute illegal content. Report it safely through appropriate channels.</p></div>
-</div><div class="callout"><strong>Practical lesson:</strong> safety depends on behaviour, consent, safeguards, reporting routes, and trusted support—not a single app setting or technology label.</div>
+<div class="eyebrow">ផ្នែកទី១ · ទិន្នន័យ និងបរិបទ</div><h2 class="sectionhead">ទិន្នន័យកម្ពុជា៖ បង្ហាញឆ្នាំឱ្យច្បាស់</h2><p class="subhead">ទិន្នន័យជាក់លាក់របស់កម្ពុជា និងទិន្នន័យអន្តរជាតិមិនគួរលាយបញ្ចូលគ្នា។</p>
+<div class="grid">
+<div class="card"><div class="num">១១%</div><h3>កុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំ</h3><p>បានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងរយៈពេលមួយឆ្នាំមុនការស្ទង់មតិ។</p><div class="tag" style="margin-top:18px">ការសិក្សា Disrupting Harm · ២០២២</div></div>
+<div class="card"><div class="num">ប្រហែល ១៦ ម៉ឺននាក់</div><h3>ការប៉ាន់ប្រមាណសម្រាប់កម្ពុជា</h3><p>ជាការប៉ាន់ប្រមាណផ្អែកលើការសិក្សាឆ្នាំ ២០២២ មិនមែនជាលទ្ធផលស្ទង់មតិថ្មីក្នុងឆ្នាំ ២០២៥ ឬ ២០២៦ ទេ។</p><div class="tag" style="margin-top:18px">UNICEF Cambodia បានយោងម្ដងទៀតក្នុងឆ្នាំ ២០២៥</div></div>
+</div><div class="callout"><strong>របៀបប្រើទិន្នន័យ៖</strong> បញ្ជាក់ឆ្នាំ ប្រភព និងក្រុមអាយុជានិច្ច។ កុំបង្ហាញតួលេខចាស់ថាជាទិន្នន័យថ្មី ហើយកុំយកស្ថិតិអន្តរជាតិមកនិយាយថាជាអត្រារបស់កម្ពុជា។</div>
 </section>
 <section class="slide" aria-label="Slide 6 of 8">
-<div class="eyebrow">05 / Scenario discussion</div><h2 class="sectionhead">A sextortion scenario</h2><p class="subhead">A fictional learning scenario. This is not a real person or a reported case.</p>
+<div class="eyebrow">ផ្នែកទី២ · ការការពារ</div><h2 class="sectionhead">វិធីការពារកុមារ និងខ្លួនឯង</h2>
 <div class="grid">
-<div class="card"><div class="tag">What happens</div><h3>“Send money or I will post it.”</h3><p>A teenager receives a threat from an account that claims to possess a private image. The account demands payment and warns the teenager not to tell anyone. The image may be real, altered, or fabricated.</p></div>
-<div class="card"><div class="tag">What helps</div><h3>Safety over negotiation</h3><p>Tell a trusted adult; do not pay or send more material; stop engaging; preserve safe evidence of the account and threats; report the account and seek appropriate child-protection or law-enforcement support.</p></div>
-</div>
-<div class="callout"><strong>Ask the audience:</strong> What is the first supportive sentence you would say? What information can be recorded without copying or forwarding the intimate image itself?<br><span lang="km">សំណួរ៖ តើពាក្យដំបូងអ្វីដែលអាចនិយាយដើម្បីគាំទ្រកុមារ? តើព័ត៌មានអ្វីខ្លះអាចរក្សាទុកដោយមិនចម្លង ឬបញ្ជូនរូបភាពឯកជន?</span></div>
+<div class="card"><div class="tag">គណនី និងឯកជនភាព</div><h3>គ្រប់គ្រងអ្នកដែលអាចទាក់ទង</h3><p>កំណត់គណនីជាឯកជន ពិនិត្យសំណើមិត្តភក្តិ កុំចែករំលែកទីតាំង ព័ត៌មានផ្ទាល់ខ្លួន ឬលេខសម្ងាត់។</p></div>
+<div class="card"><div class="tag">សម្ពាធ និងរូបភាព</div><h3>អាចនិយាយថា «ទេ»</h3><p>កុំឱ្យនរណាម្នាក់បង្ខំឱ្យផ្ញើរូបភាព ឬបើកកាមេរ៉ា។ រូបភាពដែលបានផ្ញើហើយអាចត្រូវបានថតអេក្រង់ ឬចែកចាយបន្ត។</p></div>
+<div class="card"><div class="tag">គណនីសុវត្ថិភាព</div><h3>ការពារឧបករណ៍ និងគណនី</h3><p>ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា បើកការផ្ទៀងផ្ទាត់ពីរជំហាន (2FA) និងធ្វើបច្ចុប្បន្នភាពកម្មវិធី។ កុំចែករំលែក OTP។</p></div>
+<div class="card"><div class="tag">ទំនុកចិត្ត</div><h3>ដឹងថាអាចប្រាប់អ្នកណា</h3><p>ព្រមព្រៀងជាមួយកុមារថា ពួកគេអាចប្រាប់មនុស្សពេញវ័យដែលទុកចិត្តបាន ដោយមិនត្រូវខ្លាចការស្តីបន្ទោស ឬដកទូរស័ព្ទភ្លាមៗ។</p></div>
+</div><div class="callout"><strong>សម្រាប់មាតាបិតា និងគ្រូបង្រៀន៖</strong> សួរដោយស្ងប់ស្ងាត់ ស្តាប់ឱ្យចប់ និងជួយកុមារស្វែងរកជំហានបន្ទាប់។ កុំប្រើការដាក់ទណ្ឌកម្មជាមូលហេតុឱ្យកុមារលាក់បញ្ហា។</div>
 </section>
 <section class="slide" aria-label="Slide 7 of 8">
-<div class="eyebrow">06 / Respond safely</div><h2 class="sectionhead">Four steps: stop, save, report, support</h2>
+<div class="eyebrow">ផ្នែកទី២ · ឆ្លើយតប និងស្វែងរកជំនួយ</div><h2 class="sectionhead">បើមានការគំរាមកំហែង ត្រូវធ្វើអ្វី?</h2>
 <div class="action-grid">
-<div class="action"><b>01 · STOP</b><p>Do not pay, threaten back, send more images, or agree to meet. Block contact when safe to do so.</p></div>
-<div class="action"><b>02 · SAVE</b><p>Record usernames, profile links, dates, messages, and threats where safe. Do not download, duplicate, or forward sexual images of children.</p></div>
-<div class="action"><b>03 · REPORT</b><p>Use the platform’s reporting tools and seek help from trusted child-protection professionals or appropriate local authorities.</p></div>
-<div class="action"><b>04 · SUPPORT</b><p>Believe the child, stay calm, protect their privacy, and avoid blame. Arrange ongoing emotional and practical support.</p></div>
+<div class="action"><b>១ · បញ្ឈប់</b><p>កុំបង់ប្រាក់ កុំផ្ញើរូបភាពបន្ថែម និងកុំប្រឈមមុខតែម្នាក់ឯង។ ស្វែងរកមនុស្សដែលទុកចិត្តបាន។</p></div>
+<div class="action"><b>២ · រក្សាទុក</b><p>កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាម។ កុំទាញយក ឬបញ្ជូនបន្តរូបភាពផ្លូវភេទរបស់កុមារ។</p></div>
+<div class="action"><b>៣ · រាយការណ៍</b><p>ប្រើមុខងាររាយការណ៍របស់កម្មវិធី និងស្នើជំនួយពីសេវាការពារកុមារដែលសមស្រប។</p></div>
+<div class="action"><b>៤ · គាំទ្រ</b><p>ជឿលើកុមារ កុំបន្ទោស រក្សាឯកជនភាព និងជួយភ្ជាប់ទៅសេវាជំនួយ។</p></div>
 </div>
-<div class="callout"><strong>Adults and organisations:</strong> limit access to evidence, avoid circulating details, follow safeguarding procedures, and do not promise absolute secrecy if a child may be at risk.</div>
-<div class="rule"><h3>Prevention that works best as a conversation</h3><p>Set privacy controls together; keep accounts and devices updated; use strong unique passwords and multifactor authentication; discuss image-sharing pressure and AI manipulation; make sure children know whom they can tell without fear of punishment.</p></div>
+<div class="grid">
+<div class="card"><div class="tag">សេវាការពារកុមារ</div><h3>APLE Cambodia</h3><p>ទទួលរាយការណ៍ និងផ្ដល់ជំនួយពាក់ព័ន្ធនឹងការរំលោភបំពាន/កេងប្រវ័ញ្ចផ្លូវភេទលើកុមារ។<br><strong>Hotline: 092 311 511</strong> · ២៤ ម៉ោង</p><p style="margin-top:10px"><a href="https://aplecambodia.org/" target="_blank" rel="noopener noreferrer">aplecambodia.org ↗</a></p></div>
+<div class="card"><div class="tag">ជំនួយកុមារ និងយុវជន</div><h3>Child Helpline Cambodia</h3><p>សេវាស្តាប់ និងគាំទ្រកុមារ/យុវជនតាមទូរស័ព្ទ។<br><strong>ហៅ 1280 ឥតគិតថ្លៃ</strong></p><p style="margin-top:10px"><a href="https://childhelplinecambodia.org/" target="_blank" rel="noopener noreferrer">childhelplinecambodia.org ↗</a></p></div>
+</div><div class="callout"><strong>មើលបញ្ជីធនធានជំនួយរបស់ Sophat.Space៖</strong> <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">sophat.space/help ↗</a> — មានសេវាជំនួយ និងច្រករាយការណ៍ដែលបានរៀបចំតាមប្រភេទបញ្ហា។</div>
 </section>
 <section class="slide" aria-label="Slide 8 of 8">
-<div class="eyebrow">07 / Close &amp; references</div><h2 class="sectionhead">Make safety a shared responsibility.</h2><p class="subhead">Children should not have to solve exploitation alone. Families, educators, platforms, civil society, and public institutions each have a role.</p>
+<div class="eyebrow">បញ្ចប់ · សេចក្ដីសង្ខេប និងប្រភព</div><h2 class="sectionhead">ការពារកុមារ គឺជាការទទួលខុសត្រូវរួម</h2><p class="subhead">ស្គាល់ប្រភេទ OCSEA • ការពារគណនី និងឯកជនភាព • ស្តាប់ដោយមិនបន្ទោស • រាយការណ៍ និងភ្ជាប់ទៅជំនួយដែលសមស្រប។</p>
 <div class="grid three">
-<div class="card"><h3>Notice</h3><p>Recognise grooming, coercion, threats, non-consensual image-sharing, and AI-enabled abuse.</p></div>
-<div class="card"><h3>Respond</h3><p>Listen without blame, preserve safe evidence, report through appropriate channels, and support the child.</p></div>
-<div class="card"><h3>Prevent</h3><p>Teach digital literacy, build trustworthy reporting pathways, and strengthen platform and institutional safeguards.</p></div>
+<div class="card"><h3>គ្រួសារ និងសាលារៀន</h3><p>បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ និងស្វែងរកជំនួយ។</p></div>
+<div class="card"><h3>វេទិកាឌីជីថល</h3><p>បង្កើតសុវត្ថិភាពតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ដែលងាយប្រើ។</p></div>
+<div class="card"><h3>ស្ថាប័ន និងសហគមន៍</h3><p>ផ្តល់ការការពារ ការស៊ើបអង្កេតដែលគិតគូរពីកុមារ និងការគាំទ្រដែលអាចទទួលបាន។</p></div>
 </div>
-<h3 style="margin:26px 0 0;font-size:16px">Selected sources · reviewed October 2026</h3>
-<div class="sources">
-<a class="source" href="https://www.unicef.org/cambodia/stories/against-online-predators-young-people-stay-safe" target="_blank" rel="noopener noreferrer">UNICEF Cambodia · Online safety story (22 Aug 2025)<span>Cambodia-specific 11% / ≈160,000 estimate, attributed to 2022 research.</span></a>
-<a class="source" href="https://www.unicef.org/cambodia/press-releases/new-report-estimates-1-10-cambodian-children-were-subjected-online-sexual-abuse-and" target="_blank" rel="noopener noreferrer">Disrupting Harm in Cambodia · UNICEF (2022)<span>Original Cambodia baseline and methodology context.</span></a>
-<a class="source" href="https://www.unicef.org/innocenti/reports/through-childrens-eyes" target="_blank" rel="noopener noreferrer">UNICEF · 21-country report (3 Sep 2026)<span>Global/multi-country technology-facilitated abuse findings; not a Cambodia-only rate.</span></a>
-<a class="source" href="https://www.unicef.org/press-releases/deepfake-abuse-is-abuse" target="_blank" rel="noopener noreferrer">UNICEF · “Deepfake abuse is abuse” (4 Feb 2026)<span>AI-generated sexualised images and findings from an 11-country study.</span></a>
-<a class="source" href="https://www.unicef.org/cambodia/reports/cambodian-child-online-protection-guidelines" target="_blank" rel="noopener noreferrer">Cambodian Child Online Protection Guidelines (2023)<span>MPTC and UNICEF Cambodia policy guidance for digital technology industry.</span></a><a class="source" href="https://www.unicef.org/cambodia/reports/guidebook-child-safety-online" target="_blank" rel="noopener noreferrer">Guidebook on Child Safety Online (Jan 2025)<span>UNICEF Cambodia and Ministry of Education, Youth and Sport; practical educational reference.</span></a>
-</div>
-<div class="callout"><strong>Facilitator note:</strong> figures are time- and scope-specific; keep that distinction when presenting or reposting these slides.</div>
+<h3 style="margin:24px 0 0;font-size:17px">ប្រភពសំខាន់ៗ</h3><div class="sources">
+<a class="source" href="https://www.unicef.org/innocenti/media/4136/file/DH-Cambodia-Report-2022.pdf" target="_blank" rel="noopener noreferrer">Disrupting Harm in Cambodia (2022)<span>និយមន័យ OCSEA ប្រភេទនៃការរំលោភបំពាន និងទិន្នន័យមូលដ្ឋានរបស់កម្ពុជា។</span></a>
+<a class="source" href="https://www.unicef.org/cambodia/stories/against-online-predators-young-people-stay-safe" target="_blank" rel="noopener noreferrer">UNICEF Cambodia (2025)<span>អត្ថបទអប់រំអំពីសុវត្ថិភាពកុមារ និងការយោងទិន្នន័យឆ្នាំ ២០២២។</span></a>
+<a class="source" href="https://www.unicef.org/cambodia/reports/guidebook-child-safety-online" target="_blank" rel="noopener noreferrer">សៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញ (2025)<span>UNICEF Cambodia និងក្រសួងអប់រំ យុវជន និងកីឡា។</span></a>
+<a class="source" href="https://www.unicef.org/cambodia/reports/cambodian-child-online-protection-guidelines" target="_blank" rel="noopener noreferrer">គោលការណ៍ណែនាំការពារកុមារតាមអនឡាញ (2023)<span>ក្រសួងប្រៃសណីយ៍ និងទូរគមនាគមន៍ និង UNICEF Cambodia។</span></a>
+<a class="source" href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">Sophat.Space · ធនធានជំនួយ<span>បញ្ជីសេវាជំនួយ និងច្រករាយការណ៍នៅកម្ពុជា។</span></a>
+<a class="source" href="https://aplecambodia.org/campaign-materials/" target="_blank" rel="noopener noreferrer">APLE Cambodia · សម្ភារៈអប់រំជាភាសាខ្មែរ<span>Poster និងសម្ភារៈអប់រំអំពី grooming និងការការពារកុមារ។</span></a>
+</div><div class="callout"><strong>កំណត់សម្គាល់អ្នកបង្ហាញ៖</strong> តួលេខ OCSEA របស់កម្ពុជាដែលបានបង្ហាញ គឺជាការសិក្សាឆ្នាំ ២០២២។ សូមពិនិត្យលេខទូរស័ព្ទ និងនីតិវិធីបញ្ជូនករណីម្ដងទៀតមុនថ្ងៃបង្ហាញ។</div>
 </section>
 </main>
 <aside class="notes" id="notesPanel" aria-live="polite"><h2>Speaker notes · slide <span id="notesNum">1</span></h2><p id="notesText"></p></aside>
 <footer class="footer"><div class="hint">← → or Space to navigate · N = notes · F = fullscreen</div><div class="nav"><button class="navbtn" id="prevBtn" aria-label="Previous slide">← Back</button><span class="counter" id="counterBottom">01 / 08</span><button class="navbtn primary" id="nextBtn" aria-label="Next slide">Next →</button></div></footer></div>
 <script>
 const speakerNotes = [
-"0:00–1:00 | Welcome. Explain that OCSEA means online child sexual exploitation and abuse. This is an educational, prevention-focused session; avoid asking anyone to disclose personal experiences in front of the group. Khmer: សូមសង្កត់ធ្ងន់ថាកុមារមិនមែនជាអ្នកមានកំហុស ហើយការសន្ទនានេះផ្តោតលើការការពារ។",
-"1:00–2:30 | Define OCSEA in plain language. Explain grooming as manipulation, sextortion as threats used to demand something, and image-based abuse as creating or sharing harmful sexual imagery. Do not imply only strangers can cause harm.",
-"2:30–4:30 | Explain the date/scope labels. Cambodia's 11% and approximately 160,000 estimate comes from the 2022 Disrupting Harm study, as repeated by UNICEF Cambodia in 2025. The September 2026 1-in-5 finding aggregates 21 countries; it must not be reported as Cambodia's rate. UNICEF's 1.2 million deepfake estimate is from an 11-country study. Invite questions about why the year and denominator matter.",
-"4:30–6:00 | Explain that not every case follows a linear sequence. Focus on patterns—secrecy, pressure, boundary testing, threats—and on how adults can listen and intervene without blame. The signs should prompt concern and conversation, not automatic conclusions.",
-"6:00–7:30 | Clarify that AI image manipulation can cause real harm. Encryption protects legitimate privacy and is not itself suspicious. Disappearing messages are not a guarantee that content cannot be saved. Avoid sensationalising the Dark Web or encouraging audience members to search for illegal material.",
-"7:30–9:30 | Scenario is fictional. Ask participants to suggest a calm first response, for example: 'I’m glad you told me. This is not your fault. We will work out the next safe step together.' Do not ask the child to resend or show an intimate image to prove the case.",
-"9:30–12:30 | Walk through STOP, SAVE, REPORT, SUPPORT. Evidence can include profile names, links, timestamps, and threat messages when safe; do not copy, download, or circulate sexual images of a child. Use platform reporting and trusted child-protection or appropriate local authorities. The specific referral route should be verified locally before delivering the presentation.",
-"12:30–15:00 | Close with collective responsibility. Mention the Cambodian Child Online Protection Guidelines from MPTC and UNICEF (2023) as relevant policy guidance. Invite one practical action each for families, schools, platforms, and public institutions. Sources are linked on this slide. State that the research dates are preserved deliberately and that no multi-country statistic is being presented as Cambodia-only data."
+"0:00–1:00 | ស្វាគមន៍អ្នកចូលរួម។ បញ្ជាក់ថាបទបង្ហាញមានពីរផ្នែក៖ (១) ស្គាល់ OCSEA និងប្រភេទសំខាន់ៗ (២) វិធីការពារ និងស្វែងរកជំនួយ។ កុំស្នើឱ្យអ្នកចូលរួមចែករំលែកបទពិសោធន៍ផ្ទាល់ខ្លួនជាសាធារណៈ។",
+"1:00–2:30 | ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ បច្ចេកវិទ្យាអាចជាឧបករណ៍ក្នុងការទាក់ទង បោកបញ្ឆោត គំរាម កត់ត្រា ឬផ្សព្វផ្សាយការរំលោភបំពាន។ សង្កត់ធ្ងន់ថាអ្នកប្រព្រឹត្តអាចជាមនុស្សដែលកុមារស្គាល់។",
+"2:30–5:00 | ពន្យល់ប្រភេទទាំងប្រាំ៖ grooming, CSAM, livestreaming, sextortion និងការផ្តល់ប្រាក់/អំណោយជាថ្នូរនឹងរូបភាព ឬការជួបផ្លូវភេទ។ AI deepfake ជាហានិភ័យបច្ចេកវិទ្យាដែលអាចកើតពាក់ព័ន្ធនឹងរឿងទាំងនេះ មិនមែនជាប្រភេទដាច់ដោយឡែកក្នុងសំណុំសូចនាករ ៤ របស់ការសិក្សា Disrupting Harm ទេ។ កុំបង្ហាញរូបភាពជាក់ស្តែង ឬសម្ភារៈរំលោភបំពាន។",
+"5:00–6:30 | បង្ហាញពីរបៀបដែលការបោកបញ្ឆោតអាចកើនឡើង។ សញ្ញាទាំងនេះមិនកើតឡើងតាមលំដាប់ជានិច្ចទេ។ កុំបង្រៀនឱ្យខ្លាចមនុស្សគ្រប់គ្នា; បង្រៀនឱ្យសម្គាល់សម្ពាធ ការសម្ងាត់ និងការបង្ខិតបង្ខំ។",
+"6:30–8:00 | បញ្ជាក់ថា ១១% និងប្រហែល ១៦ ម៉ឺននាក់ គឺជាការប៉ាន់ប្រមាណពី Disrupting Harm Cambodia ឆ្នាំ ២០២២ ដែល UNICEF Cambodia បានយោងម្ដងទៀតនៅឆ្នាំ ២០២៥។ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៦ ទេ។",
+"8:00–10:30 | ផ្តល់វិធីការពារដែលអាចអនុវត្តបាន៖ privacy, ពាក្យសម្ងាត់ខុសៗគ្នា, 2FA, មិនចែករំលែក OTP, ពិភាក្សាពីសម្ពាធផ្ញើរូបភាព និងមនុស្សពេញវ័យដែលអាចទុកចិត្តបាន។ ការការពារមិនមែនជាការដាក់កំហិតទូរស័ព្ទតែមួយមុខទេ។",
+"10:30–13:00 | ពន្យល់ជំហាន បញ្ឈប់–រក្សាទុកព័ត៌មានសុវត្ថិភាព–រាយការណ៍–គាំទ្រ។ កុំទាញយក ឬចែកចាយរូបភាពផ្លូវភេទរបស់កុមារ។ បង្ហាញ APLE 092 311 511, Child Helpline 1280 និង sophat.space/help។ បញ្ជាក់ថាអ្នកបង្ហាញគួរផ្ទៀងផ្ទាត់លេខ និងនីតិវិធីមុនពេលប្រើ។",
+"13:00–15:00 | សង្ខេបថាការការពារជាការទទួលខុសត្រូវរួម។ បង្ហាញប្រភពនៅស្លាយចុងក្រោយ។ បើមានអ្នកចូលរួមបង្ហាញថាកំពុងមានគ្រោះថ្នាក់ សូមកុំស៊ើបអង្កេតជាសាធារណៈ; ជួយភ្ជាប់ទៅមនុស្សដែលទុកចិត្តបាន និងសេវាការពារដែលសមស្រប។"
 ];
 const slides=[...document.querySelectorAll(".slide")];let index=0;const notesPanel=document.getElementById("notesPanel"),notesBtn=document.getElementById("notesBtn"),themeBtn=document.getElementById("themeBtn");
 function render(){slides.forEach((s,i)=>{s.classList.toggle("active",i===index);s.setAttribute("aria-hidden",i===index?"false":"true")});const n=String(index+1).padStart(2,"0"),total=String(slides.length).padStart(2,"0");document.getElementById("counterTop").textContent=n+" / "+total;document.getElementById("counterBottom").textContent=n+" / "+total;document.getElementById("bar").style.width=((index+1)/slides.length*100)+"%";document.getElementById("prevBtn").disabled=index===0;document.getElementById("nextBtn").textContent=index===slides.length-1?"Finish ✓":"Next →";document.getElementById("notesNum").textContent=index+1;document.getElementById("notesText").textContent=speakerNotes[index];document.title=(index+1)+"/"+slides.length+" · Digital Safety & OCSEA — Cambodia"}
