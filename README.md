@@ -14,7 +14,12 @@
    - ការគំរាមកំហែងផ្លូវភេទ (Sextortion)
    - ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍ (Financial/Material Exploitation)
    - រូបភាពក្លែងក្លាយដោយបញ្ញាសិប្បនិម្មិត (AI Deepfakes)
-3. **ទិន្នន័យ និងបរិបទកម្ពុជា:** ការសិក្សា Disrupting Harm Cambodia (2022) និងឯកសារណែនាំរបស់ UNICEF Cambodia / MoEYS (2025–2026)។
+3. **ទិន្នន័យ និងករណីជាក់ស្តែងនៅកម្ពុជា (Cambodia Context & Real Cases):**
+   - ការសិក្សា Disrupting Harm Cambodia (2022) — UNICEF, ECPAT, INTERPOL
+   - ករណីបណ្តាញ Telegram ចែកចាយ CSAM ជាង ៦,០០០ ឯកសារ ដែលត្រូវបានបង្ក្រាបដោយមានការចូលរួមពី APLE Cambodia (Fresh News ២០២៤)
+   - ហានិភ័យការជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ចពាក់ព័ន្ធ Scam Compounds (របាយការណ៍ Amnesty International ២០២៥–២០២៦)
+   - ការពិត និងការយល់ច្រឡំអំពី Dark Web ឆ្លងដែន
+   - បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍ (ភាពអាម៉ាស់ ការបន្ទោសជនរងគ្រោះ កង្វះការយល់ដឹង)
 4. **វិធានការការពារ និងឆ្លើយតប (4 Steps):** បញ្ឈប់ (Stop) · រក្សាទុកភស្តុតាង (Record) · រាយការណ៍ (Report) · គាំទ្រ (Support)។
 5. **ធនធាន និងសេវាជំនួយនៅកម្ពុជា:** APLE Cambodia (092 311 511), Child Helpline Cambodia (1280), និង [Sophat.Space Help](https://sophat.space/help)។
 

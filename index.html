@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b0e12">
-<meta name="description" content="បទបង្ហាញស្តីពី សុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA (Online Child Sexual Exploitation and Abuse) — ធ្វើបទបង្ហាញដោយ ជី សុផាត (Sophat CHY)">
+<meta name="description" content="បទបង្ហាញជាភាសាខ្មែរ អំពីសុវត្ថិភាពឌីជីថល ប្រភេទ Online Child Sexual Exploitation and Abuse (OCSEA) និងវិធីការពារ/ស្វែងរកជំនួយនៅកម្ពុជា — ធ្វើបទបង្ហាញដោយ ជី សុផាត (Sophat CHY)">
 <title>សុវត្ថិភាពឌីជីថល និង OCSEA — កម្ពុជា | Presented by Sophat CHY</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%239fe7d5%22 stroke-width=%222.5%22><path d=%22M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z%22/></svg>">
 <style>
@@ -71,29 +71,10 @@ button:focus-visible, a:focus-visible {
   outline-offset: 4px;
 }
 
-/* SVG icon styles */
 .ico {
   display: inline-block;
   vertical-align: middle;
   flex-shrink: 0;
-}
-.header-ico {
-  width: 22px;
-  height: 22px;
-  color: var(--accent);
-  margin-right: 8px;
-}
-.card-ico {
-  width: 32px;
-  height: 32px;
-  color: var(--accent);
-  background: var(--soft);
-  padding: 6px;
-  border-radius: 12px;
-  margin-bottom: 14px;
-}
-.tag-ico {
-  margin-right: 6px;
 }
 
 .app {
@@ -201,7 +182,7 @@ main {
 
 .slide {
   display: none;
-  max-width: min(1360px, 92vw);
+  max-width: min(1380px, 92vw);
   width: 100%;
   max-height: 100%;
   overflow-y: auto;
@@ -311,6 +292,63 @@ main {
   font-size: clamp(13px, 1.2vw, 15px);
   color: var(--text);
   font-weight: 600;
+}
+
+/* Bio Layout with Photo (Slide 2) */
+.bio-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  margin-top: 20px;
+}
+.bio-photo {
+  width: 100%;
+  max-height: 52vh;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+.bio-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.bio-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+.bio-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 18px;
+}
+.bio-facts strong {
+  font-size: clamp(17px, 1.8vw, 22px);
+  color: var(--accent);
+}
+.bio-facts span {
+  font-size: clamp(14px, 1.4vw, 17px);
+  color: var(--muted);
+  line-height: 1.5;
+}
+.bio-links {
+  font-size: 15px;
+  color: var(--muted);
+}
+.bio-links a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* Acronym Breakdown Grid (Slide 4) */
@@ -534,6 +572,9 @@ html[data-bigscreen="true"] .callout {
 
 /* Responsive */
 @media (max-width: 900px) {
+  .bio-layout { grid-template-columns: 1fr; }
+  .bio-photo { width: min(65%, 260px); margin: 0 auto; }
+  .bio-facts { grid-template-columns: 1fr; }
   .acronym-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 768px) {
@@ -552,6 +593,12 @@ html[data-bigscreen="true"] .callout {
   .notes { bottom: 70px; max-height: 42vh; padding: 18px; }
 }
 
+/* ========================================================
+   HIGH RESOLUTION KHMER PDF PRINT ENGINE
+   - True A4 Landscape page sizing
+   - Waits for font rendering to prevent broken Khmer conjuncts
+   - Strict page break rules (1 slide per page, no split cards)
+   ======================================================== */
 @page {
   size: A4 landscape;
   margin: 10mm 12mm;
@@ -603,13 +650,17 @@ html[data-bigscreen="true"] .callout {
     page-break-after: avoid !important;
     break-after: avoid !important;
   }
-  .card, .callout, .presenter-banner, .letter-card {
+  .card, .callout, .presenter-banner, .letter-card, .bio-facts > div {
     background: #f8fafc !important;
     color: #0f172a !important;
     border: 1px solid #cbd5e1 !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+  .bio-photo {
+    max-height: 38vh !important;
+    border-color: #077969 !important;
   }
   .eyebrow {
     color: #077969 !important;
@@ -688,7 +739,7 @@ html[data-bigscreen="true"] .callout {
   <div class="tools">
     <span id="counterTop" class="counter">01 / 21</span>
     <button class="tool" id="bigScreenBtn" aria-pressed="false" title="Toggle Big Screen Khmer font scale (Key: B)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Big Screen</button>
-    <button class="tool" id="pdfBtn" title="Print or save as PDF"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ទាញយក PDF</button>
+    <button class="tool" id="pdfBtn" title="Download or print presentation slides as PDF (Key: P)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ទាញយក PDF</button>
     <button class="tool" id="themeBtn" aria-pressed="false" title="Switch day or night theme"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> <span id="themeText">Day</span></button>
     <button class="tool" id="notesBtn" aria-pressed="false" title="Speaker notes (Key: N)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Notes</button>
     <button class="tool" id="fullBtn" title="Toggle full screen (Key: F)"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><polyline points="21 15 21 21 15 21"/><polyline points="3 9 3 3 9 3"/></svg> Full screen</button>
@@ -720,33 +771,31 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> រយៈពេល ១៥–២០ នាទី · ២១ ស្លាយ · ភាសាខ្មែរ ជាចម្បង (Khmer-first with official international terms)</div></div>
   </section>
 
-  <!-- SLIDE 2: INTRODUCTION ABOUT ME -->
+  <!-- SLIDE 2: ABOUT THE PRESENTER WITH PHOTO -->
   <section class="slide" aria-label="Slide 02 of 21">
     <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ស្លាយ 02 / ២១ · សេចក្ដីណែនាំអំពីអ្នកធ្វើបទបង្ហាញ · ABOUT THE PRESENTER</div>
-    <h2 class="sectionhead">ជី សុផាត <span style="color:var(--accent); font-weight:700;">(Sophat CHY)</span></h2>
-    <p class="subhead">អ្នកបង្កើតមាតិកាឌីជីថល · គ្រូបណ្ដុះបណ្ដាល និងសម្របសម្រួល ICT ជាន់ខ្ពស់ · អ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល និងសុវត្ថិភាពអនឡាញនៅកម្ពុជា</p>
-    <div class="grid three">
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <div class="tag">បទពិសោធន៍ / EXPERIENCE</div>
-        <h3>សហគមន៍ & ការអប់រំ ICT</h3>
-        <p>ដឹកនាំការរៀបចំ <strong>BarCamp Cambodia</strong> ចាប់តាំងពីឆ្នាំ ២០១២ មក និងចូលរួមបណ្ដុះបណ្ដាលជំនាញឌីជីថល សុវត្ថិភាពអនឡាញ និងការប្រើប្រាស់បច្ចេកវិទ្យាប្រកបដោយការទទួលខុសត្រូវ។</p>
-      </div>
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">គម្រោង / INITIATIVES</div>
-        <h3>Sophat.Space</h3>
-        <p>បង្កើតធនធានអប់រំឌីជីថលជាភាសាខ្មែរ ដូចជា <strong>Digital Check-up</strong>, ធនធានជំនួយបន្ទាន់ និង <strong>វាក្យសព្ទបច្ចេកវិទ្យាខ្មែរ</strong> ដើម្បីជួយឱ្យប្រជាពលរដ្ឋយល់ដឹង និងការពារខ្លួន។</p>
-        <p style="margin-top:14px"><a href="https://sophat.space/" target="_blank" rel="noopener noreferrer">sophat.space ↗</a> · <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">ធនធានជំនួយ /help ↗</a></p>
-      </div>
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-        <div class="tag">បេសកកម្ម / MISSION</div>
-        <h3>ការពារកុមារ និងសហគមន៍</h3>
-        <p>ជួយឱ្យសហគមន៍ មាតាបិតា លោកគ្រូអ្នកគ្រូ និងកុមារ/យុវជន ស្គាល់ហានិភ័យឌីជីថល យល់ដឹងពីសិទ្ធិ និងដឹងពីជំហានជាក់ស្ដែងដែលអាចអនុវត្តបានក្នុងការទប់ស្កាត់ OCSEA។</p>
+    <div class="bio-layout">
+      <img class="bio-photo" src="https://scontent.fpnh24-1.fna.fbcdn.net/v/t39.30808-6/468360037_1074603117456411_7269761210649519852_n.jpg?stp=dst-jpg_tt6&cstp=mx1279x1279&ctp=s1279x1279&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zeoUdHb_9YkQ7kNvwFH3h9_&_nc_oc=AdptFE4kMACYKw4VoR90XPyVoGPmGyrEUUadYBD2ONCKTiwer2V9OxHZA7vPSvvhREM&_nc_zt=23&_nc_ht=scontent.fpnh24-1.fna&_nc_gid=vMNkwKIQUzvE_WEChsxhwA&_nc_ss=7b2a8&oh=00_AQMvx9SGVAAFetXHThPQT4DxcLiaHhs-gQ3XhYaIASEb5A&oe=6AD7FFB9" alt="រូបថត ជី សុផាត">
+      <div class="bio-copy">
+        <h2 class="sectionhead">ជី សុផាត <span style="color:var(--accent); font-weight:700;">(Sophat CHY)</span></h2>
+        <p class="subhead">អ្នកបង្កើតមាតិកាឌីជីថល · គ្រូបណ្ដុះបណ្ដាល និងសម្របសម្រួល ICT ជាន់ខ្ពស់ · អ្នកលើកកម្ពស់អក្ខរកម្មឌីជីថល និងសុវត្ថិភាពអនឡាញនៅកម្ពុជា</p>
+        <div class="bio-facts">
+          <div>
+            <strong><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> ចាប់ពីឆ្នាំ ២០១២</strong>
+            <span>ដឹកនាំការរៀបចំ BarCamp Cambodia និងបណ្ដុះបណ្ដាលបច្ចេកវិទ្យាទូទាំងប្រទេស</span>
+          </div>
+          <div>
+            <strong><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Sophat.Space</strong>
+            <span>បង្កើតធនធានអប់រំសុវត្ថិភាពឌីជីថល Digital Check-up & វាក្យសព្ទបច្ចេកវិទ្យាខ្មែរ</span>
+          </div>
+        </div>
+        <p class="bio-links" style="margin-top:8px;">
+          <a href="https://sophat.space/" target="_blank" rel="noopener noreferrer">sophat.space ↗</a> · 
+          <a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">ធនធានជំនួយ /help ↗</a>
+        </p>
       </div>
     </div>
-    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>គោលបំណង៖</strong> ផ្ដល់ចំណេះដឹង និងវិធីសាស្ត្រងាយយល់ ដើម្បីឱ្យគ្រប់គ្នាយកទៅអនុវត្តការពារខ្លួន និងកុមារក្នុងសហគមន៍បានភ្លាមៗ។</div></div>
+    <div class="callout" style="margin-top:18px;"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>គោលបំណង៖</strong> ផ្ដល់ចំណេះដឹង និងវិធីសាស្ត្រជាក់ស្ដែង ដើម្បីឱ្យគ្រប់គ្នាយកទៅអនុវត្តការពារខ្លួន និងកុមារក្នុងសហគមន៍បានភ្លាមៗ។</div></div>
   </section>
 
   <!-- SLIDE 3 -->
@@ -756,14 +805,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">១. ពន្យល់ OCSEA ជាភាសាសាមញ្ញ។ ២. ស្គាល់ប្រភេទ និងសញ្ញាព្រមាន។ ៣. ដឹងពីជំហានការពារ និងឆ្លើយតប។ ៤. ស្គាល់ប្រភព និងសេវាជំនួយនៅកម្ពុជា។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <div class="tag">ចំណុចទី ១ & ២</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> ចំណុចទី ១ & ២</div>
         <h3>យល់ដឹង & ស្គាល់សញ្ញាព្រមាន</h3>
         <p>ដឹងច្បាស់ពីនិយមន័យ OCSEA និងបែងចែក ៦ ប្រភេទសំខាន់ៗ ព្រមទាំងសញ្ញាព្រមានដំបូងលើអាកប្បកិរិយារបស់កុមារ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">ចំណុចទី ៣ & ៤</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ចំណុចទី ៣ & ៤</div>
         <h3>វិធានការការពារ & សេវាជំនួយ</h3>
         <p>អនុវត្ត ៤ ជំហាន (បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ) និងស្គាល់លេខទូរស័ព្ទទាន់ហេតុការណ៍ជំនួយនៅកម្ពុជា។</p>
       </div>
@@ -817,14 +864,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">ការលួចគណនី (Hacking) ឬការឆបោកប្រាក់ (Scam) ជាបញ្ហាសន្តិសុខឌីជីថលទូទៅ។ វាត្រូវចាត់ចូលជា OCSEA នៅពេលបច្ចេកវិទ្យាត្រូវបានប្រើដើម្បីកេងប្រវ័ញ្ច គំរាម ឬរំលោភបំពានផ្លូវភេទលើកុមារ។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        <div class="tag">បញ្ហាឌីជីថលទូទៅ</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> បញ្ហាឌីជីថលទូទៅ</div>
         <h3>លួចគណនី · បោកលុយ</h3>
         <p>ប៉ះពាល់លើទ្រព្យសម្បត្តិ ឯកជនភាព ឬទិន្នន័យផ្ទាល់ខ្លួន។ ជនរងគ្រោះអាចជាមនុស្សពេញវ័យ ឬស្ថាប័ន។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">OCSEA</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> OCSEA</div>
         <h3>ពាក់ព័ន្ធផ្លូវភេទលើកុមារ</h3>
         <p>មានធាតុផ្សំផ្លូវភេទ ការគំរាមកំហែងផ្លូវភេទ ឬរូបភាព/វីដេអូអាសអាភាសលើកុមារអាយុក្រោម ១៨ ឆ្នាំ។</p>
       </div>
@@ -839,14 +884,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">ដំណើរការបង្កើតទំនុកចិត្ត ឬទំនាក់ទំនងស្និទ្ធស្នាលជាមួយកុមារជាជំហានៗ ដើម្បីត្រួសត្រាយផ្លូវឆ្ពោះទៅរកការកេងប្រវ័ញ្ច ឬការរំលោភបំពានផ្លូវភេទ។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <div class="tag">យុទ្ធសាស្ត្ររបស់អ្នកប្រព្រឹត្ត</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> យុទ្ធសាស្ត្ររបស់អ្នកប្រព្រឹត្ត</div>
         <h3>បង្កើតទំនុកចិត្ត & ស្នើលាក់ការសន្ទនា</h3>
         <p>សរសើរខ្លាំងៗ យកចិត្តទុកដាក់ ផ្ញើអំណោយ/លុយក្នុងហ្គេម និងស្នើឱ្យប្តូរទៅជជែកជាឯកជន (Secret Chat) ឬកុំប្រាប់ឪពុកម្តាយ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">អ្នកប្រព្រឹត្តអាចជាអ្នកណា?</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> អ្នកប្រព្រឹត្តអាចជាអ្នកណា?</div>
         <h3>មនុស្សចម្លែក ឬមនុស្សដែលកុមារស្គាល់</h3>
         <p>អាចក្លែងបន្លំជាក្មេងវ័យស្របាលគ្នាលើបណ្ដាញសង្គម ឬអាចជាមនុស្សដែលស្គាល់ក្នុងជីវិតពិត។</p>
       </div>
@@ -861,14 +904,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead"><strong>CSAM = Child Sexual Abuse Material</strong>៖ សំដៅលើរូបភាព វីដេអូ ឬឯកសារឌីជីថលដែលបង្ហាញពីការរំលោភបំពានផ្លូវភេទ ឬរូបភាពអាសអាភាសលើកុមារ។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">គ្រោះថ្នាក់បន្តបន្ទាប់</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> គ្រោះថ្នាក់បន្តបន្ទាប់</div>
         <h3>ការចែកចាយបន្តបង្កការឈឺចាប់ម្តងហើយម្តងទៀត</h3>
         <p>នៅពេលរូបភាពត្រូវបានបង្ហោះ ឬចែករំលែកលើអ៊ីនធឺណិត កុមាររងគ្រោះទទួលរងការប៉ះទង្គិចផ្លូវចិត្តយ៉ាងធ្ងន់ធ្ងរជានិរន្តរ៍។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        <div class="tag">វិធានការច្បាប់ & សីលធម៌</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> វិធានការច្បាប់ & សីលធម៌</div>
         <h3>ដាច់ខាតកុំរក្សាទុក ឬបញ្ជូនបន្ត</h3>
         <p>ការផលិត ការទាញយក ការរក្សាទុក និងការចែកចាយ CSAM គឺជាបទល្មើសព្រហ្មទណ្ឌធ្ងន់ធ្ងរតាមច្បាប់ជាតិ និងអន្តរជាតិ។</p>
       </div>
@@ -883,14 +924,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">ការប្រើប្រាស់បច្ចេកវិទ្យាវីដេអូខល (Video Call) ឬការ Live ផ្ទាល់ ដើម្បីឱ្យអ្នកដទៃទស្សនា ឬបញ្ជាឱ្យមានសកម្មភាពរំលោភបំពានផ្លូវភេទលើកុមារក្នុងពេលជាក់ស្តែង។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-        <div class="tag">លក្ខណៈពិសេស</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> លក្ខណៈពិសេស</div>
         <h3>កើតឡើងភ្លាមៗឆ្លងព្រំដែន</h3>
         <p>អ្នកបញ្ជា ឬអ្នកទស្សនាអាចនៅប្រទេសផ្សេង ខណៈដែលកុមារស្ថិតនៅកន្លែងផ្សេង។ ជារឿយៗមានការជួញដូរ ឬការបង្ខិតបង្ខំពីក្រោយ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="tag">ការឆ្លើយតបបន្ទាន់</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> ការឆ្លើយតបបន្ទាន់</div>
         <h3>ត្រូវការការអន្តរាគមន៍ជាបន្ទាន់</h3>
         <p>ទាមទារការសហការរវាងអាជ្ញាធរមានសមត្ថកិច្ច អង្គការការពារកុមារ និងក្រុមហ៊ុនផ្ដល់សេវាអ៊ីនធឺណិត/វេទិកា។</p>
       </div>
@@ -905,14 +944,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">អ្នកគំរាមប្រើប្រាស់រូបភាពពិត រូបភាពកែច្នៃ ឬការអះអាងមិនពិត ដើម្បីបង្ខំកុមារឱ្យបង់ប្រាក់ ផ្ញើរូបភាពបន្ថែម ធ្វើសកម្មភាពផ្លូវភេទ ឬរក្សាការសម្ងាត់។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">សម្ពាធផ្លូវចិត្ត</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> សម្ពាធផ្លូវចិត្ត</div>
         <h3>«បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះលើ Facebook / Telegram»</h3>
         <p>កុមារភ័យខ្លាចការបាក់មុខនៅសាលា និងខ្លាចឪពុកម្តាយស្តីបន្ទោស ដែលនាំឱ្យធ្លាក់ចូលក្នុងអន្ទាក់កាន់តែជ្រៅ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">ការពិតជាក់ស្តែង</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ការពិតជាក់ស្តែង</div>
         <h3>ការបង់ប្រាក់មិនធ្វើឱ្យការគំរាមឈប់ឡើយ</h3>
         <p>អ្នកគំរាមតែងតែទារលុយបន្ថែមទៀត។ វិធីដោះស្រាយតែមួយគត់គឺ បញ្ឈប់ការឆ្លើយឆ្លង រក្សាភស្តុតាង និងប្រាប់មនុស្សធំដែលទុកចិត្ត។</p>
       </div>
@@ -927,14 +964,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">អ្នកប្រព្រឹត្តប្រើប្រាស់លុយកាក់ ទំនិញ ឧបករណ៍អេឡិចត្រូនិច ឬអំណោយក្នុងហ្គេម (Game items/Diamonds) ដើម្បីទិញរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពគ្រោះថ្នាក់។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-        <div class="tag">ទម្រង់សម្ភារៈ</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> ទម្រង់សម្ភារៈ</div>
         <h3>របស់របរហាក់ដូចជាគ្មានគ្រោះថ្នាក់</h3>
         <p>Top-up ហ្គេម, ទិញស្មាតហ្វូនឱ្យ, សន្យាផ្ដល់ការងារ, ឬផ្តល់ប្រាក់ឧបត្ថម្ភ ដើម្បីបង្កើតកាតព្វកិច្ចឱ្យកុមារតបស្នង។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-        <div class="tag">អំណាចមិនស្មើគ្នា</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> អំណាចមិនស្មើគ្នា</div>
         <h3>ការទាញយកប្រយោជន៍ពីភាពងាយរងគ្រោះ</h3>
         <p>អ្នកប្រព្រឹត្តទាញប្រយោជន៍ពីកង្វះខាតជីវភាព ឬការចង់បានរបស់កុមារ ដើម្បីធ្វើការកេងប្រវ័ញ្ចផ្លូវភេទ។</p>
       </div>
@@ -949,14 +984,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">ការប្រើប្រាស់បច្ចេកវិទ្យាបញ្ញាសិប្បនិម្មិត (AI) ដើម្បីកែច្នៃរូបថតធម្មតារបស់កុមារពីបណ្ដាញសង្គមឱ្យទៅជារូបភាព ឬវីដេអូផ្លូវភេទក្លែងក្លាយ (Non-Consensual Deepfakes)។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
-        <div class="tag">បច្ចេកវិទ្យាថ្មី · គ្រោះថ្នាក់ថ្មី</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> បច្ចេកវិទ្យាថ្មី · គ្រោះថ្នាក់ថ្មី</div>
         <h3>រូបថតសាមញ្ញអាចត្រូវកែច្នៃក្នុងរយៈពេលប៉ុន្មានវិនាទី</h3>
         <p>រូបថតស្លៀកឯកសណ្ឋានសាលា ឬរូបដើរលេងអាចត្រូវបានកម្មវិធី AI បំប្លែងជារូបអាក្រាតក្លែងក្លាយ ដើម្បីគំរាម ឬបំបាក់មុខ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">ផលប៉ះពាល់ជាក់ស្តែង</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ផលប៉ះពាល់ជាក់ស្តែង</div>
         <h3>ការខូចខាតផ្លូវចិត្ត និងកិត្តិយសពិតប្រាកដ</h3>
         <p>ទោះបីជារូបភាពបង្កើតដោយ AI ក៏ផលប៉ះពាល់លើជីវិត និងសុខភាពផ្លូវចិត្តរបស់កុមារគឺពិតប្រាកដ និងធ្ងន់ធ្ងរដូចគ្នា។</p>
       </div>
@@ -971,14 +1004,12 @@ html[data-bigscreen="true"] .callout {
     <p class="subhead">សញ្ញាព្រមានដំបូងលើអាកប្បកិរិយា និងការប្រើប្រាស់ទូរស័ព្ទរបស់កុមារ ដែលមាតាបិតា និងលោកគ្រូអ្នកគ្រូគួរតាមដានដោយយកចិត្តទុកដាក់៖</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="tag">សញ្ញាលើឧបករណ៍</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> សញ្ញាលើឧបករណ៍</div>
         <h3>លាក់អេក្រង់ · ប្តូរលេខកូដសម្ងាត់ញឹកញាប់</h3>
         <p>ប្រញាប់បិទអេក្រង់ពេលមនុស្សធំដើរកាត់, ប្រើកម្មវិធីជជែកសម្ងាត់, ឬមានការទទួលសារ/ការខលខុសប្រក្រតីនៅពេលយប់ជ្រៅ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">សញ្ញាលើអារម្មណ៍</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> សញ្ញាលើអារម្មណ៍</div>
         <h3>ភ័យខ្លាច · ថប់បារម្ភខ្លាំងក្រោយទទួលសារ</h3>
         <p>ស្រកទឹកចិត្ត ញែកខ្លួនចេញពីមិត្តភក្តិ ឬឆាប់ខឹងខុសធម្មតាពេលមានការនិយាយអំពីការប្រើប្រាស់អ៊ីនធឺណិត។</p>
       </div>
@@ -986,68 +1017,99 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> កុំដកហូតទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាជំហានដំបូង។ សួរនាំដោយក្តីស្រឡាញ់ និងការយល់ចិត្ត។</div></div>
   </section>
 
-  <!-- SLIDE 13 -->
+  <!-- SLIDE 13: CAMBODIA TELEGRAM CASES (from origin/main) -->
   <section class="slide" aria-label="Slide 13 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> ស្លាយ 13 / ២១ · ទិន្នន័យកម្ពុជា</div>
-    <h2 class="sectionhead">អ្វីដែលការសិក្សាស្រាវជ្រាវបានរកឃើញ</h2>
-    <p class="subhead">ការសិក្សាស្រាវជ្រាវ <strong>Disrupting Harm Cambodia (2022)</strong> ដោយ UNICEF, ECPAT និង INTERPOL បានបង្ហាញទិន្នន័យសំខាន់ៗ៖</p>
-    <div class="grid three">
-      <div class="card">
-        <div class="tag">កុមារអាយុ ១២–១៧ ឆ្នាំ</div>
-        <h3 style="font-size:36px; color:var(--accent);">១១%</h3>
-        <p>នៃកុមារប្រើប្រាស់អ៊ីនធឺណិត បានជួបប្រទះករណីជាក់ស្តែងនៃ OCSEA ក្នុងឆ្នាំកន្លងមក (ប្រមាណ ១៦០,០០០ នាក់)។</p>
-      </div>
-      <div class="card">
-        <div class="tag">ការរំខានផ្លូវភេទ</div>
-        <h3 style="font-size:36px; color:var(--accent);">១៦%</h3>
-        <p>ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត ឬរូបភាពអាសអាភាសដែលមិនចង់បាន។</p>
-      </div>
-      <div class="card">
-        <div class="tag">ការទាមទាររូបភាព</div>
-        <h3 style="font-size:36px; color:var(--accent);">៩%</h3>
-        <p>ធ្លាប់ទទួលបានសំណើមិនចង់បាន ដោយបង្ខំឱ្យផ្ញើរូបភាព ឬវីដេអូផ្លូវភេទផ្ទាល់ខ្លួន។</p>
-      </div>
-    </div>
-    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណាំ៖</strong> ទាំងនេះជាទិន្នន័យសិក្សាឆ្នាំ ២០២២។ ត្រូវបញ្ជាក់ឆ្នាំ និងប្រភពស្រាវជ្រាវជានិច្ចពេលធ្វើបទបង្ហាញ។</div></div>
-  </section>
-
-  <!-- SLIDE 14 -->
-  <section class="slide" aria-label="Slide 14 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> ស្លាយ 14 / ២១ · បរិបទថ្មី ២០២៥–២០២៦</div>
-    <h2 class="sectionhead">របៀបប្រើប្រាស់ប្រភពថ្មីៗឱ្យបានត្រឹមត្រូវ</h2>
-    <p class="subhead">ការធ្វើបច្ចុប្បន្នភាពឯកសារណែនាំ និងគោលការណ៍សំខាន់ៗនៅកម្ពុជា និងអន្តរជាតិ៖</p>
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ស្លាយ 13 / ២១ · ករណីដែលបានរាយការណ៍នៅកម្ពុជា</div>
+    <h2 class="sectionhead">ឧទាហរណ៍៖ ការចែកចាយសម្ភារៈរំលោភបំពានតាម Telegram</h2>
+    <p class="subhead">ក្នុងខែកុម្ភៈ ឆ្នាំ២០២៤ សារព័ត៌មាន Fresh News បានរាយការណ៍ថា ការស៊ើបអង្កេតមួយដែលចាប់ផ្តើមពីរបាយការណ៍របស់ APLE Cambodia បានឈានទៅដល់ការចាប់ខ្លួនបុរសម្នាក់ពីបទចែកចាយសម្ភារៈ CSAM ជាង ៦,០០០ ឯកសារ តាមរយៈក្រុម Telegram ឯកជន។</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        <div class="tag">មករា ២០២៥ · កម្ពុជា</div>
-        <h3>សៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញ</h3>
-        <p>រៀបចំដោយ UNICEF Cambodia សហការជាមួយក្រសួងអប់រំ យុវជន និងកីឡា (MoEYS) សម្រាប់លោកគ្រូអ្នកគ្រូ និងមាតាបិតា។</p>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> របៀបដែលវាដំណើរការ</div>
+        <h3>ក្រុមបិទជិត និងការទូទាត់ប្រាក់</h3>
+        <p>អ្នកប្រព្រឹត្តបង្កើត Channel ឬ Group បិទជិត ទារប្រាក់ជាមុនតាមកុងធនាគារ ហើយប្រើឈ្មោះគណនីក្លែងក្លាយដើម្បីលាក់អត្តសញ្ញាណ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
-        <div class="tag">កុម្ភៈ ២០២៦ · អន្តរជាតិ</div>
-        <h3>UNICEF Issue Brief ស្តីពី AI & OCSEA</h3>
-        <p>ផ្តោតលើការកើនឡើងនៃរូបភាពផ្លូវភេទក្លែងក្លាយ (Deepfakes) បង្កើតដោយបញ្ញាសិប្បនិម្មិត និងវិធានការឆ្លើយតបជាសកល។</p>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ការឆ្លើយតបជាក់ស្តែង</div>
+        <h3>របាយការណ៍នាំទៅដល់ចំណាត់ការច្បាប់</h3>
+        <p>ករណីនេះបង្ហាញថា ការរាយការណ៍ពីអង្គការឯកទេស និងសាធារណជនពិតជាអាចជួយឱ្យសមត្ថកិច្ចកំណត់មុខសញ្ញា និងចាត់វិធានការបាន។</p>
       </div>
     </div>
-    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> កុំយកស្ថិតិអន្តរជាតិពហុប្រទេសមកនិយាយថាជាអត្រារបស់កម្ពុជា។ ត្រូវបែងចែកទិន្នន័យជាតិ និងអន្តរជាតិឱ្យច្បាស់លាស់។</div></div>
+    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> បញ្ជាក់ពីករណីជាក់ស្តែងដែលបានរាយការណ៍ជាផ្លូវការ ដើម្បីឱ្យអ្នកចូលរួមឃើញថា ហានិភ័យកើតឡើងលើកម្មវិធីដែលកំពុងប្រើរាល់ថ្ងៃ។</div></div>
   </section>
 
-  <!-- SLIDE 15 -->
+  <!-- SLIDE 14: SCAM COMPOUNDS (from origin/main) -->
+  <section class="slide" aria-label="Slide 14 of 21">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 14 / ២១ · បញ្ហាប្រឈមពាក់ព័ន្ធនឹង Scam Compounds</div>
+    <h2 class="sectionhead">Scam Compounds៖ ការជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ច</h2>
+    <p class="subhead">របាយការណ៍សិទ្ធិមនុស្សអន្តរជាតិ (Amnesty International ២០២៥–២០២៦) អំពី scam compounds នៅកម្ពុជាបានកត់ត្រាការជួញដូរមនុស្ស ការបង្ខិតបង្ខំធ្វើការ និងការរំលោភបំពានធ្ងន់ធ្ងរ។ ទីតាំងទាំងនេះក៏ត្រូវបានផ្សារភ្ជាប់នឹងហានិភ័យនៃការកេងប្រវ័ញ្ចផ្លូវភេទផងដែរ។</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ការបង្ខិតបង្ខំ & ការបិទសិទ្ធិ</div>
+        <h3>ជនរងគ្រោះមិនអាចចាកចេញដោយសេរី</h3>
+        <p>ទូរស័ព្ទ លិខិតឆ្លងដែន និងសេរីភាពធ្វើដំណើរត្រូវបានរឹតត្បិត ដែលធ្វើឱ្យជនរងគ្រោះកាន់តែពិបាកស្វែងរកជំនួយ។</p>
+      </div>
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> ភាពត្រឹមត្រូវនៃព័ត៌មាន</div>
+        <h3>មិនត្រូវអះអាងលើសពីអ្វីដែលរបាយការណ៍បានបញ្ជាក់</h3>
+        <p>បញ្ជាក់ឱ្យច្បាស់ថាជាបញ្ហាសិទ្ធិមនុស្ស និងឧក្រិដ្ឋកម្មឆ្លងដែនដែលពាក់ព័ន្ធនឹងការកេងប្រវ័ញ្ច មិនមែនគ្រប់កន្លែងសុទ្ធតែដូចគ្នាទាំងអស់ឡើយ។</p>
+      </div>
+    </div>
+    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> ប្រើប្រភពឯកសារផ្លូវការ (ដូចជា Amnesty International) ដើម្បីពន្យល់ពីបរិបទស្មុគស្មាញដោយទំនួលខុសត្រូវ។</div></div>
+  </section>
+
+  <!-- SLIDE 15: DARK WEB (from origin/main) -->
   <section class="slide" aria-label="Slide 15 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 15 / ២១ · ការការពារ</div>
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg> ស្លាយ 15 / ២១ · Dark Web និងសុវត្ថិភាពកុមារ</div>
+    <h2 class="sectionhead">Dark Web៖ អ្វីដែលយើងគួរយល់ និងមិនគួរអះអាង</h2>
+    <p class="subhead">Dark Web គឺជាផ្នែកមួយនៃអ៊ីនធឺណិតដែលមិនអាចចូលប្រើតាមវិធីស្វែងរកធម្មតាបាន ហើយជាទូទៅត្រូវការកម្មវិធីពិសេសដូចជា Tor Browser។ វាត្រូវបានគេដឹងថាមានទីផ្សារខុសច្បាប់ និងវេទិកាចែកចាយសម្ភារៈ OCSEA ឆ្លងដែន។</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> អ្វីដែលជាការពិត</div>
+        <h3>ការលាក់បាំងអត្តសញ្ញាណខ្ពស់</h3>
+        <p>បច្ចេកវិទ្យាអ៊ិនគ្រីប (Encryption) ធ្វើឱ្យសមត្ថកិច្ចពិបាកតាមដានទីតាំង IP ពិតប្រាកដរបស់អ្នកលក់ និងអ្នកទិញ។</p>
+      </div>
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> អ្វីដែលមិនគួរអះអាង</div>
+        <h3>មិនមែនគ្រប់ករណីសុទ្ធតែនៅលើ Dark Web ទេ</h3>
+        <p>ករណី grooming, sextortion និងការចែករំលែកសម្ភារៈភាគច្រើនកើតឡើងលើ Surface Web ធម្មតា (Telegram, Facebook, Instagram)។</p>
+      </div>
+    </div>
+    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> កុំបន្លាចអ្នកស្តាប់ដោយពាក្យថា Dark Web រហូតដល់មើលរំលងហានិភ័យជាក់ស្តែងលើកម្មវិធីធម្មតាដែលកុមារកំពុងប្រើរាល់ថ្ងៃ។</div></div>
+  </section>
+
+  <!-- SLIDE 16: CHALLENGES (from origin/main) -->
+  <section class="slide" aria-label="Slide 16 of 21">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 16 / ២១ · បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍</div>
+    <h2 class="sectionhead">ហេតុអ្វីករណីខ្លះពិបាករកឃើញ?</h2>
+    <p class="subhead">ជនរងគ្រោះអាចខ្លាចការស្តីបន្ទោស ការសងសឹក ឬការបែកធ្លាយរូបភាព។ គណនីក្លែងក្លាយ ការប្ដូរឈ្មោះគណនីញឹកញាប់ និងការប្រើប្រាស់មុខងារសារបាត់ដោយស្វ័យប្រវត្តិ (Disappearing Messages) បង្កជាឧបសគ្គបន្ថែម។</p>
+    <div class="grid">
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> ឧបសគ្គផ្លូវចិត្ត & សង្គម</div>
+        <h3>ការបន្ទោសជនរងគ្រោះ (Victim Blaming)</h3>
+        <p>ការភ័យខ្លាចថាឪពុកម្តាយនឹងខឹង ឬដកហូតទូរស័ព្ទ គឺជាមូលហេតុចម្បងដែលធ្វើឱ្យកុមារសម្រេចចិត្តលាក់បាំង។</p>
+      </div>
+      <div class="card">
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ឧបសគ្គបច្ចេកវិទ្យា</div>
+        <h3>សារបាត់ និងគណនីអនាមិក</h3>
+        <p>អ្នកប្រព្រឹត្តតែងប្រើមុខងារលុបសារស្វ័យប្រវត្ត ដើម្បីកុំឱ្យសល់ភស្តុតាងនៅពេលមានការស៊ើបអង្កេត។</p>
+      </div>
+    </div>
+    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> បង្ហាញការយល់ចិត្ត។ បញ្ជាក់ថា ទោះបីជាមានឧបសគ្គទាំងនេះ ក៏នៅតែមានវិធីសុវត្ថិភាពក្នុងការស្វែងរកជំនួយ។</div></div>
+  </section>
+
+  <!-- SLIDE 17: PROTECTION -->
+  <section class="slide" aria-label="Slide 17 of 21">
+    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> ស្លាយ 17 / ២១ · ការការពារ</div>
     <h2 class="sectionhead">ការពារគណនី និងឯកជនភាពឌីជីថល</h2>
     <p class="subhead">ជំហានសន្តិសុខបច្ចេកវិទ្យាសំខាន់ៗ ដើម្បីកាត់បន្ថយហានិភ័យពីការលួចគណនី និងការតាមដាន៖</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        <div class="tag">សន្តិសុខគណនី</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> សន្តិសុខគណនី</div>
         <h3>2FA & ពាក្យសម្ងាត់រឹងមាំ</h3>
         <p>បើកដំណើរការផ្ទៀងផ្ទាត់ ២ ជំហាន (2-Step Verification) លើ Telegram, Facebook, TikTok។ មិនប្រើពាក្យសម្ងាត់ដូចគ្នា និងមិនចែករំលែក OTP ជាមួយនរណាឡើយ។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
-        <div class="tag">ការកំណត់ឯកជនភាព</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg> ការកំណត់ឯកជនភាព</div>
         <h3>កំណត់ Privacy & បិទទីតាំង</h3>
         <p>កំណត់គណនីជា Private, ពិនិត្យបញ្ជីមិត្តភក្តិ, និងបិទមុខងារ Live Location ឬទីតាំងសាលារៀន/ផ្ទះលើការបង្ហោះរូបភាពជាសាធារណៈ។</p>
       </div>
@@ -1055,51 +1117,7 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> ការការពារមិនមែនជាបន្ទុករបស់កុមារតែម្នាក់ឯងឡើយ។ មនុស្សពេញវ័យ និងវេទិកាបច្ចេកវិទ្យាក៏មានកាតព្វកិច្ចការពារ។</div></div>
   </section>
 
-  <!-- SLIDE 16 -->
-  <section class="slide" aria-label="Slide 16 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg> ស្លាយ 16 / ២១ · ការការពារ</div>
-    <h2 class="sectionhead">រូបភាពឯកជន សម្ពាធមិត្តភក្តិ និង AI</h2>
-    <p class="subhead">ការកសាងការយល់ដឹងអំពីព្រំដែនផ្ទាល់ខ្លួន និងការបដិសេធចំពោះការទាមទារដែលមិនសមរម្យ៖</p>
-    <div class="grid">
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">សិទ្ធិលើរាងកាយ</div>
-        <h3>មានសិទ្ធិពេញលេញក្នុងការនិយាយថា «ទេ»</h3>
-        <p>កុមារមានសិទ្ធិបដិសេធរាល់ការសុំរូបថត ឬវីដេអូឯកជន។ ការផ្ញើរូបភាពទៅមនុស្សម្នាក់ មិនមែនជាការអនុញ្ញាតឱ្យគេចែករំលែកបន្តឡើយ។</p>
-      </div>
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
-        <div class="tag">ការយល់ដឹងពី AI</div>
-        <h3>កុំបង្កើត ឬស្វែងរករូបភាពមិនសមរម្យ</h3>
-        <p>កុំប្រើប្រាស់ឧបករណ៍ AI ដើម្បីបង្កើតរូបភាពកាត់តមិត្តភក្តិ។ ការធ្វើបែបនេះបង្កការឈឺចាប់ដល់អ្នកដទៃ និងខុសច្បាប់។</p>
-      </div>
-    </div>
-    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណុចសំខាន់៖</strong> ជួយកុមារឱ្យដឹងថា ពួកគេតែងតែអាចមករកជំនួយពីអ្នកពេញវ័យបានគ្រប់ពេល ដោយមិនខ្លាចការស្តីបន្ទោស។</div></div>
-  </section>
-
-  <!-- SLIDE 17 -->
-  <section class="slide" aria-label="Slide 17 of 21">
-    <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ស្លាយ 17 / ២១ · សេណារីយ៉ូពិភាក្សា</div>
-    <h2 class="sectionhead">ករណីសិក្សាសម្រាប់ពិភាក្សាជាក់ស្តែង</h2>
-    <p class="subhead"><strong>សេណារីយ៉ូ៖</strong> ក្មេងជំទង់ម្នាក់បានទទួលសារពីគណនីចម្លែកថា៖ <em>«បង់ប្រាក់ ៥០ ដុល្លារ ឬខ្ញុំនឹងបង្ហោះរូបភាពឯកជនរបស់អ្នកចូលក្នុង Group សាលា!»</em>។</p>
-    <div class="grid">
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div class="tag">អ្វីដែលកុមារច្រើនតែគិត</div>
-        <h3>ភ័យខ្លាចខ្លាំង · ចង់លាក់បាំង ឬបង់ប្រាក់</h3>
-        <p>ខ្លាចខ្មាសគេ ខ្លាចឪពុកម្តាយដឹង ឬគិតថាការបង់លុយនឹងធ្វើឱ្យគេលុបរូបចោល។</p>
-      </div>
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <div class="tag">ពាក្យដែលមនុស្សធំគួរនិយាយ</div>
-        <h3>«អរគុណដែលកូនប្រាប់។ វាមិនមែនជាកំហុសកូនទេ»</h3>
-        <p>«យើងនឹងដោះស្រាយរឿងនេះជាមួយគ្នាដោយសុវត្ថិភាព។ កុំបារម្ភ យើងមិនបង់ប្រាក់ឱ្យគេឡើយ»។</p>
-      </div>
-    </div>
-    <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>សំណួរពិភាក្សា៖</strong> តើអ្នកចូលរួមយល់ថា អ្វីជាជំហានបន្ទាប់ដែលគួរធ្វើ និងអ្វីដែលដាច់ខាតមិនគួរធ្វើ?</div></div>
-  </section>
-
-  <!-- SLIDE 18 -->
+  <!-- SLIDE 18: 4 STEPS -->
   <section class="slide" aria-label="Slide 18 of 21">
     <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> ស្លាយ 18 / ២១ · ការឆ្លើយតប</div>
     <h2 class="sectionhead">៤ ជំហានឆ្លើយតប៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ</h2>
@@ -1129,7 +1147,7 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ការដាស់តឿនសំខាន់៖</strong> ដាច់ខាតកុំទាញយក ចម្លង ឬបញ្ជូនបន្តរូបភាព CSAM ជាសាធារណៈ។</div></div>
   </section>
 
-  <!-- SLIDE 19 -->
+  <!-- SLIDE 19: HELP SERVICES -->
   <section class="slide" aria-label="Slide 19 of 21">
     <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> ស្លាយ 19 / ២១ · សេវាជំនួយនៅកម្ពុជា</div>
     <h2 class="sectionhead">ស្វែងរកជំនួយនៅកម្ពុជា (Help Resources)</h2>
@@ -1160,21 +1178,19 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>ចំណាំ៖</strong> ប្រសិនបើកុមារកំពុងស្ថិតក្នុងគ្រោះថ្នាក់បន្ទាន់ សូមទាក់ទងសមត្ថកិច្ច ឬសេវាសង្គ្រោះបន្ទាន់ជាបន្ទាន់។</div></div>
   </section>
 
-  <!-- SLIDE 20 -->
+  <!-- SLIDE 20: ROLES -->
   <section class="slide" aria-label="Slide 20 of 21">
     <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> ស្លាយ 20 / ២១ · តួនាទីរួម</div>
     <h2 class="sectionhead">តើអ្នកណាខ្លះមានតួនាទីក្នុងការការពារ?</h2>
     <p class="subhead">ការការពារកុមារពី OCSEA មិនមែនជាការទទួលខុសត្រូវរបស់បុគ្គលណាម្នាក់ឡើយ គឺជាកាតព្វកិច្ចរួមគ្នារបស់សង្គមទាំងមូល៖</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-        <div class="tag">គ្រួសារ & សាលារៀន</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> គ្រួសារ & សាលារៀន</div>
         <h3>ការសន្ទនាដោយបើកចំហ & ការអប់រំ</h3>
         <p>បង្កើតបរិយាកាសសុវត្ថិភាពដែលកុមារហ៊ាននិយាយអំពីបញ្ហាអនឡាញ ដោយមិនខ្លាចការស្តីបន្ទោស ឬការដាក់ទណ្ឌកម្ម។</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">វេទិកាឌីជីថល & ស្ថាប័នរដ្ឋ</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> វេទិកាឌីជីថល & ស្ថាប័នរដ្ឋ</div>
         <h3>Safety by Design & ការអនុវត្តច្បាប់</h3>
         <p>ក្រុមហ៊ុនបច្ចេកវិទ្យាត្រូវបង្កើនមុខងារសុវត្ថិភាពកុមារ ហើយស្ថាប័នពាក់ព័ន្ធត្រូវស៊ើបអង្កេត និងគាំពារជនរងគ្រោះប្រកបដោយប្រសិទ្ធភាព។</p>
       </div>
@@ -1182,24 +1198,22 @@ html[data-bigscreen="true"] .callout {
     <div class="callout"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <div><strong>សំណួរសម្រាប់អ្នកចូលរួម៖</strong> តើអ្នកអាចធ្វើសកម្មភាពជាក់ស្តែងអ្វីខ្លះនៅថ្ងៃនេះ ដើម្បីជួយឱ្យកុមារជុំវិញខ្លួនកាន់តែមានសុវត្ថិភាព?</div></div>
   </section>
 
-  <!-- SLIDE 21 -->
+  <!-- SLIDE 21: SOURCES & CLOSING -->
   <section class="slide" aria-label="Slide 21 of 21">
     <div class="eyebrow"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ស្លាយ 21 / ២១ · ប្រភព និងការបិទបទបង្ហាញ</div>
     <h2 class="sectionhead">ប្រភពសំខាន់ៗ និងការបិទបទបង្ហាញ</h2>
-    <p class="subhead">ឯកសារយោងផ្លូវការ និងការដកស្រង់សម្រាប់បទបង្ហាញនេះ៖</p>
+    <p class="subhead">ឯកសារយោង និងប្រភពដែលបានដកស្រង់ក្នុងបទបង្ហាញនេះ៖</p>
     <div class="grid">
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        <div class="tag">ឯកសារស្រាវជ្រាវ & គោលនយោបាយ</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> ប្រភពរាយការណ៍ & ស្រាវជ្រាវ</div>
         <h3>ប្រភពផ្លូវការជាតិ & អន្តរជាតិ</h3>
-        <p>• <strong>Disrupting Harm in Cambodia (2022)</strong> — UNICEF, ECPAT, INTERPOL<br>
-        • <strong>UNICEF Cambodia Guidebook on Child Safety Online (Jan 2025)</strong><br>
-        • <strong>UNICEF Issue Brief on AI & OCSEA (Feb 2026)</strong><br>
-        • <strong>Cambodian Child Online Protection Guidelines (2023)</strong></p>
+        <p>• <strong>Fresh News (2024)</strong> · ករណីចែកចាយ CSAM តាម Telegram<br>
+        • <strong>APLE Cambodia</strong> · អង្គការទប់ស្កាត់ការកេងប្រវ័ញ្ចផ្លូវភេទលើកុមារ<br>
+        • <strong>Amnesty International (2025–2026)</strong> · របាយការណ៍ Scam compounds<br>
+        • <strong>UNICEF Cambodia Guidebook on Child Safety Online (2025)</strong></p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">សារសង្ខេបចុងក្រោយ</div>
+        <div class="tag"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> សារសង្ខេបចុងក្រោយ</div>
         <h3>សុវត្ថិភាពឌីជីថលចាប់ផ្តើមពីយើងទាំងអស់គ្នា</h3>
         <p>ស្គាល់ហានិភ័យ · ការពារគណនី · ស្តាប់កុមារដោយមិនបន្ទោស · និងភ្ជាប់ទៅកាន់សេវាជំនួយទាន់ពេលវេលា។<br><br>
         សូមអរគុណ! ចូលទៅកាន់ <a href="https://sophat.space/" target="_blank">sophat.space</a> សម្រាប់ធនធានបន្ថែម។</p>
@@ -1240,15 +1254,15 @@ const speakerNotes = [
   "10. ការកេងប្រវ័ញ្ចដោយប្រាក់ អំណោយ ឬផលប្រយោជន៍\nអ្នកប្រព្រឹត្តអាចសន្យាផ្តល់ប្រាក់ ទំនិញ ការងារ ឬអំណោយ ដើម្បីទទួលរូបភាពផ្លូវភេទ ឬបញ្ចុះបញ្ចូលកុមារឱ្យធ្វើសកម្មភាពដែលបង្កគ្រោះថ្នាក់។\nអ្នកបង្ហាញ៖ អំណោយ ឬទំនាក់ទំនងស្និទ្ធស្នាលមិនមែនជាភស្តុតាងដោយខ្លួនឯងទេ។ សូមមើលបរិបទនៃការបង្ខិតបង្ខំ និងអំណាច។",
   "11. រូបភាពក្លែងក្លាយដោយ AI (Deepfake)\nAI អាចកែរូបថតកុមារឱ្យទៅជារូបភាពផ្លូវភេទ ឬបង្កើតរូបភាព/វីដេអូក្លែងក្លាយដើម្បីបំបាក់មុខ គំរាម ឬជំរិតទារប្រាក់។ រូបភាពក្លែងក្លាយក៏អាចបង្កគ្រោះថ្នាក់ពិតដែរ។\nអ្នកបង្ហាញ៖ UNICEF បានព្រមានពីហានិភ័យនេះក្នុងខែកុម្ភៈ ២០២៦។ តួលេខអន្តរជាតិមិនមែនជាតួលេខកម្ពុជា។",
   "12. តើគួរយកចិត្តទុកដាក់លើអ្វីខ្លះ?\nការស្នើឱ្យលាក់ការសន្ទនា ឬប្ដូរទៅ private chat; សំណើរូបភាពឯកជន; ការគំរាមបង្ហោះ; សំណើប្រាក់ ឬអំណោយដែលភ្ជាប់នឹងការរួមភេទ; ការភ័យខ្លាច ឬបារម្ភខ្លាំងក្រោយទទួលសារ។\nអ្នកបង្ហាញ៖ កុំសន្និដ្ឋានតាមសញ្ញាមួយ។ សួរដោយបើកចំហ ហើយកុំយកទូរស័ព្ទ ឬដាក់ទណ្ឌកម្មជាការឆ្លើយតបដំបូង។",
-  "13. អ្វីដែលការសិក្សាបានរកឃើញ\nការសិក្សា Disrupting Harm Cambodia (២០២២) រកឃើញថា ១១% នៃកុមារប្រើអ៊ីនធឺណិតអាយុ ១២–១៧ ឆ្នាំបានជួបប្រទះឧទាហរណ៍ច្បាស់លាស់នៃ OCSEA ក្នុងឆ្នាំមុនការស្ទង់មតិ; ប៉ាន់ប្រមាណប្រហែល ១៦០,០០០ នាក់។ ១៦% ទទួលបានមតិយោបល់ផ្លូវភេទដែលធ្វើឱ្យមិនស្រួលចិត្ត; ១៦% ទទួលរូបភាពផ្លូវភេទដែលមិនចង់បាន; ៩% ទទួលសំណើមិនចង់បានឱ្យផ្ញើរូបភាពផ្លូវភេទ។\nអ្នកបង្ហាញ៖ ទាំងនេះជាលទ្ធផលសិក្សាឆ្នាំ ២០២២ មិនមែនជាការស្ទង់មតិថ្មីឆ្នាំ ២០២៥/២០២៦ ទេ។ ត្រូវបង្ហាញឆ្នាំ និងក្រុមអាយុជានិច្ច។",
-  "14. របៀបប្រើប្រភពថ្មីឱ្យត្រឹមត្រូវ\nសៀវភៅណែនាំសុវត្ថិភាពកុមារតាមអនឡាញរបស់ UNICEF Cambodia និងក្រសួងអប់រំ ចេញផ្សាយខែមករា ២០២៥។ UNICEF ចេញផ្សាយ issue brief អំពី AI និងការរំលោភបំពានផ្លូវភេទលើកុមារខែកុម្ភៈ ២០២៦។ របាយការណ៍អន្តរជាតិខែកញ្ញា ២០២៦ និយាយអំពីកុមារក្នុង ២១ ប្រទេស។\nអ្នកបង្ហាញ៖ កុំបង្ហាញស្ថិតិពហុប្រទេសជាអត្រារបស់កម្ពុជា។ ក្នុងបទបង្ហាញនេះ តួលេខកម្ពុជាច្បាស់លាស់នៅតែត្រូវបានដាក់ជាមូលដ្ឋានឆ្នាំ ២០២២។",
-  "15. ការពារគណនី និងឯកជនភាព\nកំណត់គណនីឯកជន; ពិនិត្យសំណើមិត្តភក្តិ; បិទការចែករំលែកទីតាំងសាធារណៈ; ប្រើពាក្យសម្ងាត់ខ្លាំង និងខុសៗគ្នា; បើក 2FA; ធ្វើបច្ចុប្បន្នភាពកម្មវិធី; កុំចែករំលែក OTP ឬលេខសម្ងាត់។\nអ្នកបង្ហាញ៖ កុំធ្វើឱ្យកុមារទទួលខុសត្រូវតែម្នាក់ឯង។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។",
-  "16. រូបភាពឯកជន សម្ពាធ និង AI\nកុមារអាចបដិសេធសំណើរូបភាព ឬវីដេអូ។ ការផ្ញើរូបភាពមិនមែនជាការយល់ព្រមឱ្យចែកចាយបន្តទេ។ កុំជឿថា AI deepfake មិនអាចបង្កគ្រោះថ្នាក់ ហើយកុំប្រើឧបករណ៍ដើម្បីស្វែងរក ឬបង្កើតរូបភាពផ្លូវភេទរបស់កុមារ។\nអ្នកបង្ហាញ៖ ពិភាក្សាអំពីព្រំដែន និងទំនុកចិត្ត។ បញ្ជាក់ថាកុមារអាចប្រាប់អ្នកពេញវ័យដែលទុកចិត្តបានដោយមិនខ្លាចការស្តីបន្ទោស។",
-  "17. ករណីសិក្សាសម្រាប់ពិភាក្សា\nក្មេងជំទង់ម្នាក់ទទួលសារថា «បង់ប្រាក់ ឬខ្ញុំនឹងបង្ហោះរូបភាព»។ មិនទាន់ដឹងថារូបភាពពិត កែដោយ AI ឬគ្រាន់តែជាការអះអាងទេ។ តើអ្នកនឹងនិយាយអ្វីជាមុន? តើអ្វីខ្លះដែលគួរធ្វើ និងមិនគួរធ្វើ?\nអ្នកបង្ហាញ៖ ករណីនេះជាសេណារីយ៉ូប្រឌិត មិនមែនករណីពិត។ ឧទាហរណ៍ពាក្យគាំទ្រ៖ «អរគុណដែលប្រាប់ខ្ញុំ។ វាមិនមែនជាកំហុសរបស់អ្នកទេ។ យើងនឹងរកវិធីសុវត្ថិភាពជាមួយគ្នា»។",
-  "18. ៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ\nបញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។\nអ្នកបង្ហាញ៖ កុំទាញយក ចម្លង ឬបញ្ជូនរូបភាពផ្លូវភេទរបស់កុមារ។ កុំស៊ើបអង្កេតជាសាធារណៈ ឬសន្យាថារក្សាការសម្ងាត់ទាំងស្រុង ប្រសិនបើមានហានិភ័យដល់សុវត្ថិភាព។",
-  "19. ស្វែងរកជំនួយនៅកម្ពុជា\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។\nអ្នកបង្ហាញ៖ មុនពេលបង្ហាញ សូមផ្ទៀងផ្ទាត់លេខទូរស័ព្ទ ម៉ោងបម្រើ និងវិធីបញ្ជូនករណីម្ដងទៀត។ ប្រសិនបើកុមារកំពុងមានគ្រោះថ្នាក់ភ្លាមៗ សូមទាក់ទងសេវាបន្ទាន់/អាជ្ញាធរដែលសមស្រប។",
-  "20. តើអ្នកណាខ្លះមានតួនាទី?\nគ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។\nអ្នកបង្ហាញ៖ សួរអ្នកចូលរួមឱ្យនិយាយពីសកម្មភាពជាក់ស្តែងមួយដែលពួកគេអាចធ្វើបាន។",
-  "21. បិទបទបង្ហាញដោយសារសំខាន់៖ ការពារកុមារជាការទទួលខុសត្រូវរួម។ ស្គាល់ប្រភេទ OCSEA ការពារគណនី ស្តាប់ដោយមិនបន្ទោស និងភ្ជាប់កុមារទៅសេវាជំនួយ។ បង្ហាញប្រភព និងបញ្ជាក់ឆ្នាំ/វិសាលភាពនៃទិន្នន័យ។"
+  "13. ឧទាហរណ៍ដែលបានរាយការណ៍នៅកម្ពុជា៖ សារព័ត៌មាន Fresh News បានរាយការណ៍នៅខែកុម្ភៈ ២០២៤ ពីការចាប់ខ្លួនជនសង្ស័យម្នាក់ពីបទចែកចាយ CSAM ជាង ៦,០០០ ឯកសារ តាមរយៈក្រុម Telegram ឯកជន បន្ទាប់ពីទទួលបានរបាយការណ៍ពីអង្គការ APLE Cambodia។ បញ្ជាក់ថា ហានិភ័យកើតឡើងជាក់ស្តែងលើកម្មវិធីដែលកំពុងពេញនិយម។",
+  "14. Scam compounds៖ របាយការណ៍ Amnesty International និងអង្គការសិទ្ធិមនុស្សនានាបានកត់ត្រាការជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ចក្នុងបរិវេណបិទជិត។ ប្រើប្រភពឯកសារផ្លូវការ និងមិនត្រូវអះអាងលើសពីអ្វីដែលរបាយការណ៍បានបញ្ជាក់។",
+  "15. Dark Web៖ ពន្យល់ជាការយល់ដឹងទូទៅ មិនមែនជាការណែនាំចូលប្រើ។ វាមិនមែនជាកន្លែងតែមួយគត់ដែលកើតមានបញ្ហាទេ; ករណីភាគច្រើនកើតឡើងលើ Surface Web ធម្មតា (Telegram, Facebook)។ កុំបន្លាចរហូតដល់ភ្លេចការការពារលើ App ធម្មតា។",
+  "16. បញ្ហាប្រឈម៖ ការភ័យខ្លាច ការបន្ទោសជនរងគ្រោះ គណនីក្លែងក្លាយ ក្រុមឯកជន និងមុខងារសារបាត់ដោយស្វ័យប្រវត្តិ។ បង្ហាញការយល់ចិត្ត និងបញ្ជាក់ថា ជនរងគ្រោះមិនមែនជាអ្នកខុសឡើយ។",
+  "17. ការការពារគណនី និងឯកជនភាព៖ គណនីឯកជន ពិនិត្យសំណើមិត្តភក្តិ បិទទីតាំង ប្រើ 2FA និងកុំចែករំលែកលេខសម្ងាត់/OTP។ មនុស្សពេញវ័យ និងវេទិកាក៏មានតួនាទីការពារ។",
+  "18. ៤ ជំហាន៖ បញ្ឈប់ · រក្សាទុក · រាយការណ៍ · គាំទ្រ\nបញ្ឈប់៖ កុំបង់ប្រាក់ ឬផ្ញើរូបភាពបន្ថែម។ រក្សាទុក៖ កត់ឈ្មោះគណនី តំណភ្ជាប់ ពេលវេលា និងសារគំរាមដោយសុវត្ថិភាព។ រាយការណ៍៖ ប្រើមុខងាររាយការណ៍របស់វេទិកា និងស្វែងរកសេវាជំនួយសមស្រប។ គាំទ្រ៖ ស្តាប់ ជឿលើកុមារ និងកុំបន្ទោស។",
+  "19. ស្វែងរកជំនួយនៅកម្ពុជា\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។",
+  "20. តើអ្នកណាខ្លះមានតួនាទី?\nគ្រួសារ និងសាលារៀន៖ បង្កើតបរិយាកាសដែលកុមារហ៊ាននិយាយ។ វេទិកាឌីជីថល៖ ការពារតាំងពីការរចនា និងមានមធ្យោបាយរាយការណ៍ងាយប្រើ។ ស្ថាប័ន និងសហគមន៍៖ ការពារ ស៊ើបអង្កេតដោយគិតគូរពីកុមារ និងផ្តល់ការគាំទ្រ។",
+  "21. បិទបទបង្ហាញដោយសារសំខាន់៖ ការពារកុមារជាការទទួលខុសត្រូវរួម។ ស្គាល់ប្រភេទ OCSEA ការពារគណនី ស្តាប់ដោយមិនបន្ទោស និងភ្ជាប់កុមារទៅសេវាជំនួយ។ បង្ហាញប្រភព (Fresh News, APLE, Amnesty, UNICEF) និងបើកវេទិកាសំណួរ-ចម្លើយ (Q&A)។"
 ];
 
 const slides = [...document.querySelectorAll(".slide")];
