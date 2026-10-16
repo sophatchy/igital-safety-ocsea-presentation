@@ -60,7 +60,7 @@ open index.html
 
 ## 👤 អំពីអ្នកធ្វើបទបង្ហាញ (About the Presenter)
 
-**ជី សុផាត (Chi Sophat)**
+**ជី សុផាត (Sophat CHY)**
 - អ្នកបង្កើតមាតិកាឌីជីថល និងគ្រូបណ្ដុះបណ្ដាល ICT
 - អ្នករៀបចំកម្មវិធី BarCamp Cambodia (តាំងពីឆ្នាំ ២០១២)
 - ស្ថាបនិក [Sophat.Space](https://sophat.space/) — ធនធានអប់រំសុវត្ថិភាពឌីជីថល និង [Digital Help](https://sophat.space/help)
