@@ -1,5 +1,9 @@
 # សុវត្ថិភាពឌីជីថល និង OCSEA — កម្ពុជា (Digital Safety & OCSEA Presentation)
-### Hosted by A21 Cambodia (Child Advocacy Center) · Presented by Sophat CHY
+### Hosted by A21 Cambodia (Child Advocacy Center) · Presented by Sophat CHY · Powered by [Sophat.Space](https://sophat.space)
+
+**🔗 តំណភ្ជាប់ផ្សាយផ្ទាល់ (Live URLs):**
+- **Sophat.Space (Standalone URL):** [https://sophat.space/slide-ocsea](https://sophat.space/slide-ocsea) (គាំទ្រទាំង `/slide-ocsea` និង `/slide-OCSEA`)
+- **GitHub Pages:** [https://sophatchy.github.io/igital-safety-ocsea-presentation/](https://sophatchy.github.io/igital-safety-ocsea-presentation/)
 
 បទបង្ហាញកម្រិតខ្ពស់ពីរភាសា (Bilingual: **ភាសាខ្មែរ 🇰🇭 សម្រាប់ពេលព្រឹក** និង **English 🇬🇧 សម្រាប់ពេលរសៀល**) ស្តីអំពី **សុវត្ថិភាពឌីជីថល** និង **ការទប់ស្កាត់ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ (Online Child Sexual Exploitation and Abuse - OCSEA)** នៅប្រទេសកម្ពុជា។
 
