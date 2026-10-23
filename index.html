@@ -17,15 +17,23 @@
   <meta property="og:url" content="https://sophat.space/slide-ocsea" />
   <meta property="og:image" content="https://sophat.space/slide-ocsea/assets/cambodia-anti-trafficking-hotlines.png" />
 
-  <!-- Google Fonts: Kantumruy Pro & Inter -->
+  <!-- Google Fonts: Kantumruy Pro with display swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ========================================================
-       SOPHAT.SPACE /PITCH FORMATION DESIGN SYSTEM
+       SOPHAT.SPACE FONT & UNICODE CONFIGURATION
        ======================================================== */
+    @font-face {
+      font-family: 'Kantumruy Pro';
+      src: url('assets/KantumruyPro.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --bg-dark: #08110D;
       --bg-light: #F8FAF8;
@@ -45,7 +53,7 @@
       --crimson: #BE123C;
       --red: #EF4444;
       --sage-text: #BFD8CC;
-      --font-km: 'Kantumruy Pro', 'Inter', system-ui, -apple-system, sans-serif;
+      --font-km: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
       --stage-w: 1600px;
       --stage-h: 900px;
     }
@@ -56,6 +64,8 @@
       padding: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
     }
 
     html, body {
@@ -625,7 +635,7 @@
       border: 2px solid #FFFFFF;
     }
 
-    /* Bilingual Switcher */
+    /* Bilingual Visibility Switcher */
     html[data-lang="km"] .lang-en { display: none !important; }
     html[data-lang="en"] .lang-km { display: none !important; }
 
@@ -639,7 +649,7 @@
     @media print {
       @page {
         size: A4 portrait;
-        margin: 15mm 13mm 15mm 13mm;
+        margin: 12mm 12mm 12mm 12mm;
       }
 
       html, body {
@@ -648,9 +658,11 @@
         overflow: visible !important;
         background: #FFFFFF !important;
         color: #0F172A !important;
-        font-family: 'Kantumruy Pro', 'Inter', system-ui, sans-serif !important;
+        font-family: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Khmer', system-ui, sans-serif !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        font-synthesis: none !important;
+        text-rendering: optimizeLegibility !important;
       }
 
       .viewport-stage-container,
@@ -665,14 +677,14 @@
         width: 100% !important;
         background: #FFFFFF !important;
         color: #0F172A !important;
-        line-height: 1.6 !important;
-        font-size: 11pt !important;
+        line-height: 1.55 !important;
+        font-size: 10.5pt !important;
       }
 
       .doc-header {
         border-bottom: 2pt solid #059669;
-        padding-bottom: 12pt;
-        margin-bottom: 18pt;
+        padding-bottom: 10pt;
+        margin-bottom: 14pt;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -683,51 +695,51 @@
         color: #059669;
       }
       .doc-brand-sub {
-        font-size: 9pt;
+        font-size: 8.5pt;
         color: #475569;
         font-weight: 600;
       }
       .doc-meta {
-        font-size: 9pt;
+        font-size: 8.5pt;
         color: #64748B;
         text-align: right;
       }
 
       .doc-main-title {
-        font-size: 22pt;
+        font-size: 20pt;
         font-weight: 800;
         line-height: 1.25;
         color: #0F172A;
-        margin-bottom: 6pt;
+        margin-bottom: 5pt;
       }
       .doc-main-subtitle {
-        font-size: 12pt;
+        font-size: 11pt;
         color: #334155;
-        margin-bottom: 14pt;
+        margin-bottom: 12pt;
         font-weight: 500;
       }
 
       .doc-exec-summary {
         background: #F0FDF4;
         border-left: 4pt solid #059669;
-        padding: 10pt 14pt;
+        padding: 9pt 12pt;
         border-radius: 4pt;
-        margin-bottom: 20pt;
-        font-size: 10pt;
+        margin-bottom: 16pt;
+        font-size: 9.5pt;
         color: #1E293B;
       }
 
       .doc-section {
-        margin-bottom: 20pt;
+        margin-bottom: 16pt;
         page-break-inside: avoid;
         break-inside: avoid;
       }
       .doc-section-h2 {
-        font-size: 15pt;
+        font-size: 13.5pt;
         font-weight: 800;
         color: #0F172A;
         border-bottom: 1pt solid #E2E8F0;
-        padding-bottom: 4pt;
+        padding-bottom: 3pt;
         margin-bottom: 8pt;
         display: flex;
         align-items: center;
@@ -735,61 +747,61 @@
       }
       .doc-section-num {
         display: inline-block;
-        width: 18pt;
-        height: 18pt;
+        width: 17pt;
+        height: 17pt;
         background: #059669;
         color: #FFFFFF;
         border-radius: 4pt;
         text-align: center;
-        line-height: 18pt;
-        font-size: 10pt;
+        line-height: 17pt;
+        font-size: 9.5pt;
         font-weight: 800;
       }
 
       .doc-p {
-        font-size: 10pt;
-        line-height: 1.6;
+        font-size: 9.5pt;
+        line-height: 1.55;
         color: #334155;
-        margin-bottom: 6pt;
+        margin-bottom: 5pt;
         text-align: justify;
       }
 
       .doc-grid-2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10pt;
+        gap: 9pt;
         margin-top: 6pt;
       }
       .doc-card-print {
         border: 1pt solid #CBD5E1;
-        border-radius: 6pt;
-        padding: 8pt 10pt;
+        border-radius: 5pt;
+        padding: 7pt 9pt;
         background: #F8FAFC;
         break-inside: avoid;
       }
       .doc-card-print-title {
-        font-size: 11pt;
+        font-size: 10pt;
         font-weight: 700;
         color: #0F172A;
-        margin-bottom: 3pt;
+        margin-bottom: 2pt;
       }
 
       .doc-table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 8pt;
-        font-size: 9.5pt;
+        font-size: 9pt;
       }
       .doc-table th {
         background: #0F172A;
         color: #FFFFFF;
         text-align: left;
-        padding: 6pt 8pt;
+        padding: 5pt 7pt;
         font-weight: 700;
       }
       .doc-table td {
         border-bottom: 1pt solid #E2E8F0;
-        padding: 6pt 8pt;
+        padding: 5pt 7pt;
         color: #1E293B;
       }
       .doc-table tr:nth-child(even) td {
@@ -799,25 +811,26 @@
       .doc-hotline-badge {
         font-family: monospace;
         font-weight: 800;
-        font-size: 11pt;
+        font-size: 10pt;
         color: #B91C1C;
         background: #FEE2E2;
-        padding: 2pt 5pt;
+        padding: 1.5pt 4pt;
         border-radius: 3pt;
       }
 
       .doc-step-box {
         display: flex;
-        gap: 10pt;
-        margin-bottom: 8pt;
-        padding: 8pt;
+        gap: 9pt;
+        margin-bottom: 7pt;
+        padding: 7pt 9pt;
         border: 1pt solid #E2E8F0;
-        border-radius: 6pt;
+        border-radius: 5pt;
         background: #FFFFFF;
+        break-inside: avoid;
       }
       .doc-step-badge {
-        width: 24pt;
-        height: 24pt;
+        width: 22pt;
+        height: 22pt;
         border-radius: 50%;
         background: #059669;
         color: #FFFFFF;
@@ -825,15 +838,15 @@
         align-items: center;
         justify-content: center;
         font-weight: 800;
-        font-size: 11pt;
+        font-size: 10pt;
         flex-shrink: 0;
       }
 
       .doc-footer {
         border-top: 1pt solid #E2E8F0;
         padding-top: 8pt;
-        margin-top: 24pt;
-        font-size: 8.5pt;
+        margin-top: 20pt;
+        font-size: 8pt;
         color: #64748B;
         display: flex;
         justify-content: space-between;
@@ -2130,75 +2143,92 @@
         <div class="bento-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 14px;">
           <!-- Police 1288 -->
           <div class="bento-card" style="border-top: 4px solid var(--red); padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #F87171;">នគរបាលជាតិកម្ពុជា</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #F87171;" class="lang-km">នគរបាលជាតិកម្ពុជា</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #F87171;" class="lang-en">Cambodia National Police</p>
             <h3 style="font-size: 18px; font-weight: 800; margin: 3px 0;" class="lang-km">ប្រឆាំងការជួញដូរមនុស្ស & អនីតិជន</h3>
             <h3 style="font-size: 18px; font-weight: 800; margin: 3px 0;" class="lang-en">Anti-Trafficking & Juvenile Police</h3>
             <p style="font-size: 28px; font-weight: 800; color: #EF4444; margin: 4px 0; font-family: monospace;">1288</p>
-            <p style="font-size: 13.5px; color: var(--soft-dark);">ទូរស័ព្ទបន្ទាន់ ២៤/៧ ឬ 012 852 241</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-km">ទូរស័ព្ទបន្ទាន់ ២៤/៧ ឬ 012 852 241</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-en">24/7 Hotline or 012 852 241</p>
           </div>
 
           <!-- APLE -->
           <div class="bento-card" style="border-top: 4px solid var(--accent-mint); padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: var(--accent-mint);">អង្គការជំនាញ OCSEA</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: var(--accent-mint);" class="lang-km">អង្គការជំនាញ OCSEA</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: var(--accent-mint);" class="lang-en">OCSEA Specialist NGO</p>
             <h3 style="font-size: 18px; font-weight: 800; margin: 3px 0;">APLE Cambodia</h3>
             <p style="font-size: 24px; font-weight: 800; color: var(--accent-mint); margin: 4px 0; font-family: monospace;">092 311 511</p>
-            <p style="font-size: 13.5px; color: var(--soft-dark);">aplecambodia.org · បង្ក្រាប CSAM</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-km">aplecambodia.org · បង្ក្រាប CSAM</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-en">aplecambodia.org · CSAM Enforcement</p>
           </div>
 
           <!-- Child Helpline -->
           <div class="bento-card" style="border-top: 4px solid #3B82F6; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #60A5FA;">ជំនួយ & ប្រឹក្សាផ្លូវចិត្ត</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #60A5FA;" class="lang-km">ជំនួយ & ប្រឹក្សាផ្លូវចិត្ត</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #60A5FA;" class="lang-en">Counseling & Crisis Line</p>
             <h3 style="font-size: 18px; font-weight: 800; margin: 3px 0;">Child Helpline Cambodia</h3>
             <p style="font-size: 28px; font-weight: 800; color: #60A5FA; margin: 4px 0; font-family: monospace;">1280</p>
-            <p style="font-size: 13.5px; color: var(--soft-dark);">ឥតគិតថ្លៃ ២៤/៧ · គ្រប់ប្រព័ន្ធ</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-km">ឥតគិតថ្លៃ ២៤/៧ · គ្រប់ប្រព័ន្ធ</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-en">Toll-free 24/7 · All networks</p>
           </div>
 
           <!-- CAC / Child Advocacy Center -->
           <div class="bento-card" style="border-top: 4px solid #F59E0B; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #FBBF24;">មជ្ឈមណ្ឌលគាំពារកុមារ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #FBBF24;" class="lang-km">មជ្ឈមណ្ឌលគាំពារកុមារ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #FBBF24;" class="lang-en">Child Advocacy Center</p>
             <h3 style="font-size: 18px; font-weight: 800; margin: 3px 0;">Child Advocacy Center (CAC)</h3>
             <p style="font-size: 21px; font-weight: 800; color: #FBBF24; margin: 4px 0; font-family: monospace;">010 220 771</p>
-            <p style="font-size: 13.5px; color: var(--soft-dark);">ឬ 071 7210 771 · សេវាគាំទ្រកុមារ</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-km">ឬ 071 7210 771 · សេវាគាំទ្រកុមារ</p>
+            <p style="font-size: 13.5px; color: var(--soft-dark);" class="lang-en">or 071 7210 771 · Victim Advocacy</p>
           </div>
 
           <!-- Anti-Cybercrime Police -->
           <div class="bento-card" style="border-top: 4px solid #8B5CF6; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #A78BFA;">នគរបាលជាតិ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #A78BFA;" class="lang-km">នគរបាលជាតិ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #A78BFA;" class="lang-en">National Police</p>
             <h3 style="font-size: 17px; font-weight: 800; margin: 3px 0;" class="lang-km">ប្រឆាំងបទល្មើសបច្ចេកវិទ្យា</h3>
             <h3 style="font-size: 17px; font-weight: 800; margin: 3px 0;" class="lang-en">Anti-Cybercrime Police</h3>
             <p style="font-size: 14.5px; font-weight: 700; color: #C4B5FD; margin: 6px 0;">hotline.police.gov.kh</p>
-            <p style="font-size: 13px; color: var(--soft-dark);">រាយការណ៍ករណី Scams & Cybercrime</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-km">រាយការណ៍ករណី Scams & Cybercrime</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-en">Report online scams & cybercrimes</p>
           </div>
 
           <!-- CamCERT -->
           <div class="bento-card" style="border-top: 4px solid #06B6D4; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #22D3EE;">ក្រសួង ប្រៃសណីយ៍ (MPTC)</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #22D3EE;" class="lang-km">ក្រសួង ប្រៃសណីយ៍ (MPTC)</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #22D3EE;" class="lang-en">Ministry of Post & Telecom</p>
             <h3 style="font-size: 17px; font-weight: 800; margin: 3px 0;">CamCERT Cambodia</h3>
-            <p style="font-size: 21px; font-weight: 800; color: #22D3EE; margin: 4px 0; font-family: monospace;">023 722 391</p>
-            <p style="font-size: 13px; color: var(--soft-dark);">camcert.gov.kh · សន្តិសុខបច្ចេកវិទ្យា</p>
+            <p style="font-size: 21px; font-weight: 800; color: #22D3EE; margin: 6px 0; font-family: monospace;">023 722 391</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-km">camcert.gov.kh · សន្តិសុខបច្ចេកវិទ្យា</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-en">camcert.gov.kh · Cybersecurity team</p>
           </div>
 
           <!-- CWCC -->
           <div class="bento-card" style="border-top: 4px solid #EC4899; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #F472B6;">ការពារសិទ្ធិស្ត្រី និងកុមារ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #F472B6;" class="lang-km">ការពារសិទ្ធិស្ត្រី និងកុមារ</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #F472B6;" class="lang-en">Women & Child Protection</p>
             <h3 style="font-size: 17px; font-weight: 800; margin: 3px 0;">CWCC Hotline</h3>
-            <p style="font-size: 21px; font-weight: 800; color: #F472B6; margin: 4px 0; font-family: monospace;">012 828 732</p>
-            <p style="font-size: 13px; color: var(--soft-dark);">ឬ 023 993 429 · សេវាច្បាប់ និងជម្រក</p>
+            <p style="font-size: 21px; font-weight: 800; color: #F472B6; margin: 6px 0; font-family: monospace;">012 828 732</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-km">ឬ 023 993 429 · សេវាច្បាប់ និងជម្រក</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-en">or 023 993 429 · Legal aid & shelter</p>
           </div>
 
           <!-- Take It Down -->
           <div class="bento-card" style="border-top: 4px solid #10B981; padding: 16px 18px;">
-            <p style="font-size: 12.5px; font-weight: 700; color: #34D399;">ដករូបចេញពី Internet</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #34D399;" class="lang-km">ដករូបចេញពី Internet</p>
+            <p style="font-size: 12.5px; font-weight: 700; color: #34D399;" class="lang-en">Global Image Takedowns</p>
             <h3 style="font-size: 17px; font-weight: 800; margin: 3px 0;">Take It Down (NCMEC)</h3>
             <p style="font-size: 14.5px; font-weight: 700; color: #6EE7B7; margin: 6px 0;">takeitdown.ncmec.org</p>
-            <p style="font-size: 13px; color: var(--soft-dark);">លុបរូបអាក្រាតអនីតិជនចេញពី Web</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-km">លុបរូបអាក្រាតអនីតិជនចេញពី Web</p>
+            <p style="font-size: 13px; color: var(--soft-dark);" class="lang-en">Eradicate minor explicit photos</p>
           </div>
         </div>
 
         <div style="margin-top: 10px; display: flex; align-items: center; justify-content: space-between;">
           <p style="font-size: 16px; color: var(--soft-dark);" class="lang-km">បញ្ជីលេខទូរស័ព្ទពេញលេញមាននៅលើ៖ <strong style="color: var(--accent-mint);">sophat.space/help</strong></p>
           <p style="font-size: 16px; color: var(--soft-dark);" class="lang-en">Full emergency directory available at: <strong style="color: var(--accent-mint);">sophat.space/help</strong></p>
-          <span style="font-size: 14px; color: var(--sage-text);">រក្សាទុក និងចែករំលែកដើម្បីជួយសង្គ្រោះកុមារ</span>
+          <span style="font-size: 14px; color: var(--sage-text);" class="lang-km">រក្សាទុក និងចែករំលែកដើម្បីជួយសង្គ្រោះកុមារ</span>
+          <span style="font-size: 14px; color: var(--sage-text);" class="lang-en">Save and share to protect children</span>
         </div>
       </section>
 
@@ -2221,7 +2251,8 @@
               <div class="squircle-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <span class="bento-badge">សារគន្លឹះ ៣ ចំណុច</span>
+              <span class="bento-badge lang-km">សារគន្លឹះ ៣ ចំណុច</span>
+              <span class="bento-badge lang-en">3 Core Takeaways</span>
             </div>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 10px; font-size: 18px; color: var(--soft-dark);">
               <li style="display: flex; gap: 12px;">
@@ -2340,11 +2371,11 @@
       <span class="lang-en">Laser</span>
     </button>
 
-    <!-- A4 Document PDF Print Button -->
-    <button id="btn-print" class="ctrl-btn" title="Print or Save A4 Handbook Document (Shortcut: P / Ctrl+P)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      <span class="lang-km">📄 សៀវភៅ A4 PDF (P)</span>
-      <span class="lang-en">📄 A4 Document PDF (P)</span>
+    <!-- A4 Document PDF Download Button -->
+    <button id="btn-print" class="ctrl-btn ctrl-btn-primary" title="Download or Print A4 Document Handbook (Shortcut: P)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span class="lang-km">📥 ទាញយក A4 PDF (P)</span>
+      <span class="lang-en">📥 Download A4 PDF (P)</span>
     </button>
 
     <!-- Fullscreen -->
@@ -2354,18 +2385,22 @@
   </div>
 
   <!-- ========================================================
-       PRINT DOCUMENT TEXT EXPERIENCE (A4 HANDBOOK)
+       PRINT DOCUMENT TEXT EXPERIENCE (100% PURE KHMER & PURE ENGLISH SEPARATION)
        ======================================================== -->
   <div class="document-print-view">
     <!-- Masthead -->
     <header class="doc-header">
       <div>
-        <p class="doc-brand-title">SOPHAT.SPACE · គម្រោងប្រយោជន៍សាធារណៈឌីជីថល</p>
-        <p class="doc-brand-sub">Cambodia Digital Public Good · Open Knowledge Initiative</p>
+        <p class="doc-brand-title lang-km">SOPHAT.SPACE · គម្រោងប្រយោជន៍សាធារណៈឌីជីថល</p>
+        <p class="doc-brand-title lang-en">SOPHAT.SPACE · Digital Public Good Initiative</p>
+        <p class="doc-brand-sub lang-km">Cambodia Digital Public Good · Open Knowledge Initiative</p>
+        <p class="doc-brand-sub lang-en">Cambodia Digital Public Good · Open Knowledge Initiative</p>
       </div>
       <div class="doc-meta">
-        <p><strong>ឯកសារណែនាំផ្លូវការ (Handbook)</strong></p>
-        <p>បោះពុម្ព៖ ឆ្នាំ ២០២៦ · sophat.space/help</p>
+        <p class="lang-km"><strong>ឯកសារណែនាំផ្លូវការ (Handbook)</strong></p>
+        <p class="lang-en"><strong>Official Action Guide & Policy Brief</strong></p>
+        <p class="lang-km">បោះពុម្ព៖ ឆ្នាំ ២០២៦ · sophat.space/help</p>
+        <p class="lang-en">Published: 2026 · sophat.space/help</p>
       </div>
     </header>
 
@@ -2414,30 +2449,60 @@
         <span class="lang-km">ទម្រង់ធំៗទាំង ៦ នៃ OCSEA ដែលកើតមានលើប្រព័ន្ធអនឡាញ</span>
         <span class="lang-en">6 Critical Manifestations of OCSEA</span>
       </h2>
-      <div class="doc-grid-2">
+
+      <!-- Khmer Section 2 -->
+      <div class="doc-grid-2 lang-km">
         <div class="doc-card-print">
           <p class="doc-card-print-title">1. Online Grooming (ការលួងលោមបោកបញ្ឆោត)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">ដំណើរការកសាងទំនុកចិត្ត បង្កើតភាពស្និទ្ធស្នាល បញ្ចុះបញ្ចូលកុំឱ្យប្រាប់ឪពុកម្តាយ និងបំបែកកុមារចេញពីគ្រួសារដើម្បីកេងប្រវ័ញ្ចផ្លូវភេទ។</p>
+          <p class="doc-p" style="font-size: 9pt;">ដំណើរការកសាងទំនុកចិត្ត បង្កើតភាពស្និទ្ធស្នាល បញ្ចុះបញ្ចូលកុំឱ្យប្រាប់ឪពុកម្តាយ និងបំបែកកុមារចេញពីគ្រួសារដើម្បីកេងប្រវ័ញ្ចផ្លូវភេទ។</p>
         </div>
         <div class="doc-card-print">
           <p class="doc-card-print-title">2. Sextortion (ការគំរាមកំហែងទារប្រាក់/រូបភាព)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">ការប្រើប្រាស់រូបភាពអាក្រាត ឬវីដេអូសម្ងាត់របស់កុមារ ដើម្បីគំរាមទារប្រាក់ ឬបង្ខំឱ្យផ្ញើរូបភាពកាន់តែធ្ងន់ធ្ងរថែមទៀត។</p>
+          <p class="doc-p" style="font-size: 9pt;">ការប្រើប្រាស់រូបភាពអាក្រាត ឬវីដេអូសម្ងាត់របស់កុមារ ដើម្បីគំរាមទារប្រាក់ ឬបង្ខំឱ្យផ្ញើរូបភាពកាន់តែធ្ងន់ធ្ងរថែមទៀត។</p>
         </div>
         <div class="doc-card-print">
           <p class="doc-card-print-title">3. CSAM (សម្ភារៈរំលោភបំពានផ្លូវភេទកុមារ)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">រូបភាព ឬវីដេអូរំលោភបំពានកុមារ — ការបង្កើត ការមើល ការកាន់កាប់ និងការ Forward ចែករំលែកគឺជាបទល្មើសព្រហ្មទណ្ឌធ្ងន់ធ្ងរ។</p>
+          <p class="doc-p" style="font-size: 9pt;">រូបភាព ឬវីដេអូរំលោភបំពានកុមារ — ការបង្កើត ការមើល ការកាន់កាប់ និងការ Forward ចែករំលែកគឺជាបទល្មើសព្រហ្មទណ្ឌធ្ងន់ធ្ងរ។</p>
         </div>
         <div class="doc-card-print">
           <p class="doc-card-print-title">4. Live-Streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភ)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">ការផ្សាយផ្ទាល់តាមកាមេរ៉ាស្មាតហ្វូន ឬ Webcam ដោយមានអ្នកបញ្ជា និងផ្ទេរប្រាក់ពីចម្ងាយតាមរយៈបច្ចេកវិទ្យាហិរញ្ញវត្ថុឌីជីថល។</p>
+          <p class="doc-p" style="font-size: 9pt;">ការផ្សាយផ្ទាល់តាមកាមេរ៉ាស្មាតហ្វូន ឬ Webcam ដោយមានអ្នកបញ្ជា និងផ្ទេរប្រាក់ពីចម្ងាយតាមរយៈបច្ចេកវិទ្យាហិរញ្ញវត្ថុឌីជីថល។</p>
         </div>
         <div class="doc-card-print">
           <p class="doc-card-print-title">5. Financial Exploitation (ការកេងប្រវ័ញ្ចដើម្បីប្រាក់)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">ការដោះដូរសកម្មភាពផ្លូវភេទ ឬរូបភាព ដើម្បីទទួលបានលុយ ការទិញ Skin ក្នុង Game ការបញ្ចូលលុយទូរស័ព្ទ ឬក្នុងបណ្តាញជួញដូរ។</p>
+          <p class="doc-p" style="font-size: 9pt;">ការដោះដូរសកម្មភាពផ្លូវភេទ ឬរូបភាព ដើម្បីទទួលបានលុយ ការទិញ Skin ក្នុង Game ការបញ្ចូលលុយទូរស័ព្ទ ឬក្នុងបណ្តាញជួញដូរ។</p>
         </div>
         <div class="doc-card-print">
           <p class="doc-card-print-title">6. AI Deepfakes (រូបភាពអាសអាភាសបង្កើតដោយ AI)</p>
-          <p class="doc-p" style="font-size: 9.5pt;">ការប្រើប្រាស់ Generative AI កាត់តមុខកុមារពីរូបថតធម្មតានៅសាលា ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយដើម្បីគំរាម ឬ Bullying។</p>
+          <p class="doc-p" style="font-size: 9pt;">ការប្រើប្រាស់ Generative AI កាត់តមុខកុមារពីរូបថតធម្មតានៅសាលា ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយដើម្បីគំរាម ឬ Bullying។</p>
+        </div>
+      </div>
+
+      <!-- English Section 2 -->
+      <div class="doc-grid-2 lang-en">
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">1. Online Grooming</p>
+          <p class="doc-p" style="font-size: 9pt;">Cultivating emotional trust, offering digital gifts, enforcing secrecy, and isolating minors from their families for sexual exploitation.</p>
+        </div>
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">2. Sextortion</p>
+          <p class="doc-p" style="font-size: 9pt;">Weaponizing private or sensitive images to coerce minors into paying money, providing gift cards, or producing further explicit content.</p>
+        </div>
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">3. CSAM (Child Sexual Abuse Material)</p>
+          <p class="doc-p" style="font-size: 9pt;">Recordings and imagery depicting child sexual violations. Production, possession, viewing, and secondary forwarding are severe global crimes.</p>
+        </div>
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">4. Live-Streaming Abuse</p>
+          <p class="doc-p" style="font-size: 9pt;">Real-time camera abuse broadcast over closed web channels, funded remotely via cryptocurrency or electronic remittances.</p>
+        </div>
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">5. Financial Exploitation</p>
+          <p class="doc-p" style="font-size: 9pt;">Coercing children to perform sexual acts in exchange for game currency, mobile top-ups, daily expenses, or trafficking rings.</p>
+        </div>
+        <div class="doc-card-print">
+          <p class="doc-card-print-title">6. AI Deepfakes</p>
+          <p class="doc-p" style="font-size: 9pt;">Using generative AI to synthesize explicit nudes from benign student portraits for extortion, school harassment, and digital bullying.</p>
         </div>
       </div>
     </section>
@@ -2454,7 +2519,7 @@
         <strong>សញ្ញាលើឧបករណ៍បច្ចេកវិទ្យា៖</strong> ក្រឡាប់ទូរស័ព្ទចុះក្រោមភ្លាមៗពេលមនុស្សធំដើរមក, ប្តូរលេខសម្ងាត់ Passcode ញឹកញាប់, ប្រើប្រាស់ App សម្ងាត់ (Secret Vaults), លួចឆាតនៅម៉ោង ២–៣ យប់។
       </p>
       <p class="doc-p lang-en">
-        <strong>Behavioral Signs:</strong> Withdrawal from loved ones, insomnia, sudden weight loss, visible panic when receiving phone notifications, unexplained gifts or money.<br/>
+        <strong>Behavioral Signs:</strong> Emotional withdrawal, insomnia, sudden weight loss, visible panic when receiving phone notifications, unexplained gifts or money.<br/>
         <strong>Device Signs:</strong> Instantly hiding screens when adults approach, constantly changing lock screen codes, using hidden vault apps, late-night secretive video calls.
       </p>
     </section>
@@ -2467,43 +2532,89 @@
         <span class="lang-en">The 4-Step Emergency Action Framework</span>
       </h2>
 
-      <div class="doc-step-box">
-        <div class="doc-step-badge">1</div>
-        <div>
-          <strong style="font-size: 11pt; color: #B91C1C;">ជំហានទី ១៖ បញ្ឈប់ (STOP)</strong>
-          <p class="doc-p" style="margin-top: 2pt;">
-            ឈប់ឆ្លើយតបសារជនល្មើសជាបន្ទាន់។ <strong>កុំផ្ញើប្រាក់ដាច់ខាត</strong> ព្រោះការបង់ប្រាក់មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ កុំផ្ញើរូបបន្ថែម និងរក្សាភាពស្ងប់ស្ងាត់។
-          </p>
+      <!-- Khmer Section 4 -->
+      <div class="lang-km">
+        <div class="doc-step-box">
+          <div class="doc-step-badge">1</div>
+          <div>
+            <strong style="font-size: 11pt; color: #B91C1C;">ជំហានទី ១៖ បញ្ឈប់ (STOP)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              ឈប់ឆ្លើយតបសារជនល្មើសជាបន្ទាន់។ <strong>កុំផ្ញើប្រាក់ដាច់ខាត</strong> ព្រោះការបង់ប្រាក់មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ កុំផ្ញើរូបបន្ថែម និងរក្សាភាពស្ងប់ស្ងាត់។
+            </p>
+          </div>
+        </div>
+
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #D97706;">2</div>
+          <div>
+            <strong style="font-size: 11pt; color: #D97706;">ជំហានទី ២៖ រក្សាទុកភស្តុតាង (RECORD)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              <strong>កុំលុប Chat ចោលដាច់ខាត!</strong> ធ្វើការ Screenshot សារគំរាមកំហែង កាលបរិច្ឆេទ ពេលវេលា គណនី Profile URL លេខសម្គាល់ User ID លេខទូរស័ព្ទ និងកុងធនាគារដែលជនល្មើសទាមទារ។ ប្រើមុខងារ Export Chat History។
+            </p>
+          </div>
+        </div>
+
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #2563EB;">3</div>
+          <div>
+            <strong style="font-size: 11pt; color: #2563EB;">ជំហានទី ៣៖ រាយការណ៍ (REPORT)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              ទាក់ទងនគរបាលប្រឆាំងការជួញដូរមនុស្ស និងអនីតិជន (Hotline <strong>1288</strong>), អង្គការ APLE Cambodia (Hotline <strong>092 311 511</strong>), រាយការណ៍ Report លើ App (Child Safety), និងប្រើប្រាស់ <strong>takeitdown.ncmec.org</strong> ដើម្បីលុបរូបចេញពី Internet។
+            </p>
+          </div>
+        </div>
+
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #059669;">4</div>
+          <div>
+            <strong style="font-size: 11pt; color: #059669;">ជំហានទី ៤៖ គាំទ្រផ្លូវចិត្ត (SUPPORT)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              ផ្តល់ភាពកក់ក្តៅ និងការលួងលោម។ <strong>មិនត្រូវស្តីបន្ទោសជនរងគ្រោះជាដាច់ខាត!</strong> ហៅទៅកាន់ Child Helpline Cambodia (Hotline <strong>1280</strong> ឥតគិតថ្លៃ ២៤/៧) ដើម្បីទទួលបានការប្រឹក្សាផ្លូវចិត្តពីអ្នកជំនាញ។
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="doc-step-box">
-        <div class="doc-step-badge" style="background: #D97706;">2</div>
-        <div>
-          <strong style="font-size: 11pt; color: #D97706;">ជំហានទី ២៖ រក្សាទុកភស្តុតាង (RECORD)</strong>
-          <p class="doc-p" style="margin-top: 2pt;">
-            <strong>កុំលុប Chat ចោលដាច់ខាត!</strong> ធ្វើការ Screenshot សារគំរាមកំហែង កាលបរិច្ឆេទ ពេលវេលា គណនី Profile URL លេខសម្គាល់ User ID លេខទូរស័ព្ទ និងកុងធនាគារដែលជនល្មើសទាមទារ។ ប្រើមុខងារ Export Chat History។
-          </p>
+      <!-- English Section 4 -->
+      <div class="lang-en">
+        <div class="doc-step-box">
+          <div class="doc-step-badge">1</div>
+          <div>
+            <strong style="font-size: 11pt; color: #B91C1C;">STEP 1: STOP (Cease Communication)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              Stop all replies to the perpetrator immediately. <strong>NEVER PAY RANSOM</strong> — payments guarantee escalated blackmail rather than deletion. Do not send further imagery; remain calm.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="doc-step-box">
-        <div class="doc-step-badge" style="background: #2563EB;">3</div>
-        <div>
-          <strong style="font-size: 11pt; color: #2563EB;">ជំហានទី ៣៖ រាយការណ៍ (REPORT)</strong>
-          <p class="doc-p" style="margin-top: 2pt;">
-            ទាក់ទងនគរបាលប្រឆាំងការជួញដូរមនុស្ស និងអនីតិជន (Hotline <strong>1288</strong>), អង្គការ APLE Cambodia (Hotline <strong>092 311 511</strong>), រាយការណ៍ Report លើ App (Child Safety), និងប្រើប្រាស់ <strong>takeitdown.ncmec.org</strong> ដើម្បីលុបរូបចេញពី Internet។
-          </p>
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #D97706;">2</div>
+          <div>
+            <strong style="font-size: 11pt; color: #D97706;">STEP 2: RECORD (Preserve Evidence)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              <strong>DO NOT DELETE CHAT LOGS!</strong> Screenshot extortion threats, timestamps, profile URLs, numerical User IDs, phone numbers, and payment details. Use the in-app Export Chat History feature.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="doc-step-box">
-        <div class="doc-step-badge" style="background: #059669;">4</div>
-        <div>
-          <strong style="font-size: 11pt; color: #059669;">ជំហានទី ៤៖ គាំទ្រផ្លូវចិត្ត (SUPPORT)</strong>
-          <p class="doc-p" style="margin-top: 2pt;">
-            ផ្តល់ភាពកក់ក្តៅ និងការលួងលោម។ <strong>មិនត្រូវស្តីបន្ទោសជនរងគ្រោះជាដាច់ខាត!</strong> ហៅទៅកាន់ Child Helpline Cambodia (Hotline <strong>1280</strong> ឥតគិតថ្លៃ ២៤/៧) ដើម្បីទទួលបានការប្រឹក្សាផ្លូវចិត្តពីអ្នកជំនាញ។
-          </p>
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #2563EB;">3</div>
+          <div>
+            <strong style="font-size: 11pt; color: #2563EB;">STEP 3: REPORT (Alert Enforcement & Platforms)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              Call Anti-Human Trafficking & Juvenile Police (Hotline <strong>1288</strong>), APLE Cambodia (Hotline <strong>092 311 511</strong>), report the account in-app for Child Safety, and hash imagery via <strong>takeitdown.ncmec.org</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="doc-step-box">
+          <div class="doc-step-badge" style="background: #059669;">4</div>
+          <div>
+            <strong style="font-size: 11pt; color: #059669;">STEP 4: SUPPORT (Psychosocial Care)</strong>
+            <p class="doc-p" style="margin-top: 2pt;">
+              Provide unconditional emotional safety and love. <strong>NEVER BLAME THE VICTIM!</strong> Call Child Helpline Cambodia (Hotline <strong>1280</strong> toll-free 24/7) to connect with professional youth counselors.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -2513,11 +2624,13 @@
       <h2 class="doc-section-h2">
         <span class="doc-section-num">5</span>
         <span class="lang-km">បញ្ជីលេខទូរស័ព្ទ និងសេវាជំនួយបន្ទាន់នៅកម្ពុជា (Emergency Hotlines)</span>
-        <span class="lang-en">Cambodia Emergency Hotlines & Support Directory</span>
+        <span class="lang-en">Cambodia Emergency Hotlines & Specialized Support Directory</span>
       </h2>
       <p class="doc-p lang-km">រក្សាទុកលេខទូរស័ព្ទទាំងនេះក្នុងទូរស័ព្ទដៃ និងបិទផ្សាយនៅតាមសាលារៀន ឬសហគមន៍៖</p>
+      <p class="doc-p lang-en">Save these verified emergency contacts in mobile phones and post across community centers:</p>
 
-      <table class="doc-table">
+      <!-- Khmer Table -->
+      <table class="doc-table lang-km">
         <thead>
           <tr>
             <th>ស្ថាប័ន / អង្គការ</th>
@@ -2577,13 +2690,77 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- English Table -->
+      <table class="doc-table lang-en">
+        <thead>
+          <tr>
+            <th>Agency / Organization</th>
+            <th>Emergency Contact</th>
+            <th>Role & Specialized Services</th>
+            <th>Portal / Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Anti-Trafficking & Juvenile Police (AHTJPD)</strong></td>
+            <td><span class="doc-hotline-badge">1288</span> / 012 852 241</td>
+            <td>24/7 law enforcement, criminal investigations, and crisis raid rescue</td>
+            <td>Cambodia National Police</td>
+          </tr>
+          <tr>
+            <td><strong>APLE Cambodia</strong></td>
+            <td><span class="doc-hotline-badge">092 311 511</span></td>
+            <td>Specialist child protection NGO, CSAM investigations, and legal advocacy</td>
+            <td>aplecambodia.org</td>
+          </tr>
+          <tr>
+            <td><strong>Child Helpline Cambodia</strong></td>
+            <td><span class="doc-hotline-badge">1280</span> (Toll-free)</td>
+            <td>24/7 confidential psychosocial counseling and child welfare referrals</td>
+            <td>childhelplinecambodia.org</td>
+          </tr>
+          <tr>
+            <td><strong>Child Advocacy Center (CAC)</strong></td>
+            <td><span class="doc-hotline-badge">010 220 771</span> / 071 7210 771</td>
+            <td>Trauma-informed care, child advocacy, and rehabilitation services</td>
+            <td>Child Support Services</td>
+          </tr>
+          <tr>
+            <td><strong>Anti-Cybercrime Police Department</strong></td>
+            <td>hotline.police.gov.kh</td>
+            <td>Official digital crime reporting platform for scams, phishing, and hacks</td>
+            <td>Anti-Cybercrime Police</td>
+          </tr>
+          <tr>
+            <td><strong>CamCERT (MPTC)</strong></td>
+            <td>023 722 391</td>
+            <td>National computer emergency response team, domain blocking, threats</td>
+            <td>camcert.gov.kh</td>
+          </tr>
+          <tr>
+            <td><strong>CWCC (Women & Child Crisis Center)</strong></td>
+            <td>012 828 732 / 023 993 429</td>
+            <td>Emergency shelter, legal representation, and trauma recovery services</td>
+            <td>cwcc.org.kh</td>
+          </tr>
+          <tr>
+            <td><strong>Take It Down (NCMEC)</strong></td>
+            <td>takeitdown.ncmec.org</td>
+            <td>Cryptographic hash platform to stop online circulation of youth images</td>
+            <td>Global Platform</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- Footer Colophon -->
     <footer class="doc-footer">
       <div>
-        <p><strong>SOPHAT.SPACE</strong> — គម្រោងប្រយោជន៍សាធារណៈឌីជីថល (Digital Public Good)</p>
-        <p>រក្សាសិទ្ធិឆ្នាំ ២០២៦ · អាចទាញយក ចែករំលែក និងបោះពុម្ពផ្សាយដោយសេរីដើម្បីប្រយោជន៍អប់រំសង្គម</p>
+        <p class="lang-km"><strong>SOPHAT.SPACE</strong> — គម្រោងប្រយោជន៍សាធារណៈឌីជីថល (Digital Public Good)</p>
+        <p class="lang-en"><strong>SOPHAT.SPACE</strong> — Cambodia Digital Public Good Initiative</p>
+        <p class="lang-km">រក្សាសិទ្ធិឆ្នាំ ២០២៦ · អាចទាញយក ចែករំលែក និងបោះពុម្ពផ្សាយដោយសេរីដើម្បីប្រយោជន៍អប់រំសង្គម</p>
+        <p class="lang-en">Copyright 2026 · Free to download, reproduce, and distribute for public educational purposes</p>
       </div>
       <div style="text-align: right;">
         <p>គេហទំព័រ៖ <strong>sophat.space</strong> · ស្លាយបទបង្ហាញ៖ <strong>sophat.space/slide-ocsea</strong></p>
@@ -2709,10 +2886,22 @@
         showControlBar();
       });
 
-      // Print / PDF
-      btnPrint.addEventListener('click', () => {
+      // Direct PDF Download / Print Trigger
+      function triggerDownloadPDF() {
+        const originalTitle = document.title;
+        const targetFilename = currentLang === 'km' 
+          ? 'SophatSpace-OCSEA-Digital-Safety-Handbook-KH' 
+          : 'SophatSpace-OCSEA-Digital-Safety-Handbook-EN';
+        
+        document.title = targetFilename;
         window.print();
-      });
+        
+        setTimeout(() => {
+          document.title = originalTitle;
+        }, 2000);
+      }
+
+      btnPrint.addEventListener('click', triggerDownloadPDF);
 
       // Fullscreen
       btnFs.addEventListener('click', () => {
@@ -2756,7 +2945,7 @@
           if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
           else document.exitFullscreen().catch(() => {});
         } else if (e.key === 'p' || e.key === 'P') {
-          window.print();
+          triggerDownloadPDF();
         }
       });
 
