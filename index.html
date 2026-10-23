@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · Digital Safety & OCSEA · Sophat CHY · Hosted by A21</title>
-  <meta name="description" content="Digital Safety & Preventing Online Child Sexual Exploitation and Abuse (OCSEA) in Cambodia · Presented by Sophat CHY · Hosted by A21 Cambodia" />
+  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · Sophat.Space & A21</title>
+  <meta name="description" content="Digital Safety & Preventing Online Child Sexual Exploitation and Abuse (OCSEA) in Cambodia · Presented by Sophat CHY · Hosted by A21 Cambodia · Powered by Sophat.Space" />
   <meta name="author" content="Sophat CHY (ជី សុផាត)" />
-  <meta name="theme-color" content="#090d16" />
+  <meta name="theme-color" content="#059669" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="សុវត្ថិភាពឌីជីថល និង OCSEA · Digital Safety & OCSEA (Hosted by A21)" />
-  <meta property="og:description" content="បទបង្ហាញស្តីអំពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា រៀបចំដោយ A21 និងធ្វើបទបង្ហាញដោយ ជី សុផាត (Sophat CHY)" />
+  <meta property="og:title" content="សុវត្ថិភាពឌីជីថល និង OCSEA · Digital Safety & OCSEA (Sophat.Space & A21)" />
+  <meta property="og:description" content="បទបង្ហាញស្តីអំពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា រៀបចំដោយ A21 និងធ្វើបទបង្ហាញដោយ ជី សុផាត (Sophat CHY) · Sophat.Space" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/cambodia-anti-trafficking-hotlines.png" />
 
@@ -21,28 +21,33 @@
 
   <style>
     /* ========================================================
-       A21-INSPIRED DESIGN SYSTEM & VARIABLES
+       SOPHAT.SPACE & A21 DESIGN SYSTEM & TOKENS
        ======================================================== */
     :root {
-      --bg: #090d16;
-      --panel: #111827;
-      --panel-hover: #172033;
-      --panel2: #141d2e;
-      --card-border: rgba(255, 255, 255, 0.09);
+      /* Sophat.Space Signature Dark Canvas */
+      --bg: #0b1220;
+      --panel: #111a2b;
+      --panel-hover: #16243b;
+      --panel2: #142036;
+      --card-border: rgba(255, 255, 255, 0.08);
       --text: #f8fafc;
       --text-sub: #cbd5e1;
       --muted: #94a3b8;
       --line: rgba(255, 255, 255, 0.08);
       --line-strong: rgba(255, 255, 255, 0.16);
-      --soft: rgba(245, 158, 11, 0.06);
 
-      /* A21 Signature Accents */
-      --accent: #f59e0b;       /* A21 Signature Amber/Gold */
-      --accent-hover: #fbbf24;
-      --accent-rgb: 245, 158, 11;
-      --accent-cyan: #06b6d4;  /* Tech / Protection Cyan */
-      --accent-red: #ef4444;   /* Alert / Emergency Crimson */
-      --accent-blue: #3b82f6;
+      /* Sophat.Space Iconic Emerald Accent */
+      --accent: #10b981;
+      --accent-hover: #34d399;
+      --accent-rgb: 16, 185, 129;
+      --accent-green: #059669;
+      --soft: rgba(16, 185, 129, 0.08);
+
+      /* A21 Gold & Alert Accents */
+      --accent-a21: #f59e0b;
+      --accent-a21-hover: #fbbf24;
+      --accent-red: #ef4444;
+      --accent-cyan: #06b6d4;
 
       --radius: 12px;
       --radius-sm: 8px;
@@ -50,9 +55,10 @@
     }
 
     html[data-theme="day"] {
-      --bg: #f8fafc;
+      /* Sophat.Space Signature Light Canvas */
+      --bg: #f8faf9;
       --panel: #ffffff;
-      --panel-hover: #f1f5f9;
+      --panel-hover: #f0fdf4;
       --panel2: #f1f5f9;
       --card-border: #e2e8f0;
       --text: #0f172a;
@@ -60,8 +66,11 @@
       --muted: #64748b;
       --line: #e2e8f0;
       --line-strong: #cbd5e1;
-      --soft: rgba(245, 158, 11, 0.08);
-      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --accent: #059669;
+      --accent-hover: #047857;
+      --accent-rgb: 5, 150, 105;
+      --soft: rgba(5, 150, 105, 0.08);
+      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
     }
 
     /* Bilingual Switching Rules */
@@ -86,6 +95,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Kantumruy Pro', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 500;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
@@ -102,7 +112,7 @@
     }
 
     /* ========================================================
-       TOP HEADER & CONTROLS
+       TOP HEADER & SOPHAT.SPACE BRAND MARK
        ======================================================== */
     .top {
       height: clamp(48px, 6.5vh, 58px);
@@ -125,23 +135,29 @@
       font-size: clamp(13px, 1.2vw, 15px);
     }
 
-    .a21-header-badge {
+    /* Sophat.Space Brand Mark */
+    .sophat-space-mark {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--accent);
+      text-decoration: none;
+      color: var(--text);
     }
-    .a21-header-logo {
-      height: 18px;
-      width: auto;
-      display: block;
+    .sophat-space-badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #059669;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 2px 6px rgba(5, 150, 105, 0.4);
+      flex-shrink: 0;
+    }
+    .sophat-space-title {
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      font-size: 14.5px;
     }
 
     .brand-divider {
@@ -150,10 +166,30 @@
       background: var(--line-strong);
     }
 
-    .meta {
-      font-size: 12px;
+    /* A21 Event Badge */
+    .a21-header-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--accent-a21);
+    }
+    .a21-header-logo {
+      height: 17px;
+      width: auto;
+      display: block;
+    }
+
+    .deck-title {
+      font-size: 12.5px;
       color: var(--muted);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .tools {
@@ -184,23 +220,23 @@
       border-color: var(--accent);
     }
     .tool.primary {
-      background: var(--accent);
-      color: #000000;
-      border-color: var(--accent);
+      background: #059669;
+      color: #ffffff;
+      border-color: #059669;
       font-weight: 700;
     }
     .tool.primary:hover {
-      background: var(--accent-hover);
+      background: #10b981;
     }
     .tool[aria-pressed="true"] {
-      background: rgba(245, 158, 11, 0.2);
+      background: rgba(16, 185, 129, 0.18);
       color: var(--accent);
       border-color: var(--accent);
     }
 
     .counter {
       font-variant-numeric: tabular-nums;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 13px;
       color: var(--accent);
       padding: 4px 8px;
@@ -209,7 +245,7 @@
       border: 1px solid var(--line);
     }
 
-    /* Progress bar */
+    /* Progress bar: Emerald to A21 Amber Gradient */
     .progress {
       height: 3px;
       width: 100%;
@@ -219,7 +255,7 @@
     }
     .progress-bar {
       height: 100%;
-      background: linear-gradient(90deg, #f59e0b, #06b6d4);
+      background: linear-gradient(90deg, #059669, #10b981, #f59e0b);
       width: 5%;
       transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -314,7 +350,7 @@
       transition: border-color 0.15s ease;
     }
     .card:hover {
-      border-color: rgba(245, 158, 11, 0.4);
+      border-color: rgba(16, 185, 129, 0.4);
     }
 
     .card .tag {
@@ -470,7 +506,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      border-left: 4px solid #ef4444;
+      border-left: 4px solid var(--accent-a21);
     }
     .host-a21-logo {
       height: clamp(34px, 3.2vw, 44px);
@@ -480,8 +516,8 @@
 
     /* Slide 18: Campaign & Hotline Center */
     .slide18-banner {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.08));
-      border: 1px solid rgba(239, 68, 68, 0.35);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(245, 158, 11, 0.35);
       border-radius: var(--radius);
       padding: clamp(8px, 1vh, 12px) clamp(12px, 1.4vw, 16px);
       display: flex;
@@ -572,13 +608,13 @@
       background: var(--panel-hover);
     }
     .navbtn.primary {
-      background: var(--accent);
-      color: #000000;
-      border-color: var(--accent);
+      background: #059669;
+      color: #ffffff;
+      border-color: #059669;
       font-weight: 700;
     }
     .navbtn.primary:hover {
-      background: var(--accent-hover);
+      background: #10b981;
     }
     .navbtn:disabled {
       opacity: 0.35;
@@ -804,12 +840,12 @@
         color: #334155 !important;
       }
       .callout {
-        background: #f1f5f9 !important;
-        border-left-color: #d97706 !important;
+        background: #f0fdf4 !important;
+        border-left-color: #059669 !important;
         color: #0f172a !important;
       }
       .eyebrow {
-        color: #d97706 !important;
+        color: #059669 !important;
       }
     }
   </style>
@@ -820,19 +856,31 @@
   <!-- Top Navigation Header -->
   <header class="top">
     <div class="brand">
-      <div class="a21-header-badge" title="Hosted by A21 Cambodia">
+      <!-- Sophat.Space Official Brand Mark -->
+      <a href="https://sophat.space" target="_blank" rel="noopener noreferrer" class="sophat-space-mark" title="Sophat.Space — ថ្នាលសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ">
+        <div class="sophat-space-badge-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            <path d="M7 12h2.1l1.1-2.2 2 5 2-7 1.3 4.2h1.5" />
+          </svg>
+        </div>
+        <span class="sophat-space-title">Sophat.Space</span>
+      </a>
+
+      <div class="brand-divider"></div>
+
+      <!-- A21 Event Badge -->
+      <div class="a21-header-badge" title="Hosted by A21 Cambodia (Child Advocacy Center)">
         <img src="assets/a21-logo.png" alt="A21" class="a21-header-logo" />
         <span class="lang-km">រៀបចំដោយ A21</span>
         <span class="lang-en">HOSTED BY A21</span>
       </div>
+
       <div class="brand-divider"></div>
-      <span class="title">
+
+      <span class="deck-title">
         <span class="lang-km">សុវត្ថិភាពឌីជីថល &amp; OCSEA</span>
         <span class="lang-en">Digital Safety &amp; OCSEA</span>
-      </span>
-      <span class="meta">
-        <span class="lang-km">· ជី សុផាត (Sophat CHY)</span>
-        <span class="lang-en">· Sophat CHY</span>
       </span>
     </div>
 
@@ -913,7 +961,7 @@
         <div class="host-card-box">
           <img src="assets/a21-logo.png" alt="A21" class="host-a21-logo" />
           <div>
-            <div style="font-size: 11px; font-weight: 700; color: #ef4444; text-transform: uppercase;">
+            <div style="font-size: 11px; font-weight: 700; color: var(--accent-a21); text-transform: uppercase;">
               <span class="lang-km">រៀបចំដោយ / Event Hosted by:</span>
               <span class="lang-en">Event Host:</span>
             </div>
@@ -1113,7 +1161,7 @@
           <h3><span class="lang-km">អ្នកណាខ្លះអាចជាអ្នកប្រព្រឹត្ត?</span><span class="lang-en">Who Are the Groomers?</span></h3>
           <p><span class="lang-km"><strong>• មនុស្សចម្លែកក្លែងអត្តសញ្ញាណ៖</strong> ដាក់រូបក្មេងវ័យស្របាលគ្នា ឬរូបស្រស់ស្អាតលើ Facebook/TikTok ដើម្បីទាក់ទាញកុមារ។</span><span class="lang-en"><strong>• Fake Online Peers:</strong> Posing as fellow teenagers with attractive avatars on TikTok, Facebook, or Instagram.</span></p>
           <p><span class="lang-km"><strong>• មនុស្សស្គាល់មុខក្នុងជីវិតពិត៖</strong> អាចជាអ្នកជិតខាង មិត្តភក្តិ ឬមនុស្សធំដែលកុមារធ្លាប់ស្គាល់ តែឆ្លៀតឱកាសតាមអនឡាញ។</span><span class="lang-en"><strong>• Real-Life Acquaintances:</strong> Neighbors, relatives, or community members exploiting digital familiarity.</span></p>
-          <p><span class="lang-km"><strong>• គោលបំណងចម្បង៖</strong> ស្វែងរកចំណុចខ្សោយ និងភាពឯកោរបស់កុមារដើម្បីគ្រប់គ្រង។</span><span class="lang-en"><strong>• Core Tactic:</strong> Exploiting emotional loneliness to build artificial intimacy and control.</span></p>
+          <p><span class="lang-km">• គោលបំណងចម្បង៖ ស្វែងរកចំណុចខ្សោយ និងភាពឯកោរបស់កុមារដើម្បីគ្រប់គ្រង។</span><span class="lang-en">• Core Tactic: Exploiting emotional loneliness to build artificial intimacy and control.</span></p>
         </div>
       </div>
 
@@ -1459,7 +1507,7 @@
     <!-- SLIDE 14: DARK WEB VS REAL WORLD -->
     <section class="slide" aria-label="Slide 14 of 20">
       <div class="eyebrow">
-        <svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
         <span class="lang-km">ស្លាយ 14 / ២០ · ទីតាំង &amp; វេទិកាហានិភ័យ</span>
         <span class="lang-en">Slide 14 / 20 · Risk Locations &amp; Platforms</span>
       </div>
@@ -1522,7 +1570,7 @@
           <p><span class="lang-km">• <strong>ការភ័យខ្លាចទណ្ឌកម្ម៖</strong> ខ្លាចឪពុកម្តាយវាយ ដកហូតទូរស័ព្ទ ឬបណ្តេញចេញពីផ្ទះ។</span><span class="lang-en">• <strong>Fear of Punishment:</strong> Fear that parents will beat them, ban internet access, or expel them from school.</span></p>
         </div>
 
-        <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
+        <div class="card" style="border-color: rgba(16, 185, 129, 0.4);">
           <div class="tag"><span class="lang-km">ការផ្លាស់ប្តូរផ្នត់គំនិតរួមគ្នា</span><span class="lang-en">Mindset Shift Required</span></div>
           <h3><span class="lang-km">«ជនរងគ្រោះគ្មានកំហុសឡើយ!»</span><span class="lang-en">"The Victim is NEVER at Fault!"</span></h3>
           <p><span class="lang-km">• កុមារត្រូវបានបោកបញ្ឆោត ឬគំរាមកំហែងដោយជនល្មើសដែលមានចេតនាអាក្រក់។</span><span class="lang-en">• Minors are systematically manipulated by sophisticated, predatory adults.</span></p>
@@ -1608,8 +1656,8 @@
           <p><span class="lang-km">• Block គណនីជនល្មើស</span><span class="lang-en">• Block the perpetrator</span></p>
         </div>
 
-        <div class="card" style="border-top: 3px solid #f59e0b;">
-          <div class="tag" style="color: #f59e0b;"><span class="lang-km">២ · រក្សាទុក</span><span class="lang-en">2 · RECORD</span></div>
+        <div class="card" style="border-top: 3px solid var(--accent-a21);">
+          <div class="tag" style="color: var(--accent-a21);"><span class="lang-km">២ · រក្សាទុក</span><span class="lang-en">2 · RECORD</span></div>
           <h3>RECORD</h3>
           <p><span class="lang-km">• ថត Screenshot សារ</span><span class="lang-en">• Screenshot all chats</span></p>
           <p><span class="lang-km">• កត់ Username, Link</span><span class="lang-en">• Note @handle &amp; URLs</span></p>
@@ -1624,8 +1672,8 @@
           <p><span class="lang-km">• ប្តឹងនគរបាល <strong>1288</strong></span><span class="lang-en">• Police Hotline <strong>1288</strong></span></p>
         </div>
 
-        <div class="card" style="border-top: 3px solid #10b981;">
-          <div class="tag" style="color: #10b981;"><span class="lang-km">៤ · គាំទ្រ</span><span class="lang-en">4 · SUPPORT</span></div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+          <div class="tag" style="color: var(--accent);"><span class="lang-km">៤ · គាំទ្រ</span><span class="lang-en">4 · SUPPORT</span></div>
           <h3>SUPPORT</h3>
           <p><span class="lang-km">• ស្តាប់ដោយក្តីមេត្តា</span><span class="lang-en">• Listen with empathy</span></p>
           <p><span class="lang-km">• <strong>កុំស្តីបន្ទោសកុមារ</strong></span><span class="lang-en">• <strong>Never blame the child</strong></span></p>
@@ -1662,7 +1710,7 @@
       <div class="slide18-banner">
         <img src="assets/cambodia-anti-trafficking-hotlines.png" alt="យុទ្ធនាការយើងរួមគ្នាប្រយុទ្ធប្រឆាំងអំពើជួញដូរមនុស្ស" class="slide18-poster" />
         <div class="slide18-body">
-          <div style="font-size: 11px; font-weight: 800; color: #ef4444; letter-spacing: 0.5px; text-transform: uppercase;">
+          <div style="font-size: 11px; font-weight: 800; color: var(--accent-a21); letter-spacing: 0.5px; text-transform: uppercase;">
             <span class="lang-km">យុទ្ធនាការផ្លូវការ · សមត្ថកិច្ច និងអង្គការដៃគូ</span>
             <span class="lang-en">Official Joint Campaign · Police &amp; Civil Society</span>
           </div>
@@ -1678,12 +1726,12 @@
               </div>
               <div style="font-size: 14px; font-weight: 800; color: #ef4444;">Hotline: 1288 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 012 852 241</span></div>
             </div>
-            <div class="slide18-badge-item" style="border-left: 3px solid var(--accent);">
+            <div class="slide18-badge-item" style="border-left: 3px solid var(--accent-a21);">
               <div style="font-size: 11px; font-weight: 700; color: var(--text);">
                 <span class="lang-km">មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (CAC) / A21</span>
                 <span class="lang-en">Child Advocacy Center (CAC) / A21</span>
               </div>
-              <div style="font-size: 14px; font-weight: 800; color: var(--accent);">Hotline: 010 22 07 71 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 071 72 10 771</span></div>
+              <div style="font-size: 14px; font-weight: 800; color: var(--accent-a21);">Hotline: 010 22 07 71 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 071 72 10 771</span></div>
             </div>
           </div>
         </div>
@@ -1707,8 +1755,8 @@
           <p><span class="lang-km">• <strong>អ៊ីមែល CamCERT៖</strong> incident@camcert.gov.kh</span><span class="lang-en">• <strong>CamCERT Email:</strong> incident@camcert.gov.kh</span></p>
         </div>
 
-        <div class="card" style="border-top: 3px solid #a855f7;">
-          <div class="tag" style="color: #a855f7;"><span class="lang-km">ជំនួយផ្លូវចិត្ត &amp; សុវត្ថិភាពឌីជីថល</span><span class="lang-en">Psychosocial &amp; Digital Help</span></div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+          <div class="tag" style="color: var(--accent);"><span class="lang-km">ជំនួយផ្លូវចិត្ត &amp; សុវត្ថិភាពឌីជីថល</span><span class="lang-en">Psychosocial &amp; Digital Help</span></div>
           <h3><span class="lang-km">CWCC &amp; Sophat.Space</span><span class="lang-en">CWCC &amp; Sophat.Space</span></h3>
           <p><span class="lang-km">• <strong>CWCC (វិបត្តិស្ត្រី និងកុមារី)៖</strong> Hotline <strong>012 828 732</strong> | 023 993 429</span><span class="lang-en">• <strong>CWCC (Women &amp; Girls Crisis):</strong> <strong>012 828 732</strong> | 023 993 429</span></p>
           <p><span class="lang-km">• <strong>Stop Online Harm / Karpeer៖</strong> Telegram @KarpeerHelpLine</span><span class="lang-en">• <strong>Stop Online Harm / Karpeer:</strong> Telegram @KarpeerHelpLine</span></p>
@@ -2052,10 +2100,10 @@ function setLanguage(lang) {
   render();
   if (lang === "en") {
     showToast("🇬🇧 Switched to English (Afternoon Session)");
-    document.title = "Digital Safety & Preventing OCSEA · Sophat CHY · Hosted by A21";
+    document.title = "Digital Safety & Preventing OCSEA · Sophat.Space & A21";
   } else {
     showToast("🇰🇭 បានប្ដូរទៅភាសាខ្មែរ (Morning Session)");
-    document.title = "សុវត្ថិភាពឌីជីថល និង OCSEA · Sophat CHY · រៀបចំដោយ A21";
+    document.title = "សុវត្ថិភាពឌីជីថល និង OCSEA · Sophat.Space & A21";
   }
 }
 
@@ -2140,9 +2188,9 @@ confirmPdfBtn.addEventListener("click", async () => {
   // Set accurate document title for default PDF filename
   const oldTitle = document.title;
   if (currentLang === "en") {
-    document.title = "Digital-Safety-OCSEA-Presentation-A21-Sophat-CHY";
+    document.title = "Digital-Safety-OCSEA-Presentation-Sophat-Space-A21";
   } else {
-    document.title = "សុវត្ថិភាពឌីជីថល-និង-OCSEA-A21-ជី-សុផាត";
+    document.title = "សុវត្ថិភាពឌីជីថល-និង-OCSEA-Sophat-Space-A21-ជី-សុផាត";
   }
 
   // Ensure fonts are 100% loaded before triggering print dialog
