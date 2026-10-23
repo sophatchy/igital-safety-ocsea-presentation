@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <base href="./" />
-  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · v3.2 Final · Sophat.Space</title>
+  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · v3.3 Final · Sophat.Space</title>
   <meta name="description" content="Digital Safety & Preventing Online Child Sexual Exploitation and Abuse (OCSEA) in Cambodia · Presented by Sophat CHY · Sophat.Space" />
   <meta name="author" content="Sophat CHY (ជី សុផាត)" />
   <meta name="theme-color" content="#08110D" />
 
-  <link rel="icon" type="image/png" href="assets/sophat.jpg" />
   <link rel="canonical" href="https://sophat.space/slide-ocsea" />
-  <meta property="og:title" content="សុវត្ថិភាពឌីជីថល និង OCSEA · v3.2 Final · Sophat.Space" />
+  <meta property="og:title" content="សុវត្ថិភាពឌីជីថល និង OCSEA · v3.3 Final · Sophat.Space" />
   <meta property="og:description" content="សៀវភៅណែនាំ និងស្លាយបទបង្ហាញស្តីពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា · ជី សុផាត (Sophat CHY) · Sophat.Space" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sophat.space/slide-ocsea" />
-  <meta property="og:image" content="https://sophat.space/slide-ocsea/assets/cambodia-anti-trafficking-hotlines.png" />
 
   <!-- Google Fonts: Kantumruy Pro with display swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +22,7 @@
 
   <style>
     /* ========================================================
-       SOPHAT.SPACE FONT & DESIGN TOKENS (PITCH FORMATION)
+       SOPHAT.SPACE DUAL THEME ENGINE (DARK & LIGHT MODE)
        ======================================================== */
     @font-face {
       font-family: 'Kantumruy Pro';
@@ -34,12 +32,12 @@
       font-display: swap;
     }
 
-    :root {
+    :root, html[data-theme="dark"] {
       --bg: #08110D;
       --bg2: #0E1A14;
       --panel: rgba(17, 34, 27, 0.85);
       --panel-hover: rgba(22, 45, 36, 0.95);
-      --panel2: #14201B;
+      --panel-inner: rgba(11, 24, 18, 0.6);
       --card-border: rgba(255, 255, 255, 0.08);
       --card-border-hover: rgba(16, 185, 129, 0.35);
       --text: #F8FAFC;
@@ -53,11 +51,41 @@
       --accent-rgb: 16, 185, 129;
       --accent-cyan: #06B6D4;
       --accent-red: #EF4444;
-      --accent-a21: #F59E0B;
+      --accent-amber: #F59E0B;
+      --callout-bg: rgba(16, 185, 129, 0.08);
+      --callout-border: rgba(16, 185, 129, 0.28);
+      --bar-bg: rgba(8, 17, 13, 0.88);
+      --bar-border: rgba(255, 255, 255, 0.12);
+      --bar-text: #F8FAFC;
+      --viewport-grad: radial-gradient(ellipse at 50% 12%, rgba(16, 185, 129, 0.1), transparent 65%), #08110D;
+    }
 
-      --font-km: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
-      --stage-w: 1600px;
-      --stage-h: 900px;
+    html[data-theme="light"] {
+      --bg: #F8FAF9;
+      --bg2: #EFF6F2;
+      --panel: rgba(255, 255, 255, 0.94);
+      --panel-hover: #FFFFFF;
+      --panel-inner: #F1F5F3;
+      --card-border: #DDE5E0;
+      --card-border-hover: rgba(5, 150, 105, 0.45);
+      --text: #0F172A;
+      --text-sub: #334155;
+      --muted: #64748B;
+      --line: #E2E8F0;
+      --line-strong: #CBD5E1;
+
+      --accent: #059669;
+      --accent-hover: #047857;
+      --accent-rgb: 5, 150, 105;
+      --accent-cyan: #0891B2;
+      --accent-red: #DC2626;
+      --accent-amber: #D97706;
+      --callout-bg: #F0FDF4;
+      --callout-border: rgba(5, 150, 105, 0.3);
+      --bar-bg: rgba(255, 255, 255, 0.94);
+      --bar-border: #DDE5E0;
+      --bar-text: #0F172A;
+      --viewport-grad: radial-gradient(ellipse at 50% 12%, rgba(5, 150, 105, 0.08), transparent 65%), #F8FAF9;
     }
 
     * {
@@ -74,11 +102,12 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      font-family: var(--font-km);
+      font-family: 'Kantumruy Pro', 'Khmer OS Siemreap', 'Khmer Sangam MN', 'Khmer MN', 'Noto Sans Khmer', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       user-select: none;
       -webkit-user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Bilingual Switching Rules */
@@ -105,7 +134,7 @@
     .ambient-progress-bar {
       height: 100%;
       width: 5%;
-      background: #10B981;
+      background: var(--accent);
       box-shadow: 0 0 14px rgba(16, 185, 129, 0.9);
       transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -118,7 +147,8 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: radial-gradient(ellipse at 50% 12%, rgba(16, 185, 129, 0.1), transparent 65%), #08110D;
+      background: var(--viewport-grad);
+      transition: background 0.3s ease;
     }
 
     #stage {
@@ -175,7 +205,7 @@
       font-size: clamp(28px, 2.7vw, 42px);
       line-height: 1.25;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--text);
       letter-spacing: -0.02em;
     }
     .accent-text {
@@ -216,8 +246,8 @@
       border: 1px solid var(--card-border);
       border-radius: 18px;
       padding: 22px 26px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -237,7 +267,7 @@
     .card h3 {
       font-size: clamp(18px, 1.5vw, 22px);
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--text);
       margin-bottom: 10px;
       line-height: 1.3;
     }
@@ -248,7 +278,7 @@
       margin-bottom: 6px;
     }
     .card strong {
-      color: #FFFFFF;
+      color: var(--text);
     }
     .card a {
       color: var(--accent);
@@ -257,8 +287,8 @@
 
     /* Callout Banner */
     .callout {
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.28);
+      background: var(--callout-bg);
+      border: 1px solid var(--callout-border);
       border-left: 4px solid var(--accent);
       border-radius: 14px;
       padding: 13px 20px;
@@ -267,8 +297,9 @@
       gap: 14px;
       font-size: clamp(13px, 1.05vw, 15px);
       line-height: 1.5;
-      color: #E2E8F0;
+      color: var(--text);
       margin-top: 10px;
+      transition: background 0.3s ease;
     }
     .callout svg {
       stroke: var(--accent);
@@ -277,7 +308,7 @@
       flex-shrink: 0;
     }
 
-    /* Title Slide 01 Presenter Layout */
+    /* Presenter & Initiative Layout (NO PHOTOS) */
     .title-grid-host {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -288,38 +319,23 @@
       background: var(--panel);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 16px 20px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
-      gap: 16px;
-    }
-    .presenter-avatar {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
-      flex-shrink: 0;
+      gap: 18px;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
-    /* Slide 18 Hotlines Layout */
+    /* Slide 18 Hotlines Layout (PURE FLAT VECTOR) */
     .slide18-banner {
-      background: rgba(239, 68, 68, 0.08);
-      border: 1px solid rgba(239, 68, 68, 0.25);
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.28);
       border-radius: 14px;
       padding: 12px 18px;
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 12px;
-    }
-    .slide18-poster {
-      width: 56px;
-      height: 56px;
-      object-fit: cover;
-      border-radius: 8px;
-      flex-shrink: 0;
     }
     .slide18-body {
       flex: 1;
@@ -331,9 +347,13 @@
       margin-top: 6px;
     }
     .slide18-badge-item {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       padding: 6px 12px;
+    }
+    html[data-theme="light"] .slide18-badge-item {
+      background: #FFFFFF;
+      border: 1px solid #DDE5E0;
     }
 
     /* Floating Presenter Pill Bar */
@@ -345,13 +365,14 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
       padding: 7px 18px;
-      background: rgba(8, 17, 13, 0.88);
+      background: var(--bar-bg);
       backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--bar-border);
       border-radius: 9999px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .ctrl-btn {
       display: inline-flex;
@@ -365,28 +386,28 @@
       font-size: 13px;
       font-weight: 700;
       cursor: pointer;
-      font-family: var(--font-km);
+      font-family: inherit;
       transition: all 0.15s ease;
     }
     .ctrl-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #FFFFFF;
-      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(125, 125, 125, 0.1);
+      color: var(--text);
+      border-color: rgba(125, 125, 125, 0.15);
     }
     .ctrl-btn.primary {
-      background: rgba(16, 185, 129, 0.2);
-      color: #34D399;
-      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.18);
+      color: var(--accent);
+      border-color: rgba(16, 185, 129, 0.35);
     }
     .ctrl-btn.primary:hover {
-      background: rgba(16, 185, 129, 0.35);
+      background: rgba(16, 185, 129, 0.3);
       color: #FFFFFF;
       box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
     }
     .ctrl-counter {
       font-size: 13px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--text);
       padding: 0 6px;
       font-variant-numeric: tabular-nums;
       min-width: 58px;
@@ -395,7 +416,7 @@
     .ctrl-divider {
       width: 1px;
       height: 20px;
-      background: rgba(255, 255, 255, 0.14);
+      background: var(--line-strong);
     }
 
     .version-badge-pill {
@@ -404,7 +425,7 @@
       gap: 6px;
       background: rgba(16, 185, 129, 0.18);
       border: 1px solid rgba(16, 185, 129, 0.4);
-      color: #34D399;
+      color: var(--accent);
       font-size: 11.5px;
       font-weight: 800;
       padding: 4px 11px;
@@ -433,12 +454,12 @@
       width: min(850px, 92vw);
       max-height: 220px;
       overflow-y: auto;
-      background: rgba(11, 18, 32, 0.95);
+      background: var(--bar-bg);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid var(--bar-border);
       border-radius: 16px;
       padding: 16px 22px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       z-index: 990;
       display: none;
       opacity: 0;
@@ -468,7 +489,7 @@
       top: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(-20px);
-      background: rgba(16, 185, 129, 0.95);
+      background: var(--accent);
       color: #FFFFFF;
       font-weight: 800;
       font-size: 13.5px;
@@ -486,7 +507,7 @@
     }
 
     /* ========================================================
-       PRINT & HANDBOOK A4 DOCUMENT STYLES
+       PRINT & HANDBOOK A4 DOCUMENT STYLES (FLAT DESIGN & SIGNS)
        ======================================================== */
     .document-print-view {
       display: none;
@@ -649,19 +670,6 @@
         page-break-inside: avoid;
         break-inside: avoid;
       }
-      .doc-step-num {
-        background: #059669;
-        color: #FFFFFF;
-        font-weight: 800;
-        font-size: 9pt;
-        width: 16pt;
-        height: 16pt;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
 
       .doc-table {
         width: 100%;
@@ -701,7 +709,7 @@
   <!-- Toast Message -->
   <div id="toast" class="toast-msg"></div>
 
-  <!-- STAGE VIEWPORT (1600x900 Scale Engine) -->
+  <!-- STAGE VIEWPORT (1600x900 Pitch Formation) -->
   <div id="viewport-container">
     <div id="stage">
       <section class="slide active" data-slide="1" aria-label="Slide 1 of 20">
@@ -710,6 +718,10 @@
         <svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <span class="lang-km">ស្លាយ 01 / ២០ · បើកបទបង្ហាញ · DIGITAL SAFETY &amp; OCSEA</span>
         <span class="lang-en">Slide 01 / 20 · Opening Deck · DIGITAL SAFETY &amp; OCSEA</span>
+        <span class="version-badge-pill" style="margin-left: 10px;">
+          <span class="pulse-dot"></span>
+          <span>v3.3 Final (Live Edition)</span>
+        </span>
       </div>
 
       <h1 class="hero-title">
@@ -722,16 +734,19 @@
         <span class="lang-en">Understanding the risks of Online Child Sexual Exploitation and Abuse (OCSEA), and equipping participants with actionable digital safety safeguards, response protocols, and verified support helplines in Cambodia.</span>
       </p>
 
+      <!-- PURE TEXT & FLAT DESIGN PRESENTER + INITIATIVE CARDS (NO PHOTOS) -->
       <div class="title-grid-host">
         <div class="presenter-card-box">
-          <img src="assets/sophat.jpg" onerror="this.src='https://avatars.githubusercontent.com/u/28402395?v=4'" alt="Sophat CHY" class="presenter-avatar" />
+          <div class="flat-avatar-badge" style="width: 58px; height: 58px; border-radius: 14px; background: linear-gradient(135deg, #10b981, #047857); color: #ffffff; font-size: 22px; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4); flex-shrink: 0; letter-spacing: -0.5px;">
+            SC
+          </div>
           <div>
-            <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase;">
+            <div style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em;">
               <span class="lang-km">ធ្វើបទបង្ហាញដោយ / Presented by:</span>
               <span class="lang-en">Keynote Speaker:</span>
             </div>
-            <div style="font-size: clamp(15px, 1.3vw, 18px); font-weight: 800; color: var(--text);">ជី សុផាត (Sophat CHY)</div>
-            <div style="font-size: 11.5px; color: var(--muted); line-height: 1.4;">
+            <div style="font-size: clamp(16px, 1.35vw, 19px); font-weight: 800; color: var(--text);">ជី សុផាត (Sophat CHY)</div>
+            <div style="font-size: 12px; color: var(--muted); line-height: 1.45;">
               <span class="lang-km">គ្រូបណ្ដុះបណ្ដាល ICT · BarCamp Cambodia (តាំងពី ២០១២) · ស្ថាបនិក Sophat.Space</span>
               <span class="lang-en">ICT Trainer &amp; Content Creator · BarCamp Cambodia Organizer · Founder of Sophat.Space</span>
             </div>
@@ -739,21 +754,21 @@
         </div>
 
         <div class="presenter-card-box" style="border-color: rgba(16, 185, 129, 0.28); background: rgba(16, 185, 129, 0.06);">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.16); border: 1px solid rgba(16, 185, 129, 0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#10b981" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <div style="width: 58px; height: 58px; border-radius: 14px; background: rgba(16, 185, 129, 0.16); border: 1.5pt solid rgba(16, 185, 129, 0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#10b981" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
           </div>
           <div>
-            <div style="font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase;">
+            <div style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em;">
               <span class="lang-km">គំនិតផ្ដួចផ្ដើមសុវត្ថិភាពឌីជីថល</span>
               <span class="lang-en">Digital Safety Initiative</span>
             </div>
-            <div style="font-size: clamp(15px, 1.3vw, 18px); font-weight: 800; color: var(--text);">
+            <div style="font-size: clamp(16px, 1.35vw, 19px); font-weight: 800; color: var(--text);">
               <span class="lang-km">Sophat.Space · ការការពារកុមារតាមប្រព័ន្ធអនឡាញ</span>
               <span class="lang-en">Sophat.Space · Online Child Protection</span>
             </div>
-            <div style="font-size: 11.5px; color: var(--muted); line-height: 1.4;">
+            <div style="font-size: 12px; color: var(--muted); line-height: 1.45;">
               <span class="lang-km">ធនធានអប់រំ និងជំនួយសង្គ្រោះបន្ទាន់ · <a href="https://sophat.space/help" target="_blank" style="color:var(--accent); text-decoration: underline;">sophat.space/help</a></span>
               <span class="lang-en">Educational resources &amp; verified emergency helplines · <a href="https://sophat.space/help" target="_blank" style="color:var(--accent); text-decoration: underline;">sophat.space/help</a></span>
             </div>
@@ -762,13 +777,13 @@
       </div>
 
       <div class="callout">
-        <svg class="ico" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <svg class="ico" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <div>
-          <span class="lang-km"><strong>រៀបចំឡើងសម្រាប់៖</strong> សិក្ខាសាលាព្រឹក (ភាសាខ្មែរ) និងរសៀល (English) · ២០ ស្លាយ · ផ្ដោតលើការអនុវត្តជាក់ស្ដែង វិធានការបច្ចេកទេស និងបណ្ដាញសង្គ្រោះបន្ទាន់។</span>
-          <span class="lang-en"><strong>Designed for:</strong> Morning Khmer Session &amp; Afternoon English Session · 20 Slides · Actionable frameworks, technical safeguards, and verified Cambodia emergency referral hotlines.</span>
+          <span class="lang-km"><strong>រៀបចំឡើងសម្រាប់៖</strong> សិក្ខាសាលាព្រឹក (ភាសាខ្មែរ) និងរសៀល (English) · ២០ ស្លាយ · កំណែ v3.3 Final · ផ្តោតលើការអនុវត្តជាក់ស្ដែង វិធានការបច្ចេកទេស និងបណ្ដាញសង្គ្រោះបន្ទាន់។</span>
+          <span class="lang-en"><strong>Designed for:</strong> Morning Khmer Session &amp; Afternoon English Session · 20 Slides · v3.3 Final · Actionable frameworks, technical safeguards, and verified Cambodia emergency referral hotlines.</span>
         </div>
       </div>
-    
+
       </section>
 
       <section class="slide" data-slide="2" aria-label="Slide 2 of 20">
@@ -926,44 +941,83 @@
 
       <div class="eyebrow">
         <svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span class="lang-km">ស្លាយ 05 / ២០ · ប្រភេទ ១ នៃ OCSEA</span>
-        <span class="lang-en">Slide 05 / 20 · OCSEA Typology 1</span>
+        <span class="lang-km">ស្លាយ 05 / ២០ · ប្រភេទ ១ នៃ OCSEA · ONLINE GROOMING</span>
+        <span class="lang-en">Slide 05 / 20 · OCSEA Typology 1 · Online Grooming</span>
       </div>
       <h2 class="sectionhead">
         <span class="lang-km">ការបោកបញ្ឆោតកុមារតាមអនឡាញ (Online Grooming)</span>
-        <span class="lang-en">Online Grooming</span>
+        <span class="lang-en">Online Grooming &amp; Child Exploitation Funnel</span>
       </h2>
       <p class="subhead">
-        <span class="lang-km">ដំណើរការបង្កើតទំនុកចិត្ត ឬទំនាក់ទំនងស្និទ្ធស្នាលជាមួយកុមារជាជំហានៗ ដើម្បីត្រួសត្រាយផ្លូវឆ្ពោះទៅរកការកេងប្រវ័ញ្ចផ្លូវភេទ៖</span>
-        <span class="lang-en">The deliberate, gradual process of building emotional trust with a child to facilitate subsequent sexual exploitation:</span>
+        <span class="lang-km">ដំណើរការបង្កើតទំនុកចិត្ត និងទំនាក់ទំនងស្និទ្ធស្នាលជាជំហានៗ ដើម្បីបំបែកកុមារពីគ្រួសារ និងត្រួសត្រាយផ្លូវឆ្ពោះទៅរកការកេងប្រវ័ញ្ចផ្លូវភេទ៖</span>
+        <span class="lang-en">The deliberate, gradual process of manipulating emotional dependency to isolate children and facilitate sexual exploitation:</span>
       </p>
 
-      <div class="grid">
-        <div class="card">
-          <div class="tag"><span class="lang-km">យុទ្ធសាស្ត្ររបស់អ្នកប្រព្រឹត្ត</span><span class="lang-en">Perpetrator Tactics</span></div>
-          <h3><span class="lang-km">៣ ដំណាក់កាលនៃ Grooming</span><span class="lang-en">3 Typical Stages of Grooming</span></h3>
-          <p><span class="lang-km"><strong>១. ចងមេត្រីភាព៖</strong> សរសើររូបសម្រស់ យកចិត្តទុកដាក់ ចាក់ចុចរឿងគ្រួសារ ឬលេងហ្គេមជាមួយ (Roblox, Free Fire, MLBB)។</span><span class="lang-en"><strong>1. Befriending:</strong> Flattery, fake empathy, gaming together in Roblox/MLBB, active listening to family issues.</span></p>
-          <p><span class="lang-km"><strong>២. ញែកកុមារចេញ៖</strong> បបួលទៅ Chat ជាឯកជន (Telegram Secret Chat)៖ «កុំប្រាប់ម៉ាក់ប៉ា គាត់មិនយល់ពីយើងទេ»។</span><span class="lang-en"><strong>2. Isolating:</strong> Moving to encrypted chats (Telegram secret chat): "Keep this between us; adults don't get you."</span></p>
-          <p><span class="lang-km"><strong>៣. បង្ខំទាររូបភាព៖</strong> ពេលកុមារទុកចិត្ត ចាប់ផ្តើមសុំរូបភាពស្រាត ឬសកម្មភាពផ្លូវភេទបន្តិចម្តងៗ។</span><span class="lang-en"><strong>3. Soliciting:</strong> Once emotional dependency is formed, escalating to requests for nude imagery or sexual acts.</span></p>
+      <div class="grid" style="grid-template-columns: 1.15fr 0.85fr; gap: 20px; margin: 12px 0;">
+        <!-- Left: 4-Stage Visual Funnel -->
+        <div class="card" style="padding: 20px 24px;">
+          <div class="tag"><span class="lang-km">ដំណើរការ ៤ ដំណាក់កាលនៃ GROOMING</span><span class="lang-en">The 4-Stage Grooming Funnel</span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px;">
+            <div style="display: flex; align-items: flex-start; gap: 12px; padding: 9px 12px; background: rgba(0,0,0,0.22); border-left: 3px solid #06b6d4; border-radius: 8px;">
+              <span style="background: #06b6d4; color: #ffffff; font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; flex-shrink: 0;">01</span>
+              <div>
+                <strong style="color: #ffffff; font-size: 14px;"><span class="lang-km">ស្វែងរកគោលដៅ (Targeting):</span><span class="lang-en">Target Selection:</span></strong>
+                <p style="font-size: 12.5px; color: var(--text-sub); margin: 2px 0 0 0;"><span class="lang-km">សង្កេតកុមារដែលបង្ហោះសារឯកោ ក្រៀមក្រំ ឬលេងហ្គេម (Roblox, Free Fire, MLBB, TikTok)។</span><span class="lang-en">Monitoring lonely or vulnerable children across popular multiplayer games and social apps.</span></p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px; padding: 9px 12px; background: rgba(0,0,0,0.22); border-left: 3px solid #10b981; border-radius: 8px;">
+              <span style="background: #10b981; color: #ffffff; font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; flex-shrink: 0;">02</span>
+              <div>
+                <strong style="color: #ffffff; font-size: 14px;"><span class="lang-km">កសាងទំនុកចិត្ត (Building Trust):</span><span class="lang-en">Trust Building &amp; Gifts:</span></strong>
+                <p style="font-size: 12.5px; color: var(--text-sub); margin: 2px 0 0 0;"><span class="lang-km">និយាយសរសើរសម្រស់ ធ្វើជាមិត្តស្មោះត្រង់ ផ្តល់កាដូ បញ្ចូលកាតទូរស័ព្ទ ឬទិញ Skin ហ្គេមឱ្យ។</span><span class="lang-en">Flattery, active listening, purchasing game currency/skins, and sending top-up cards to build dependency.</span></p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px; padding: 9px 12px; background: rgba(0,0,0,0.22); border-left: 3px solid #f59e0b; border-radius: 8px;">
+              <span style="background: #f59e0b; color: #ffffff; font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; flex-shrink: 0;">03</span>
+              <div>
+                <strong style="color: #ffffff; font-size: 14px;"><span class="lang-km">ញែកកុមារចេញ (Isolation &amp; Secrecy):</span><span class="lang-en">Isolation &amp; Secret Chats:</span></strong>
+                <p style="font-size: 12.5px; color: var(--text-sub); margin: 2px 0 0 0;"><span class="lang-km">បបួលទៅ Chat ឯកជន (Telegram Secret Chat)៖ «កុំប្រាប់ម៉ាក់ប៉ា គាត់មិនយល់ពីយើងទេ»។</span><span class="lang-en">Moving to private channels: "Keep this between us; adults won't understand our special connection."</span></p>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px; padding: 9px 12px; background: rgba(0,0,0,0.22); border-left: 3px solid #ef4444; border-radius: 8px;">
+              <span style="background: #ef4444; color: #ffffff; font-weight: 800; font-size: 11px; padding: 2px 7px; border-radius: 4px; flex-shrink: 0;">04</span>
+              <div>
+                <strong style="color: #ffffff; font-size: 14px;"><span class="lang-km">ទាមទារផ្លូវភេទ (Sexual Exploitation):</span><span class="lang-en">Sexual Solicitation &amp; Coercion:</span></strong>
+                <p style="font-size: 12.5px; color: var(--text-sub); margin: 2px 0 0 0;"><span class="lang-km">សុំរូបភាពអាក្រាតបន្តិចម្តងៗ បន្ទាប់មកគំរាមថានឹងបង្ហោះបើកុមារចង់បញ្ឈប់ (ឈានចូល Sextortion)។</span><span class="lang-en">Gradually soliciting intimate photos, escalating into threats of exposure if the child refuses.</span></p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="tag"><span class="lang-km">អត្តសញ្ញាណអ្នកប្រព្រឹត្ត</span><span class="lang-en">Offender Profiles</span></div>
-          <h3><span class="lang-km">អ្នកណាខ្លះអាចជាអ្នកប្រព្រឹត្ត?</span><span class="lang-en">Who Are the Groomers?</span></h3>
-          <p><span class="lang-km"><strong>• មនុស្សចម្លែកក្លែងអត្តសញ្ញាណ៖</strong> ដាក់រូបក្មេងវ័យស្របាលគ្នា ឬរូបស្រស់ស្អាតលើ Facebook/TikTok ដើម្បីទាក់ទាញកុមារ។</span><span class="lang-en"><strong>• Fake Online Peers:</strong> Posing as fellow teenagers with attractive avatars on TikTok, Facebook, or Instagram.</span></p>
-          <p><span class="lang-km"><strong>• មនុស្សស្គាល់មុខក្នុងជីវិតពិត៖</strong> អាចជាអ្នកជិតខាង មិត្តភក្តិ ឬមនុស្សធំដែលកុមារធ្លាប់ស្គាល់ តែឆ្លៀតឱកាសតាមអនឡាញ។</span><span class="lang-en"><strong>• Real-Life Acquaintances:</strong> Neighbors, relatives, or community members exploiting digital familiarity.</span></p>
-          <p><span class="lang-km">• គោលបំណងចម្បង៖ ស្វែងរកចំណុចខ្សោយ និងភាពឯកោរបស់កុមារដើម្បីគ្រប់គ្រង។</span><span class="lang-en">• Core Tactic: Exploiting emotional loneliness to build artificial intimacy and control.</span></p>
+        <!-- Right: Profiles & Red Flags -->
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="card" style="padding: 18px 22px;">
+            <div class="tag"><span class="lang-km">អត្តសញ្ញាណអ្នកប្រព្រឹត្ត</span><span class="lang-en">Offender Profiles</span></div>
+            <h3 style="font-size: 16px; margin-bottom: 6px;"><span class="lang-km">អ្នកណាខ្លះជា Groomers?</span><span class="lang-en">Who Are The Predators?</span></h3>
+            <p style="font-size: 12.5px; margin-bottom: 4px;"><span class="lang-km">• <strong>មនុស្សចម្លែកក្លែងជាក្មេង៖</strong> ដាក់រូបស្អាតៗលើ TikTok/IG បន្លំជាយុវវ័យ។</span><span class="lang-en">• <strong>Fake Online Peers:</strong> Attractive teen avatars on TikTok/Roblox to lower defenses.</span></p>
+            <p style="font-size: 12.5px; margin-bottom: 0;"><span class="lang-km">• <strong>មនុស្សស្គាល់មុខក្នុងជីវិតពិត៖</strong> អ្នកជិតខាង មិត្ត ឬមនុស្សធំដែលកុមារទុកចិត្ត។</span><span class="lang-en">• <strong>Real-Life Acquaintances:</strong> Neighbors, trusted adults exploiting digital channels.</span></p>
+          </div>
+
+          <div class="card" style="padding: 18px 22px; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05);">
+            <div class="tag" style="color: #ef4444;"><span class="lang-km">សញ្ញាអាសន្នក្រហម</span><span class="lang-en">Critical Red Flags</span></div>
+            <h3 style="font-size: 16px; margin-bottom: 6px; color: #ef4444;"><span class="lang-km">សញ្ញាគួរឱ្យសង្ស័យ</span><span class="lang-en">Warning Behaviors</span></h3>
+            <p style="font-size: 12.5px; margin-bottom: 4px;"><span class="lang-km">• កុមារលួចប្រើទូរស័ព្ទស្ងាត់ៗពេលយប់ និងឆាប់បិទអេក្រង់ពេលមនុស្សធំដើរមកជិត។</span><span class="lang-en">• Secretive nighttime device use; immediately flipping phone when adults approach.</span></p>
+            <p style="font-size: 12.5px; margin-bottom: 0;"><span class="lang-km">• ទទួលបានកាដូ ឬលុយដោយគ្មានប្រភពច្បាស់លាស់ និងមានអារម្មណ៍ភ័យខ្លាច។</span><span class="lang-en">• Unexplained gifts, gaming credits, or sudden withdrawal and anxiety.</span></p>
+          </div>
         </div>
       </div>
 
       <div class="callout">
-        <svg class="ico" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <svg class="ico" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <div>
-          <span class="lang-km"><strong>វិធីការពារ៖</strong> បង្រៀនកុមារឱ្យប្រុងប្រយ័ត្នចំពោះការសុំរក្សាការសម្ងាត់ («Secret») និងបង្កើតបរិយាកាសគ្រួសារដែលកុមារហ៊ាននិយាយប្រាប់ដោយគ្មានការភ័យខ្លាច។</span>
-          <span class="lang-en"><strong>Key Safeguard:</strong> Teach youth that healthy relationships never require keeping secrets from trusted guardians. Create an open family space where children speak up without fear of anger.</span>
+          <span class="lang-km"><strong>វិធានការការពារមាស៖</strong> បង្រៀនកុមារឱ្យដឹងថា <em>«មិត្តល្អ និងមនុស្សស្មោះត្រង់ មិនដែលទាមទារការសម្ងាត់ពីឪពុកម្តាយឡើយ!»</em> បង្កើតបរិយាកាសគ្រួសារដែលកុមារហ៊ាននិយាយប្រាប់ដោយគ្មានការភ័យខ្លាចការស្តីបន្ទោស។</span>
+          <span class="lang-en"><strong>Golden Safeguard:</strong> Teach children that <em>"Genuine friends never demand keeping secrets from parents!"</em> Cultivate a non-judgmental family space where youth feel safe to speak up without fear.</span>
         </div>
       </div>
-    
+
       </section>
 
       <section class="slide" data-slide="6" aria-label="Slide 6 of 20">
@@ -1499,7 +1553,7 @@
       <div class="eyebrow">
         <svg class="ico" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span class="lang-km">ស្លាយ 18 / ២០ · សេវាជំនួយ &amp; HOTLINES នៅកម្ពុជា</span>
-        <span class="lang-en">Slide 18 / 20 · Cambodia Support Services &amp; Hotlines</span>
+        <span class="lang-en">Slide 18 / 20 · Cambodia Support Services &amp; Emergency Hotlines</span>
       </div>
       <h2 class="sectionhead">
         <span class="lang-km">បណ្តាញសេវាជំនួយ និងលេខទូរស័ព្ទទាន់ហេតុការណ៍ផ្លូវការ</span>
@@ -1510,15 +1564,19 @@
         <span class="lang-en">Official joint national campaign &amp; verified digital safety resources in Cambodia (<a href="https://sophat.space/help" target="_blank">sophat.space/help</a>):</span>
       </p>
 
-      <!-- Joint Campaign Banner Box -->
-      <div class="slide18-banner">
-        <img src="assets/cambodia-anti-trafficking-hotlines.png" alt="យុទ្ធនាការយើងរួមគ្នាប្រយុទ្ធប្រឆាំងអំពើជួញដូរមនុស្ស" class="slide18-poster" />
+      <!-- PURE FLAT VECTOR JOINT CAMPAIGN BANNER (NO PHOTOS) -->
+      <div class="slide18-banner" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(16, 185, 129, 0.16); border: 1.5pt solid rgba(16, 185, 129, 0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#10b981" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
         <div class="slide18-body">
-          <div style="font-size: 11px; font-weight: 800; color: var(--accent-a21); letter-spacing: 0.5px; text-transform: uppercase;">
-            <span class="lang-km">យុទ្ធនាការផ្លូវការ · សមត្ថកិច្ច និងអង្គការដៃគូ</span>
-            <span class="lang-en">Official Joint Campaign · Police &amp; Civil Society</span>
+          <div style="font-size: 11px; font-weight: 800; color: var(--accent); letter-spacing: 0.5px; text-transform: uppercase;">
+            <span class="lang-km">យុទ្ធនាការផ្លូវការ · សមត្ថកិច្ច និងអង្គការដៃគូការពារកុមារ</span>
+            <span class="lang-en">Official Joint Campaign · Law Enforcement &amp; Child Protection Partners</span>
           </div>
-          <div style="font-size: clamp(14px, 1.3vw, 17px); font-weight: 800; color: var(--text); margin: 2px 0 4px 0;">
+          <div style="font-size: clamp(14px, 1.25vw, 17px); font-weight: 800; color: var(--text); margin: 2px 0 4px 0;">
             <span class="lang-km">«យើងរួមគ្នាប្រយុទ្ធប្រឆាំង អំពើជួញដូរមនុស្ស &amp; ការកេងប្រវ័ញ្ចលើកុមារ»</span>
             <span class="lang-en">"Together We Fight Against Human Trafficking &amp; Child Exploitation"</span>
           </div>
@@ -1530,40 +1588,43 @@
               </div>
               <div style="font-size: 14px; font-weight: 800; color: #ef4444;">Hotline: 1288 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 012 852 241</span></div>
             </div>
-            <div class="slide18-badge-item" style="border-left: 3px solid var(--accent-a21);">
+            <div class="slide18-badge-item" style="border-left: 3px solid #f59e0b;">
               <div style="font-size: 11px; font-weight: 700; color: var(--text);">
-                <span class="lang-km">មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (CAC) / A21</span>
-                <span class="lang-en">Child Advocacy Center (CAC) / A21</span>
+                <span class="lang-km">មជ្ឈមណ្ឌលតស៊ូមតិកុមារ (CAC) / អង្គការ A21 កម្ពុជា</span>
+                <span class="lang-en">Child Advocacy Center (CAC) / A21 Cambodia</span>
               </div>
-              <div style="font-size: 14px; font-weight: 800; color: var(--accent-a21);">Hotline: 010 22 07 71 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 071 72 10 771</span></div>
+              <div style="font-size: 14px; font-weight: 800; color: #f59e0b;">Hotline: 010 22 07 71 <span style="font-size: 11.5px; color: var(--muted); font-weight: 500;">| 071 72 10 771 | a21.org</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 3 Categorized Hotline Columns from sophat.space/help -->
+      <!-- 3 Categorized Hotline Columns from sophat.space/help with Deep A21 Info -->
       <div class="grid three" style="margin-top: 8px;">
+        <!-- Card 1: A21 CAC & APLE (Child Protection) -->
         <div class="card" style="border-top: 3px solid #06b6d4;">
-          <div class="tag" style="color: #06b6d4;"><span class="lang-km">កិច្ចការពារកុមារ &amp; CSAM</span><span class="lang-en">Child Protection &amp; CSAM</span></div>
-          <h3><span class="lang-km">APLE &amp; Child Helpline</span><span class="lang-en">APLE &amp; Child Helpline</span></h3>
-          <p><span class="lang-km">• <strong>APLE Cambodia:</strong> Hotline <strong>092 311 511</strong> (ស៊ើបអង្កេត CSAM &amp; គាំទ្រច្បាប់)</span><span class="lang-en">• <strong>APLE Cambodia:</strong> <strong>092 311 511</strong> (CSAM investigation &amp; legal aid)</span></p>
-          <p><span class="lang-km">• <strong>Child Helpline:</strong> <strong>1280</strong> (ឥតគិតថ្លៃ ២៤/៧ ទូទាំង ២៥ ខេត្ត-ក្រុង)</span><span class="lang-en">• <strong>Child Helpline:</strong> <strong>1280</strong> (Free 24/7 counseling nationwide)</span></p>
-          <p><span class="lang-km">• <strong>Take It Down:</strong> <a href="https://takeitdown.ncmec.org" target="_blank">takeitdown.ncmec.org</a> (ដករូបភាពអាក្រាតចេញពីអនឡាញ)</span><span class="lang-en">• <strong>Take It Down:</strong> <a href="https://takeitdown.ncmec.org" target="_blank">takeitdown.ncmec.org</a> (NCMEC removal tool)</span></p>
+          <div class="tag" style="color: #06b6d4;"><span class="lang-km">កិច្ចការពារកុមារ &amp; សង្គ្រោះបន្ទាន់</span><span class="lang-en">Child Protection &amp; Rescue</span></div>
+          <h3><span class="lang-km">A21 Cambodia &amp; APLE</span><span class="lang-en">A21 Cambodia &amp; APLE</span></h3>
+          <p><span class="lang-km">• <strong>អង្គការ A21 (Child Advocacy Center):</strong> Hotline <strong>010 22 07 71</strong> / 071 72 10 771 (ស៊ើបអង្កេត, ជម្រកសុវត្ថិភាព, គាំទ្រច្បាប់ &amp; ព្យាបាលផ្លូវចិត្ត Trauma Care)</span><span class="lang-en">• <strong>A21 Cambodia (CAC):</strong> <strong>010 22 07 71</strong> (Investigation, emergency shelter, legal aid &amp; trauma-informed care)</span></p>
+          <p><span class="lang-km">• <strong>APLE Cambodia:</strong> Hotline <strong>092 311 511</strong> (ជំនាញស៊ើបអង្កេត CSAM)</span><span class="lang-en">• <strong>APLE Cambodia:</strong> <strong>092 311 511</strong> (CSAM investigations &amp; legal aid)</span></p>
+          <p><span class="lang-km">• <strong>Child Helpline Cambodia:</strong> <strong>1280</strong> (ឥតគិតថ្លៃ ២៤/៧ ទូទាំង ២៥ ខេត្ត-ក្រុង)</span><span class="lang-en">• <strong>Child Helpline:</strong> <strong>1280</strong> (Free 24/7 counseling nationwide)</span></p>
         </div>
 
+        <!-- Card 2: Police & CamCERT -->
         <div class="card" style="border-top: 3px solid #ef4444;">
           <div class="tag" style="color: #ef4444;"><span class="lang-km">នគរបាលជាតិ &amp; សន្តិសុខបច្ចេកវិទ្យា</span><span class="lang-en">Law Enforcement &amp; Tech Response</span></div>
           <h3><span class="lang-km">Anti-Cybercrime &amp; CamCERT</span><span class="lang-en">Anti-Cybercrime &amp; CamCERT</span></h3>
+          <p><span class="lang-km">• <strong>នគរបាលជាតិ (AHTJPD):</strong> <strong>1288</strong> (អន្តរាគមន៍ច្បាប់បន្ទាន់ ២៤/៧)</span><span class="lang-en">• <strong>Police (AHTJPD):</strong> <strong>1288</strong> (24/7 Emergency Police Intervention)</span></p>
           <p><span class="lang-km">• <strong>នាយកដ្ឋានប្រឆាំងបទល្មើសបច្ចេកវិទ្យា៖</strong> <a href="https://hotline.police.gov.kh" target="_blank">hotline.police.gov.kh</a> | App Kapea Scams</span><span class="lang-en">• <strong>Anti-Cybercrime Dept:</strong> <a href="https://hotline.police.gov.kh" target="_blank">hotline.police.gov.kh</a> | App Kapea Scams</span></p>
-          <p><span class="lang-km">• <strong>CamCERT (MPTC)៖</strong> <strong>+855 23 722 391</strong> (ឆ្លើយតបបន្ទាន់បញ្ហាសន្តិសុខសាយប័រ)</span><span class="lang-en">• <strong>CamCERT (MPTC):</strong> <strong>+855 23 722 391</strong> (Cyber Incident Response)</span></p>
-          <p><span class="lang-km">• <strong>អ៊ីមែល CamCERT៖</strong> incident@camcert.gov.kh</span><span class="lang-en">• <strong>CamCERT Email:</strong> incident@camcert.gov.kh</span></p>
+          <p><span class="lang-km">• <strong>CamCERT (MPTC)៖</strong> <strong>+855 23 722 391</strong> (incident@camcert.gov.kh)</span><span class="lang-en">• <strong>CamCERT (MPTC):</strong> <strong>+855 23 722 391</strong> (Cyber Incident Response)</span></p>
         </div>
 
+        <!-- Card 3: Psychosocial & Digital Help -->
         <div class="card" style="border-top: 3px solid var(--accent);">
           <div class="tag" style="color: var(--accent);"><span class="lang-km">ជំនួយផ្លូវចិត្ត &amp; សុវត្ថិភាពឌីជីថល</span><span class="lang-en">Psychosocial &amp; Digital Help</span></div>
           <h3><span class="lang-km">CWCC &amp; Sophat.Space</span><span class="lang-en">CWCC &amp; Sophat.Space</span></h3>
           <p><span class="lang-km">• <strong>CWCC (វិបត្តិស្ត្រី និងកុមារី)៖</strong> Hotline <strong>012 828 732</strong> | 023 993 429</span><span class="lang-en">• <strong>CWCC (Women &amp; Girls Crisis):</strong> <strong>012 828 732</strong> | 023 993 429</span></p>
-          <p><span class="lang-km">• <strong>Stop Online Harm / Karpeer៖</strong> Telegram @KarpeerHelpLine</span><span class="lang-en">• <strong>Stop Online Harm / Karpeer:</strong> Telegram @KarpeerHelpLine</span></p>
+          <p><span class="lang-km">• <strong>Take It Down:</strong> <a href="https://takeitdown.ncmec.org" target="_blank">takeitdown.ncmec.org</a> (ដករូបភាពអាក្រាតចេញពី Internet)</span><span class="lang-en">• <strong>Take It Down:</strong> <a href="https://takeitdown.ncmec.org" target="_blank">takeitdown.ncmec.org</a> (NCMEC removal tool)</span></p>
           <p><span class="lang-km">• <strong>Sophat.Space Help៖</strong> <a href="https://sophat.space/help" target="_blank">sophat.space/help</a> (មជ្ឈមណ្ឌលជំនួយឌីជីថលខ្មែរ)</span><span class="lang-en">• <strong>Sophat.Space Help:</strong> <a href="https://sophat.space/help" target="_blank">sophat.space/help</a> (Khmer Digital Safety Hub)</span></p>
         </div>
       </div>
@@ -1571,11 +1632,11 @@
       <div class="callout" style="margin-top: 8px;">
         <svg class="ico" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <div>
-          <span class="lang-km"><strong>ចងចាំលេខទូរស័ព្ទទាន់ហេតុការណ៍បន្ទាន់៖</strong> នគរបាលជាតិ (AHTJPD): <strong>1288</strong> / <strong>012 852 241</strong> | A21 CAC: <strong>010 22 07 71</strong> | APLE: <strong>092 311 511</strong> | Child Helpline: <strong>1280</strong> | CWCC: <strong>012 828 732</strong></span>
-          <span class="lang-en"><strong>Key Emergency Numbers:</strong> Police (AHTJPD): <strong>1288</strong> / <strong>012 852 241</strong> | A21 CAC: <strong>010 22 07 71</strong> | APLE: <strong>092 311 511</strong> | Child Helpline: <strong>1280</strong> | CWCC: <strong>012 828 732</strong></span>
+          <span class="lang-km"><strong>ចងចាំលេខទូរស័ព្ទទាន់ហេតុការណ៍បន្ទាន់៖</strong> នគរបាលជាតិ (AHTJPD): <strong>1288</strong> | A21 CAC: <strong>010 22 07 71</strong> | Child Helpline: <strong>1280</strong> | APLE: <strong>092 311 511</strong> | CWCC: <strong>012 828 732</strong></span>
+          <span class="lang-en"><strong>Key Emergency Numbers:</strong> Police (AHTJPD): <strong>1288</strong> | A21 CAC: <strong>010 22 07 71</strong> | Child Helpline: <strong>1280</strong> | APLE: <strong>092 311 511</strong> | CWCC: <strong>012 828 732</strong></span>
         </div>
       </div>
-    
+
       </section>
 
       <section class="slide" data-slide="19" aria-label="Slide 19 of 20">
@@ -1717,7 +1778,7 @@
 
     <span class="version-badge-pill">
       <span class="pulse-dot"></span>
-      <span>v3.2 Final</span>
+      <span>v3.3 Final</span>
     </span>
 
     <button id="btn-next" class="ctrl-btn" title="Next (Right Arrow / Space / PageDown)">
@@ -1728,11 +1789,20 @@
 
     <div class="ctrl-divider"></div>
 
+    <!-- Theme Toggle (Dark & Light Mode) -->
+    <button id="btn-theme" class="ctrl-btn" title="Toggle Dark/Light Theme (T)">
+      <span id="theme-icon">☼</span>
+      <span id="theme-text" class="lang-km">ពន្លឺ</span>
+      <span id="theme-text-en" class="lang-en">Light</span>
+    </button>
+
+    <!-- Language Toggle -->
     <button id="btn-lang" class="ctrl-btn primary" title="Switch Language (L) · ប្ដូរភាសា">
       <span class="lang-km">🇬🇧 English</span>
       <span class="lang-en">🇰🇭 ភាសាខ្មែរ</span>
     </button>
 
+    <!-- Download Handbook A4 PDF -->
     <button id="btn-pdf" class="ctrl-btn" title="Download A4 Handbook PDF (P)">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       <span class="lang-km">📥 A4 PDF (P)</span>
@@ -1750,6 +1820,7 @@
   </div>
 
   <!-- A4 HANDBOOK DOCUMENT VIEW FOR PRINT -->
+  
   <div class="document-print-view">
     <!-- Masthead -->
     <header class="doc-header">
@@ -1761,32 +1832,32 @@
       </div>
       <div class="doc-meta">
         <p class="lang-km"><strong>ឯកសារណែនាំផ្លូវការ (Handbook)</strong></p>
-        <p class="lang-en"><strong>Official Action Guide & Policy Brief</strong></p>
-        <p class="lang-km">បោះពុម្ព៖ ឆ្នាំ ២០២៦ · កំណែ v3.2 Final (តុលា ២០២៦) · sophat.space/help</p>
-        <p class="lang-en">Published: 2026 · Edition v3.2 Final (October 2026) · sophat.space/help</p>
+        <p class="lang-en"><strong>Official Action Guide &amp; Policy Brief</strong></p>
+        <p class="lang-km">បោះពុម្ព៖ ឆ្នាំ ២០២៦ · កំណែ v3.3 Final (តុលា ២០២៦) · sophat.space/help</p>
+        <p class="lang-en">Published: 2026 · Edition v3.3 Final (October 2026) · sophat.space/help</p>
       </div>
     </header>
 
     <!-- Main Title -->
     <h1 class="doc-main-title lang-km">សៀវភៅណែនាំស្តីពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ការកេងប្រវ័ញ្ចផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ (OCSEA)</h1>
-    <h1 class="doc-main-title lang-en">Digital Safety & Preventing Online Child Sexual Exploitation and Abuse (OCSEA) — Cambodia Action Guide</h1>
+    <h1 class="doc-main-title lang-en">Digital Safety &amp; Preventing Online Child Sexual Exploitation and Abuse (OCSEA) — Cambodia Action Guide</h1>
 
     <p class="doc-main-subtitle lang-km">
       រៀបរៀង និងចងក្រងដោយ៖ <strong>ជី សុផាត (Sophat CHY)</strong> · ស្ថាបនិក Sophat.Space · សម្រាប់គ្រួសារ សាលារៀន និងយុវជនកម្ពុជា
     </p>
     <p class="doc-main-subtitle lang-en">
-      Authored and Compiled by: <strong>Sophat CHY</strong> · Founder of Sophat.Space · Prepared for Cambodian Families, Educators & Youth
+      Authored and Compiled by: <strong>Sophat CHY</strong> · Founder of Sophat.Space · Prepared for Cambodian Families, Educators &amp; Youth
     </p>
 
     <!-- Executive Summary -->
     <div class="doc-exec-summary">
-      <strong class="lang-km">📌 សេចក្តីសង្ខេបប្រតិបត្តិ (Executive Summary)៖</strong>
-      <strong class="lang-en">📌 Executive Summary:</strong>
+      <strong class="lang-km">📌 សេចក្តីសង្ខេបប្រតិបត្តិ (Executive Summary) — កំណែ v3.3 Final៖</strong>
+      <strong class="lang-en">📌 Executive Summary — Edition v3.3 Final:</strong>
       <p style="margin-top: 4pt;" class="lang-km">
-        ឯកសារនេះត្រូវបានរៀបចំឡើងក្នុងគោលបំណងលើកកម្ពស់ការយល់ដឹងទូលំទូលាយអំពី <strong>OCSEA</strong> (Online Child Sexual Exploitation and Abuse) នៅប្រទេសកម្ពុជា។ វាមិនមែនជាបទល្មើសលួចទិន្នន័យធម្មតាទេ ប៉ុន្តែជាការរំលោភបំពានសិទ្ធិមនុស្ស និងសេចក្តីថ្លៃថ្នូររបស់កុមារយ៉ាងធ្ងន់ធ្ងរ។ ឯកសារនេះផ្តល់នូវការវិភាគទម្រង់គ្រោះថ្នាក់ទាំង ៦ សញ្ញាព្រមាន រូបមន្តសកម្មភាព ៤ ជំហាន (Stop · Record · Report · Support) គោលការណ៍រក្សាទុកភស្តុតាងត្រឹមត្រូវតាមច្បាប់ និងតារាងលេខទូរស័ព្ទជំនួយបន្ទាន់ពេញលេញនៅកម្ពុជា។
+        ឯកសារនេះត្រូវបានរៀបចំឡើងដើម្បីជាឯកសារយោងពេញលេញអំពី <strong>OCSEA</strong> (Online Child Sexual Exploitation and Abuse) នៅប្រទេសកម្ពុជា។ វាមិនមែនជាបទល្មើសលួចទិន្នន័យធម្មតាទេ ប៉ុន្តែជាការរំលោភបំពានសិទ្ធិមនុស្ស និងសេចក្តីថ្លៃថ្នូររបស់កុមារយ៉ាងធ្ងន់ធ្ងរ។ ឯកសារនេះផ្តល់នូវការវិភាគទម្រង់គ្រោះថ្នាក់ទាំង ៦ ដំណើរការ Grooming ៤ ដំណាក់កាល សញ្ញាព្រមាន រូបមន្តសកម្មភាពបន្ទាន់ ៤ ជំហាន (Stop · Record · Report · Support) គោលការណ៍រក្សាទុកភស្តុតាងត្រឹមត្រូវតាមច្បាប់ និងតារាងលេខទូរស័ព្ទជំនួយបន្ទាន់ពេញលេញ (រួមមាន A21 CAC, នគរបាលជាតិ 1288, Child Helpline 1280, APLE)។
       </p>
       <p style="margin-top: 4pt;" class="lang-en">
-        This document provides comprehensive guidance on understanding and preventing <strong>OCSEA</strong> (Online Child Sexual Exploitation and Abuse) in Cambodia. Unlike ordinary cybercrime, OCSEA constitutes an egregious violation of child bodily autonomy and human dignity. This guide outlines 6 critical danger forms, behavioral/digital warning signs, the 4-step emergency action framework (Stop, Record, Report, Support), legal evidence preservation protocols, and verified Cambodia emergency hotlines.
+        This document provides comprehensive guidance on understanding and preventing <strong>OCSEA</strong> (Online Child Sexual Exploitation and Abuse) in Cambodia. Unlike ordinary cybercrime, OCSEA constitutes an egregious violation of child bodily autonomy and human dignity. This guide outlines 6 critical danger forms, the 4-stage grooming funnel, behavioral/digital warning signs, the 4-step emergency action framework (Stop, Record, Report, Support), legal evidence preservation protocols, and verified Cambodia emergency hotlines (including A21 CAC, Police 1288, Child Helpline 1280, and APLE).
       </p>
     </div>
 
@@ -1795,356 +1866,396 @@
       <h2 class="doc-section-h2">
         <span class="doc-section-num">1</span>
         <span class="lang-km">និយមន័យ OCSEA និងភាពខុសគ្នារវាង Cybercrime ទូទៅ</span>
-        <span class="lang-en">Understanding OCSEA & Distinction from General Cybercrime</span>
+        <span class="lang-en">Understanding OCSEA &amp; Distinction from General Cybercrime</span>
       </h2>
       <p class="doc-p lang-km">
-        <strong>OCSEA (Online Child Sexual Exploitation and Abuse)</strong> សំដៅលើគ្រប់ទម្រង់នៃការកេងប្រវ័ញ្ច ការបៀតបៀន និងការរំលោភបំពានផ្លូវភេទលើកុមារ និងអនីតិជនដែលប្រព្រឹត្តឡើង ឬសម្របសម្រួលតាមរយៈបច្ចេកវិទ្យាព័ត៌មាន និងទំនាក់ទំនង (ICT)។ ផ្ទុយពីបទល្មើសបច្ចេកវិទ្យាទូទៅ (ដូចជាការ Hack គណនី ឬការបោកប្រាស់លុយ) ជនរងគ្រោះនៃ OCSEA គឺជាកុមារ ដែលប្រឈមនឹងការប៉ះទង្គិចផ្លូវចិត្តធ្ងន់ធ្ងរ និងរបួសផ្លូវចិត្តអស់មួយជីវិត។ ជាង ៨០% នៃករណីកើតឡើងលើកម្មវិធីប្រចាំថ្ងៃដូចជា Facebook, Telegram, TikTok, Discord និងហ្គេមអនឡាញ មិនមែនតែលើ Dark Web នោះទេ។
+        <strong>OCSEA (Online Child Sexual Exploitation and Abuse)</strong> សំដៅលើគ្រប់ទម្រង់នៃការកេងប្រវ័ញ្ច ការបៀតបៀន និងការរំលោភបំពានផ្លូវភេទលើកុមារ (អាយុក្រោម ១៨ ឆ្នាំ) តាមរយៈប្រព័ន្ធព័ត៌មានវិទ្យា និងទូរគមនាគមន៍។ ជនរងគ្រោះនៃ OCSEA គឺជាកុមារ ដែលប្រឈមនឹងការប៉ះទង្គិចផ្លូវចិត្តធ្ងន់ធ្ងរ និងរបួសផ្លូវចិត្តអស់មួយជីវិត។ ជាង ៨០% នៃករណីកើតឡើងលើកម្មវិធីប្រចាំថ្ងៃដូចជា Facebook, Telegram, TikTok, Discord និងហ្គេមអនឡាញ មិនមែនតែលើ Dark Web នោះទេ។
       </p>
       <p class="doc-p lang-en">
-        <strong>OCSEA</strong> encompasses all forms of sexual exploitation, grooming, and abuse targeting minors facilitated by information and communications technology. Unlike financial scams or hacking, OCSEA inflicts permanent trauma on developing children. Over 80% occurs via mainstream messaging, social networks, and multiplayer games rather than obscure corners of the Dark Web.
+        <strong>OCSEA</strong> encompasses all forms of sexual exploitation, grooming, and abuse targeting minors (under 18) facilitated by ICT. Unlike financial scams or account hacking, OCSEA inflicts permanent trauma on developing children. Over 80% occurs via mainstream messaging, social networks, and multiplayer games rather than obscure corners of the Dark Web.
       </p>
     </section>
 
-    <!-- Section 2 -->
+    <!-- Section 2: 6 Critical Manifestations (BIG SIGN SHAPES) -->
     <section class="doc-section page-break">
       <h2 class="doc-section-h2">
         <span class="doc-section-num">2</span>
         <span class="lang-km">ទម្រង់ធំៗទាំង ៦ នៃ OCSEA ដែលកើតមានលើប្រព័ន្ធអនឡាញ</span>
-        <span class="lang-en">6 Critical Manifestations of OCSEA</span>
+        <span class="lang-en">6 Critical Manifestations of OCSEA (Flat Sign Shapes)</span>
       </h2>
 
       <!-- Khmer Section 2 -->
       <div class="doc-grid-2 lang-km">
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#06b6d4; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ ទម្រង់ ០១</span>
           <p class="doc-card-print-title">1. Online Grooming (ការលួងលោមបោកបញ្ឆោត)</p>
-          <p class="doc-p" style="font-size: 9pt;">ដំណើរការកសាងទំនុកចិត្ត បង្កើតភាពស្និទ្ធស្នាល បញ្ចុះបញ្ចូលកុំឱ្យប្រាប់ឪពុកម្តាយ និងបំបែកកុមារចេញពីគ្រួសារដើម្បីកេងប្រវ័ញ្ចផ្លូវភេទ។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">ដំណើរការកសាងទំនុកចិត្ត បង្កើតភាពស្និទ្ធស្នាល បញ្ចុះបញ្ចូលកុំឱ្យប្រាប់ឪពុកម្តាយ និងបំបែកកុមារចេញពីគ្រួសារដើម្បីកេងប្រវ័ញ្ចផ្លូវភេទ។</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#ef4444; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ ទម្រង់ ០២</span>
           <p class="doc-card-print-title">2. Sextortion (ការគំរាមកំហែងទារប្រាក់/រូបភាព)</p>
-          <p class="doc-p" style="font-size: 9pt;">ការប្រើប្រាស់រូបភាពអាក្រាត ឬវីដេអូសម្ងាត់របស់កុមារ ដើម្បីគំរាមទារប្រាក់ ឬបង្ខំឱ្យផ្ញើរូបភាពកាន់តែធ្ងន់ធ្ងរថែមទៀត។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">ការប្រើប្រាស់រូបភាពអាក្រាត ឬវីដេអូសម្ងាត់របស់កុមារ ដើម្បីគំរាមទារប្រាក់ ឬបង្ខំឱ្យផ្ញើរូបភាពកាន់តែធ្ងន់ធ្ងរថែមទៀត។</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#b91c1c; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">🛑 ទម្រង់ ០៣</span>
           <p class="doc-card-print-title">3. CSAM (សម្ភារៈរំលោភបំពានផ្លូវភេទកុមារ)</p>
-          <p class="doc-p" style="font-size: 9pt;">រូបភាព ឬវីដេអូរំលោភបំពានកុមារ — ការបង្កើត ការមើល ការកាន់កាប់ និងការ Forward ចែករំលែកគឺជាបទល្មើសព្រហ្មទណ្ឌធ្ងន់ធ្ងរ។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">រូបភាព ឬវីដេអូរំលោភបំពានកុមារ — ការបង្កើត ការមើល ការកាន់កាប់ និងការ Forward ចែករំលែកគឺជាបទល្មើសព្រហ្មទណ្ឌធ្ងន់ធ្ងរ។</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#dc2626; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">🛑 ទម្រង់ ០៤</span>
           <p class="doc-card-print-title">4. Live-Streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភ)</p>
-          <p class="doc-p" style="font-size: 9pt;">ការផ្សាយផ្ទាល់តាមកាមេរ៉ាស្មាតហ្វូន ឬ Webcam ដោយមានអ្នកបញ្ជា និងផ្ទេរប្រាក់ពីចម្ងាយតាមរយៈបច្ចេកវិទ្យាហិរញ្ញវត្ថុឌីជីថល។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">ការផ្សាយផ្ទាល់តាមកាមេរ៉ាស្មាតហ្វូន ឬ Webcam ដោយមានអ្នកបញ្ជា និងផ្ទេរប្រាក់ពីចម្ងាយតាមរយៈបច្ចេកវិទ្យាហិរញ្ញវត្ថុឌីជីថល។</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#f59e0b; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ ទម្រង់ ០៥</span>
           <p class="doc-card-print-title">5. Financial Exploitation (ការកេងប្រវ័ញ្ចដើម្បីប្រាក់)</p>
-          <p class="doc-p" style="font-size: 9pt;">ការដោះដូរសកម្មភាពផ្លូវភេទ ឬរូបភាព ដើម្បីទទួលបានលុយ ការទិញ Skin ក្នុង Game ការបញ្ចូលលុយទូរស័ព្ទ ឬក្នុងបណ្តាញជួញដូរ។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">ការដោះដូរសកម្មភាពផ្លូវភេទ ឬរូបភាព ដើម្បីទទួលបានលុយ ការទិញ Skin ក្នុង Game ការបញ្ចូលលុយទូរស័ព្ទ ឬក្នុងបណ្តាញជួញដូរ។</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#8b5cf6; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ ទម្រង់ ០៦</span>
           <p class="doc-card-print-title">6. AI Deepfakes (រូបភាពអាសអាភាសបង្កើតដោយ AI)</p>
-          <p class="doc-p" style="font-size: 9pt;">ការប្រើប្រាស់ Generative AI កាត់តមុខកុមារពីរូបថតធម្មតានៅសាលា ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយដើម្បីគំរាម ឬ Bullying។</p>
+          <p class="doc-p" style="font-size: 8.5pt;">ការប្រើប្រាស់ Generative AI កាត់តមុខកុមារពីរូបថតធម្មតានៅសាលា ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយដើម្បីគំរាម ឬ Bullying។</p>
         </div>
       </div>
 
       <!-- English Section 2 -->
       <div class="doc-grid-2 lang-en">
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#06b6d4; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ TYPOLOGY 01</span>
           <p class="doc-card-print-title">1. Online Grooming</p>
-          <p class="doc-p" style="font-size: 9pt;">Cultivating emotional trust, offering digital gifts, enforcing secrecy, and isolating minors from their families for sexual exploitation.</p>
+          <p class="doc-p" style="font-size: 8.5pt;">The deliberate process of building trust with a child, isolating them from parental support, and preparing them for sexual abuse.</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#ef4444; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ TYPOLOGY 02</span>
           <p class="doc-card-print-title">2. Sextortion</p>
-          <p class="doc-p" style="font-size: 9pt;">Weaponizing private or sensitive images to coerce minors into paying money, providing gift cards, or producing further explicit content.</p>
+          <p class="doc-p" style="font-size: 8.5pt;">Using intimate or compromised images to blackmail minors into paying money, buying cryptocurrency, or sending more extreme explicit material.</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#b91c1c; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">🛑 TYPOLOGY 03</span>
           <p class="doc-card-print-title">3. CSAM (Child Sexual Abuse Material)</p>
-          <p class="doc-p" style="font-size: 9pt;">Recordings and imagery depicting child sexual violations. Production, possession, viewing, and secondary forwarding are severe global crimes.</p>
+          <p class="doc-p" style="font-size: 8.5pt;">Visual depictions of child sexual abuse. Creating, possessing, downloading, and circulating CSAM is an egregious felony under criminal law.</p>
         </div>
         <div class="doc-card-print">
+          <span style="display:inline-block; background:#dc2626; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">🛑 TYPOLOGY 04</span>
           <p class="doc-card-print-title">4. Live-Streaming Abuse</p>
-          <p class="doc-p" style="font-size: 9pt;">Real-time camera abuse broadcast over closed web channels, funded remotely via cryptocurrency or electronic remittances.</p>
+          <p class="doc-p" style="font-size: 8.5pt;">Real-time broadcasting of child sexual abuse via webcams or mobile devices, often coordinated for payment via digital financial channels.</p>
         </div>
         <div class="doc-card-print">
-          <p class="doc-card-print-title">5. Financial Exploitation</p>
-          <p class="doc-p" style="font-size: 9pt;">Coercing children to perform sexual acts in exchange for game currency, mobile top-ups, daily expenses, or trafficking rings.</p>
+          <span style="display:inline-block; background:#f59e0b; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ TYPOLOGY 05</span>
+          <p class="doc-card-print-title">5. Financial &amp; Material Exploitation</p>
+          <p class="doc-p" style="font-size: 8.5pt;">Trading sexual imagery or interactions for game currency, gifts, mobile phone credits, or within human trafficking recruitment networks.</p>
         </div>
         <div class="doc-card-print">
-          <p class="doc-card-print-title">6. AI Deepfakes</p>
-          <p class="doc-p" style="font-size: 9pt;">Using generative AI to synthesize explicit nudes from benign student portraits for extortion, school harassment, and digital bullying.</p>
+          <span style="display:inline-block; background:#8b5cf6; color:#ffffff; font-size:8pt; font-weight:800; padding:2pt 6pt; border-radius:3pt; margin-bottom:4pt;">⚠️ TYPOLOGY 06</span>
+          <p class="doc-card-print-title">6. AI Deepfakes &amp; Synthetic Imagery</p>
+          <p class="doc-p" style="font-size: 8.5pt;">Using Generative AI to map a minor's school yearbook or social photo onto nude bodies, producing non-consensual synthetic abuse content.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section 3 -->
+    <!-- Section 3: Grooming Funnel & Warning Signs -->
     <section class="doc-section">
       <h2 class="doc-section-h2">
         <span class="doc-section-num">3</span>
-        <span class="lang-km">សញ្ញាព្រមានលើកុមារ និងយុវជន (Warning Signs)</span>
-        <span class="lang-en">Recognizing Warning Signs in Children & Youth</span>
+        <span class="lang-km">ដំណើរការ Grooming ៤ ដំណាក់កាល និងសញ្ញាព្រមាន</span>
+        <span class="lang-en">The 4-Stage Grooming Funnel &amp; Warning Signs</span>
       </h2>
-      <p class="doc-p lang-km">
-        <strong>សញ្ញាអាកប្បកិរិយា៖</strong> ដកខ្លួនចេញពីគ្រួសារ, គេងមិនលក់, ស្រកទម្ងន់, ថប់បារម្ភស្លន់ស្លោពេលទូរស័ព្ទរោទិ៍សារ, មានលុយកាក់ ឬកាដូថ្មីៗដោយមិនដឹងប្រភព។<br/>
-        <strong>សញ្ញាលើឧបករណ៍បច្ចេកវិទ្យា៖</strong> ក្រឡាប់ទូរស័ព្ទចុះក្រោមភ្លាមៗពេលមនុស្សធំដើរមក, ប្តូរលេខសម្ងាត់ Passcode ញឹកញាប់, ប្រើប្រាស់ App សម្ងាត់ (Secret Vaults), លួចឆាតនៅម៉ោង ២–៣ យប់។
-      </p>
-      <p class="doc-p lang-en">
-        <strong>Behavioral Signs:</strong> Emotional withdrawal, insomnia, sudden weight loss, visible panic when receiving phone notifications, unexplained gifts or money.<br/>
-        <strong>Device Signs:</strong> Instantly hiding screens when adults approach, constantly changing lock screen codes, using hidden vault apps, late-night secretive video calls.
-      </p>
+      <div class="doc-p lang-km">
+        <strong>• ៤ ដំណាក់កាលនៃ Grooming៖</strong> ១. ស្វែងរកគោលដៅ (Targeting) ➔ ២. កសាងទំនុកចិត្ត (Befriending &amp; Gifts) ➔ ៣. ញែកកុមារចេញ (Isolation &amp; Secret Chat) ➔ ៤. កេងប្រវ័ញ្ចផ្លូវភេទ (Sexual Escalation)។<br/>
+        <strong>• សញ្ញាអាកប្បកិរិយា៖</strong> ដកខ្លួនចេញពីគ្រួសារ, គេងមិនលក់, ស្រកទម្ងន់ខុសធម្មតា, ភ័យស្លន់ស្លោពេលមាន Notification, មានកាដូ ឬលុយដោយគ្មានប្រភពច្បាស់លាស់។<br/>
+        <strong>• សញ្ញាបច្ចេកវិទ្យា៖</strong> ឆាប់បិទទូរស័ព្ទពេលមនុស្សធំដើរមកជិត, ប្តូរលេខកូដ Lock Screen ញឹកញាប់, ប្រើ App លាក់រូបភាព (Vault Apps), លួច Call វីដេអូសម្ងាត់ពេលយប់ជ្រៅ។
+      </div>
+      <div class="doc-p lang-en">
+        <strong>• The 4 Grooming Stages:</strong> 1. Target Selection ➔ 2. Trust Building &amp; Gaming Gifts ➔ 3. Isolation &amp; Telegram Secret Chat ➔ 4. Sexual Solicitation.<br/>
+        <strong>• Behavioral Signs:</strong> Withdrawal from loved ones, insomnia, sudden panic upon receiving notifications, unexplained gifts or money.<br/>
+        <strong>• Device Signs:</strong> Secretive nighttime device use, hiding screens when adults approach, using hidden vault apps, secretive late-night video calls.
+      </div>
     </section>
 
-    <!-- Section 4 -->
+    <!-- Section 4: 4-Step Action Protocol (BIG SIGN SHAPES) -->
     <section class="doc-section page-break">
       <h2 class="doc-section-h2">
         <span class="doc-section-num">4</span>
-        <span class="lang-km">រូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់ (The 4-Step Action Framework)</span>
-        <span class="lang-en">The 4-Step Emergency Action Framework</span>
+        <span class="lang-km">រូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់ (STOP · RECORD · REPORT · SUPPORT)</span>
+        <span class="lang-en">The 4-Step Emergency Action Protocol (Flat Sign Badges)</span>
       </h2>
 
-      <!-- Khmer Section 4 -->
+      <!-- Khmer Steps with Big Sign Shapes -->
       <div class="lang-km">
         <div class="doc-step-box">
-          <div class="doc-step-badge">1</div>
+          <div style="background:#dc2626; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🛑 ជំហានទី ១ (STOP)</div>
           <div>
-            <strong style="font-size: 11pt; color: #B91C1C;">ជំហានទី ១៖ បញ្ឈប់ (STOP)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              ឈប់ឆ្លើយតបសារជនល្មើសជាបន្ទាន់។ <strong>កុំផ្ញើប្រាក់ដាច់ខាត</strong> ព្រោះការបង់ប្រាក់មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ កុំផ្ញើរូបបន្ថែម និងរក្សាភាពស្ងប់ស្ងាត់។
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">បញ្ឈប់ការប្រាស្រ័យទាក់ទងជាបន្ទាន់</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">ឈប់ឆ្លើយតបសារជនល្មើសជាបន្ទាន់។ <strong>កុំផ្ញើប្រាក់ដាច់ខាត</strong> ព្រោះការបង់ប្រាក់មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ កុំផ្ញើរូបបន្ថែម និងរក្សាភាពស្ងប់ស្ងាត់។</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #D97706;">2</div>
+          <div style="background:#d97706; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">📸 ជំហានទី ២ (RECORD)</div>
           <div>
-            <strong style="font-size: 11pt; color: #D97706;">ជំហានទី ២៖ រក្សាទុកភស្តុតាង (RECORD)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              <strong>កុំលុប Chat ចោលដាច់ខាត!</strong> ធ្វើការ Screenshot សារគំរាមកំហែង កាលបរិច្ឆេទ ពេលវេលា គណនី Profile URL លេខសម្គាល់ User ID លេខទូរស័ព្ទ និងកុងធនាគារដែលជនល្មើសទាមទារ។ ប្រើមុខងារ Export Chat History។
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">រក្សាទុកភស្តុតាងឱ្យបានត្រឹមត្រូវ</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;"><strong>កុំលុប Chat ចោលដាច់ខាត!</strong> ថត Screenshot សារគំរាមកំហែង, កាលបរិច្ឆេទ, ឈ្មោះ Profile URL, លេខសម្គាល់ User ID, លេខទូរស័ព្ទ និងលេខកុងធនាគារដែលជនល្មើសទាមទារ។ ប្រើមុខងារ Export Chat History។</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #2563EB;">3</div>
+          <div style="background:#0891b2; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🚨 ជំហានទី ៣ (REPORT)</div>
           <div>
-            <strong style="font-size: 11pt; color: #2563EB;">ជំហានទី ៣៖ រាយការណ៍ (REPORT)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              ទាក់ទងនគរបាលប្រឆាំងការជួញដូរមនុស្ស និងអនីតិជន (Hotline <strong>1288</strong>), អង្គការ APLE Cambodia (Hotline <strong>092 311 511</strong>), រាយការណ៍ Report លើ App (Child Safety), និងប្រើប្រាស់ <strong>takeitdown.ncmec.org</strong> ដើម្បីលុបរូបចេញពី Internet។
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">រាយការណ៍ទៅសមត្ថកិច្ច និងអង្គការជំនាញ</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">ទាក់ទងនគរបាលប្រឆាំងការជួញដូរមនុស្ស (<strong>1288</strong>), អង្គការ A21 CAC (<strong>010 22 07 71</strong>), អង្គការ APLE Cambodia (<strong>092 311 511</strong>), រាយការណ៍ Report លើ App, និងប្រើប្រាស់ <strong>takeitdown.ncmec.org</strong> ដើម្បីលុបរូបភាពចេញពី Internet។</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #059669;">4</div>
+          <div style="background:#059669; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🤝 ជំហានទី ៤ (SUPPORT)</div>
           <div>
-            <strong style="font-size: 11pt; color: #059669;">ជំហានទី ៤៖ គាំទ្រផ្លូវចិត្ត (SUPPORT)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              ផ្តល់ភាពកក់ក្តៅ និងការលួងលោម។ <strong>មិនត្រូវស្តីបន្ទោសជនរងគ្រោះជាដាច់ខាត!</strong> ហៅទៅកាន់ Child Helpline Cambodia (Hotline <strong>1280</strong> ឥតគិតថ្លៃ ២៤/៧) ដើម្បីទទួលបានការប្រឹក្សាផ្លូវចិត្តពីអ្នកជំនាញ។
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">គាំទ្រផ្លូវចិត្ត និងមិនស្តីបន្ទោស</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">ផ្តល់ភាពកក់ក្តៅ និងការលួងលោម។ <strong>មិនត្រូវស្តីបន្ទោសជនរងគ្រោះជាដាច់ខាត!</strong> ហៅទៅកាន់ Child Helpline Cambodia (<strong>1280</strong> ឥតគិតថ្លៃ ២៤/៧) ឬ A21 CAC ដើម្បីទទួលបានការប្រឹក្សាផ្លូវចិត្ត និងការព្យាបាលរបួសផ្លូវចិត្ត (Trauma Care)។</p>
           </div>
         </div>
       </div>
 
-      <!-- English Section 4 -->
+      <!-- English Steps with Big Sign Shapes -->
       <div class="lang-en">
         <div class="doc-step-box">
-          <div class="doc-step-badge">1</div>
+          <div style="background:#dc2626; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🛑 STEP 1 (STOP)</div>
           <div>
-            <strong style="font-size: 11pt; color: #B91C1C;">STEP 1: STOP (Cease Communication)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              Stop all replies to the perpetrator immediately. <strong>NEVER PAY RANSOM</strong> — payments guarantee escalated blackmail rather than deletion. Do not send further imagery; remain calm.
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">Cease All Contact Immediately</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">Stop messaging immediately. <strong>Never pay ransom:</strong> paying does not delete images, it accelerates extortion demands. Do not send further material; preserve composure.</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #D97706;">2</div>
+          <div style="background:#d97706; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">📸 STEP 2 (RECORD)</div>
           <div>
-            <strong style="font-size: 11pt; color: #D97706;">STEP 2: RECORD (Preserve Evidence)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              <strong>DO NOT DELETE CHAT LOGS!</strong> Screenshot extortion threats, timestamps, profile URLs, numerical User IDs, phone numbers, and payment details. Use the in-app Export Chat History feature.
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">Preserve Critical Evidence Legally</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;"><strong>Do not delete chat logs!</strong> Screenshot extortion threats, timestamps, profile URLs, numerical user IDs, phone handles, and extortion payment account details. Use Export Chat History.</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #2563EB;">3</div>
+          <div style="background:#0891b2; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🚨 STEP 3 (REPORT)</div>
           <div>
-            <strong style="font-size: 11pt; color: #2563EB;">STEP 3: REPORT (Alert Enforcement & Platforms)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              Call Anti-Human Trafficking & Juvenile Police (Hotline <strong>1288</strong>), APLE Cambodia (Hotline <strong>092 311 511</strong>), report the account in-app for Child Safety, and hash imagery via <strong>takeitdown.ncmec.org</strong>.
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">Report to Police &amp; Child Protection Helplines</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">Contact Anti-Trafficking Police (<strong>1288</strong>), A21 Child Advocacy Center (<strong>010 22 07 71</strong>), APLE Cambodia (<strong>092 311 511</strong>), submit in-app reports, and register with <strong>takeitdown.ncmec.org</strong>.</p>
           </div>
         </div>
 
         <div class="doc-step-box">
-          <div class="doc-step-badge" style="background: #059669;">4</div>
+          <div style="background:#059669; color:#ffffff; font-weight:800; font-size:9pt; padding:4pt 8pt; border-radius:4pt; flex-shrink:0;">🤝 STEP 4 (SUPPORT)</div>
           <div>
-            <strong style="font-size: 11pt; color: #059669;">STEP 4: SUPPORT (Psychosocial Care)</strong>
-            <p class="doc-p" style="margin-top: 2pt;">
-              Provide unconditional emotional safety and love. <strong>NEVER BLAME THE VICTIM!</strong> Call Child Helpline Cambodia (Hotline <strong>1280</strong> toll-free 24/7) to connect with professional youth counselors.
-            </p>
+            <strong style="color:#0F172A; font-size:10pt;">Provide Psychological Safety (No Victim Blaming)</strong>
+            <p class="doc-p" style="margin:2pt 0 0 0; font-size:9pt;">Provide immediate reassurance. <strong>Never shame or scold the child!</strong> Call Child Helpline Cambodia (<strong>1280</strong> Free 24/7) or A21 CAC for trauma-informed psychosocial support.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 5 -->
+    <!-- Section 5: Cambodia National Hotlines & Support Directory Table (DETAILED A21 INFO) -->
     <section class="doc-section">
       <h2 class="doc-section-h2">
         <span class="doc-section-num">5</span>
-        <span class="lang-km">បញ្ជីលេខទូរស័ព្ទ និងសេវាជំនួយបន្ទាន់នៅកម្ពុជា (Emergency Hotlines)</span>
-        <span class="lang-en">Cambodia Emergency Hotlines & Specialized Support Directory</span>
+        <span class="lang-km">តារាងលេខទូរស័ព្ទបន្ទាន់ និងសេវាជំនួយផ្លូវការនៅកម្ពុជា (sophat.space/help)</span>
+        <span class="lang-en">Cambodia National Emergency Hotlines &amp; Support Directory</span>
       </h2>
-      <p class="doc-p lang-km">រក្សាទុកលេខទូរស័ព្ទទាំងនេះក្នុងទូរស័ព្ទដៃ និងបិទផ្សាយនៅតាមសាលារៀន ឬសហគមន៍៖</p>
-      <p class="doc-p lang-en">Save these verified emergency contacts in mobile phones and post across community centers:</p>
 
-      <!-- Khmer Table -->
+      <!-- Khmer Table with Detailed A21 Entry -->
       <table class="doc-table lang-km">
         <thead>
           <tr>
-            <th>ស្ថាប័ន / អង្គការ</th>
-            <th>លេខទូរស័ព្ទ Hotline</th>
-            <th>តួនាទី និងសេវាកម្ម</th>
-            <th>គេហទំព័រ / ព័ត៌មាន</th>
+            <th style="width: 25%;">ស្ថាប័ន / អង្គការ</th>
+            <th style="width: 20%;">លេខទូរស័ព្ទ Hotline</th>
+            <th style="width: 35%;">តួនាទី និងសេវាកម្ម</th>
+            <th style="width: 20%;">គេហទំព័រ / ព័ត៌មាន</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>នគរបាលប្រឆាំងការជួញដូរមនុស្ស & ការពារអនីតិជន</strong></td>
-            <td><span class="doc-hotline-badge">1288</span> / 012 852 241</td>
-            <td>អន្តរាគមន៍ច្បាប់ បង្ក្រាប បើកការស៊ើបអង្កេត និងសង្គ្រោះ ២៤/៧</td>
+            <td><strong>អង្គការ A21 កម្ពុជា (Child Advocacy Center)</strong></td>
+            <td class="hl-num">010 220 771<br/><span style="font-size:7.5pt; color:#64748b;">071 7210 771 | 023 900 121</span></td>
+            <td>មជ្ឈមណ្ឌលតស៊ូមតិកុមារ (CAC)៖ ស៊ើបអង្កេត ផ្តល់ជម្រកសុវត្ថិភាព គាំទ្រច្បាប់ក្នុងតុលាការ និងព្យាបាលរបួសផ្លូវចិត្តកុមារ (Trauma Care)</td>
+            <td>a21.org<br/><span style="font-size:7.5pt;">cambodia@a21.org</span></td>
+          </tr>
+          <tr>
+            <td><strong>នគរបាលប្រឆាំងការជួញដូរមនុស្ស &amp; ការពារអនីតិជន</strong></td>
+            <td class="hl-num">1288<br/><span style="font-size:7.5pt; color:#64748b;">012 852 241</span></td>
+            <td>អន្តរាគមន៍ច្បាប់បន្ទាន់ បង្ក្រាប បើកការស៊ើបអង្កេត និងសង្គ្រោះជនរងគ្រោះ ២៤/៧</td>
             <td>នគរបាលជាតិកម្ពុជា</td>
           </tr>
           <tr>
-            <td><strong>APLE Cambodia</strong></td>
-            <td><span class="doc-hotline-badge">092 311 511</span></td>
+            <td><strong>ខ្សែទូរស័ព្ទជំនួយកុមារ Child Helpline</strong></td>
+            <td class="hl-num">1280<br/><span style="font-size:7.5pt; color:#059669;">(ឥតគិតថ្លៃ ២៤/៧)</span></td>
+            <td>ប្រឹក្សាយោបល់ផ្លូវចិត្ត គាំពារសិទ្ធិកុមារ និងសង្គ្រោះបន្ទាន់ ២៥ ខេត្ត-ក្រុង</td>
+            <td>childhelplinecambodia.org</td>
+          </tr>
+          <tr>
+            <td><strong>អង្គការ APLE Cambodia</strong></td>
+            <td class="hl-num">092 311 511</td>
             <td>អង្គការជំនាញបង្ក្រាប OCSEA ស៊ើបអង្កេត CSAM និងកិច្ចការពារកុមារ</td>
             <td>aplecambodia.org</td>
           </tr>
           <tr>
-            <td><strong>Child Helpline Cambodia</strong></td>
-            <td><span class="doc-hotline-badge">1280</span> (ឥតគិតថ្លៃ)</td>
-            <td>ប្រឹក្សាយោបល់ផ្លូវចិត្ត គាំពារសិទ្ធិកុមារ និងសង្គ្រោះបន្ទាន់ ២៤/៧</td>
-            <td>childhelplinecambodia.org</td>
-          </tr>
-          <tr>
-            <td><strong>Child Advocacy Center (CAC)</strong></td>
-            <td><span class="doc-hotline-badge">010 220 771</span> / 071 7210 771</td>
-            <td>មជ្ឈមណ្ឌលតស៊ូមតិ និងគាំពារកុមាររងគ្រោះដោយការរំលោភបំពាន</td>
-            <td>សេវាគាំពារកុមារ</td>
-          </tr>
-          <tr>
             <td><strong>នាយកដ្ឋានប្រឆាំងបទល្មើសបច្ចេកវិទ្យា</strong></td>
-            <td>hotline.police.gov.kh</td>
-            <td>ទទួលបណ្តឹងបទល្មើសតាមប្រព័ន្ធបច្ចេកវិទ្យា Scams និង Phishing</td>
-            <td>Anti-Cybercrime Police</td>
+            <td style="color:#0891b2; font-weight:700;">hotline.police.gov.kh</td>
+            <td>ទទួលបណ្តឹងបទល្មើសតាមប្រព័ន្ធបច្ចេកវិទ្យា Scams, Hacking និង Phishing</td>
+            <td>App Kapea Scams</td>
           </tr>
           <tr>
-            <td><strong>CamCERT (MPTC)</strong></td>
-            <td>023 722 391</td>
+            <td><strong>CamCERT (ក្រសួងប្រៃសណីយ៍ និងទូរគមនាគមន៍)</strong></td>
+            <td class="hl-num">023 722 391</td>
             <td>ឆ្លើយតបបញ្ហាសន្តិសុខបច្ចេកវិទ្យា និងទប់ស្កាត់ Link/Domain គ្រោះថ្នាក់</td>
             <td>camcert.gov.kh</td>
           </tr>
           <tr>
             <td><strong>CWCC (ការពារសិទ្ធិកុមារ និងស្ត្រី)</strong></td>
-            <td>012 828 732 / 023 993 429</td>
+            <td class="hl-num">012 828 732<br/><span style="font-size:7.5pt; color:#64748b;">023 993 429</span></td>
             <td>សេវាការពារផ្លូវច្បាប់ ការប្រឹក្សា និងជម្រកសុវត្ថិភាពបណ្តោះអាសន្ន</td>
             <td>cwcc.org.kh</td>
           </tr>
           <tr>
             <td><strong>Take It Down (NCMEC)</strong></td>
-            <td>takeitdown.ncmec.org</td>
+            <td style="color:#059669; font-weight:700;">takeitdown.ncmec.org</td>
             <td>បច្ចេកវិទ្យា Hash លុបរូបភាពអាក្រាតអនីតិជនចេញពី Internet ដោយឥតគិតថ្លៃ</td>
             <td>សកលលោក</td>
           </tr>
         </tbody>
       </table>
 
-      <!-- English Table -->
+      <!-- English Table with Detailed A21 Entry -->
       <table class="doc-table lang-en">
         <thead>
           <tr>
-            <th>Agency / Organization</th>
-            <th>Emergency Contact</th>
-            <th>Role & Specialized Services</th>
-            <th>Portal / Reference</th>
+            <th style="width: 25%;">Agency / Organization</th>
+            <th style="width: 20%;">Emergency Hotline</th>
+            <th style="width: 35%;">Mandate &amp; Core Services</th>
+            <th style="width: 20%;">Portal / Contact</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Anti-Trafficking & Juvenile Police (AHTJPD)</strong></td>
-            <td><span class="doc-hotline-badge">1288</span> / 012 852 241</td>
-            <td>24/7 law enforcement, criminal investigations, and crisis raid rescue</td>
+            <td><strong>A21 Cambodia (Child Advocacy Center)</strong></td>
+            <td class="hl-num">010 220 771<br/><span style="font-size:7.5pt; color:#64748b;">071 7210 771 | 023 900 121</span></td>
+            <td>Child Advocacy Center: Investigation, emergency shelter, legal prosecution aid &amp; trauma-informed psychological aftercare</td>
+            <td>a21.org<br/><span style="font-size:7.5pt;">cambodia@a21.org</span></td>
+          </tr>
+          <tr>
+            <td><strong>Anti-Trafficking Police (AHTJPD)</strong></td>
+            <td class="hl-num">1288<br/><span style="font-size:7.5pt; color:#64748b;">012 852 241</span></td>
+            <td>Emergency law enforcement, tactical raid operations, evidence seizure and 24/7 victim rescue</td>
             <td>Cambodia National Police</td>
           </tr>
           <tr>
-            <td><strong>APLE Cambodia</strong></td>
-            <td><span class="doc-hotline-badge">092 311 511</span></td>
-            <td>Specialist child protection NGO, CSAM investigations, and legal advocacy</td>
-            <td>aplecambodia.org</td>
-          </tr>
-          <tr>
             <td><strong>Child Helpline Cambodia</strong></td>
-            <td><span class="doc-hotline-badge">1280</span> (Toll-free)</td>
-            <td>24/7 confidential psychosocial counseling and child welfare referrals</td>
+            <td class="hl-num">1280<br/><span style="font-size:7.5pt; color:#059669;">(Toll-Free 24/7)</span></td>
+            <td>Free confidential counseling, child welfare intervention, and provincial referral coordination</td>
             <td>childhelplinecambodia.org</td>
           </tr>
           <tr>
-            <td><strong>Child Advocacy Center (CAC)</strong></td>
-            <td><span class="doc-hotline-badge">010 220 771</span> / 071 7210 771</td>
-            <td>Trauma-informed care, child advocacy, and rehabilitation services</td>
-            <td>Child Support Services</td>
+            <td><strong>APLE Cambodia</strong></td>
+            <td class="hl-num">092 311 511</td>
+            <td>Specialized NGO targeting OCSEA, digital CSAM investigations, and direct legal representation</td>
+            <td>aplecambodia.org</td>
           </tr>
           <tr>
             <td><strong>Anti-Cybercrime Police Department</strong></td>
-            <td>hotline.police.gov.kh</td>
-            <td>Official digital crime reporting platform for scams, phishing, and hacks</td>
-            <td>Anti-Cybercrime Police</td>
+            <td style="color:#0891b2; font-weight:700;">hotline.police.gov.kh</td>
+            <td>Receives technical cybercrime reports, account hijackings, phishing, and scam compound activity</td>
+            <td>App Kapea Scams</td>
           </tr>
           <tr>
             <td><strong>CamCERT (MPTC)</strong></td>
-            <td>023 722 391</td>
-            <td>National computer emergency response team, domain blocking, threats</td>
+            <td class="hl-num">023 722 391</td>
+            <td>National cybersecurity incident response, takedown requests for malicious phishing domains</td>
             <td>camcert.gov.kh</td>
           </tr>
           <tr>
-            <td><strong>CWCC (Women & Child Crisis Center)</strong></td>
-            <td>012 828 732 / 023 993 429</td>
-            <td>Emergency shelter, legal representation, and trauma recovery services</td>
+            <td><strong>CWCC (Crisis Support for Women &amp; Children)</strong></td>
+            <td class="hl-num">012 828 732<br/><span style="font-size:7.5pt; color:#64748b;">023 993 429</span></td>
+            <td>Legal defense, psychosocial counseling, safe crisis housing, and family reintegration</td>
             <td>cwcc.org.kh</td>
           </tr>
           <tr>
             <td><strong>Take It Down (NCMEC)</strong></td>
-            <td>takeitdown.ncmec.org</td>
-            <td>Cryptographic hash platform to stop online circulation of youth images</td>
-            <td>Global Platform</td>
+            <td style="color:#059669; font-weight:700;">takeitdown.ncmec.org</td>
+            <td>Cryptographic image hashing tool removing underage explicit content from global platforms</td>
+            <td>Global Service</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Footer Colophon -->
-    <footer class="doc-footer">
-      <div>
-        <p class="lang-km"><strong>SOPHAT.SPACE</strong> — គម្រោងប្រយោជន៍សាធារណៈឌីជីថល (Digital Public Good)</p>
-        <p class="lang-en"><strong>SOPHAT.SPACE</strong> — Cambodia Digital Public Good Initiative</p>
-        <p class="lang-km">រក្សាសិទ្ធិឆ្នាំ ២០២៦ · អាចទាញយក ចែករំលែក និងបោះពុម្ពផ្សាយដោយសេរីដើម្បីប្រយោជន៍អប់រំសង្គម</p>
-        <p class="lang-en">Copyright 2026 · Free to download, reproduce, and distribute for public educational purposes</p>
+    <!-- Section 6: Real Scannable QR Codes Box -->
+    <div style="margin-top: 14pt; padding: 10pt 14pt; border: 1.5pt solid #10b981; border-radius: 8pt; background: #f0fdf4; display: flex; align-items: center; justify-content: space-between; gap: 16pt;" class="lang-km">
+      <div style="flex: 1;">
+        <p style="font-size: 11pt; font-weight: 800; color: #065f46; margin-bottom: 3pt;">📲 ស្កេន QR Code ដើម្បីទទួលបានជំនួយ និងឯកសារបន្ថែម</p>
+        <p style="font-size: 8.5pt; color: #1f2937; line-height: 1.45;">
+          • <strong>sophat.space/help:</strong> មជ្ឈមណ្ឌលជំនួយសង្គ្រោះបន្ទាន់ កិច្ចការពារកុមារ និង Privacy Check-up<br/>
+          • <strong>sophat.space/slide-ocsea:</strong> បទបង្ហាញអន្តរកម្មលើបណ្ដាញ និងទាញយកសៀវភៅណែនាំជា PDF កំណែ v3.3 Final
+        </p>
       </div>
-      <div style="text-align: right;">
-        <p>គេហទំព័រ៖ <strong>sophat.space</strong> · ស្លាយបទបង្ហាញ៖ <strong>sophat.space/slide-ocsea</strong></p>
-        <p>មជ្ឈមណ្ឌលជំនួយឌីជីថល៖ <strong>sophat.space/help</strong></p>
+      <div style="display: flex; gap: 14pt; align-items: center;">
+        <div style="text-align: center;">
+          <div style="width: 68pt; height: 68pt; background: #ffffff; padding: 3pt; border: 1pt solid #cbd5e1; border-radius: 6pt; display: flex; align-items: center; justify-content: center;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"  preserveAspectRatio="xMinYMin meet"><rect width="100%" height="100%" fill="white" cx="0" cy="0"/><path d="M2,2l2,0 0,2 -2,0 0,-2z M4,2l2,0 0,2 -2,0 0,-2z M6,2l2,0 0,2 -2,0 0,-2z M8,2l2,0 0,2 -2,0 0,-2z M10,2l2,0 0,2 -2,0 0,-2z M12,2l2,0 0,2 -2,0 0,-2z M14,2l2,0 0,2 -2,0 0,-2z M22,2l2,0 0,2 -2,0 0,-2z M26,2l2,0 0,2 -2,0 0,-2z M30,2l2,0 0,2 -2,0 0,-2z M32,2l2,0 0,2 -2,0 0,-2z M38,2l2,0 0,2 -2,0 0,-2z M40,2l2,0 0,2 -2,0 0,-2z M42,2l2,0 0,2 -2,0 0,-2z M44,2l2,0 0,2 -2,0 0,-2z M46,2l2,0 0,2 -2,0 0,-2z M48,2l2,0 0,2 -2,0 0,-2z M50,2l2,0 0,2 -2,0 0,-2z M2,4l2,0 0,2 -2,0 0,-2z M14,4l2,0 0,2 -2,0 0,-2z M18,4l2,0 0,2 -2,0 0,-2z M20,4l2,0 0,2 -2,0 0,-2z M22,4l2,0 0,2 -2,0 0,-2z M26,4l2,0 0,2 -2,0 0,-2z M28,4l2,0 0,2 -2,0 0,-2z M32,4l2,0 0,2 -2,0 0,-2z M38,4l2,0 0,2 -2,0 0,-2z M50,4l2,0 0,2 -2,0 0,-2z M2,6l2,0 0,2 -2,0 0,-2z M6,6l2,0 0,2 -2,0 0,-2z M8,6l2,0 0,2 -2,0 0,-2z M10,6l2,0 0,2 -2,0 0,-2z M14,6l2,0 0,2 -2,0 0,-2z M20,6l2,0 0,2 -2,0 0,-2z M34,6l2,0 0,2 -2,0 0,-2z M38,6l2,0 0,2 -2,0 0,-2z M42,6l2,0 0,2 -2,0 0,-2z M44,6l2,0 0,2 -2,0 0,-2z M46,6l2,0 0,2 -2,0 0,-2z M50,6l2,0 0,2 -2,0 0,-2z M2,8l2,0 0,2 -2,0 0,-2z M6,8l2,0 0,2 -2,0 0,-2z M8,8l2,0 0,2 -2,0 0,-2z M10,8l2,0 0,2 -2,0 0,-2z M14,8l2,0 0,2 -2,0 0,-2z M20,8l2,0 0,2 -2,0 0,-2z M24,8l2,0 0,2 -2,0 0,-2z M26,8l2,0 0,2 -2,0 0,-2z M30,8l2,0 0,2 -2,0 0,-2z M32,8l2,0 0,2 -2,0 0,-2z M34,8l2,0 0,2 -2,0 0,-2z M38,8l2,0 0,2 -2,0 0,-2z M42,8l2,0 0,2 -2,0 0,-2z M44,8l2,0 0,2 -2,0 0,-2z M46,8l2,0 0,2 -2,0 0,-2z M50,8l2,0 0,2 -2,0 0,-2z M2,10l2,0 0,2 -2,0 0,-2z M6,10l2,0 0,2 -2,0 0,-2z M8,10l2,0 0,2 -2,0 0,-2z M10,10l2,0 0,2 -2,0 0,-2z M14,10l2,0 0,2 -2,0 0,-2z M18,10l2,0 0,2 -2,0 0,-2z M24,10l2,0 0,2 -2,0 0,-2z M26,10l2,0 0,2 -2,0 0,-2z M30,10l2,0 0,2 -2,0 0,-2z M32,10l2,0 0,2 -2,0 0,-2z M38,10l2,0 0,2 -2,0 0,-2z M42,10l2,0 0,2 -2,0 0,-2z M44,10l2,0 0,2 -2,0 0,-2z M46,10l2,0 0,2 -2,0 0,-2z M50,10l2,0 0,2 -2,0 0,-2z M2,12l2,0 0,2 -2,0 0,-2z M14,12l2,0 0,2 -2,0 0,-2z M24,12l2,0 0,2 -2,0 0,-2z M26,12l2,0 0,2 -2,0 0,-2z M32,12l2,0 0,2 -2,0 0,-2z M34,12l2,0 0,2 -2,0 0,-2z M38,12l2,0 0,2 -2,0 0,-2z M50,12l2,0 0,2 -2,0 0,-2z M2,14l2,0 0,2 -2,0 0,-2z M4,14l2,0 0,2 -2,0 0,-2z M6,14l2,0 0,2 -2,0 0,-2z M8,14l2,0 0,2 -2,0 0,-2z M10,14l2,0 0,2 -2,0 0,-2z M12,14l2,0 0,2 -2,0 0,-2z M14,14l2,0 0,2 -2,0 0,-2z M18,14l2,0 0,2 -2,0 0,-2z M22,14l2,0 0,2 -2,0 0,-2z M26,14l2,0 0,2 -2,0 0,-2z M30,14l2,0 0,2 -2,0 0,-2z M34,14l2,0 0,2 -2,0 0,-2z M38,14l2,0 0,2 -2,0 0,-2z M40,14l2,0 0,2 -2,0 0,-2z M42,14l2,0 0,2 -2,0 0,-2z M44,14l2,0 0,2 -2,0 0,-2z M46,14l2,0 0,2 -2,0 0,-2z M48,14l2,0 0,2 -2,0 0,-2z M50,14l2,0 0,2 -2,0 0,-2z M20,16l2,0 0,2 -2,0 0,-2z M22,16l2,0 0,2 -2,0 0,-2z M26,16l2,0 0,2 -2,0 0,-2z M28,16l2,0 0,2 -2,0 0,-2z M30,16l2,0 0,2 -2,0 0,-2z M2,18l2,0 0,2 -2,0 0,-2z M6,18l2,0 0,2 -2,0 0,-2z M10,18l2,0 0,2 -2,0 0,-2z M14,18l2,0 0,2 -2,0 0,-2z M20,18l2,0 0,2 -2,0 0,-2z M24,18l2,0 0,2 -2,0 0,-2z M26,18l2,0 0,2 -2,0 0,-2z M28,18l2,0 0,2 -2,0 0,-2z M42,18l2,0 0,2 -2,0 0,-2z M48,18l2,0 0,2 -2,0 0,-2z M2,20l2,0 0,2 -2,0 0,-2z M4,20l2,0 0,2 -2,0 0,-2z M6,20l2,0 0,2 -2,0 0,-2z M8,20l2,0 0,2 -2,0 0,-2z M10,20l2,0 0,2 -2,0 0,-2z M12,20l2,0 0,2 -2,0 0,-2z M16,20l2,0 0,2 -2,0 0,-2z M20,20l2,0 0,2 -2,0 0,-2z M22,20l2,0 0,2 -2,0 0,-2z M24,20l2,0 0,2 -2,0 0,-2z M26,20l2,0 0,2 -2,0 0,-2z M28,20l2,0 0,2 -2,0 0,-2z M34,20l2,0 0,2 -2,0 0,-2z M36,20l2,0 0,2 -2,0 0,-2z M38,20l2,0 0,2 -2,0 0,-2z M50,20l2,0 0,2 -2,0 0,-2z M2,22l2,0 0,2 -2,0 0,-2z M4,22l2,0 0,2 -2,0 0,-2z M14,22l2,0 0,2 -2,0 0,-2z M18,22l2,0 0,2 -2,0 0,-2z M24,22l2,0 0,2 -2,0 0,-2z M34,22l2,0 0,2 -2,0 0,-2z M36,22l2,0 0,2 -2,0 0,-2z M40,22l2,0 0,2 -2,0 0,-2z M46,22l2,0 0,2 -2,0 0,-2z M48,22l2,0 0,2 -2,0 0,-2z M50,22l2,0 0,2 -2,0 0,-2z M4,24l2,0 0,2 -2,0 0,-2z M8,24l2,0 0,2 -2,0 0,-2z M18,24l2,0 0,2 -2,0 0,-2z M26,24l2,0 0,2 -2,0 0,-2z M28,24l2,0 0,2 -2,0 0,-2z M30,24l2,0 0,2 -2,0 0,-2z M34,24l2,0 0,2 -2,0 0,-2z M38,24l2,0 0,2 -2,0 0,-2z M40,24l2,0 0,2 -2,0 0,-2z M48,24l2,0 0,2 -2,0 0,-2z M10,26l2,0 0,2 -2,0 0,-2z M12,26l2,0 0,2 -2,0 0,-2z M14,26l2,0 0,2 -2,0 0,-2z M18,26l2,0 0,2 -2,0 0,-2z M20,26l2,0 0,2 -2,0 0,-2z M22,26l2,0 0,2 -2,0 0,-2z M24,26l2,0 0,2 -2,0 0,-2z M26,26l2,0 0,2 -2,0 0,-2z M28,26l2,0 0,2 -2,0 0,-2z M30,26l2,0 0,2 -2,0 0,-2z M32,26l2,0 0,2 -2,0 0,-2z M34,26l2,0 0,2 -2,0 0,-2z M36,26l2,0 0,2 -2,0 0,-2z M38,26l2,0 0,2 -2,0 0,-2z M40,26l2,0 0,2 -2,0 0,-2z M44,26l2,0 0,2 -2,0 0,-2z M48,26l2,0 0,2 -2,0 0,-2z M50,26l2,0 0,2 -2,0 0,-2z M18,28l2,0 0,2 -2,0 0,-2z M22,28l2,0 0,2 -2,0 0,-2z M24,28l2,0 0,2 -2,0 0,-2z M26,28l2,0 0,2 -2,0 0,-2z M38,28l2,0 0,2 -2,0 0,-2z M44,28l2,0 0,2 -2,0 0,-2z M50,28l2,0 0,2 -2,0 0,-2z M2,30l2,0 0,2 -2,0 0,-2z M14,30l2,0 0,2 -2,0 0,-2z M18,30l2,0 0,2 -2,0 0,-2z M20,30l2,0 0,2 -2,0 0,-2z M24,30l2,0 0,2 -2,0 0,-2z M26,30l2,0 0,2 -2,0 0,-2z M28,30l2,0 0,2 -2,0 0,-2z M34,30l2,0 0,2 -2,0 0,-2z M38,30l2,0 0,2 -2,0 0,-2z M40,30l2,0 0,2 -2,0 0,-2z M46,30l2,0 0,2 -2,0 0,-2z M48,30l2,0 0,2 -2,0 0,-2z M50,30l2,0 0,2 -2,0 0,-2z M4,32l2,0 0,2 -2,0 0,-2z M6,32l2,0 0,2 -2,0 0,-2z M10,32l2,0 0,2 -2,0 0,-2z M12,32l2,0 0,2 -2,0 0,-2z M20,32l2,0 0,2 -2,0 0,-2z M26,32l2,0 0,2 -2,0 0,-2z M28,32l2,0 0,2 -2,0 0,-2z M30,32l2,0 0,2 -2,0 0,-2z M32,32l2,0 0,2 -2,0 0,-2z M34,32l2,0 0,2 -2,0 0,-2z M36,32l2,0 0,2 -2,0 0,-2z M42,32l2,0 0,2 -2,0 0,-2z M48,32l2,0 0,2 -2,0 0,-2z M2,34l2,0 0,2 -2,0 0,-2z M8,34l2,0 0,2 -2,0 0,-2z M10,34l2,0 0,2 -2,0 0,-2z M12,34l2,0 0,2 -2,0 0,-2z M14,34l2,0 0,2 -2,0 0,-2z M16,34l2,0 0,2 -2,0 0,-2z M24,34l2,0 0,2 -2,0 0,-2z M26,34l2,0 0,2 -2,0 0,-2z M28,34l2,0 0,2 -2,0 0,-2z M34,34l2,0 0,2 -2,0 0,-2z M36,34l2,0 0,2 -2,0 0,-2z M38,34l2,0 0,2 -2,0 0,-2z M40,34l2,0 0,2 -2,0 0,-2z M42,34l2,0 0,2 -2,0 0,-2z M44,34l2,0 0,2 -2,0 0,-2z M18,36l2,0 0,2 -2,0 0,-2z M20,36l2,0 0,2 -2,0 0,-2z M24,36l2,0 0,2 -2,0 0,-2z M34,36l2,0 0,2 -2,0 0,-2z M42,36l2,0 0,2 -2,0 0,-2z M44,36l2,0 0,2 -2,0 0,-2z M48,36l2,0 0,2 -2,0 0,-2z M50,36l2,0 0,2 -2,0 0,-2z M2,38l2,0 0,2 -2,0 0,-2z M4,38l2,0 0,2 -2,0 0,-2z M6,38l2,0 0,2 -2,0 0,-2z M8,38l2,0 0,2 -2,0 0,-2z M10,38l2,0 0,2 -2,0 0,-2z M12,38l2,0 0,2 -2,0 0,-2z M14,38l2,0 0,2 -2,0 0,-2z M20,38l2,0 0,2 -2,0 0,-2z M26,38l2,0 0,2 -2,0 0,-2z M30,38l2,0 0,2 -2,0 0,-2z M32,38l2,0 0,2 -2,0 0,-2z M34,38l2,0 0,2 -2,0 0,-2z M38,38l2,0 0,2 -2,0 0,-2z M42,38l2,0 0,2 -2,0 0,-2z M44,38l2,0 0,2 -2,0 0,-2z M48,38l2,0 0,2 -2,0 0,-2z M50,38l2,0 0,2 -2,0 0,-2z M2,40l2,0 0,2 -2,0 0,-2z M14,40l2,0 0,2 -2,0 0,-2z M20,40l2,0 0,2 -2,0 0,-2z M22,40l2,0 0,2 -2,0 0,-2z M24,40l2,0 0,2 -2,0 0,-2z M28,40l2,0 0,2 -2,0 0,-2z M34,40l2,0 0,2 -2,0 0,-2z M42,40l2,0 0,2 -2,0 0,-2z M44,40l2,0 0,2 -2,0 0,-2z M2,42l2,0 0,2 -2,0 0,-2z M6,42l2,0 0,2 -2,0 0,-2z M8,42l2,0 0,2 -2,0 0,-2z M10,42l2,0 0,2 -2,0 0,-2z M14,42l2,0 0,2 -2,0 0,-2z M18,42l2,0 0,2 -2,0 0,-2z M20,42l2,0 0,2 -2,0 0,-2z M22,42l2,0 0,2 -2,0 0,-2z M28,42l2,0 0,2 -2,0 0,-2z M34,42l2,0 0,2 -2,0 0,-2z M36,42l2,0 0,2 -2,0 0,-2z M38,42l2,0 0,2 -2,0 0,-2z M40,42l2,0 0,2 -2,0 0,-2z M42,42l2,0 0,2 -2,0 0,-2z M44,42l2,0 0,2 -2,0 0,-2z M2,44l2,0 0,2 -2,0 0,-2z M6,44l2,0 0,2 -2,0 0,-2z M8,44l2,0 0,2 -2,0 0,-2z M10,44l2,0 0,2 -2,0 0,-2z M14,44l2,0 0,2 -2,0 0,-2z M20,44l2,0 0,2 -2,0 0,-2z M26,44l2,0 0,2 -2,0 0,-2z M28,44l2,0 0,2 -2,0 0,-2z M40,44l2,0 0,2 -2,0 0,-2z M42,44l2,0 0,2 -2,0 0,-2z M44,44l2,0 0,2 -2,0 0,-2z M46,44l2,0 0,2 -2,0 0,-2z M2,46l2,0 0,2 -2,0 0,-2z M6,46l2,0 0,2 -2,0 0,-2z M8,46l2,0 0,2 -2,0 0,-2z M10,46l2,0 0,2 -2,0 0,-2z M14,46l2,0 0,2 -2,0 0,-2z M18,46l2,0 0,2 -2,0 0,-2z M20,46l2,0 0,2 -2,0 0,-2z M26,46l2,0 0,2 -2,0 0,-2z M34,46l2,0 0,2 -2,0 0,-2z M42,46l2,0 0,2 -2,0 0,-2z M50,46l2,0 0,2 -2,0 0,-2z M2,48l2,0 0,2 -2,0 0,-2z M14,48l2,0 0,2 -2,0 0,-2z M20,48l2,0 0,2 -2,0 0,-2z M24,48l2,0 0,2 -2,0 0,-2z M26,48l2,0 0,2 -2,0 0,-2z M28,48l2,0 0,2 -2,0 0,-2z M30,48l2,0 0,2 -2,0 0,-2z M32,48l2,0 0,2 -2,0 0,-2z M34,48l2,0 0,2 -2,0 0,-2z M36,48l2,0 0,2 -2,0 0,-2z M38,48l2,0 0,2 -2,0 0,-2z M42,48l2,0 0,2 -2,0 0,-2z M44,48l2,0 0,2 -2,0 0,-2z M48,48l2,0 0,2 -2,0 0,-2z M2,50l2,0 0,2 -2,0 0,-2z M4,50l2,0 0,2 -2,0 0,-2z M6,50l2,0 0,2 -2,0 0,-2z M8,50l2,0 0,2 -2,0 0,-2z M10,50l2,0 0,2 -2,0 0,-2z M12,50l2,0 0,2 -2,0 0,-2z M14,50l2,0 0,2 -2,0 0,-2z M18,50l2,0 0,2 -2,0 0,-2z M22,50l2,0 0,2 -2,0 0,-2z M24,50l2,0 0,2 -2,0 0,-2z M26,50l2,0 0,2 -2,0 0,-2z M28,50l2,0 0,2 -2,0 0,-2z M32,50l2,0 0,2 -2,0 0,-2z M34,50l2,0 0,2 -2,0 0,-2z M38,50l2,0 0,2 -2,0 0,-2z M40,50l2,0 0,2 -2,0 0,-2z M48,50l2,0 0,2 -2,0 0,-2z M50,50l2,0 0,2 -2,0 0,-2z " stroke="transparent" fill="black"/></svg>
+          </div>
+          <p style="font-size: 7.5pt; font-weight: 700; color: #065f46; margin-top: 3pt;">sophat.space/help</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 68pt; height: 68pt; background: #ffffff; padding: 3pt; border: 1pt solid #cbd5e1; border-radius: 6pt; display: flex; align-items: center; justify-content: center;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"  preserveAspectRatio="xMinYMin meet"><rect width="100%" height="100%" fill="white" cx="0" cy="0"/><path d="M2,2l2,0 0,2 -2,0 0,-2z M4,2l2,0 0,2 -2,0 0,-2z M6,2l2,0 0,2 -2,0 0,-2z M8,2l2,0 0,2 -2,0 0,-2z M10,2l2,0 0,2 -2,0 0,-2z M12,2l2,0 0,2 -2,0 0,-2z M14,2l2,0 0,2 -2,0 0,-2z M24,2l2,0 0,2 -2,0 0,-2z M28,2l2,0 0,2 -2,0 0,-2z M30,2l2,0 0,2 -2,0 0,-2z M32,2l2,0 0,2 -2,0 0,-2z M38,2l2,0 0,2 -2,0 0,-2z M46,2l2,0 0,2 -2,0 0,-2z M48,2l2,0 0,2 -2,0 0,-2z M50,2l2,0 0,2 -2,0 0,-2z M52,2l2,0 0,2 -2,0 0,-2z M54,2l2,0 0,2 -2,0 0,-2z M56,2l2,0 0,2 -2,0 0,-2z M58,2l2,0 0,2 -2,0 0,-2z M2,4l2,0 0,2 -2,0 0,-2z M14,4l2,0 0,2 -2,0 0,-2z M18,4l2,0 0,2 -2,0 0,-2z M20,4l2,0 0,2 -2,0 0,-2z M24,4l2,0 0,2 -2,0 0,-2z M32,4l2,0 0,2 -2,0 0,-2z M42,4l2,0 0,2 -2,0 0,-2z M46,4l2,0 0,2 -2,0 0,-2z M58,4l2,0 0,2 -2,0 0,-2z M2,6l2,0 0,2 -2,0 0,-2z M6,6l2,0 0,2 -2,0 0,-2z M8,6l2,0 0,2 -2,0 0,-2z M10,6l2,0 0,2 -2,0 0,-2z M14,6l2,0 0,2 -2,0 0,-2z M18,6l2,0 0,2 -2,0 0,-2z M20,6l2,0 0,2 -2,0 0,-2z M22,6l2,0 0,2 -2,0 0,-2z M30,6l2,0 0,2 -2,0 0,-2z M34,6l2,0 0,2 -2,0 0,-2z M38,6l2,0 0,2 -2,0 0,-2z M40,6l2,0 0,2 -2,0 0,-2z M46,6l2,0 0,2 -2,0 0,-2z M50,6l2,0 0,2 -2,0 0,-2z M52,6l2,0 0,2 -2,0 0,-2z M54,6l2,0 0,2 -2,0 0,-2z M58,6l2,0 0,2 -2,0 0,-2z M2,8l2,0 0,2 -2,0 0,-2z M6,8l2,0 0,2 -2,0 0,-2z M8,8l2,0 0,2 -2,0 0,-2z M10,8l2,0 0,2 -2,0 0,-2z M14,8l2,0 0,2 -2,0 0,-2z M18,8l2,0 0,2 -2,0 0,-2z M22,8l2,0 0,2 -2,0 0,-2z M24,8l2,0 0,2 -2,0 0,-2z M30,8l2,0 0,2 -2,0 0,-2z M32,8l2,0 0,2 -2,0 0,-2z M36,8l2,0 0,2 -2,0 0,-2z M46,8l2,0 0,2 -2,0 0,-2z M50,8l2,0 0,2 -2,0 0,-2z M52,8l2,0 0,2 -2,0 0,-2z M54,8l2,0 0,2 -2,0 0,-2z M58,8l2,0 0,2 -2,0 0,-2z M2,10l2,0 0,2 -2,0 0,-2z M6,10l2,0 0,2 -2,0 0,-2z M8,10l2,0 0,2 -2,0 0,-2z M10,10l2,0 0,2 -2,0 0,-2z M14,10l2,0 0,2 -2,0 0,-2z M20,10l2,0 0,2 -2,0 0,-2z M28,10l2,0 0,2 -2,0 0,-2z M30,10l2,0 0,2 -2,0 0,-2z M32,10l2,0 0,2 -2,0 0,-2z M36,10l2,0 0,2 -2,0 0,-2z M38,10l2,0 0,2 -2,0 0,-2z M40,10l2,0 0,2 -2,0 0,-2z M42,10l2,0 0,2 -2,0 0,-2z M46,10l2,0 0,2 -2,0 0,-2z M50,10l2,0 0,2 -2,0 0,-2z M52,10l2,0 0,2 -2,0 0,-2z M54,10l2,0 0,2 -2,0 0,-2z M58,10l2,0 0,2 -2,0 0,-2z M2,12l2,0 0,2 -2,0 0,-2z M14,12l2,0 0,2 -2,0 0,-2z M22,12l2,0 0,2 -2,0 0,-2z M28,12l2,0 0,2 -2,0 0,-2z M30,12l2,0 0,2 -2,0 0,-2z M34,12l2,0 0,2 -2,0 0,-2z M38,12l2,0 0,2 -2,0 0,-2z M42,12l2,0 0,2 -2,0 0,-2z M46,12l2,0 0,2 -2,0 0,-2z M58,12l2,0 0,2 -2,0 0,-2z M2,14l2,0 0,2 -2,0 0,-2z M4,14l2,0 0,2 -2,0 0,-2z M6,14l2,0 0,2 -2,0 0,-2z M8,14l2,0 0,2 -2,0 0,-2z M10,14l2,0 0,2 -2,0 0,-2z M12,14l2,0 0,2 -2,0 0,-2z M14,14l2,0 0,2 -2,0 0,-2z M18,14l2,0 0,2 -2,0 0,-2z M22,14l2,0 0,2 -2,0 0,-2z M26,14l2,0 0,2 -2,0 0,-2z M30,14l2,0 0,2 -2,0 0,-2z M34,14l2,0 0,2 -2,0 0,-2z M38,14l2,0 0,2 -2,0 0,-2z M42,14l2,0 0,2 -2,0 0,-2z M46,14l2,0 0,2 -2,0 0,-2z M48,14l2,0 0,2 -2,0 0,-2z M50,14l2,0 0,2 -2,0 0,-2z M52,14l2,0 0,2 -2,0 0,-2z M54,14l2,0 0,2 -2,0 0,-2z M56,14l2,0 0,2 -2,0 0,-2z M58,14l2,0 0,2 -2,0 0,-2z M18,16l2,0 0,2 -2,0 0,-2z M20,16l2,0 0,2 -2,0 0,-2z M28,16l2,0 0,2 -2,0 0,-2z M40,16l2,0 0,2 -2,0 0,-2z M42,16l2,0 0,2 -2,0 0,-2z M2,18l2,0 0,2 -2,0 0,-2z M14,18l2,0 0,2 -2,0 0,-2z M18,18l2,0 0,2 -2,0 0,-2z M22,18l2,0 0,2 -2,0 0,-2z M24,18l2,0 0,2 -2,0 0,-2z M26,18l2,0 0,2 -2,0 0,-2z M30,18l2,0 0,2 -2,0 0,-2z M32,18l2,0 0,2 -2,0 0,-2z M36,18l2,0 0,2 -2,0 0,-2z M40,18l2,0 0,2 -2,0 0,-2z M44,18l2,0 0,2 -2,0 0,-2z M46,18l2,0 0,2 -2,0 0,-2z M52,18l2,0 0,2 -2,0 0,-2z M54,18l2,0 0,2 -2,0 0,-2z M56,18l2,0 0,2 -2,0 0,-2z M4,20l2,0 0,2 -2,0 0,-2z M6,20l2,0 0,2 -2,0 0,-2z M8,20l2,0 0,2 -2,0 0,-2z M10,20l2,0 0,2 -2,0 0,-2z M12,20l2,0 0,2 -2,0 0,-2z M16,20l2,0 0,2 -2,0 0,-2z M20,20l2,0 0,2 -2,0 0,-2z M24,20l2,0 0,2 -2,0 0,-2z M26,20l2,0 0,2 -2,0 0,-2z M30,20l2,0 0,2 -2,0 0,-2z M38,20l2,0 0,2 -2,0 0,-2z M40,20l2,0 0,2 -2,0 0,-2z M42,20l2,0 0,2 -2,0 0,-2z M48,20l2,0 0,2 -2,0 0,-2z M50,20l2,0 0,2 -2,0 0,-2z M54,20l2,0 0,2 -2,0 0,-2z M56,20l2,0 0,2 -2,0 0,-2z M4,22l2,0 0,2 -2,0 0,-2z M6,22l2,0 0,2 -2,0 0,-2z M14,22l2,0 0,2 -2,0 0,-2z M16,22l2,0 0,2 -2,0 0,-2z M26,22l2,0 0,2 -2,0 0,-2z M42,22l2,0 0,2 -2,0 0,-2z M44,22l2,0 0,2 -2,0 0,-2z M50,22l2,0 0,2 -2,0 0,-2z M2,24l2,0 0,2 -2,0 0,-2z M6,24l2,0 0,2 -2,0 0,-2z M10,24l2,0 0,2 -2,0 0,-2z M16,24l2,0 0,2 -2,0 0,-2z M18,24l2,0 0,2 -2,0 0,-2z M20,24l2,0 0,2 -2,0 0,-2z M24,24l2,0 0,2 -2,0 0,-2z M30,24l2,0 0,2 -2,0 0,-2z M32,24l2,0 0,2 -2,0 0,-2z M34,24l2,0 0,2 -2,0 0,-2z M38,24l2,0 0,2 -2,0 0,-2z M42,24l2,0 0,2 -2,0 0,-2z M44,24l2,0 0,2 -2,0 0,-2z M52,24l2,0 0,2 -2,0 0,-2z M4,26l2,0 0,2 -2,0 0,-2z M8,26l2,0 0,2 -2,0 0,-2z M12,26l2,0 0,2 -2,0 0,-2z M14,26l2,0 0,2 -2,0 0,-2z M18,26l2,0 0,2 -2,0 0,-2z M22,26l2,0 0,2 -2,0 0,-2z M28,26l2,0 0,2 -2,0 0,-2z M30,26l2,0 0,2 -2,0 0,-2z M34,26l2,0 0,2 -2,0 0,-2z M40,26l2,0 0,2 -2,0 0,-2z M42,26l2,0 0,2 -2,0 0,-2z M46,26l2,0 0,2 -2,0 0,-2z M48,26l2,0 0,2 -2,0 0,-2z M58,26l2,0 0,2 -2,0 0,-2z M2,28l2,0 0,2 -2,0 0,-2z M8,28l2,0 0,2 -2,0 0,-2z M10,28l2,0 0,2 -2,0 0,-2z M12,28l2,0 0,2 -2,0 0,-2z M18,28l2,0 0,2 -2,0 0,-2z M20,28l2,0 0,2 -2,0 0,-2z M28,28l2,0 0,2 -2,0 0,-2z M30,28l2,0 0,2 -2,0 0,-2z M38,28l2,0 0,2 -2,0 0,-2z M40,28l2,0 0,2 -2,0 0,-2z M42,28l2,0 0,2 -2,0 0,-2z M44,28l2,0 0,2 -2,0 0,-2z M46,28l2,0 0,2 -2,0 0,-2z M48,28l2,0 0,2 -2,0 0,-2z M50,28l2,0 0,2 -2,0 0,-2z M56,28l2,0 0,2 -2,0 0,-2z M58,28l2,0 0,2 -2,0 0,-2z M12,30l2,0 0,2 -2,0 0,-2z M14,30l2,0 0,2 -2,0 0,-2z M16,30l2,0 0,2 -2,0 0,-2z M18,30l2,0 0,2 -2,0 0,-2z M20,30l2,0 0,2 -2,0 0,-2z M24,30l2,0 0,2 -2,0 0,-2z M28,30l2,0 0,2 -2,0 0,-2z M30,30l2,0 0,2 -2,0 0,-2z M32,30l2,0 0,2 -2,0 0,-2z M34,30l2,0 0,2 -2,0 0,-2z M42,30l2,0 0,2 -2,0 0,-2z M50,30l2,0 0,2 -2,0 0,-2z M52,30l2,0 0,2 -2,0 0,-2z M54,30l2,0 0,2 -2,0 0,-2z M4,32l2,0 0,2 -2,0 0,-2z M6,32l2,0 0,2 -2,0 0,-2z M8,32l2,0 0,2 -2,0 0,-2z M10,32l2,0 0,2 -2,0 0,-2z M12,32l2,0 0,2 -2,0 0,-2z M20,32l2,0 0,2 -2,0 0,-2z M22,32l2,0 0,2 -2,0 0,-2z M24,32l2,0 0,2 -2,0 0,-2z M28,32l2,0 0,2 -2,0 0,-2z M30,32l2,0 0,2 -2,0 0,-2z M32,32l2,0 0,2 -2,0 0,-2z M40,32l2,0 0,2 -2,0 0,-2z M42,32l2,0 0,2 -2,0 0,-2z M46,32l2,0 0,2 -2,0 0,-2z M50,32l2,0 0,2 -2,0 0,-2z M54,32l2,0 0,2 -2,0 0,-2z M58,32l2,0 0,2 -2,0 0,-2z M4,34l2,0 0,2 -2,0 0,-2z M8,34l2,0 0,2 -2,0 0,-2z M10,34l2,0 0,2 -2,0 0,-2z M14,34l2,0 0,2 -2,0 0,-2z M18,34l2,0 0,2 -2,0 0,-2z M20,34l2,0 0,2 -2,0 0,-2z M22,34l2,0 0,2 -2,0 0,-2z M30,34l2,0 0,2 -2,0 0,-2z M36,34l2,0 0,2 -2,0 0,-2z M38,34l2,0 0,2 -2,0 0,-2z M44,34l2,0 0,2 -2,0 0,-2z M48,34l2,0 0,2 -2,0 0,-2z M52,34l2,0 0,2 -2,0 0,-2z M54,34l2,0 0,2 -2,0 0,-2z M2,36l2,0 0,2 -2,0 0,-2z M6,36l2,0 0,2 -2,0 0,-2z M12,36l2,0 0,2 -2,0 0,-2z M20,36l2,0 0,2 -2,0 0,-2z M22,36l2,0 0,2 -2,0 0,-2z M24,36l2,0 0,2 -2,0 0,-2z M26,36l2,0 0,2 -2,0 0,-2z M32,36l2,0 0,2 -2,0 0,-2z M36,36l2,0 0,2 -2,0 0,-2z M38,36l2,0 0,2 -2,0 0,-2z M40,36l2,0 0,2 -2,0 0,-2z M42,36l2,0 0,2 -2,0 0,-2z M46,36l2,0 0,2 -2,0 0,-2z M48,36l2,0 0,2 -2,0 0,-2z M50,36l2,0 0,2 -2,0 0,-2z M54,36l2,0 0,2 -2,0 0,-2z M56,36l2,0 0,2 -2,0 0,-2z M58,36l2,0 0,2 -2,0 0,-2z M2,38l2,0 0,2 -2,0 0,-2z M4,38l2,0 0,2 -2,0 0,-2z M10,38l2,0 0,2 -2,0 0,-2z M14,38l2,0 0,2 -2,0 0,-2z M16,38l2,0 0,2 -2,0 0,-2z M22,38l2,0 0,2 -2,0 0,-2z M24,38l2,0 0,2 -2,0 0,-2z M26,38l2,0 0,2 -2,0 0,-2z M28,38l2,0 0,2 -2,0 0,-2z M30,38l2,0 0,2 -2,0 0,-2z M32,38l2,0 0,2 -2,0 0,-2z M36,38l2,0 0,2 -2,0 0,-2z M40,38l2,0 0,2 -2,0 0,-2z M52,38l2,0 0,2 -2,0 0,-2z M58,38l2,0 0,2 -2,0 0,-2z M2,40l2,0 0,2 -2,0 0,-2z M6,40l2,0 0,2 -2,0 0,-2z M10,40l2,0 0,2 -2,0 0,-2z M12,40l2,0 0,2 -2,0 0,-2z M18,40l2,0 0,2 -2,0 0,-2z M20,40l2,0 0,2 -2,0 0,-2z M22,40l2,0 0,2 -2,0 0,-2z M26,40l2,0 0,2 -2,0 0,-2z M30,40l2,0 0,2 -2,0 0,-2z M46,40l2,0 0,2 -2,0 0,-2z M48,40l2,0 0,2 -2,0 0,-2z M2,42l2,0 0,2 -2,0 0,-2z M12,42l2,0 0,2 -2,0 0,-2z M14,42l2,0 0,2 -2,0 0,-2z M16,42l2,0 0,2 -2,0 0,-2z M24,42l2,0 0,2 -2,0 0,-2z M32,42l2,0 0,2 -2,0 0,-2z M36,42l2,0 0,2 -2,0 0,-2z M42,42l2,0 0,2 -2,0 0,-2z M44,42l2,0 0,2 -2,0 0,-2z M46,42l2,0 0,2 -2,0 0,-2z M48,42l2,0 0,2 -2,0 0,-2z M50,42l2,0 0,2 -2,0 0,-2z M54,42l2,0 0,2 -2,0 0,-2z M56,42l2,0 0,2 -2,0 0,-2z M58,42l2,0 0,2 -2,0 0,-2z M18,44l2,0 0,2 -2,0 0,-2z M20,44l2,0 0,2 -2,0 0,-2z M26,44l2,0 0,2 -2,0 0,-2z M28,44l2,0 0,2 -2,0 0,-2z M32,44l2,0 0,2 -2,0 0,-2z M36,44l2,0 0,2 -2,0 0,-2z M38,44l2,0 0,2 -2,0 0,-2z M42,44l2,0 0,2 -2,0 0,-2z M50,44l2,0 0,2 -2,0 0,-2z M52,44l2,0 0,2 -2,0 0,-2z M2,46l2,0 0,2 -2,0 0,-2z M4,46l2,0 0,2 -2,0 0,-2z M6,46l2,0 0,2 -2,0 0,-2z M8,46l2,0 0,2 -2,0 0,-2z M10,46l2,0 0,2 -2,0 0,-2z M12,46l2,0 0,2 -2,0 0,-2z M14,46l2,0 0,2 -2,0 0,-2z M20,46l2,0 0,2 -2,0 0,-2z M22,46l2,0 0,2 -2,0 0,-2z M24,46l2,0 0,2 -2,0 0,-2z M28,46l2,0 0,2 -2,0 0,-2z M30,46l2,0 0,2 -2,0 0,-2z M32,46l2,0 0,2 -2,0 0,-2z M34,46l2,0 0,2 -2,0 0,-2z M36,46l2,0 0,2 -2,0 0,-2z M40,46l2,0 0,2 -2,0 0,-2z M42,46l2,0 0,2 -2,0 0,-2z M46,46l2,0 0,2 -2,0 0,-2z M50,46l2,0 0,2 -2,0 0,-2z M52,46l2,0 0,2 -2,0 0,-2z M54,46l2,0 0,2 -2,0 0,-2z M2,48l2,0 0,2 -2,0 0,-2z M14,48l2,0 0,2 -2,0 0,-2z M28,48l2,0 0,2 -2,0 0,-2z M34,48l2,0 0,2 -2,0 0,-2z M40,48l2,0 0,2 -2,0 0,-2z M42,48l2,0 0,2 -2,0 0,-2z M50,48l2,0 0,2 -2,0 0,-2z M56,48l2,0 0,2 -2,0 0,-2z M2,50l2,0 0,2 -2,0 0,-2z M6,50l2,0 0,2 -2,0 0,-2z M8,50l2,0 0,2 -2,0 0,-2z M10,50l2,0 0,2 -2,0 0,-2z M14,50l2,0 0,2 -2,0 0,-2z M20,50l2,0 0,2 -2,0 0,-2z M28,50l2,0 0,2 -2,0 0,-2z M32,50l2,0 0,2 -2,0 0,-2z M34,50l2,0 0,2 -2,0 0,-2z M40,50l2,0 0,2 -2,0 0,-2z M42,50l2,0 0,2 -2,0 0,-2z M44,50l2,0 0,2 -2,0 0,-2z M46,50l2,0 0,2 -2,0 0,-2z M48,50l2,0 0,2 -2,0 0,-2z M50,50l2,0 0,2 -2,0 0,-2z M52,50l2,0 0,2 -2,0 0,-2z M56,50l2,0 0,2 -2,0 0,-2z M58,50l2,0 0,2 -2,0 0,-2z M2,52l2,0 0,2 -2,0 0,-2z M6,52l2,0 0,2 -2,0 0,-2z M8,52l2,0 0,2 -2,0 0,-2z M10,52l2,0 0,2 -2,0 0,-2z M14,52l2,0 0,2 -2,0 0,-2z M28,52l2,0 0,2 -2,0 0,-2z M32,52l2,0 0,2 -2,0 0,-2z M34,52l2,0 0,2 -2,0 0,-2z M38,52l2,0 0,2 -2,0 0,-2z M44,52l2,0 0,2 -2,0 0,-2z M52,52l2,0 0,2 -2,0 0,-2z M54,52l2,0 0,2 -2,0 0,-2z M58,52l2,0 0,2 -2,0 0,-2z M2,54l2,0 0,2 -2,0 0,-2z M6,54l2,0 0,2 -2,0 0,-2z M8,54l2,0 0,2 -2,0 0,-2z M10,54l2,0 0,2 -2,0 0,-2z M14,54l2,0 0,2 -2,0 0,-2z M32,54l2,0 0,2 -2,0 0,-2z M34,54l2,0 0,2 -2,0 0,-2z M36,54l2,0 0,2 -2,0 0,-2z M38,54l2,0 0,2 -2,0 0,-2z M46,54l2,0 0,2 -2,0 0,-2z M48,54l2,0 0,2 -2,0 0,-2z M50,54l2,0 0,2 -2,0 0,-2z M52,54l2,0 0,2 -2,0 0,-2z M54,54l2,0 0,2 -2,0 0,-2z M56,54l2,0 0,2 -2,0 0,-2z M2,56l2,0 0,2 -2,0 0,-2z M14,56l2,0 0,2 -2,0 0,-2z M24,56l2,0 0,2 -2,0 0,-2z M26,56l2,0 0,2 -2,0 0,-2z M28,56l2,0 0,2 -2,0 0,-2z M30,56l2,0 0,2 -2,0 0,-2z M32,56l2,0 0,2 -2,0 0,-2z M34,56l2,0 0,2 -2,0 0,-2z M40,56l2,0 0,2 -2,0 0,-2z M46,56l2,0 0,2 -2,0 0,-2z M48,56l2,0 0,2 -2,0 0,-2z M52,56l2,0 0,2 -2,0 0,-2z M54,56l2,0 0,2 -2,0 0,-2z M58,56l2,0 0,2 -2,0 0,-2z M2,58l2,0 0,2 -2,0 0,-2z M4,58l2,0 0,2 -2,0 0,-2z M6,58l2,0 0,2 -2,0 0,-2z M8,58l2,0 0,2 -2,0 0,-2z M10,58l2,0 0,2 -2,0 0,-2z M12,58l2,0 0,2 -2,0 0,-2z M14,58l2,0 0,2 -2,0 0,-2z M18,58l2,0 0,2 -2,0 0,-2z M20,58l2,0 0,2 -2,0 0,-2z M22,58l2,0 0,2 -2,0 0,-2z M28,58l2,0 0,2 -2,0 0,-2z M30,58l2,0 0,2 -2,0 0,-2z M32,58l2,0 0,2 -2,0 0,-2z M34,58l2,0 0,2 -2,0 0,-2z M36,58l2,0 0,2 -2,0 0,-2z M40,58l2,0 0,2 -2,0 0,-2z M46,58l2,0 0,2 -2,0 0,-2z M50,58l2,0 0,2 -2,0 0,-2z M52,58l2,0 0,2 -2,0 0,-2z M54,58l2,0 0,2 -2,0 0,-2z " stroke="transparent" fill="black"/></svg>
+          </div>
+          <p style="font-size: 7.5pt; font-weight: 700; color: #065f46; margin-top: 3pt;">slide-ocsea</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 14pt; padding: 10pt 14pt; border: 1.5pt solid #10b981; border-radius: 8pt; background: #f0fdf4; display: flex; align-items: center; justify-content: space-between; gap: 16pt;" class="lang-en">
+      <div style="flex: 1;">
+        <p style="font-size: 11pt; font-weight: 800; color: #065f46; margin-bottom: 3pt;">📲 Scan QR Codes for Emergency Support &amp; Digital Handbook</p>
+        <p style="font-size: 8.5pt; color: #1f2937; line-height: 1.45;">
+          • <strong>sophat.space/help:</strong> Cambodia Emergency Help &amp; Digital Safety Referral Hub<br/>
+          • <strong>sophat.space/slide-ocsea:</strong> Interactive Online Presentation &amp; Action Handbook v3.3 Final
+        </p>
+      </div>
+      <div style="display: flex; gap: 14pt; align-items: center;">
+        <div style="text-align: center;">
+          <div style="width: 68pt; height: 68pt; background: #ffffff; padding: 3pt; border: 1pt solid #cbd5e1; border-radius: 6pt; display: flex; align-items: center; justify-content: center;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"  preserveAspectRatio="xMinYMin meet"><rect width="100%" height="100%" fill="white" cx="0" cy="0"/><path d="M2,2l2,0 0,2 -2,0 0,-2z M4,2l2,0 0,2 -2,0 0,-2z M6,2l2,0 0,2 -2,0 0,-2z M8,2l2,0 0,2 -2,0 0,-2z M10,2l2,0 0,2 -2,0 0,-2z M12,2l2,0 0,2 -2,0 0,-2z M14,2l2,0 0,2 -2,0 0,-2z M22,2l2,0 0,2 -2,0 0,-2z M26,2l2,0 0,2 -2,0 0,-2z M30,2l2,0 0,2 -2,0 0,-2z M32,2l2,0 0,2 -2,0 0,-2z M38,2l2,0 0,2 -2,0 0,-2z M40,2l2,0 0,2 -2,0 0,-2z M42,2l2,0 0,2 -2,0 0,-2z M44,2l2,0 0,2 -2,0 0,-2z M46,2l2,0 0,2 -2,0 0,-2z M48,2l2,0 0,2 -2,0 0,-2z M50,2l2,0 0,2 -2,0 0,-2z M2,4l2,0 0,2 -2,0 0,-2z M14,4l2,0 0,2 -2,0 0,-2z M18,4l2,0 0,2 -2,0 0,-2z M20,4l2,0 0,2 -2,0 0,-2z M22,4l2,0 0,2 -2,0 0,-2z M26,4l2,0 0,2 -2,0 0,-2z M28,4l2,0 0,2 -2,0 0,-2z M32,4l2,0 0,2 -2,0 0,-2z M38,4l2,0 0,2 -2,0 0,-2z M50,4l2,0 0,2 -2,0 0,-2z M2,6l2,0 0,2 -2,0 0,-2z M6,6l2,0 0,2 -2,0 0,-2z M8,6l2,0 0,2 -2,0 0,-2z M10,6l2,0 0,2 -2,0 0,-2z M14,6l2,0 0,2 -2,0 0,-2z M20,6l2,0 0,2 -2,0 0,-2z M34,6l2,0 0,2 -2,0 0,-2z M38,6l2,0 0,2 -2,0 0,-2z M42,6l2,0 0,2 -2,0 0,-2z M44,6l2,0 0,2 -2,0 0,-2z M46,6l2,0 0,2 -2,0 0,-2z M50,6l2,0 0,2 -2,0 0,-2z M2,8l2,0 0,2 -2,0 0,-2z M6,8l2,0 0,2 -2,0 0,-2z M8,8l2,0 0,2 -2,0 0,-2z M10,8l2,0 0,2 -2,0 0,-2z M14,8l2,0 0,2 -2,0 0,-2z M20,8l2,0 0,2 -2,0 0,-2z M24,8l2,0 0,2 -2,0 0,-2z M26,8l2,0 0,2 -2,0 0,-2z M30,8l2,0 0,2 -2,0 0,-2z M32,8l2,0 0,2 -2,0 0,-2z M34,8l2,0 0,2 -2,0 0,-2z M38,8l2,0 0,2 -2,0 0,-2z M42,8l2,0 0,2 -2,0 0,-2z M44,8l2,0 0,2 -2,0 0,-2z M46,8l2,0 0,2 -2,0 0,-2z M50,8l2,0 0,2 -2,0 0,-2z M2,10l2,0 0,2 -2,0 0,-2z M6,10l2,0 0,2 -2,0 0,-2z M8,10l2,0 0,2 -2,0 0,-2z M10,10l2,0 0,2 -2,0 0,-2z M14,10l2,0 0,2 -2,0 0,-2z M18,10l2,0 0,2 -2,0 0,-2z M24,10l2,0 0,2 -2,0 0,-2z M26,10l2,0 0,2 -2,0 0,-2z M30,10l2,0 0,2 -2,0 0,-2z M32,10l2,0 0,2 -2,0 0,-2z M38,10l2,0 0,2 -2,0 0,-2z M42,10l2,0 0,2 -2,0 0,-2z M44,10l2,0 0,2 -2,0 0,-2z M46,10l2,0 0,2 -2,0 0,-2z M50,10l2,0 0,2 -2,0 0,-2z M2,12l2,0 0,2 -2,0 0,-2z M14,12l2,0 0,2 -2,0 0,-2z M24,12l2,0 0,2 -2,0 0,-2z M26,12l2,0 0,2 -2,0 0,-2z M32,12l2,0 0,2 -2,0 0,-2z M34,12l2,0 0,2 -2,0 0,-2z M38,12l2,0 0,2 -2,0 0,-2z M50,12l2,0 0,2 -2,0 0,-2z M2,14l2,0 0,2 -2,0 0,-2z M4,14l2,0 0,2 -2,0 0,-2z M6,14l2,0 0,2 -2,0 0,-2z M8,14l2,0 0,2 -2,0 0,-2z M10,14l2,0 0,2 -2,0 0,-2z M12,14l2,0 0,2 -2,0 0,-2z M14,14l2,0 0,2 -2,0 0,-2z M18,14l2,0 0,2 -2,0 0,-2z M22,14l2,0 0,2 -2,0 0,-2z M26,14l2,0 0,2 -2,0 0,-2z M30,14l2,0 0,2 -2,0 0,-2z M34,14l2,0 0,2 -2,0 0,-2z M38,14l2,0 0,2 -2,0 0,-2z M40,14l2,0 0,2 -2,0 0,-2z M42,14l2,0 0,2 -2,0 0,-2z M44,14l2,0 0,2 -2,0 0,-2z M46,14l2,0 0,2 -2,0 0,-2z M48,14l2,0 0,2 -2,0 0,-2z M50,14l2,0 0,2 -2,0 0,-2z M20,16l2,0 0,2 -2,0 0,-2z M22,16l2,0 0,2 -2,0 0,-2z M26,16l2,0 0,2 -2,0 0,-2z M28,16l2,0 0,2 -2,0 0,-2z M30,16l2,0 0,2 -2,0 0,-2z M2,18l2,0 0,2 -2,0 0,-2z M6,18l2,0 0,2 -2,0 0,-2z M10,18l2,0 0,2 -2,0 0,-2z M14,18l2,0 0,2 -2,0 0,-2z M20,18l2,0 0,2 -2,0 0,-2z M24,18l2,0 0,2 -2,0 0,-2z M26,18l2,0 0,2 -2,0 0,-2z M28,18l2,0 0,2 -2,0 0,-2z M42,18l2,0 0,2 -2,0 0,-2z M48,18l2,0 0,2 -2,0 0,-2z M2,20l2,0 0,2 -2,0 0,-2z M4,20l2,0 0,2 -2,0 0,-2z M6,20l2,0 0,2 -2,0 0,-2z M8,20l2,0 0,2 -2,0 0,-2z M10,20l2,0 0,2 -2,0 0,-2z M12,20l2,0 0,2 -2,0 0,-2z M16,20l2,0 0,2 -2,0 0,-2z M20,20l2,0 0,2 -2,0 0,-2z M22,20l2,0 0,2 -2,0 0,-2z M24,20l2,0 0,2 -2,0 0,-2z M26,20l2,0 0,2 -2,0 0,-2z M28,20l2,0 0,2 -2,0 0,-2z M34,20l2,0 0,2 -2,0 0,-2z M36,20l2,0 0,2 -2,0 0,-2z M38,20l2,0 0,2 -2,0 0,-2z M50,20l2,0 0,2 -2,0 0,-2z M2,22l2,0 0,2 -2,0 0,-2z M4,22l2,0 0,2 -2,0 0,-2z M14,22l2,0 0,2 -2,0 0,-2z M18,22l2,0 0,2 -2,0 0,-2z M24,22l2,0 0,2 -2,0 0,-2z M34,22l2,0 0,2 -2,0 0,-2z M36,22l2,0 0,2 -2,0 0,-2z M40,22l2,0 0,2 -2,0 0,-2z M46,22l2,0 0,2 -2,0 0,-2z M48,22l2,0 0,2 -2,0 0,-2z M50,22l2,0 0,2 -2,0 0,-2z M4,24l2,0 0,2 -2,0 0,-2z M8,24l2,0 0,2 -2,0 0,-2z M18,24l2,0 0,2 -2,0 0,-2z M26,24l2,0 0,2 -2,0 0,-2z M28,24l2,0 0,2 -2,0 0,-2z M30,24l2,0 0,2 -2,0 0,-2z M34,24l2,0 0,2 -2,0 0,-2z M38,24l2,0 0,2 -2,0 0,-2z M40,24l2,0 0,2 -2,0 0,-2z M48,24l2,0 0,2 -2,0 0,-2z M10,26l2,0 0,2 -2,0 0,-2z M12,26l2,0 0,2 -2,0 0,-2z M14,26l2,0 0,2 -2,0 0,-2z M18,26l2,0 0,2 -2,0 0,-2z M20,26l2,0 0,2 -2,0 0,-2z M22,26l2,0 0,2 -2,0 0,-2z M24,26l2,0 0,2 -2,0 0,-2z M26,26l2,0 0,2 -2,0 0,-2z M28,26l2,0 0,2 -2,0 0,-2z M30,26l2,0 0,2 -2,0 0,-2z M32,26l2,0 0,2 -2,0 0,-2z M34,26l2,0 0,2 -2,0 0,-2z M36,26l2,0 0,2 -2,0 0,-2z M38,26l2,0 0,2 -2,0 0,-2z M40,26l2,0 0,2 -2,0 0,-2z M44,26l2,0 0,2 -2,0 0,-2z M48,26l2,0 0,2 -2,0 0,-2z M50,26l2,0 0,2 -2,0 0,-2z M18,28l2,0 0,2 -2,0 0,-2z M22,28l2,0 0,2 -2,0 0,-2z M24,28l2,0 0,2 -2,0 0,-2z M26,28l2,0 0,2 -2,0 0,-2z M38,28l2,0 0,2 -2,0 0,-2z M44,28l2,0 0,2 -2,0 0,-2z M50,28l2,0 0,2 -2,0 0,-2z M2,30l2,0 0,2 -2,0 0,-2z M14,30l2,0 0,2 -2,0 0,-2z M18,30l2,0 0,2 -2,0 0,-2z M20,30l2,0 0,2 -2,0 0,-2z M24,30l2,0 0,2 -2,0 0,-2z M26,30l2,0 0,2 -2,0 0,-2z M28,30l2,0 0,2 -2,0 0,-2z M34,30l2,0 0,2 -2,0 0,-2z M38,30l2,0 0,2 -2,0 0,-2z M40,30l2,0 0,2 -2,0 0,-2z M46,30l2,0 0,2 -2,0 0,-2z M48,30l2,0 0,2 -2,0 0,-2z M50,30l2,0 0,2 -2,0 0,-2z M4,32l2,0 0,2 -2,0 0,-2z M6,32l2,0 0,2 -2,0 0,-2z M10,32l2,0 0,2 -2,0 0,-2z M12,32l2,0 0,2 -2,0 0,-2z M20,32l2,0 0,2 -2,0 0,-2z M26,32l2,0 0,2 -2,0 0,-2z M28,32l2,0 0,2 -2,0 0,-2z M30,32l2,0 0,2 -2,0 0,-2z M32,32l2,0 0,2 -2,0 0,-2z M34,32l2,0 0,2 -2,0 0,-2z M36,32l2,0 0,2 -2,0 0,-2z M42,32l2,0 0,2 -2,0 0,-2z M48,32l2,0 0,2 -2,0 0,-2z M2,34l2,0 0,2 -2,0 0,-2z M8,34l2,0 0,2 -2,0 0,-2z M10,34l2,0 0,2 -2,0 0,-2z M12,34l2,0 0,2 -2,0 0,-2z M14,34l2,0 0,2 -2,0 0,-2z M16,34l2,0 0,2 -2,0 0,-2z M24,34l2,0 0,2 -2,0 0,-2z M26,34l2,0 0,2 -2,0 0,-2z M28,34l2,0 0,2 -2,0 0,-2z M34,34l2,0 0,2 -2,0 0,-2z M36,34l2,0 0,2 -2,0 0,-2z M38,34l2,0 0,2 -2,0 0,-2z M40,34l2,0 0,2 -2,0 0,-2z M42,34l2,0 0,2 -2,0 0,-2z M44,34l2,0 0,2 -2,0 0,-2z M18,36l2,0 0,2 -2,0 0,-2z M20,36l2,0 0,2 -2,0 0,-2z M24,36l2,0 0,2 -2,0 0,-2z M34,36l2,0 0,2 -2,0 0,-2z M42,36l2,0 0,2 -2,0 0,-2z M44,36l2,0 0,2 -2,0 0,-2z M48,36l2,0 0,2 -2,0 0,-2z M50,36l2,0 0,2 -2,0 0,-2z M2,38l2,0 0,2 -2,0 0,-2z M4,38l2,0 0,2 -2,0 0,-2z M6,38l2,0 0,2 -2,0 0,-2z M8,38l2,0 0,2 -2,0 0,-2z M10,38l2,0 0,2 -2,0 0,-2z M12,38l2,0 0,2 -2,0 0,-2z M14,38l2,0 0,2 -2,0 0,-2z M20,38l2,0 0,2 -2,0 0,-2z M26,38l2,0 0,2 -2,0 0,-2z M30,38l2,0 0,2 -2,0 0,-2z M32,38l2,0 0,2 -2,0 0,-2z M34,38l2,0 0,2 -2,0 0,-2z M38,38l2,0 0,2 -2,0 0,-2z M42,38l2,0 0,2 -2,0 0,-2z M44,38l2,0 0,2 -2,0 0,-2z M48,38l2,0 0,2 -2,0 0,-2z M50,38l2,0 0,2 -2,0 0,-2z M2,40l2,0 0,2 -2,0 0,-2z M14,40l2,0 0,2 -2,0 0,-2z M20,40l2,0 0,2 -2,0 0,-2z M22,40l2,0 0,2 -2,0 0,-2z M24,40l2,0 0,2 -2,0 0,-2z M28,40l2,0 0,2 -2,0 0,-2z M34,40l2,0 0,2 -2,0 0,-2z M42,40l2,0 0,2 -2,0 0,-2z M44,40l2,0 0,2 -2,0 0,-2z M2,42l2,0 0,2 -2,0 0,-2z M6,42l2,0 0,2 -2,0 0,-2z M8,42l2,0 0,2 -2,0 0,-2z M10,42l2,0 0,2 -2,0 0,-2z M14,42l2,0 0,2 -2,0 0,-2z M18,42l2,0 0,2 -2,0 0,-2z M20,42l2,0 0,2 -2,0 0,-2z M22,42l2,0 0,2 -2,0 0,-2z M28,42l2,0 0,2 -2,0 0,-2z M34,42l2,0 0,2 -2,0 0,-2z M36,42l2,0 0,2 -2,0 0,-2z M38,42l2,0 0,2 -2,0 0,-2z M40,42l2,0 0,2 -2,0 0,-2z M42,42l2,0 0,2 -2,0 0,-2z M44,42l2,0 0,2 -2,0 0,-2z M2,44l2,0 0,2 -2,0 0,-2z M6,44l2,0 0,2 -2,0 0,-2z M8,44l2,0 0,2 -2,0 0,-2z M10,44l2,0 0,2 -2,0 0,-2z M14,44l2,0 0,2 -2,0 0,-2z M20,44l2,0 0,2 -2,0 0,-2z M26,44l2,0 0,2 -2,0 0,-2z M28,44l2,0 0,2 -2,0 0,-2z M40,44l2,0 0,2 -2,0 0,-2z M42,44l2,0 0,2 -2,0 0,-2z M44,44l2,0 0,2 -2,0 0,-2z M46,44l2,0 0,2 -2,0 0,-2z M2,46l2,0 0,2 -2,0 0,-2z M6,46l2,0 0,2 -2,0 0,-2z M8,46l2,0 0,2 -2,0 0,-2z M10,46l2,0 0,2 -2,0 0,-2z M14,46l2,0 0,2 -2,0 0,-2z M18,46l2,0 0,2 -2,0 0,-2z M20,46l2,0 0,2 -2,0 0,-2z M26,46l2,0 0,2 -2,0 0,-2z M34,46l2,0 0,2 -2,0 0,-2z M42,46l2,0 0,2 -2,0 0,-2z M50,46l2,0 0,2 -2,0 0,-2z M2,48l2,0 0,2 -2,0 0,-2z M14,48l2,0 0,2 -2,0 0,-2z M20,48l2,0 0,2 -2,0 0,-2z M24,48l2,0 0,2 -2,0 0,-2z M26,48l2,0 0,2 -2,0 0,-2z M28,48l2,0 0,2 -2,0 0,-2z M30,48l2,0 0,2 -2,0 0,-2z M32,48l2,0 0,2 -2,0 0,-2z M34,48l2,0 0,2 -2,0 0,-2z M36,48l2,0 0,2 -2,0 0,-2z M38,48l2,0 0,2 -2,0 0,-2z M42,48l2,0 0,2 -2,0 0,-2z M44,48l2,0 0,2 -2,0 0,-2z M48,48l2,0 0,2 -2,0 0,-2z M2,50l2,0 0,2 -2,0 0,-2z M4,50l2,0 0,2 -2,0 0,-2z M6,50l2,0 0,2 -2,0 0,-2z M8,50l2,0 0,2 -2,0 0,-2z M10,50l2,0 0,2 -2,0 0,-2z M12,50l2,0 0,2 -2,0 0,-2z M14,50l2,0 0,2 -2,0 0,-2z M18,50l2,0 0,2 -2,0 0,-2z M22,50l2,0 0,2 -2,0 0,-2z M24,50l2,0 0,2 -2,0 0,-2z M26,50l2,0 0,2 -2,0 0,-2z M28,50l2,0 0,2 -2,0 0,-2z M32,50l2,0 0,2 -2,0 0,-2z M34,50l2,0 0,2 -2,0 0,-2z M38,50l2,0 0,2 -2,0 0,-2z M40,50l2,0 0,2 -2,0 0,-2z M48,50l2,0 0,2 -2,0 0,-2z M50,50l2,0 0,2 -2,0 0,-2z " stroke="transparent" fill="black"/></svg>
+          </div>
+          <p style="font-size: 7.5pt; font-weight: 700; color: #065f46; margin-top: 3pt;">sophat.space/help</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 68pt; height: 68pt; background: #ffffff; padding: 3pt; border: 1pt solid #cbd5e1; border-radius: 6pt; display: flex; align-items: center; justify-content: center;">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"  preserveAspectRatio="xMinYMin meet"><rect width="100%" height="100%" fill="white" cx="0" cy="0"/><path d="M2,2l2,0 0,2 -2,0 0,-2z M4,2l2,0 0,2 -2,0 0,-2z M6,2l2,0 0,2 -2,0 0,-2z M8,2l2,0 0,2 -2,0 0,-2z M10,2l2,0 0,2 -2,0 0,-2z M12,2l2,0 0,2 -2,0 0,-2z M14,2l2,0 0,2 -2,0 0,-2z M24,2l2,0 0,2 -2,0 0,-2z M28,2l2,0 0,2 -2,0 0,-2z M30,2l2,0 0,2 -2,0 0,-2z M32,2l2,0 0,2 -2,0 0,-2z M38,2l2,0 0,2 -2,0 0,-2z M46,2l2,0 0,2 -2,0 0,-2z M48,2l2,0 0,2 -2,0 0,-2z M50,2l2,0 0,2 -2,0 0,-2z M52,2l2,0 0,2 -2,0 0,-2z M54,2l2,0 0,2 -2,0 0,-2z M56,2l2,0 0,2 -2,0 0,-2z M58,2l2,0 0,2 -2,0 0,-2z M2,4l2,0 0,2 -2,0 0,-2z M14,4l2,0 0,2 -2,0 0,-2z M18,4l2,0 0,2 -2,0 0,-2z M20,4l2,0 0,2 -2,0 0,-2z M24,4l2,0 0,2 -2,0 0,-2z M32,4l2,0 0,2 -2,0 0,-2z M42,4l2,0 0,2 -2,0 0,-2z M46,4l2,0 0,2 -2,0 0,-2z M58,4l2,0 0,2 -2,0 0,-2z M2,6l2,0 0,2 -2,0 0,-2z M6,6l2,0 0,2 -2,0 0,-2z M8,6l2,0 0,2 -2,0 0,-2z M10,6l2,0 0,2 -2,0 0,-2z M14,6l2,0 0,2 -2,0 0,-2z M18,6l2,0 0,2 -2,0 0,-2z M20,6l2,0 0,2 -2,0 0,-2z M22,6l2,0 0,2 -2,0 0,-2z M30,6l2,0 0,2 -2,0 0,-2z M34,6l2,0 0,2 -2,0 0,-2z M38,6l2,0 0,2 -2,0 0,-2z M40,6l2,0 0,2 -2,0 0,-2z M46,6l2,0 0,2 -2,0 0,-2z M50,6l2,0 0,2 -2,0 0,-2z M52,6l2,0 0,2 -2,0 0,-2z M54,6l2,0 0,2 -2,0 0,-2z M58,6l2,0 0,2 -2,0 0,-2z M2,8l2,0 0,2 -2,0 0,-2z M6,8l2,0 0,2 -2,0 0,-2z M8,8l2,0 0,2 -2,0 0,-2z M10,8l2,0 0,2 -2,0 0,-2z M14,8l2,0 0,2 -2,0 0,-2z M18,8l2,0 0,2 -2,0 0,-2z M22,8l2,0 0,2 -2,0 0,-2z M24,8l2,0 0,2 -2,0 0,-2z M30,8l2,0 0,2 -2,0 0,-2z M32,8l2,0 0,2 -2,0 0,-2z M36,8l2,0 0,2 -2,0 0,-2z M46,8l2,0 0,2 -2,0 0,-2z M50,8l2,0 0,2 -2,0 0,-2z M52,8l2,0 0,2 -2,0 0,-2z M54,8l2,0 0,2 -2,0 0,-2z M58,8l2,0 0,2 -2,0 0,-2z M2,10l2,0 0,2 -2,0 0,-2z M6,10l2,0 0,2 -2,0 0,-2z M8,10l2,0 0,2 -2,0 0,-2z M10,10l2,0 0,2 -2,0 0,-2z M14,10l2,0 0,2 -2,0 0,-2z M20,10l2,0 0,2 -2,0 0,-2z M28,10l2,0 0,2 -2,0 0,-2z M30,10l2,0 0,2 -2,0 0,-2z M32,10l2,0 0,2 -2,0 0,-2z M36,10l2,0 0,2 -2,0 0,-2z M38,10l2,0 0,2 -2,0 0,-2z M40,10l2,0 0,2 -2,0 0,-2z M42,10l2,0 0,2 -2,0 0,-2z M46,10l2,0 0,2 -2,0 0,-2z M50,10l2,0 0,2 -2,0 0,-2z M52,10l2,0 0,2 -2,0 0,-2z M54,10l2,0 0,2 -2,0 0,-2z M58,10l2,0 0,2 -2,0 0,-2z M2,12l2,0 0,2 -2,0 0,-2z M14,12l2,0 0,2 -2,0 0,-2z M22,12l2,0 0,2 -2,0 0,-2z M28,12l2,0 0,2 -2,0 0,-2z M30,12l2,0 0,2 -2,0 0,-2z M34,12l2,0 0,2 -2,0 0,-2z M38,12l2,0 0,2 -2,0 0,-2z M42,12l2,0 0,2 -2,0 0,-2z M46,12l2,0 0,2 -2,0 0,-2z M58,12l2,0 0,2 -2,0 0,-2z M2,14l2,0 0,2 -2,0 0,-2z M4,14l2,0 0,2 -2,0 0,-2z M6,14l2,0 0,2 -2,0 0,-2z M8,14l2,0 0,2 -2,0 0,-2z M10,14l2,0 0,2 -2,0 0,-2z M12,14l2,0 0,2 -2,0 0,-2z M14,14l2,0 0,2 -2,0 0,-2z M18,14l2,0 0,2 -2,0 0,-2z M22,14l2,0 0,2 -2,0 0,-2z M26,14l2,0 0,2 -2,0 0,-2z M30,14l2,0 0,2 -2,0 0,-2z M34,14l2,0 0,2 -2,0 0,-2z M38,14l2,0 0,2 -2,0 0,-2z M42,14l2,0 0,2 -2,0 0,-2z M46,14l2,0 0,2 -2,0 0,-2z M48,14l2,0 0,2 -2,0 0,-2z M50,14l2,0 0,2 -2,0 0,-2z M52,14l2,0 0,2 -2,0 0,-2z M54,14l2,0 0,2 -2,0 0,-2z M56,14l2,0 0,2 -2,0 0,-2z M58,14l2,0 0,2 -2,0 0,-2z M18,16l2,0 0,2 -2,0 0,-2z M20,16l2,0 0,2 -2,0 0,-2z M28,16l2,0 0,2 -2,0 0,-2z M40,16l2,0 0,2 -2,0 0,-2z M42,16l2,0 0,2 -2,0 0,-2z M2,18l2,0 0,2 -2,0 0,-2z M14,18l2,0 0,2 -2,0 0,-2z M18,18l2,0 0,2 -2,0 0,-2z M22,18l2,0 0,2 -2,0 0,-2z M24,18l2,0 0,2 -2,0 0,-2z M26,18l2,0 0,2 -2,0 0,-2z M30,18l2,0 0,2 -2,0 0,-2z M32,18l2,0 0,2 -2,0 0,-2z M36,18l2,0 0,2 -2,0 0,-2z M40,18l2,0 0,2 -2,0 0,-2z M44,18l2,0 0,2 -2,0 0,-2z M46,18l2,0 0,2 -2,0 0,-2z M52,18l2,0 0,2 -2,0 0,-2z M54,18l2,0 0,2 -2,0 0,-2z M56,18l2,0 0,2 -2,0 0,-2z M4,20l2,0 0,2 -2,0 0,-2z M6,20l2,0 0,2 -2,0 0,-2z M8,20l2,0 0,2 -2,0 0,-2z M10,20l2,0 0,2 -2,0 0,-2z M12,20l2,0 0,2 -2,0 0,-2z M16,20l2,0 0,2 -2,0 0,-2z M20,20l2,0 0,2 -2,0 0,-2z M24,20l2,0 0,2 -2,0 0,-2z M26,20l2,0 0,2 -2,0 0,-2z M30,20l2,0 0,2 -2,0 0,-2z M38,20l2,0 0,2 -2,0 0,-2z M40,20l2,0 0,2 -2,0 0,-2z M42,20l2,0 0,2 -2,0 0,-2z M48,20l2,0 0,2 -2,0 0,-2z M50,20l2,0 0,2 -2,0 0,-2z M54,20l2,0 0,2 -2,0 0,-2z M56,20l2,0 0,2 -2,0 0,-2z M4,22l2,0 0,2 -2,0 0,-2z M6,22l2,0 0,2 -2,0 0,-2z M14,22l2,0 0,2 -2,0 0,-2z M16,22l2,0 0,2 -2,0 0,-2z M26,22l2,0 0,2 -2,0 0,-2z M42,22l2,0 0,2 -2,0 0,-2z M44,22l2,0 0,2 -2,0 0,-2z M50,22l2,0 0,2 -2,0 0,-2z M2,24l2,0 0,2 -2,0 0,-2z M6,24l2,0 0,2 -2,0 0,-2z M10,24l2,0 0,2 -2,0 0,-2z M16,24l2,0 0,2 -2,0 0,-2z M18,24l2,0 0,2 -2,0 0,-2z M20,24l2,0 0,2 -2,0 0,-2z M24,24l2,0 0,2 -2,0 0,-2z M30,24l2,0 0,2 -2,0 0,-2z M32,24l2,0 0,2 -2,0 0,-2z M34,24l2,0 0,2 -2,0 0,-2z M38,24l2,0 0,2 -2,0 0,-2z M42,24l2,0 0,2 -2,0 0,-2z M44,24l2,0 0,2 -2,0 0,-2z M52,24l2,0 0,2 -2,0 0,-2z M4,26l2,0 0,2 -2,0 0,-2z M8,26l2,0 0,2 -2,0 0,-2z M12,26l2,0 0,2 -2,0 0,-2z M14,26l2,0 0,2 -2,0 0,-2z M18,26l2,0 0,2 -2,0 0,-2z M22,26l2,0 0,2 -2,0 0,-2z M28,26l2,0 0,2 -2,0 0,-2z M30,26l2,0 0,2 -2,0 0,-2z M34,26l2,0 0,2 -2,0 0,-2z M40,26l2,0 0,2 -2,0 0,-2z M42,26l2,0 0,2 -2,0 0,-2z M46,26l2,0 0,2 -2,0 0,-2z M48,26l2,0 0,2 -2,0 0,-2z M58,26l2,0 0,2 -2,0 0,-2z M2,28l2,0 0,2 -2,0 0,-2z M8,28l2,0 0,2 -2,0 0,-2z M10,28l2,0 0,2 -2,0 0,-2z M12,28l2,0 0,2 -2,0 0,-2z M18,28l2,0 0,2 -2,0 0,-2z M20,28l2,0 0,2 -2,0 0,-2z M28,28l2,0 0,2 -2,0 0,-2z M30,28l2,0 0,2 -2,0 0,-2z M38,28l2,0 0,2 -2,0 0,-2z M40,28l2,0 0,2 -2,0 0,-2z M42,28l2,0 0,2 -2,0 0,-2z M44,28l2,0 0,2 -2,0 0,-2z M46,28l2,0 0,2 -2,0 0,-2z M48,28l2,0 0,2 -2,0 0,-2z M50,28l2,0 0,2 -2,0 0,-2z M56,28l2,0 0,2 -2,0 0,-2z M58,28l2,0 0,2 -2,0 0,-2z M12,30l2,0 0,2 -2,0 0,-2z M14,30l2,0 0,2 -2,0 0,-2z M16,30l2,0 0,2 -2,0 0,-2z M18,30l2,0 0,2 -2,0 0,-2z M20,30l2,0 0,2 -2,0 0,-2z M24,30l2,0 0,2 -2,0 0,-2z M28,30l2,0 0,2 -2,0 0,-2z M30,30l2,0 0,2 -2,0 0,-2z M32,30l2,0 0,2 -2,0 0,-2z M34,30l2,0 0,2 -2,0 0,-2z M42,30l2,0 0,2 -2,0 0,-2z M50,30l2,0 0,2 -2,0 0,-2z M52,30l2,0 0,2 -2,0 0,-2z M54,30l2,0 0,2 -2,0 0,-2z M4,32l2,0 0,2 -2,0 0,-2z M6,32l2,0 0,2 -2,0 0,-2z M8,32l2,0 0,2 -2,0 0,-2z M10,32l2,0 0,2 -2,0 0,-2z M12,32l2,0 0,2 -2,0 0,-2z M20,32l2,0 0,2 -2,0 0,-2z M22,32l2,0 0,2 -2,0 0,-2z M24,32l2,0 0,2 -2,0 0,-2z M28,32l2,0 0,2 -2,0 0,-2z M30,32l2,0 0,2 -2,0 0,-2z M32,32l2,0 0,2 -2,0 0,-2z M40,32l2,0 0,2 -2,0 0,-2z M42,32l2,0 0,2 -2,0 0,-2z M46,32l2,0 0,2 -2,0 0,-2z M50,32l2,0 0,2 -2,0 0,-2z M54,32l2,0 0,2 -2,0 0,-2z M58,32l2,0 0,2 -2,0 0,-2z M4,34l2,0 0,2 -2,0 0,-2z M8,34l2,0 0,2 -2,0 0,-2z M10,34l2,0 0,2 -2,0 0,-2z M14,34l2,0 0,2 -2,0 0,-2z M18,34l2,0 0,2 -2,0 0,-2z M20,34l2,0 0,2 -2,0 0,-2z M22,34l2,0 0,2 -2,0 0,-2z M30,34l2,0 0,2 -2,0 0,-2z M36,34l2,0 0,2 -2,0 0,-2z M38,34l2,0 0,2 -2,0 0,-2z M44,34l2,0 0,2 -2,0 0,-2z M48,34l2,0 0,2 -2,0 0,-2z M52,34l2,0 0,2 -2,0 0,-2z M54,34l2,0 0,2 -2,0 0,-2z M2,36l2,0 0,2 -2,0 0,-2z M6,36l2,0 0,2 -2,0 0,-2z M12,36l2,0 0,2 -2,0 0,-2z M20,36l2,0 0,2 -2,0 0,-2z M22,36l2,0 0,2 -2,0 0,-2z M24,36l2,0 0,2 -2,0 0,-2z M26,36l2,0 0,2 -2,0 0,-2z M32,36l2,0 0,2 -2,0 0,-2z M36,36l2,0 0,2 -2,0 0,-2z M38,36l2,0 0,2 -2,0 0,-2z M40,36l2,0 0,2 -2,0 0,-2z M42,36l2,0 0,2 -2,0 0,-2z M46,36l2,0 0,2 -2,0 0,-2z M48,36l2,0 0,2 -2,0 0,-2z M50,36l2,0 0,2 -2,0 0,-2z M54,36l2,0 0,2 -2,0 0,-2z M56,36l2,0 0,2 -2,0 0,-2z M58,36l2,0 0,2 -2,0 0,-2z M2,38l2,0 0,2 -2,0 0,-2z M4,38l2,0 0,2 -2,0 0,-2z M10,38l2,0 0,2 -2,0 0,-2z M14,38l2,0 0,2 -2,0 0,-2z M16,38l2,0 0,2 -2,0 0,-2z M22,38l2,0 0,2 -2,0 0,-2z M24,38l2,0 0,2 -2,0 0,-2z M26,38l2,0 0,2 -2,0 0,-2z M28,38l2,0 0,2 -2,0 0,-2z M30,38l2,0 0,2 -2,0 0,-2z M32,38l2,0 0,2 -2,0 0,-2z M36,38l2,0 0,2 -2,0 0,-2z M40,38l2,0 0,2 -2,0 0,-2z M52,38l2,0 0,2 -2,0 0,-2z M58,38l2,0 0,2 -2,0 0,-2z M2,40l2,0 0,2 -2,0 0,-2z M6,40l2,0 0,2 -2,0 0,-2z M10,40l2,0 0,2 -2,0 0,-2z M12,40l2,0 0,2 -2,0 0,-2z M18,40l2,0 0,2 -2,0 0,-2z M20,40l2,0 0,2 -2,0 0,-2z M22,40l2,0 0,2 -2,0 0,-2z M26,40l2,0 0,2 -2,0 0,-2z M30,40l2,0 0,2 -2,0 0,-2z M46,40l2,0 0,2 -2,0 0,-2z M48,40l2,0 0,2 -2,0 0,-2z M2,42l2,0 0,2 -2,0 0,-2z M12,42l2,0 0,2 -2,0 0,-2z M14,42l2,0 0,2 -2,0 0,-2z M16,42l2,0 0,2 -2,0 0,-2z M24,42l2,0 0,2 -2,0 0,-2z M32,42l2,0 0,2 -2,0 0,-2z M36,42l2,0 0,2 -2,0 0,-2z M42,42l2,0 0,2 -2,0 0,-2z M44,42l2,0 0,2 -2,0 0,-2z M46,42l2,0 0,2 -2,0 0,-2z M48,42l2,0 0,2 -2,0 0,-2z M50,42l2,0 0,2 -2,0 0,-2z M54,42l2,0 0,2 -2,0 0,-2z M56,42l2,0 0,2 -2,0 0,-2z M58,42l2,0 0,2 -2,0 0,-2z M18,44l2,0 0,2 -2,0 0,-2z M20,44l2,0 0,2 -2,0 0,-2z M26,44l2,0 0,2 -2,0 0,-2z M28,44l2,0 0,2 -2,0 0,-2z M32,44l2,0 0,2 -2,0 0,-2z M36,44l2,0 0,2 -2,0 0,-2z M38,44l2,0 0,2 -2,0 0,-2z M42,44l2,0 0,2 -2,0 0,-2z M50,44l2,0 0,2 -2,0 0,-2z M52,44l2,0 0,2 -2,0 0,-2z M2,46l2,0 0,2 -2,0 0,-2z M4,46l2,0 0,2 -2,0 0,-2z M6,46l2,0 0,2 -2,0 0,-2z M8,46l2,0 0,2 -2,0 0,-2z M10,46l2,0 0,2 -2,0 0,-2z M12,46l2,0 0,2 -2,0 0,-2z M14,46l2,0 0,2 -2,0 0,-2z M20,46l2,0 0,2 -2,0 0,-2z M22,46l2,0 0,2 -2,0 0,-2z M24,46l2,0 0,2 -2,0 0,-2z M28,46l2,0 0,2 -2,0 0,-2z M30,46l2,0 0,2 -2,0 0,-2z M32,46l2,0 0,2 -2,0 0,-2z M34,46l2,0 0,2 -2,0 0,-2z M36,46l2,0 0,2 -2,0 0,-2z M40,46l2,0 0,2 -2,0 0,-2z M42,46l2,0 0,2 -2,0 0,-2z M46,46l2,0 0,2 -2,0 0,-2z M50,46l2,0 0,2 -2,0 0,-2z M52,46l2,0 0,2 -2,0 0,-2z M54,46l2,0 0,2 -2,0 0,-2z M2,48l2,0 0,2 -2,0 0,-2z M14,48l2,0 0,2 -2,0 0,-2z M28,48l2,0 0,2 -2,0 0,-2z M34,48l2,0 0,2 -2,0 0,-2z M40,48l2,0 0,2 -2,0 0,-2z M42,48l2,0 0,2 -2,0 0,-2z M50,48l2,0 0,2 -2,0 0,-2z M56,48l2,0 0,2 -2,0 0,-2z M2,50l2,0 0,2 -2,0 0,-2z M6,50l2,0 0,2 -2,0 0,-2z M8,50l2,0 0,2 -2,0 0,-2z M10,50l2,0 0,2 -2,0 0,-2z M14,50l2,0 0,2 -2,0 0,-2z M20,50l2,0 0,2 -2,0 0,-2z M28,50l2,0 0,2 -2,0 0,-2z M32,50l2,0 0,2 -2,0 0,-2z M34,50l2,0 0,2 -2,0 0,-2z M40,50l2,0 0,2 -2,0 0,-2z M42,50l2,0 0,2 -2,0 0,-2z M44,50l2,0 0,2 -2,0 0,-2z M46,50l2,0 0,2 -2,0 0,-2z M48,50l2,0 0,2 -2,0 0,-2z M50,50l2,0 0,2 -2,0 0,-2z M52,50l2,0 0,2 -2,0 0,-2z M56,50l2,0 0,2 -2,0 0,-2z M58,50l2,0 0,2 -2,0 0,-2z M2,52l2,0 0,2 -2,0 0,-2z M6,52l2,0 0,2 -2,0 0,-2z M8,52l2,0 0,2 -2,0 0,-2z M10,52l2,0 0,2 -2,0 0,-2z M14,52l2,0 0,2 -2,0 0,-2z M28,52l2,0 0,2 -2,0 0,-2z M32,52l2,0 0,2 -2,0 0,-2z M34,52l2,0 0,2 -2,0 0,-2z M38,52l2,0 0,2 -2,0 0,-2z M44,52l2,0 0,2 -2,0 0,-2z M52,52l2,0 0,2 -2,0 0,-2z M54,52l2,0 0,2 -2,0 0,-2z M58,52l2,0 0,2 -2,0 0,-2z M2,54l2,0 0,2 -2,0 0,-2z M6,54l2,0 0,2 -2,0 0,-2z M8,54l2,0 0,2 -2,0 0,-2z M10,54l2,0 0,2 -2,0 0,-2z M14,54l2,0 0,2 -2,0 0,-2z M32,54l2,0 0,2 -2,0 0,-2z M34,54l2,0 0,2 -2,0 0,-2z M36,54l2,0 0,2 -2,0 0,-2z M38,54l2,0 0,2 -2,0 0,-2z M46,54l2,0 0,2 -2,0 0,-2z M48,54l2,0 0,2 -2,0 0,-2z M50,54l2,0 0,2 -2,0 0,-2z M52,54l2,0 0,2 -2,0 0,-2z M54,54l2,0 0,2 -2,0 0,-2z M56,54l2,0 0,2 -2,0 0,-2z M2,56l2,0 0,2 -2,0 0,-2z M14,56l2,0 0,2 -2,0 0,-2z M24,56l2,0 0,2 -2,0 0,-2z M26,56l2,0 0,2 -2,0 0,-2z M28,56l2,0 0,2 -2,0 0,-2z M30,56l2,0 0,2 -2,0 0,-2z M32,56l2,0 0,2 -2,0 0,-2z M34,56l2,0 0,2 -2,0 0,-2z M40,56l2,0 0,2 -2,0 0,-2z M46,56l2,0 0,2 -2,0 0,-2z M48,56l2,0 0,2 -2,0 0,-2z M52,56l2,0 0,2 -2,0 0,-2z M54,56l2,0 0,2 -2,0 0,-2z M58,56l2,0 0,2 -2,0 0,-2z M2,58l2,0 0,2 -2,0 0,-2z M4,58l2,0 0,2 -2,0 0,-2z M6,58l2,0 0,2 -2,0 0,-2z M8,58l2,0 0,2 -2,0 0,-2z M10,58l2,0 0,2 -2,0 0,-2z M12,58l2,0 0,2 -2,0 0,-2z M14,58l2,0 0,2 -2,0 0,-2z M18,58l2,0 0,2 -2,0 0,-2z M20,58l2,0 0,2 -2,0 0,-2z M22,58l2,0 0,2 -2,0 0,-2z M28,58l2,0 0,2 -2,0 0,-2z M30,58l2,0 0,2 -2,0 0,-2z M32,58l2,0 0,2 -2,0 0,-2z M34,58l2,0 0,2 -2,0 0,-2z M36,58l2,0 0,2 -2,0 0,-2z M40,58l2,0 0,2 -2,0 0,-2z M46,58l2,0 0,2 -2,0 0,-2z M50,58l2,0 0,2 -2,0 0,-2z M52,58l2,0 0,2 -2,0 0,-2z M54,58l2,0 0,2 -2,0 0,-2z " stroke="transparent" fill="black"/></svg>
+          </div>
+          <p style="font-size: 7.5pt; font-weight: 700; color: #065f46; margin-top: 3pt;">slide-ocsea</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Sign-off & Distribution Footer -->
+    <footer style="margin-top: 16pt; padding-top: 8pt; border-top: 1pt solid #e2e8f0; font-size: 8pt; color: #64748b; display: flex; justify-content: space-between;">
+      <div>
+        <span class="lang-km">SOPHAT.SPACE — គម្រោងប្រយោជន៍សាធារណៈឌីជីថល (Digital Public Good) · រក្សាសិទ្ធិឆ្នាំ ២០២៦ · អាចទាញយក និងចែករំលែកដោយសេរីដើម្បីអប់រំ</span>
+        <span class="lang-en">SOPHAT.SPACE — Digital Public Good Project · Copyright 2026 · Open for free educational distribution nationwide</span>
+      </div>
+      <div>
+        <span>sophat.space/help</span>
       </div>
     </footer>
   </div>
 
-  <!-- ========================================================
-       PRESENTATION DECK JAVASCRIPT CONTROLLER
-       ======================================================== -->
 
   <script>
     // ========================================================
-    // SLIDE PRESENTATION & STAGE ENGINE
+    // SLIDE PRESENTATION & THEME ENGINE (v3.3 FINAL)
     // ========================================================
     const speakerNotes = [];
 
     const totalSlides = 20;
     let currentSlide = 1;
     let currentLang = "km";
+    let currentTheme = "dark";
     let notesOpen = false;
 
     const slides = document.querySelectorAll('.slide');
@@ -2155,8 +2266,11 @@
     const notesDrawer = document.getElementById('notes-drawer');
     const notesSlideNum = document.getElementById('notes-slide-num');
     const notesContent = document.getElementById('notes-content');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    const themeTextEn = document.getElementById('theme-text-en');
 
-    // 1600x900 Auto-Scale Algorithm
+    // 1600x900 Auto-Scale Engine
     function scaleStage() {
       if (!stage) return;
       const w = window.innerWidth;
@@ -2214,15 +2328,31 @@
       }
     }
 
+    function toggleTheme() {
+      currentTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === "light") {
+        themeIcon.textContent = "☾";
+        themeText.textContent = "ងងឹត";
+        themeTextEn.textContent = "Dark";
+        showToast("☼ Switched to Light Theme");
+      } else {
+        themeIcon.textContent = "☼";
+        themeText.textContent = "ពន្លឺ";
+        themeTextEn.textContent = "Light";
+        showToast("☾ Switched to Dark Theme");
+      }
+    }
+
     function toggleLang() {
       currentLang = currentLang === "km" ? "en" : "km";
       document.documentElement.setAttribute('data-lang', currentLang);
       if (currentLang === "en") {
         showToast("🇬🇧 Switched to English (Afternoon Session)");
-        document.title = "Digital Safety & Preventing OCSEA · v3.2 Final · Sophat.Space";
+        document.title = "Digital Safety & Preventing OCSEA · v3.3 Final · Sophat.Space";
       } else {
         showToast("🇰🇭 បានប្ដូរទៅភាសាខ្មែរ (បទបង្ហាញពេលព្រឹក)");
-        document.title = "សុវត្ថិភាពឌីជីថល និង OCSEA · v3.2 Final · Sophat.Space";
+        document.title = "សុវត្ថិភាពឌីជីថល និង OCSEA · v3.3 Final · Sophat.Space";
       }
     }
 
@@ -2230,8 +2360,8 @@
       showToast(currentLang === "en" ? "📥 Preparing A4 Action Handbook PDF..." : "📥 កំពុងរៀបចំសៀវភៅណែនាំ A4 PDF...");
       const oldTitle = document.title;
       document.title = currentLang === "en" 
-        ? "SophatSpace-OCSEA-Digital-Safety-Handbook-EN-v3.2" 
-        : "SophatSpace-OCSEA-Digital-Safety-Handbook-KH-v3.2";
+        ? "SophatSpace-OCSEA-Digital-Safety-Handbook-EN-v3.3" 
+        : "SophatSpace-OCSEA-Digital-Safety-Handbook-KH-v3.3";
 
       setTimeout(() => {
         window.print();
@@ -2259,6 +2389,7 @@
     // Event Listeners
     document.getElementById('btn-prev').addEventListener('click', prevSlide);
     document.getElementById('btn-next').addEventListener('click', nextSlide);
+    document.getElementById('btn-theme').addEventListener('click', toggleTheme);
     document.getElementById('btn-lang').addEventListener('click', toggleLang);
     document.getElementById('btn-pdf').addEventListener('click', triggerDownloadPDF);
     document.getElementById('btn-notes').addEventListener('click', toggleNotes);
@@ -2273,6 +2404,8 @@
       } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         prevSlide();
+      } else if (e.key.toLowerCase() === 't') {
+        toggleTheme();
       } else if (e.key.toLowerCase() === 'l') {
         toggleLang();
       } else if (e.key.toLowerCase() === 'p') {
