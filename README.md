@@ -21,7 +21,12 @@
    - ការពិត និងការយល់ច្រឡំអំពី Dark Web ឆ្លងដែន
    - បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍ (ភាពអាម៉ាស់ ការបន្ទោសជនរងគ្រោះ កង្វះការយល់ដឹង)
 4. **វិធានការការពារ និងឆ្លើយតប (4 Steps):** បញ្ឈប់ (Stop) · រក្សាទុកភស្តុតាង (Record) · រាយការណ៍ (Report) · គាំទ្រ (Support)។
-5. **ធនធាន និងសេវាជំនួយនៅកម្ពុជា:** APLE Cambodia (092 311 511), Child Helpline Cambodia (1280), និង [Sophat.Space Help](https://sophat.space/help)។
+5. **ធនធាន និងសេវាជំនួយនៅកម្ពុជា:**
+   - **នាយកដ្ឋាននគរបាលប្រឆាំងការជួញដូរមនុស្ស និងការពារអនីតិជន (AHTJPD):** Hotline `1288` / `012 852 241`
+   - **មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (Child Advocacy Center - CAC) / A21:** Hotline `010 22 07 71` / `071 72 10 771`
+   - **APLE Cambodia:** Hotline `092 311 511` | [aplecambodia.org](https://www.aplecambodia.org/)
+   - **Child Helpline Cambodia:** Hotline `1280` (ឥតគិតថ្លៃ) | [childhelplinecambodia.org](https://childhelplinecambodia.org/)
+   - **Sophat.Space Help:** [sophat.space/help](https://sophat.space/help)
 
 ---
 
@@ -73,6 +78,8 @@ open index.html
 - **UNICEF Cambodia Guidebook on Child Safety Online (Jan 2025)** — UNICEF Cambodia & Ministry of Education, Youth and Sport (MoEYS)
 - **UNICEF Issue Brief on AI & Child Sexual Abuse/Exploitation (Feb 2026)**
 - **Cambodian Child Online Protection Guidelines (2023)**
+- **នាយកដ្ឋាននគរបាលប្រឆាំងការជួញដូរមនុស្ស និងការពារអនីតិជន (AHTJPD):** Hotline `1288` (ទាន់ហេតុការណ៍) | `012 852 241`
+- **មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (Child Advocacy Center - CAC) / A21:** Hotline `010 22 07 71` | `071 72 10 771` | [a21.org](https://www.a21.org/)
 - **APLE Cambodia:** Hotline `092 311 511` | [aplecambodia.org](https://www.aplecambodia.org/)
 - **Child Helpline Cambodia:** Hotline `1280` (Free) | [childhelplinecambodia.org](https://childhelplinecambodia.org/)
 - **Sophat.Space Help:** [sophat.space/help](https://sophat.space/help)

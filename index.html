@@ -423,6 +423,45 @@ main {
   color: var(--accent);
 }
 
+/* Joint Campaign Banner Card (Slide 18) */
+.campaign-banner-card {
+  margin-top: clamp(12px, 1.6vh, 20px);
+  padding: clamp(12px, 1.5vw, 18px);
+  border-radius: var(--radius);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(245, 158, 11, 0.05));
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 22px);
+  max-width: 1240px;
+}
+.campaign-banner-img {
+  width: clamp(160px, 20vw, 240px);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  flex-shrink: 0;
+  display: block;
+}
+.campaign-banner-body {
+  flex: 1;
+  min-width: 0;
+}
+.campaign-hotlines-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+.campaign-hotline-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
 /* Footer & Controls */
 .footer {
   height: 60px;
@@ -546,6 +585,12 @@ html[data-bigscreen="true"] .eyebrow {
 html[data-bigscreen="true"] .p-name {
   font-size: clamp(24px, 2.6vw, 32px) !important;
 }
+html[data-bigscreen="true"] .campaign-banner-card h3 {
+  font-size: clamp(20px, 2.2vw, 28px) !important;
+}
+html[data-bigscreen="true"] .campaign-hotline-item div {
+  font-size: clamp(14px, 1.3vw, 17px) !important;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
@@ -553,6 +598,17 @@ html[data-bigscreen="true"] .p-name {
     grid-template-columns: 1fr 1fr;
   }
   .grid, .grid.three {
+    grid-template-columns: 1fr;
+  }
+  .campaign-banner-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .campaign-banner-img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .campaign-hotlines-row {
     grid-template-columns: 1fr;
   }
   .meta {
@@ -629,13 +685,30 @@ html[data-bigscreen="true"] .p-name {
     page-break-after: avoid !important;
     break-after: avoid !important;
   }
-  .card, .callout, .presenter-banner, .letter-card {
+  .card, .callout, .presenter-banner, .letter-card, .campaign-banner-card {
     background: #f8fafc !important;
     color: #0f172a !important;
     border: 1px solid #cbd5e1 !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+  .campaign-banner-card {
+    padding: 8px 12px !important;
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  .campaign-banner-img {
+    width: 140px !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+  .campaign-hotline-item {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 6px 10px !important;
   }
   .presenter-thumb {
     width: 38px !important;
@@ -1231,33 +1304,53 @@ html[data-bigscreen="true"] .p-name {
     <p class="subhead">
       បណ្តាញសេវាជំនួយ និងលេខទូរស័ព្ទទាន់ហេតុការណ៍ផ្លូវការដែលអាចទុកចិត្តបាននៅកម្ពុជា៖
     </p>
-    <div class="grid three">
-      <div class="card" style="border-top: 4px solid var(--accent);">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="tag">APLE CAMBODIA</div>
-        <h3 style="font-size: 24px; color: var(--accent); margin: 6px 0 10px;">Hotline: 092 311 511</h3>
-        <p>អង្គការជំនាញឈានមុខគេលើការទប់ស្កាត់ និងឆ្លើយតបនឹងការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារនៅកម្ពុជា។ ធ្វើការស៊ើបអង្កេត និងគាំទ្រផ្លូវច្បាប់។</p>
-        <p style="margin-top: 14px;"><a href="https://www.aplecambodia.org/" target="_blank" rel="noopener noreferrer">aplecambodia.org ↗</a></p>
-      </div>
-      <div class="card" style="border-top: 4px solid #38bdf8;">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="tag">CHILD HELPLINE CAMBODIA</div>
-        <h3 style="font-size: 24px; color: #38bdf8; margin: 6px 0 10px;">ហៅឥតគិតថ្លៃ: 1280</h3>
-        <p>ខ្សែទូរស័ព្ទជំនួយកុមារកម្ពុជា ផ្តល់សេវាប្រឹក្សាផ្លូវចិត្ត និងការជួយសង្គ្រោះកុមារទូទាំង ២៥ ខេត្ត-រាជធានី។ សម្ងាត់ ឥតគិតថ្លៃ និងជួយបានភ្លាមៗ។</p>
-        <p style="margin-top: 14px;"><a href="https://childhelplinecambodia.org/" target="_blank" rel="noopener noreferrer">childhelplinecambodia.org ↗</a></p>
-      </div>
-      <div class="card" style="border-top: 4px solid #a78bfa;">
-        <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <div class="tag">SOPHAT.SPACE HELP</div>
-        <h3 style="font-size: 24px; color: #a78bfa; margin: 6px 0 10px;">sophat.space/help</h3>
-        <p>មជ្ឈមណ្ឌលធនធានជំនួយសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ ដោយ ជី សុផាត។ ការណែនាំស្តីពីការសង្គ្រោះគណនី, Privacy Check-up និងបណ្តាញជំនួយ។</p>
-        <p style="margin-top: 14px;"><a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">sophat.space/help ↗</a></p>
+
+    <!-- Official Joint Campaign Banner -->
+    <div class="campaign-banner-card">
+      <img src="assets/cambodia-anti-trafficking-hotlines.png" alt="យុទ្ធនាការយើងរួមគ្នាប្រយុទ្ធប្រឆាំង អំពើជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ចលើកុមារ" class="campaign-banner-img" />
+      <div class="campaign-banner-body">
+        <div class="tag" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); font-weight: 700; margin-bottom: 4px;">
+          <svg class="ico" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> យុទ្ធនាការផ្លូវការរួមគ្នា · សមត្ថកិច្ច និងអង្គការដៃគូ
+        </div>
+        <h3 style="font-size: clamp(17px, 1.6vw, 22px); margin: 4px 0 8px; color: var(--text);">«យើងរួមគ្នាប្រយុទ្ធប្រឆាំង អំពើជួញដូរមនុស្ស &amp; ការកេងប្រវ័ញ្ចលើកុមារ»</h3>
+        <div class="campaign-hotlines-row">
+          <div class="campaign-hotline-item" style="border-left: 3px solid #ef4444;">
+            <div style="font-weight: 700; font-size: clamp(12px, 1.05vw, 14px); color: var(--text);">នាយកដ្ឋាននគរបាលប្រឆាំងការជួញដូរមនុស្ស និងការពារអនីតិជន (AHTJPD)</div>
+            <div style="font-size: clamp(16px, 1.35vw, 20px); font-weight: 800; color: #ef4444; margin-top: 3px;">Hotline: 1288 <span style="font-size: 13px; font-weight: 500; color: var(--muted);">| 012 852 241</span></div>
+          </div>
+          <div class="campaign-hotline-item" style="border-left: 3px solid #f59e0b;">
+            <div style="font-weight: 700; font-size: clamp(12px, 1.05vw, 14px); color: var(--text);">មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (Child Advocacy Center) / A21</div>
+            <div style="font-size: clamp(16px, 1.35vw, 20px); font-weight: 800; color: #f59e0b; margin-top: 3px;">Hotline: 010 22 07 71 <span style="font-size: 13px; font-weight: 500; color: var(--muted);">| 071 72 10 771</span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="callout">
-      <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      <div>
-        <strong>ជំនួយបន្ទាន់ពីសមត្ថកិច្ច៖</strong> ប្រសិនបើកុមារកំពុងស្ថិតក្នុងគ្រោះថ្នាក់លើរាងកាយបន្ទាន់ សូមទាក់ទងនាយកដ្ឋានប្រឆាំងបទល្មើសបច្ចេកវិទ្យា (Anti-Cybercrime Department) ឬប៉ុស្តិ៍នគរបាលដែលនៅជិតបំផុតជាបន្ទាន់។
+
+    <!-- 3 Community & Technical Support Cards -->
+    <div class="grid three" style="margin-top: 14px;">
+      <div class="card" style="border-top: 4px solid var(--accent); padding: clamp(14px, 1.5vw, 20px);">
+        <div class="tag">APLE CAMBODIA</div>
+        <h3 style="font-size: 21px; color: var(--accent); margin: 4px 0 8px;">Hotline: 092 311 511</h3>
+        <p style="font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55;">អង្គការជំនាញស៊ើបអង្កេតបច្ចេកវិទ្យា ទប់ស្កាត់ និងឆ្លើយតបករណី OCSEA/CSAM នៅកម្ពុជា ព្រមទាំងផ្តល់ការគាំទ្រផ្លូវច្បាប់។</p>
+        <p style="margin-top: 10px; font-size: 13px;"><a href="https://www.aplecambodia.org/" target="_blank" rel="noopener noreferrer">aplecambodia.org ↗</a></p>
+      </div>
+      <div class="card" style="border-top: 4px solid #38bdf8; padding: clamp(14px, 1.5vw, 20px);">
+        <div class="tag">CHILD HELPLINE CAMBODIA</div>
+        <h3 style="font-size: 21px; color: #38bdf8; margin: 4px 0 8px;">ហៅឥតគិតថ្លៃ: 1280</h3>
+        <p style="font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55;">ខ្សែទូរស័ព្ទជំនួយកុមារកម្ពុជា ផ្តល់ការប្រឹក្សាផ្លូវចិត្ត និងការជួយសង្គ្រោះកុមារទូទាំង ២៥ ខេត្ត-រាជធានី។ សម្ងាត់ ឥតគិតថ្លៃ ២៤/៧។</p>
+        <p style="margin-top: 10px; font-size: 13px;"><a href="https://childhelplinecambodia.org/" target="_blank" rel="noopener noreferrer">childhelplinecambodia.org ↗</a></p>
+      </div>
+      <div class="card" style="border-top: 4px solid #a78bfa; padding: clamp(14px, 1.5vw, 20px);">
+        <div class="tag">SOPHAT.SPACE HELP</div>
+        <h3 style="font-size: 21px; color: #a78bfa; margin: 4px 0 8px;">sophat.space/help</h3>
+        <p style="font-size: clamp(13px, 1.1vw, 15px); line-height: 1.55;">មជ្ឈមណ្ឌលធនធានជំនួយសុវត្ថិភាពឌីជីថលជាភាសាខ្មែរ ដោយ ជី សុផាត។ ការណែនាំស្តីពី Privacy Settings, សង្គ្រោះគណនី និងបណ្តាញជំនួយ។</p>
+        <p style="margin-top: 10px; font-size: 13px;"><a href="https://sophat.space/help" target="_blank" rel="noopener noreferrer">sophat.space/help ↗</a></p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 14px; padding: 12px 18px;">
+      <svg class="ico" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div style="font-size: clamp(13px, 1.1vw, 15px);">
+        <strong>ចងចាំលេខទូរស័ព្ទទាន់ហេតុការណ៍បន្ទាន់៖</strong> នគរបាលជាតិ (AHTJPD): <strong>1288</strong> / <strong>012 852 241</strong> · CAC/A21: <strong>010 22 07 71</strong> · APLE: <strong>092 311 511</strong> · ខ្សែទូរស័ព្ទកុមារ: <strong>1280</strong>
       </div>
     </div>
   </section>
@@ -1308,7 +1401,7 @@ html[data-bigscreen="true"] .p-name {
     <div class="callout">
       <svg class="ico" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <div>
-        <strong>ចងចាំលេខទូរស័ព្ទសង្គ្រោះបន្ទាន់៖</strong> APLE Cambodia: <strong>092 311 511</strong> | Child Helpline Cambodia: <strong>1280 (ឥតគិតថ្លៃ)</strong>
+        <strong>ចងចាំលេខទូរស័ព្ទសង្គ្រោះបន្ទាន់៖</strong> នគរបាលប្រឆាំងការជួញដូរមនុស្ស និងកុមារ (AHTJPD): <strong>1288</strong> / <strong>012 852 241</strong> | CAC/A21: <strong>010 22 07 71</strong> | APLE: <strong>092 311 511</strong> | Child Helpline: <strong>1280 (ឥតគិតថ្លៃ)</strong>
       </div>
     </div>
   </section>
@@ -1339,7 +1432,7 @@ const slides = Array.from(document.querySelectorAll('.slide'));
 const total = slides.length;
 let index = 0;
 
-const speakerNotes = ['០១. ស្លាយបើកបទបង្ហាញ៖ ស្វាគមន៍អ្នកចូលរួមទាំងអស់គ្នា។ ណែនាំខ្លួនដោយសង្ខេប៖ ខ្ញុំបាទ ជី សុផាត (Sophat CHY) គ្រូបណ្តុះបណ្តាល ICT និងជាអ្នករៀបចំ BarCamp Cambodia តាំងពីឆ្នាំ ២០១២ ព្រមទាំងជាស្ថាបនិក Sophat.Space។ ថ្ងៃនេះខ្ញុំសូមលើកយកប្រធានបទ «សុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា» មកធ្វើបទបង្ហាញ។ បទបង្ហាញនេះមាន ២០ ស្លាយ រយៈពេលប្រមាណ ១៥ ទៅ ២០ នាទី ផ្តោតលើចំណេះដឹងជាក់ស្តែង វិធានការការពារបច្ចេកទេស និងកន្លែងស្វែងរកជំនួយនៅកម្ពុជា។', '០២. គោលបំណងបទបង្ហាញ៖ បញ្ជាក់លទ្ធផលរំពឹងទុក ៤ ចំណុច៖ ១. យល់ដឹងច្បាស់ពី OCSEA និងបែងចែកដាច់ពីការ Hack ធម្មតា, ២. ចំណាំបាន ៦ ប្រភេទសំខាន់ៗ និងសញ្ញាព្រមានដំបូង, ៣. ចេះកំណត់ Privacy និង Security លើ Telegram/Facebook/TikTok, និង ៤. ដឹងពី ៤ ជំហានឆ្លើយតប និងស្គាល់ Hotline APLE 092 311 511 / 1280។', '០៣. និយមន័យពេញលេញនៃ OCSEA៖ ពន្យល់អក្សរកាត់ Online Child Sexual Exploitation and Abuse (ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ)។ សង្កត់ធ្ងន់លើពាក្យនីមួយៗ (O-C-S-E-A) និងបញ្ជាក់ថា តាមច្បាប់កម្ពុជា និងអនុសញ្ញាសិទ្ធិកុមារ កុមារគឺជាបុគ្គលគ្រប់រូបដែលមានអាយុក្រោម ១៨ ឆ្នាំ។ ណែនាំពាក្យបច្ចេកទេស CSAM, CSAE និង COP ឱ្យស្គាល់ជាមូលដ្ឋាន។', '០៤. ការបែងចែករវាង Cybercrime ទូទៅ និង OCSEA៖ ជួយឱ្យអ្នកស្តាប់មើលឃើញភាពខុសគ្នាដាច់ស្រឡះ។ ការលួចគណនី ឬ Scam លុយ គឺជាបទល្មើសលើទ្រព្យ ឬទិន្នន័យ។ ចំណែក OCSEA គឺជាការរំលោភបំពានលើរាងកាយ ផ្លូវចិត្ត និងសេចក្តីថ្លៃថ្នូររបស់កុមារ។ ហេតុនេះ ការដោះស្រាយ OCSEA មិនមែនគ្រាន់តែផ្លាស់ប្តូរលេខសម្ងាត់ទេ គឺត្រូវការការសង្គ្រោះផ្លូវចិត្ត និងកិច្ចការពារផ្លូវច្បាប់ជាបន្ទាន់។', '០៥. ប្រភេទ ១: Online Grooming (ការលួងលោមបោកបញ្ឆោត)៖ ពន្យល់ថា Grooming មិនកើតឡើងភ្លាមៗទេ គឺដើរតាម ៣ ជំហាន៖ បង្កើតទំនុកចិត្ត (សរសើរ ជជែកលេងក្នុងហ្គេម Roblox/MLBB) -> ញែកកុមារចេញពីគ្រួសារ (បបួល Chat សម្ងាត់ សុំកុំប្រាប់ម៉ាក់ប៉ា) -> ស្នើសុំរូបភាពស្រាត ឬសកម្មភាពផ្លូវភេទ។ ដាស់តឿនថា អ្នកប្រព្រឹត្តច្រើនតែក្លែងបន្លំជាក្មេងវ័យដូចគ្នា។', '០៦. ប្រភេទ ២: CSAM (Child Sexual Abuse Material)៖ ពន្យល់ពីមូលហេតុដែលពិភពលោកឈប់ប្រើពាក្យ Child Pornography ហើយប្តូរមកប្រើ CSAM វិញ ព្រោះកុមារមិនអាចផ្តល់ការយល់ព្រមបានឡើយ។ គ្រប់រូបភាពផ្លូវភេទកុមារគឺជាភស្តុតាងនៃការរំលោភបំពាន។ ដាស់តឿនយ៉ាងម៉ឺងម៉ាត់៖ ការទាញយក រក្សាទុក ឬ Share បន្ត (ទោះបី Share ដើម្បីដាស់តឿនគ្នាក៏ដោយ) គឺជាបទល្មើសព្រហ្មទណ្ឌ និងធ្វើឱ្យជនរងគ្រោះរងគ្រោះម្តងហើយម្តងទៀត! ឃើញភ្លាម ត្រូវរាយការណ៍ភ្លាម។', '០៧. ប្រភេទ ៣: Live-streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភបំពាន)៖ ការប្រើវីដេអូខល ឬការ Live ផ្ទាល់តាម Telegram/Webcam ដើម្បីឱ្យអ្នកទស្សនា ឬអ្នកបញ្ជាពីចម្ងាយ (ច្រើនតែឆ្លងព្រំដែន) បង់ប្រាក់ដើម្បីបញ្ជាឱ្យមានការរំលោភបំពាន។ ករណីនេះគ្រោះថ្នាក់បំផុត និងត្រូវការការសហការបន្ទាន់រវាងសមត្ថកិច្ច និងអង្គការការពារកុមារ (APLE) ដើម្បីជួយសង្គ្រោះកុមារទាន់ពេលវេលា។', '០៨. ប្រភេទ ៤: Sextortion (ការគំរាមកំហែងផ្លូវភេទ)៖ បញ្ជាក់ច្បាស់ពីទម្រង់ Financial Sextortion (ទារលុយ ABA/Wing) និង Coercive Sextortion (ទាររូបថែម)។ បញ្ជាក់សារគន្លឹះដែលត្រូវចាំ៖ «ការបង់ប្រាក់មិនដែលបញ្ចប់ការគំរាមឡើយ!» ព្រោះអ្នកគំរាមនឹងទារកាន់តែច្រើន។ កុមារមិនមែនជាអ្នកខុសឡើយ ត្រូវបញ្ឈប់ការទាក់ទង រក្សាភស្តុតាង និងប្រាប់មនុស្សធំជាបន្ទាន់។', '០៩. ប្រភេទ ៥: ការកេងប្រវ័ញ្ចដោយប្រាក់ ឬអំណោយ (Financial/Material Exploitation)៖ ពន្យល់ពីវិធីសាស្ត្រប្រើនុយ៖ Top-up ហ្គេម (Free Fire, Mobile Legends, Robux), ទិញទូរស័ព្ទ, ផ្ញើកាត, ឬសន្យាថានឹងឱ្យធ្វើតារាម៉ូដែល។ បញ្ជាក់ថា ទោះបីជាកុមារព្រមទទួលអំណោយ ក៏មិនមែនមានន័យថាកុមារយល់ព្រមឱ្យកេងប្រវ័ញ្ចផ្លូវភេទដែរ។ ច្បាប់ការពារកុមារជានិច្ច។', '១០. ប្រភេទ ៦: AI Deepfakes / GenAI Abuse៖ លើកឡើងពីបញ្ហាថ្មីបំផុតដែល UNICEF បានចេញការព្រមានក្នុងឆ្នាំ ២០២៦។ ការប្រើ AI Nudify tools ឬ Telegram Bots ដើម្បីកែច្នៃរូបថតធម្មតារបស់សិស្ស (រូបពាក់ឯកសណ្ឋានសាលា រូបដើរលេង) ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយក្នុងពេលប៉ុន្មានវិនាទី។ ទោះបីជារូបក្លែងក្លាយ តែការឈឺចាប់ និងផលប៉ះពាល់ផ្លូវចិត្តគឺពិតប្រាកដ ១០០%។', '១១. សញ្ញាព្រមានមិនមែនជាភស្តុតាងទេ។ កុមារអាចលាក់អេក្រង់ ឬផ្លាស់ប្ដូរអារម្មណ៍ដោយហេតុផលជាច្រើន។ កុំដកហូតទូរស័ព្ទភ្លាមៗ ឬបង្ខំឱ្យបង្ហាញអ្វីៗ; សួរថា «តើមានអ្វីធ្វើឱ្យអ្នកមិនស្រួលចិត្ត? ខ្ញុំនៅទីនេះដើម្បីជួយ»។', '១២. ករណីជាក់ស្តែងនៅកម្ពុជា៖ Fresh News រាយការណ៍ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ ថា ស្ត្រីអាយុ ៣៣ ឆ្នាំត្រូវបានចាប់ខ្លួន និងចោទប្រកាន់ក្រោយការស៊ើបអង្កេតដែលចាប់ផ្តើមពី tip-off របស់ APLE។ របាយការណ៍និយាយពី ៣៤ Telegram channels/groups មានអ្នកជាវ ៣,០០០–១៧,០០០ នាក់ និងឯកសារផ្លូវភេទជាង ១៩,០០០ ដែលរួមមានមនុស្សពេញវ័យ និងកុមារ។ មិនត្រូវនិយាយថាឯកសារទាំងអស់ជារបស់កុមារទេ។ កុំបង្ហាញរូបភាព ឬតំណទៅសម្ភារៈខុសច្បាប់។', '១៣. Scam compounds៖ Amnesty International បានចេញរបាយការណ៍ឆ្នាំ២០២៥ ហើយធ្វើបច្ចុប្បន្នភាពថ្ងៃទី ៨ មិថុនា ២០២៦។ ករណីទាំងនេះបង្ហាញពីការជួញដូរមនុស្ស ការបង្ខំឱ្យធ្វើការបោកប្រាស់ ការឃុំឃាំង និងអំពើហិង្សា រួមទាំងសក្ខីកម្មអំពីអំពើហិង្សាផ្លូវភេទលើស្ត្រី។ បំបែកច្បាស់ពី OCSEA លុះត្រាតែប្រភពបញ្ជាក់ថាជាកុមារ។', '១៤. Dark Web៖ ពន្យល់កម្រិតទូទៅ មិនផ្តល់ការណែនាំចូលប្រើ ឬស្វែងរកសម្ភារៈ។ សង្កត់ធ្ងន់ថា មិនចាំបាច់ចូល Dark Web ដើម្បីយល់ពីហានិភ័យទេ; ករណីនៅកម្ពុជាត្រូវបានរាយការណ៍លើ Telegram ដែលជាវេទិកាធម្មតា។', '១៥. បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍៖ ពិភាក្សាដោយស្មោះត្រង់ពីឧបសគ្គក្នុងសង្គមកម្ពុជា៖ ការភ័យខ្លាចបាក់មុខ (Shame), ការបន្ទោសជនរងគ្រោះ (Victim-blaming: «មកពីឯងល្ងង់ផ្ញើរូបឱ្យគេ»), និងការភ័យខ្លាចឪពុកម្តាយដាក់ទណ្ឌកម្ម។ ផ្លាស់ប្តូរផ្នត់គំនិតរួមគ្នា៖ «ជនរងគ្រោះគ្មានកំហុសឡើយ — អ្នកគំរាមទើបជាជនល្មើស!»', '១៦. វិធានការការពារបច្ចេកទេស (Digital Safety Checklist)៖ ណែនាំការអនុវត្តជាក់ស្តែងភ្លាមៗ៖ បើក 2-Step Verification លើ Telegram, Facebook, TikTok; កំណត់ Privacy: Phone Number (Nobody), Groups (My Contacts), Calls (My Contacts)។ ចងចាំច្បាប់មាស៖ «បើរូបណាអ្នកមិនហ៊ានបិទលើជញ្ជាំងសាលារៀនទេ សូមកុំផ្ញើតាម Chat ឱ្យសោះ!»', '១៧. រូបមន្ត ៤ ជំហានឆ្លើយតប (Stop, Record, Report, Support)៖ សង្ខេបជំហានសកម្មភាព៖ ១. បញ្ឈប់ (កុំតប កុំផ្ញើលុយ Block ភ្លាម), ២. រក្សាទុក (ថត Screenshot ឈ្មោះ Username, Link, លេខកុងធនាគារ និងសារគំរាម), ៣. រាយការណ៍ (រាយការណ៍លើ App និងទាក់ទង APLE / សមត្ថកិច្ច), ៤. គាំទ្រ (ស្តាប់ដោយក្តីស្រឡាញ់ មិនស្តីបន្ទោស និងជួយស្តារផ្លូវចិត្ត)។', '១៨. ស្វែងរកជំនួយនៅកម្ពុជា\nAPLE Cambodia៖ hotline 092 311 511 និង aplecambodia.org។ Child Helpline Cambodia៖ ហៅ 1280 ឥតគិតថ្លៃ និង childhelplinecambodia.org។ Sophat.Space Help៖ sophat.space/help មានធនធានជំនួយបែងចែកតាមប្រភេទបញ្ហា។', '១៩. ស្លាយនេះផ្តោតលើអ្នកដឹកនាំ និងអ្នកជំនាញ៖ តើខេត្តមាន focal point និងផ្លូវបញ្ជូនករណីដែលគ្រប់ស្ថាប័នយល់ដូចគ្នាឬទេ? តើមានថវិកាសម្រាប់ការបង្ការ និងសេវាជួយកុមារឬទេ? តើអ្នកផ្សព្វផ្សាយដឹងពីការការពារអត្តសញ្ញាណកុមារឬទេ? តើអ្នកស្រាវជ្រាវមានការរក្សាសម្ងាត់ និងវិធីសាស្ត្រដែលមិនបង្កគ្រោះថ្នាក់បន្ថែមឬទេ? ភ្ជាប់ជាមួយផែនការជាតិ ២០២៥–២០៣០ ដែលផ្តោតលើការពង្រឹងប្រព័ន្ធការពារ OCSE ការសម្របសម្រួលអន្តរវិស័យ ការប្រមូលទិន្នន័យ និងការវិនិយោគក្នុងកម្មវិធីកុមារ។', '២០. ប្រភព៖ Fresh News (២២ កុម្ភៈ ២០២៤) សម្រាប់ករណី Telegram; UNICEF Cambodia (២០២៥) សម្រាប់ការយល់ដឹង និងបទពិសោធន៍យុវជន; Amnesty International (២០២៦) សម្រាប់ scam compounds/ការជួញដូរមនុស្ស; UNICEF/MPTC (២០២៣) សម្រាប់គោលការណ៍ការពារកុមារតាមអនឡាញ; ផែនការជាតិ ២០២៥–២០៣០ សម្រាប់ការអនុវត្តថ្នាក់ជាតិ និងថ្នាក់ក្រោមជាតិ។ កុំច្រឡំ scam compounds ជាមួយ OCSEA បើគ្មានភស្តុតាងថាកុមារពាក់ព័ន្ធ។ បិទដោយសំណួរ៖ «តើមួយជំហានណាដែលស្ថាប័នរបស់យើងអាចចាប់ផ្តើមក្នុង ៣០ ថ្ងៃខាងមុខ?»'];
+const speakerNotes = ['០១. ស្លាយបើកបទបង្ហាញ៖ ស្វាគមន៍អ្នកចូលរួមទាំងអស់គ្នា។ ណែនាំខ្លួនដោយសង្ខេប៖ ខ្ញុំបាទ ជី សុផាត (Sophat CHY) គ្រូបណ្តុះបណ្តាល ICT និងជាអ្នករៀបចំ BarCamp Cambodia តាំងពីឆ្នាំ ២០១២ ព្រមទាំងជាស្ថាបនិក Sophat.Space។ ថ្ងៃនេះខ្ញុំសូមលើកយកប្រធានបទ «សុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA នៅកម្ពុជា» មកធ្វើបទបង្ហាញ។ បទបង្ហាញនេះមាន ២០ ស្លាយ រយៈពេលប្រមាណ ១៥ ទៅ ២០ នាទី ផ្តោតលើចំណេះដឹងជាក់ស្តែង វិធានការការពារបច្ចេកទេស និងកន្លែងស្វែងរកជំនួយនៅកម្ពុជា។', '០២. គោលបំណងបទបង្ហាញ៖ បញ្ជាក់លទ្ធផលរំពឹងទុក ៤ ចំណុច៖ ១. យល់ដឹងច្បាស់ពី OCSEA និងបែងចែកដាច់ពីការ Hack ធម្មតា, ២. ចំណាំបាន ៦ ប្រភេទសំខាន់ៗ និងសញ្ញាព្រមានដំបូង, ៣. ចេះកំណត់ Privacy និង Security លើ Telegram/Facebook/TikTok, និង ៤. ដឹងពី ៤ ជំហានឆ្លើយតប និងស្គាល់ Hotline APLE 092 311 511 / 1280។', '០៣. និយមន័យពេញលេញនៃ OCSEA៖ ពន្យល់អក្សរកាត់ Online Child Sexual Exploitation and Abuse (ការកេងប្រវ័ញ្ច និងការរំលោភបំពានផ្លូវភេទលើកុមារតាមប្រព័ន្ធអនឡាញ)។ សង្កត់ធ្ងន់លើពាក្យនីមួយៗ (O-C-S-E-A) និងបញ្ជាក់ថា តាមច្បាប់កម្ពុជា និងអនុសញ្ញាសិទ្ធិកុមារ កុមារគឺជាបុគ្គលគ្រប់រូបដែលមានអាយុក្រោម ១៨ ឆ្នាំ។ ណែនាំពាក្យបច្ចេកទេស CSAM, CSAE និង COP ឱ្យស្គាល់ជាមូលដ្ឋាន។', '០៤. ការបែងចែករវាង Cybercrime ទូទៅ និង OCSEA៖ ជួយឱ្យអ្នកស្តាប់មើលឃើញភាពខុសគ្នាដាច់ស្រឡះ។ ការលួចគណនី ឬ Scam លុយ គឺជាបទល្មើសលើទ្រព្យ ឬទិន្នន័យ។ ចំណែក OCSEA គឺជាការរំលោភបំពានលើរាងកាយ ផ្លូវចិត្ត និងសេចក្តីថ្លៃថ្នូររបស់កុមារ។ ហេតុនេះ ការដោះស្រាយ OCSEA មិនមែនគ្រាន់តែផ្លាស់ប្តូរលេខសម្ងាត់ទេ គឺត្រូវការការសង្គ្រោះផ្លូវចិត្ត និងកិច្ចការពារផ្លូវច្បាប់ជាបន្ទាន់។', '០៥. ប្រភេទ ១: Online Grooming (ការលួងលោមបោកបញ្ឆោត)៖ ពន្យល់ថា Grooming មិនកើតឡើងភ្លាមៗទេ គឺដើរតាម ៣ ជំហាន៖ បង្កើតទំនុកចិត្ត (សរសើរ ជជែកលេងក្នុងហ្គេម Roblox/MLBB) -> ញែកកុមារចេញពីគ្រួសារ (បបួល Chat សម្ងាត់ សុំកុំប្រាប់ម៉ាក់ប៉ា) -> ស្នើសុំរូបភាពស្រាត ឬសកម្មភាពផ្លូវភេទ។ ដាស់តឿនថា អ្នកប្រព្រឹត្តច្រើនតែក្លែងបន្លំជាក្មេងវ័យដូចគ្នា។', '០៦. ប្រភេទ ២: CSAM (Child Sexual Abuse Material)៖ ពន្យល់ពីមូលហេតុដែលពិភពលោកឈប់ប្រើពាក្យ Child Pornography ហើយប្តូរមកប្រើ CSAM វិញ ព្រោះកុមារមិនអាចផ្តល់ការយល់ព្រមបានឡើយ។ គ្រប់រូបភាពផ្លូវភេទកុមារគឺជាភស្តុតាងនៃការរំលោភបំពាន។ ដាស់តឿនយ៉ាងម៉ឺងម៉ាត់៖ ការទាញយក រក្សាទុក ឬ Share បន្ត (ទោះបី Share ដើម្បីដាស់តឿនគ្នាក៏ដោយ) គឺជាបទល្មើសព្រហ្មទណ្ឌ និងធ្វើឱ្យជនរងគ្រោះរងគ្រោះម្តងហើយម្តងទៀត! ឃើញភ្លាម ត្រូវរាយការណ៍ភ្លាម។', '០៧. ប្រភេទ ៣: Live-streaming Abuse (ការផ្សាយផ្ទាល់ការរំលោភបំពាន)៖ ការប្រើវីដេអូខល ឬការ Live ផ្ទាល់តាម Telegram/Webcam ដើម្បីឱ្យអ្នកទស្សនា ឬអ្នកបញ្ជាពីចម្ងាយ (ច្រើនតែឆ្លងព្រំដែន) បង់ប្រាក់ដើម្បីបញ្ជាឱ្យមានការរំលោភបំពាន។ ករណីនេះគ្រោះថ្នាក់បំផុត និងត្រូវការការសហការបន្ទាន់រវាងសមត្ថកិច្ច និងអង្គការការពារកុមារ (APLE) ដើម្បីជួយសង្គ្រោះកុមារទាន់ពេលវេលា។', '០៨. ប្រភេទ ៤: Sextortion (ការគំរាមកំហែងផ្លូវភេទ)៖ បញ្ជាក់ច្បាស់ពីទម្រង់ Financial Sextortion (ទារលុយ ABA/Wing) និង Coercive Sextortion (ទាររូបថែម)។ បញ្ជាក់សារគន្លឹះដែលត្រូវចាំ៖ «ការបង់ប្រាក់មិនដែលបញ្ចប់ការគំរាមឡើយ!» ព្រោះអ្នកគំរាមនឹងទារកាន់តែច្រើន។ កុមារមិនមែនជាអ្នកខុសឡើយ ត្រូវបញ្ឈប់ការទាក់ទង រក្សាភស្តុតាង និងប្រាប់មនុស្សធំជាបន្ទាន់។', '០៩. ប្រភេទ ៥: ការកេងប្រវ័ញ្ចដោយប្រាក់ ឬអំណោយ (Financial/Material Exploitation)៖ ពន្យល់ពីវិធីសាស្ត្រប្រើនុយ៖ Top-up ហ្គេម (Free Fire, Mobile Legends, Robux), ទិញទូរស័ព្ទ, ផ្ញើកាត, ឬសន្យាថានឹងឱ្យធ្វើតារាម៉ូដែល។ បញ្ជាក់ថា ទោះបីជាកុមារព្រមទទួលអំណោយ ក៏មិនមែនមានន័យថាកុមារយល់ព្រមឱ្យកេងប្រវ័ញ្ចផ្លូវភេទដែរ។ ច្បាប់ការពារកុមារជានិច្ច។', '១០. ប្រភេទ ៦: AI Deepfakes / GenAI Abuse៖ លើកឡើងពីបញ្ហាថ្មីបំផុតដែល UNICEF បានចេញការព្រមានក្នុងឆ្នាំ ២០២៦។ ការប្រើ AI Nudify tools ឬ Telegram Bots ដើម្បីកែច្នៃរូបថតធម្មតារបស់សិស្ស (រូបពាក់ឯកសណ្ឋានសាលា រូបដើរលេង) ឱ្យទៅជារូបអាក្រាតក្លែងក្លាយក្នុងពេលប៉ុន្មានវិនាទី។ ទោះបីជារូបក្លែងក្លាយ តែការឈឺចាប់ និងផលប៉ះពាល់ផ្លូវចិត្តគឺពិតប្រាកដ ១០០%។', '១១. សញ្ញាព្រមានមិនមែនជាភស្តុតាងទេ។ កុមារអាចលាក់អេក្រង់ ឬផ្លាស់ប្ដូរអារម្មណ៍ដោយហេតុផលជាច្រើន។ កុំដកហូតទូរស័ព្ទភ្លាមៗ ឬបង្ខំឱ្យបង្ហាញអ្វីៗ; សួរថា «តើមានអ្វីធ្វើឱ្យអ្នកមិនស្រួលចិត្ត? ខ្ញុំនៅទីនេះដើម្បីជួយ»។', '១២. ករណីជាក់ស្តែងនៅកម្ពុជា៖ Fresh News រាយការណ៍ថ្ងៃទី ២២ កុម្ភៈ ២០២៤ ថា ស្ត្រីអាយុ ៣៣ ឆ្នាំត្រូវបានចាប់ខ្លួន និងចោទប្រកាន់ក្រោយការស៊ើបអង្កេតដែលចាប់ផ្តើមពី tip-off របស់ APLE។ របាយការណ៍និយាយពី ៣៤ Telegram channels/groups មានអ្នកជាវ ៣,០០០–១៧,០០០ នាក់ និងឯកសារផ្លូវភេទជាង ១៩,០០០ ដែលរួមមានមនុស្សពេញវ័យ និងកុមារ។ មិនត្រូវនិយាយថាឯកសារទាំងអស់ជារបស់កុមារទេ។ កុំបង្ហាញរូបភាព ឬតំណទៅសម្ភារៈខុសច្បាប់។', '១៣. Scam compounds៖ Amnesty International បានចេញរបាយការណ៍ឆ្នាំ២០២៥ ហើយធ្វើបច្ចុប្បន្នភាពថ្ងៃទី ៨ មិថុនា ២០២៦។ ករណីទាំងនេះបង្ហាញពីការជួញដូរមនុស្ស ការបង្ខំឱ្យធ្វើការបោកប្រាស់ ការឃុំឃាំង និងអំពើហិង្សា រួមទាំងសក្ខីកម្មអំពីអំពើហិង្សាផ្លូវភេទលើស្ត្រី។ បំបែកច្បាស់ពី OCSEA លុះត្រាតែប្រភពបញ្ជាក់ថាជាកុមារ។', '១៤. Dark Web៖ ពន្យល់កម្រិតទូទៅ មិនផ្តល់ការណែនាំចូលប្រើ ឬស្វែងរកសម្ភារៈ។ សង្កត់ធ្ងន់ថា មិនចាំបាច់ចូល Dark Web ដើម្បីយល់ពីហានិភ័យទេ; ករណីនៅកម្ពុជាត្រូវបានរាយការណ៍លើ Telegram ដែលជាវេទិកាធម្មតា។', '១៥. បញ្ហាប្រឈមក្នុងការរកឃើញ និងរាយការណ៍៖ ពិភាក្សាដោយស្មោះត្រង់ពីឧបសគ្គក្នុងសង្គមកម្ពុជា៖ ការភ័យខ្លាចបាក់មុខ (Shame), ការបន្ទោសជនរងគ្រោះ (Victim-blaming: «មកពីឯងល្ងង់ផ្ញើរូបឱ្យគេ»), និងការភ័យខ្លាចឪពុកម្តាយដាក់ទណ្ឌកម្ម។ ផ្លាស់ប្តូរផ្នត់គំនិតរួមគ្នា៖ «ជនរងគ្រោះគ្មានកំហុសឡើយ — អ្នកគំរាមទើបជាជនល្មើស!»', '១៦. វិធានការការពារបច្ចេកទេស (Digital Safety Checklist)៖ ណែនាំការអនុវត្តជាក់ស្តែងភ្លាមៗ៖ បើក 2-Step Verification លើ Telegram, Facebook, TikTok; កំណត់ Privacy: Phone Number (Nobody), Groups (My Contacts), Calls (My Contacts)។ ចងចាំច្បាប់មាស៖ «បើរូបណាអ្នកមិនហ៊ានបិទលើជញ្ជាំងសាលារៀនទេ សូមកុំផ្ញើតាម Chat ឱ្យសោះ!»', '១៧. រូបមន្ត ៤ ជំហានឆ្លើយតប (Stop, Record, Report, Support)៖ សង្ខេបជំហានសកម្មភាព៖ ១. បញ្ឈប់ (កុំតប កុំផ្ញើលុយ Block ភ្លាម), ២. រក្សាទុក (ថត Screenshot ឈ្មោះ Username, Link, លេខកុងធនាគារ និងសារគំរាម), ៣. រាយការណ៍ (រាយការណ៍លើ App និងទាក់ទង APLE / សមត្ថកិច្ច), ៤. គាំទ្រ (ស្តាប់ដោយក្តីស្រឡាញ់ មិនស្តីបន្ទោស និងជួយស្តារផ្លូវចិត្ត)។', '១៨. ស្វែងរកជំនួយនៅកម្ពុជា៖ យុទ្ធនាការផ្លូវការ «យើងរួមគ្នាប្រយុទ្ធប្រឆាំងអំពើជួញដូរមនុស្ស និងការកេងប្រវ័ញ្ចលើកុមារ» រួមមាន៖ ១. នាយកដ្ឋាននគរបាលប្រឆាំងការជួញដូរមនុស្ស និងការពារអនីតិជន (AHTJPD) hotline 1288 ឬ 012 852 241, ២. មជ្ឈមណ្ឌលតស៊ូមតិសម្រាប់កុមារ (Child Advocacy Center) / A21 hotline 010 22 07 71 ឬ 071 72 10 771, ៣. អង្គការ APLE Cambodia hotline 092 311 511, ៤. ខ្សែទូរស័ព្ទជំនួយកុមារ Child Helpline Cambodia ហៅ 1280 (ឥតគិតថ្លៃ ២៤/៧), និង ៥. ធនធានបច្ចេកទេស Sophat.Space Help (sophat.space/help)។', '១៩. ស្លាយនេះផ្តោតលើអ្នកដឹកនាំ និងអ្នកជំនាញ៖ តើខេត្តមាន focal point និងផ្លូវបញ្ជូនករណីដែលគ្រប់ស្ថាប័នយល់ដូចគ្នាឬទេ? តើមានថវិកាសម្រាប់ការបង្ការ និងសេវាជួយកុមារឬទេ? តើអ្នកផ្សព្វផ្សាយដឹងពីការការពារអត្តសញ្ញាណកុមារឬទេ? តើអ្នកស្រាវជ្រាវមានការរក្សាសម្ងាត់ និងវិធីសាស្ត្រដែលមិនបង្កគ្រោះថ្នាក់បន្ថែមឬទេ? ភ្ជាប់ជាមួយផែនការជាតិ ២០២៥–២០៣០ ដែលផ្តោតលើការពង្រឹងប្រព័ន្ធការពារ OCSE ការសម្របសម្រួលអន្តរវិស័យ ការប្រមូលទិន្នន័យ និងការវិនិយោគក្នុងកម្មវិធីកុមារ។', '២០. ប្រភព៖ Fresh News (២២ កុម្ភៈ ២០២៤) សម្រាប់ករណី Telegram; UNICEF Cambodia (២០២៥) សម្រាប់ការយល់ដឹង និងបទពិសោធន៍យុវជន; Amnesty International (២០២៦) សម្រាប់ scam compounds/ការជួញដូរមនុស្ស; UNICEF/MPTC (២០២៣) សម្រាប់គោលការណ៍ការពារកុមារតាមអនឡាញ; ផែនការជាតិ ២០២៥–២០៣០ សម្រាប់ការអនុវត្តថ្នាក់ជាតិ និងថ្នាក់ក្រោមជាតិ។ កុំច្រឡំ scam compounds ជាមួយ OCSEA បើគ្មានភស្តុតាងថាកុមារពាក់ព័ន្ធ។ បិទដោយសំណួរ៖ «តើមួយជំហានណាដែលស្ថាប័នរបស់យើងអាចចាប់ផ្តើមក្នុង ៣០ ថ្ងៃខាងមុខ?»'];
 
 const counterTop = document.getElementById("counterTop");
 const counterBottom = document.getElementById("counterBottom");
