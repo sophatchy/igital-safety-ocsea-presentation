@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <base href="./" />
-  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · v3.5 Final · Sophat.Space</title>
+  <title>សុវត្ថិភាពឌីជីថល និង OCSEA · v3.5 Final (Pitch Edition) · Sophat.Space</title>
   <meta name="description" content="Digital Safety & Preventing Online Child Sexual Exploitation and Abuse (OCSEA) in Cambodia · Presented by Sophat CHY · Sophat.Space" />
   <meta name="author" content="Sophat CHY (ជី សុផាត)" />
   <meta name="theme-color" content="#08110D" />
@@ -36,9 +36,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <style>
+  <style>
     /* ========================================================
-       SOPHAT.SPACE DUAL THEME ENGINE (DARK & LIGHT MODE)
+       SOPHAT.SPACE MASTER PITCH DESIGN SYSTEM (V3.5 EDITORIAL)
        ======================================================== */
     @font-face {
       font-family: 'Kantumruy Pro';
@@ -51,14 +51,14 @@
     :root, html[data-theme="dark"] {
       --bg: #08110D;
       --bg2: #0B1712;
-      --panel: rgba(17, 34, 27, 0.82);
-      --panel-hover: rgba(23, 46, 37, 0.94);
-      --panel-inner: rgba(11, 24, 18, 0.65);
-      --card-border: rgba(255, 255, 255, 0.09);
-      --card-border-hover: rgba(16, 185, 129, 0.4);
+      --panel: rgba(17, 34, 27, 0.88);
+      --panel-hover: rgba(23, 46, 37, 0.96);
+      --panel-inner: rgba(11, 24, 18, 0.72);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-border-hover: rgba(16, 185, 129, 0.5);
       --text: #FFFFFF;
-      --text-sub: #CBD5E1;
-      --muted: #94A3B8;
+      --text-sub: #A1B7AB;
+      --muted: #7E9B8E;
       --line: rgba(255, 255, 255, 0.08);
       --line-strong: rgba(255, 255, 255, 0.16);
 
@@ -74,12 +74,12 @@
 
       --callout-bg: rgba(16, 185, 129, 0.09);
       --callout-border: rgba(16, 185, 129, 0.32);
-      --bar-bg: rgba(8, 17, 13, 0.88);
+      --bar-bg: rgba(11, 23, 18, 0.95);
       --bar-border: rgba(255, 255, 255, 0.12);
-      --bar-text: #F8FAFC;
+      --bar-text: #FFFFFF;
       --viewport-grad: radial-gradient(1200px circle at 50% 0%, rgba(16, 185, 129, 0.08), transparent 60%), #08110D;
-      --shadow-card: 0 14px 36px rgba(0, 0, 0, 0.35);
-      --shadow-hover: 0 18px 48px rgba(0, 0, 0, 0.45);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
+      --shadow-hover: 0 22px 54px rgba(0, 0, 0, 0.55);
     }
 
     html[data-theme="light"] {
@@ -89,17 +89,17 @@
       --panel-hover: #FFFFFF;
       --panel-inner: #F1F6F3;
       --card-border: #DCE5DF;
-      --card-border-hover: rgba(5, 150, 105, 0.45);
+      --card-border-hover: rgba(21, 128, 61, 0.45);
       --text: #14201B;
-      --text-sub: #334155;
-      --muted: #64748B;
+      --text-sub: #4A5A52;
+      --muted: #6B7A72;
       --line: #E2E8F0;
       --line-strong: #CBD5E1;
 
-      --accent: #059669;
-      --accent-hover: #047857;
-      --accent-rgb: 5, 150, 105;
-      --glow-green: #059669;
+      --accent: #15803D;
+      --accent-hover: #166534;
+      --accent-rgb: 21, 128, 61;
+      --glow-green: #15803D;
       --accent-cyan: #0891B2;
       --accent-red: #DC2626;
       --accent-amber: #D97706;
@@ -107,13 +107,13 @@
       --accent-blue: #0284C7;
 
       --callout-bg: #F0FDF4;
-      --callout-border: rgba(5, 150, 105, 0.35);
-      --bar-bg: rgba(255, 255, 255, 0.95);
+      --callout-border: rgba(21, 128, 61, 0.35);
+      --bar-bg: rgba(248, 250, 248, 0.96);
       --bar-border: #DCE5DF;
       --bar-text: #14201B;
-      --viewport-grad: radial-gradient(1200px circle at 50% 0%, rgba(5, 150, 105, 0.06), transparent 60%), #F8FAF8;
+      --viewport-grad: radial-gradient(1200px circle at 50% 0%, rgba(21, 128, 61, 0.06), transparent 60%), #F8FAF8;
       --shadow-card: 0 8px 24px rgba(16, 36, 28, 0.04);
-      --shadow-hover: 0 12px 32px rgba(16, 36, 28, 0.08);
+      --shadow-hover: 0 14px 32px rgba(16, 36, 28, 0.08);
     }
 
     * {
@@ -205,42 +205,91 @@
       transform: translateX(-50%) translateY(0);
     }
 
+    /* Working Laser Pointer */
+    #laser-pointer {
+      position: fixed;
+      left: -100px;
+      top: -100px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+    }
+    #laser-pointer.active {
+      display: block;
+    }
+    .laser-aura {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.45) 0%, rgba(239, 68, 68, 0) 70%);
+      transform: translate(-50%, -50%);
+      animation: laserPing 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    .laser-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #EF4444;
+      box-shadow: 0 0 10px #EF4444, 0 0 22px #EF4444, 0 0 36px #DC2626;
+      border: 2px solid #FFFFFF;
+      position: relative;
+    }
+    @keyframes laserPing {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+      50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.3; }
+      100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+    }
+
     /* ========================================================
        LARGE EDITORIAL TYPOGRAPHY & MOTIFS (PITCH-INSPIRED)
        ======================================================== */
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: clamp(12px, 0.9vw, 14px);
+      gap: 12px;
+      font-size: 18px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 800;
-      color: var(--accent);
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: var(--glow-green);
       margin-bottom: 6px;
     }
     .eyebrow .pulse-dot, .eyebrow-dot {
-      width: 9px;
-      height: 9px;
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
+      background: var(--glow-green);
+      box-shadow: 0 0 10px var(--glow-green);
       flex-shrink: 0;
     }
     .eyebrow svg {
-      stroke: var(--accent);
-      width: 17px;
-      height: 17px;
+      stroke: var(--glow-green);
+      width: 18px;
+      height: 18px;
       flex-shrink: 0;
     }
 
-    .hero-title, .sectionhead {
-      font-size: clamp(28px, 2.6vw, 44px);
-      line-height: 1.22;
+    .hero-title {
+      font-size: 72px;
+      line-height: 1.15;
       font-weight: 800;
       color: var(--text);
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
       text-wrap: balance;
+      margin: 4px 0 10px 0;
+    }
+    .sectionhead {
+      font-size: 46px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+      margin: 4px 0 8px 0;
     }
     .accent-text {
       color: var(--accent);
@@ -248,11 +297,11 @@
     }
 
     .subhead {
-      font-size: clamp(15px, 1.25vw, 19px);
+      font-size: 21px;
       line-height: 1.55;
       color: var(--text-sub);
-      margin-top: 6px;
-      max-width: 1400px;
+      margin-bottom: 12px;
+      max-width: 1450px;
     }
 
     /* Bento Grids */
@@ -260,7 +309,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
-      margin: 14px 0;
+      margin: 12px 0;
       flex: 1;
       align-content: center;
     }
@@ -279,8 +328,8 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 22px 26px;
+      border-radius: 24px;
+      padding: 24px 26px;
       box-shadow: var(--shadow-card);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.3s ease;
       display: flex;
@@ -293,7 +342,7 @@
       transform: translateY(-2px);
     }
     .card .tag {
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--accent);
       letter-spacing: 0.08em;
@@ -304,14 +353,14 @@
       gap: 6px;
     }
     .card h3 {
-      font-size: clamp(17px, 1.4vw, 22px);
+      font-size: 22px;
       font-weight: 800;
       color: var(--text);
       margin-bottom: 8px;
       line-height: 1.3;
     }
     .card p {
-      font-size: clamp(13px, 1.05vw, 15px);
+      font-size: 15.5px;
       line-height: 1.6;
       color: var(--text-sub);
       margin-bottom: 6px;
@@ -329,15 +378,15 @@
       background: var(--callout-bg);
       border: 1px solid var(--callout-border);
       border-left: 4px solid var(--accent);
-      border-radius: 14px;
-      padding: 13px 20px;
+      border-radius: 16px;
+      padding: 13px 22px;
       display: flex;
       align-items: center;
       gap: 14px;
-      font-size: clamp(13px, 1.05vw, 15px);
+      font-size: 15.5px;
       line-height: 1.5;
       color: var(--text);
-      margin-top: 10px;
+      margin-top: 8px;
       transition: background 0.3s ease;
     }
     .callout svg {
@@ -350,18 +399,18 @@
     /* Presenter & Initiative Layout */
     .title-grid-host {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 20px;
-      margin: 16px 0;
+      margin: 14px 0;
     }
     .presenter-card-box {
       background: var(--panel);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 18px 22px;
+      border-radius: 22px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
       box-shadow: var(--shadow-card);
       transition: background 0.3s ease, border-color 0.3s ease;
     }
@@ -370,8 +419,8 @@
     .slide18-banner {
       background: rgba(16, 185, 129, 0.08);
       border: 1px solid rgba(16, 185, 129, 0.28);
-      border-radius: 14px;
-      padding: 12px 18px;
+      border-radius: 16px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -388,8 +437,8 @@
     }
     .slide18-badge-item {
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      padding: 6px 12px;
+      border-radius: 10px;
+      padding: 8px 14px;
     }
     html[data-theme="light"] .slide18-badge-item {
       background: #FFFFFF;
@@ -399,25 +448,21 @@
     /* Floating Presenter Pill Bar */
     .floating-control-bar {
       position: fixed;
-      bottom: 22px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 18px;
+      gap: 6px;
+      padding: 6px 16px;
       background: var(--bar-bg);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--bar-border);
       border-radius: 9999px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
       transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
-    }
-    .floating-control-bar.autohide {
-      opacity: 0;
-      pointer-events: none;
     }
     .ctrl-btn {
       display: inline-flex;
@@ -426,7 +471,7 @@
       background: transparent;
       border: 1px solid transparent;
       color: var(--text-sub);
-      padding: 7px 13px;
+      padding: 8px 14px;
       border-radius: 9999px;
       font-size: 13px;
       font-weight: 700;
@@ -434,35 +479,37 @@
       font-family: inherit;
       transition: all 0.15s ease;
       touch-action: manipulation;
+      text-decoration: none;
     }
     .ctrl-btn:hover {
-      background: rgba(125, 125, 125, 0.1);
+      background: rgba(125, 125, 125, 0.12);
       color: var(--text);
-      border-color: rgba(125, 125, 125, 0.15);
+      border-color: rgba(125, 125, 125, 0.2);
     }
     .ctrl-btn.primary {
       background: rgba(16, 185, 129, 0.18);
       color: var(--accent);
-      border-color: rgba(16, 185, 129, 0.35);
+      border-color: rgba(16, 185, 129, 0.4);
     }
     .ctrl-btn.primary:hover {
-      background: rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.32);
       color: #FFFFFF;
       box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
     }
     .ctrl-counter {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 800;
       color: var(--text);
-      padding: 0 6px;
+      padding: 0 8px;
       font-variant-numeric: tabular-nums;
-      min-width: 58px;
+      min-width: 62px;
       text-align: center;
     }
     .ctrl-divider {
       width: 1px;
       height: 20px;
       background: var(--line-strong);
+      margin: 0 2px;
     }
 
     .version-badge-pill {
@@ -506,7 +553,7 @@
       border-radius: 18px;
       padding: 18px;
       z-index: 1000;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
       display: none;
     }
     .notes-drawer.open {
@@ -559,7 +606,7 @@
       .slide {
         width: 1600px;
         height: 900px;
-        padding: 40px 68px 56px 68px;
+        padding: 38px 64px 50px 64px;
         box-sizing: border-box;
         display: none;
         flex-direction: column;
@@ -574,7 +621,7 @@
     }
 
     @keyframes slideFadeIn {
-      from { opacity: 0; transform: scale(0.992); }
+      from { opacity: 0; transform: scale(0.994); }
       to { opacity: 1; transform: scale(1); }
     }
 
@@ -602,7 +649,7 @@
       #stage {
         transform: none !important;
         width: 100% !important;
-        max-width: 860px !important;
+        max-width: 740px !important;
         height: auto !important;
         min-height: 100vh !important;
         margin: 0 auto !important;
@@ -614,12 +661,12 @@
         inset: auto !important;
         width: 100% !important;
         height: auto !important;
-        min-height: calc(100vh - 84px) !important;
-        padding: 24px 20px 104px 20px !important;
+        min-height: calc(100vh - 76px) !important;
+        padding: 20px 18px 96px 18px !important;
         display: none !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
-        gap: 16px !important;
+        gap: 14px !important;
         box-sizing: border-box !important;
         overflow: visible !important;
       }
@@ -630,27 +677,48 @@
       /* Reflow all side-by-side grids to vertical */
       .grid, .grid.three, .grid.four, .title-grid-host, .slide18-grid {
         grid-template-columns: 1fr !important;
-        gap: 14px !important;
-        margin: 10px 0 !important;
+        gap: 12px !important;
+        margin: 8px 0 !important;
       }
-      .hero-title, .sectionhead {
-        font-size: clamp(24px, 5.8vw, 32px) !important;
+      .eyebrow {
+        font-size: 13px !important;
+        letter-spacing: 0.8px !important;
+        gap: 8px !important;
+      }
+      .eyebrow .pulse-dot {
+        width: 8px !important;
+        height: 8px !important;
+      }
+      .hero-title {
+        font-size: clamp(28px, 6vw, 36px) !important;
+        line-height: 1.2 !important;
+        margin: 4px 0 6px 0 !important;
+      }
+      .sectionhead {
+        font-size: clamp(22px, 5.2vw, 28px) !important;
         line-height: 1.25 !important;
+        margin: 4px 0 6px 0 !important;
       }
       .subhead {
         font-size: clamp(14px, 3.8vw, 16px) !important;
         line-height: 1.55 !important;
+        margin-bottom: 8px !important;
       }
       .card {
         padding: 16px 18px !important;
-        border-radius: 16px !important;
+        border-radius: 18px !important;
+      }
+      .card .tag {
+        font-size: 11.5px !important;
       }
       .card h3 {
         font-size: 17px !important;
+        margin-bottom: 6px !important;
       }
       .card p {
         font-size: 13.5px !important;
         line-height: 1.55 !important;
+        margin-bottom: 4px !important;
       }
 
       /* Slide 3 Stack Reflow */
@@ -675,27 +743,32 @@
       /* Floating Dock for Mobile */
       .floating-control-bar {
         position: fixed !important;
-        bottom: max(14px, env(safe-area-inset-bottom)) !important;
-        left: 12px !important;
-        right: 12px !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
         transform: none !important;
-        width: auto !important;
-        max-width: 520px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
         margin: 0 auto !important;
-        padding: 6px 10px !important;
+        padding: 8px 10px max(8px, env(safe-area-inset-bottom)) 10px !important;
         justify-content: space-between !important;
-        gap: 5px !important;
+        border-top: 1px solid var(--bar-border) !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        gap: 3px !important;
       }
       .ctrl-btn {
-        padding: 6px 9px !important;
-        font-size: 12px !important;
+        padding: 6px 8px !important;
+        font-size: 11.5px !important;
       }
       .hide-mobile {
         display: none !important;
       }
     }
 
-        /* ========================================================
+    /* ========================================================
        PRINT & HANDBOOK A4 DOCUMENT STYLES (FLAT DESIGN & SIGNS)
        ======================================================== */
     .document-print-view {
@@ -721,7 +794,7 @@
         text-rendering: optimizeLegibility !important;
       }
 
-      #viewport-container, .ambient-progress-wrap, .floating-control-bar, .notes-drawer, .toast-msg {
+      #viewport-container, .ambient-progress-wrap, .floating-control-bar, .notes-drawer, .toast-msg, #laser-pointer {
         display: none !important;
       }
 
@@ -748,155 +821,24 @@
         border-bottom: 2pt solid #059669;
         padding-bottom: 10pt;
         margin-bottom: 14pt;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-      .doc-brand-title {
-        font-size: 14pt;
-        font-weight: 800;
-        color: #059669;
-      }
-      .doc-brand-sub {
-        font-size: 8.5pt;
-        color: #475569;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-      .doc-meta {
-        text-align: right;
-        font-size: 9pt;
-        color: #475569;
-      }
-
-      .doc-main-title {
-        font-size: 18pt;
-        font-weight: 800;
-        line-height: 1.3;
-        color: #0F172A;
-        margin-bottom: 6pt;
-      }
-      .doc-main-subtitle {
-        font-size: 10.5pt;
-        color: #334155;
-        margin-bottom: 12pt;
-      }
-
-      .doc-exec-summary {
-        background: #F0FDF4;
-        border-left: 3.5pt solid #059669;
-        border-radius: 4pt;
-        padding: 9pt 12pt;
-        margin-bottom: 14pt;
-        font-size: 9.5pt;
-        color: #166534;
-      }
-
-      .doc-section {
-        margin-bottom: 16pt;
-      }
-      .doc-section-h2 {
-        font-size: 13pt;
-        font-weight: 800;
-        color: #0F172A;
-        border-bottom: 1pt solid #E2E8F0;
-        padding-bottom: 4pt;
-        margin-bottom: 8pt;
-        display: flex;
-        align-items: center;
-        gap: 8pt;
-      }
-      .doc-section-num {
-        background: #059669;
-        color: #FFFFFF;
-        width: 18pt;
-        height: 18pt;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 9.5pt;
-        font-weight: 800;
-      }
-
-      .doc-p {
-        font-size: 9.5pt;
-        line-height: 1.55;
-        color: #334155;
-        margin-bottom: 6pt;
-      }
-
-      .doc-grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8pt;
-        margin-top: 6pt;
-      }
-      .doc-card-print {
-        border: 1pt solid #CBD5E1;
-        border-radius: 4pt;
-        padding: 8pt 10pt;
-        background: #F8FAFC;
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-      .doc-card-print-title {
-        font-weight: 800;
-        font-size: 9.5pt;
-        color: #0F172A;
-        margin-bottom: 3pt;
-      }
-
-      .doc-step-box {
-        display: flex;
-        align-items: flex-start;
-        gap: 8pt;
-        margin-bottom: 6pt;
-        padding: 6pt 8pt;
-        border: 1pt solid #E2E8F0;
-        border-radius: 4pt;
-        background: #F8FAFC;
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-
-      .doc-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 8pt;
-        font-size: 8.5pt;
-      }
-      .doc-table th {
-        background: #0F172A;
-        color: #FFFFFF;
-        padding: 6pt 8pt;
-        text-align: left;
-        font-weight: 700;
-      }
-      .doc-table td {
-        padding: 5pt 8pt;
-        border-bottom: 1pt solid #E2E8F0;
-        color: #1E293B;
-      }
-      .doc-table tr:nth-child(even) td {
-        background: #F8FAFC;
-      }
-      .doc-table .hl-num {
-        font-weight: 800;
-        color: #DC2626;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- Ambient Progress Bar -->
-  <div class="ambient-progress-wrap">
+  <div class="ambient-progress-wrap" aria-hidden="true">
     <div id="ambient-bar" class="ambient-progress-bar"></div>
   </div>
 
   <!-- Toast Message -->
   <div id="toast" class="toast-msg"></div>
+
+  <!-- Interactive Laser Pointer -->
+  <div id="laser-pointer" aria-hidden="true">
+    <div class="laser-aura"></div>
+    <div class="laser-dot"></div>
+  </div>
 
   <!-- STAGE VIEWPORT (1600x900 Pitch Formation) -->
   <div id="viewport-container">
@@ -2036,7 +1978,6 @@
         </div>
         
       </section>
-
     </div>
   </div>
 
@@ -2046,8 +1987,28 @@
     <p id="notes-content"></p>
   </div>
 
-  <!-- Floating Control Bar -->
+  <!-- Floating Control Bar (Styled matching pitch page) -->
   <div class="floating-control-bar">
+    <a href="/" class="ctrl-btn" title="Exit to Home">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      <span class="hide-mobile"><span class="lang-km">ចេញ</span><span class="lang-en">Exit</span></span>
+    </a>
+
+    <!-- Theme Toggle (Dark & Light Mode) -->
+    <button id="btn-theme" class="ctrl-btn" title="Toggle Theme (D)">
+      <span id="theme-icon">☼</span>
+      <span id="theme-text" class="lang-km hide-mobile">ពន្លឺ</span>
+      <span id="theme-text-en" class="lang-en hide-mobile">Light</span>
+    </button>
+
+    <!-- Laser Pointer Toggle -->
+    <button id="btn-pointer" class="ctrl-btn hide-mobile" title="Laser Pointer (P)">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      <span id="pointer-label">Pointer</span>
+    </button>
+
+    <div class="ctrl-divider"></div>
+
     <button id="btn-prev" class="ctrl-btn" title="Previous (Left Arrow / PageUp)">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
       <span class="lang-km">ថយ</span>
@@ -2055,11 +2016,6 @@
     </button>
 
     <span id="counter" class="ctrl-counter">01 / 20</span>
-
-    <span class="version-badge-pill">
-      <span class="pulse-dot"></span>
-      <span>v3.5 Final</span>
-    </span>
 
     <button id="btn-next" class="ctrl-btn" title="Next (Right Arrow / Space / PageDown)">
       <span class="lang-km">បន្ទាប់</span>
@@ -2069,27 +2025,19 @@
 
     <div class="ctrl-divider"></div>
 
-    <!-- Theme Toggle (Dark & Light Mode) -->
-    <button id="btn-theme" class="ctrl-btn" title="Toggle Dark/Light Theme (T)">
-      <span id="theme-icon">☼</span>
-      <span id="theme-text" class="lang-km">ពន្លឺ</span>
-      <span id="theme-text-en" class="lang-en">Light</span>
-    </button>
-
     <!-- Language Toggle -->
     <button id="btn-lang" class="ctrl-btn primary" title="Switch Language (L) · ប្ដូរភាសា">
-      <span class="lang-km">🇬🇧 English</span>
-      <span class="lang-en">🇰🇭 ភាសាខ្មែរ</span>
+      <span class="lang-km">🇬🇧 EN</span>
+      <span class="lang-en">🇰🇭 ខ្មែរ</span>
     </button>
 
     <!-- Download Handbook A4 PDF -->
-    <button id="btn-pdf" class="ctrl-btn" title="Download A4 Handbook PDF (P)">
+    <button id="btn-pdf" class="ctrl-btn hide-mobile" title="Download A4 Handbook PDF">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      <span class="lang-km">📥 A4 PDF (P)</span>
-      <span class="lang-en">📥 A4 PDF (P)</span>
+      <span>A4 PDF</span>
     </button>
 
-    <button id="btn-notes" class="ctrl-btn" title="Speaker Notes (N)">
+    <button id="btn-notes" class="ctrl-btn hide-mobile" title="Speaker Notes (N)">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       <span>Notes</span>
     </button>
@@ -2099,9 +2047,7 @@
     </button>
   </div>
 
-  <!-- A4 HANDBOOK DOCUMENT VIEW FOR PRINT -->
-  
-    <div class="document-print-view">
+  <div class="document-print-view">
     <!-- Masthead -->
     <header class="doc-header">
       <div>
@@ -2760,7 +2706,7 @@
     </footer>
   </div>
 
-    <script>
+  <script>
     // ========================================================
     // SLIDE PRESENTATION & THEME ENGINE (v3.5 EDITORIAL EDITION)
     // ========================================================
@@ -2769,70 +2715,31 @@
     let currentLang = "km";
     let currentTheme = "dark";
     let notesOpen = false;
+    let pointerActive = false;
 
-    // Rich Professional Speaker Notes (Bilingual Khmer & English)
+    // Professional Speaker Notes (Bilingual Khmer & English)
     const speakerNotes = [
-      "ស្លាយ 01 · បើកបទបង្ហាញ៖ ស្វាគមន៍សិក្ខាកាមមកកាន់សិក្ខាសាលាស្តីពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA។ លើកឡើងសារគន្លឹះ៖ អ៊ីនធឺណិតគួរតែជាពិភពនៃការរៀនសូត្រ និងការរីកចម្រើនរបស់កុមារ — មិនមែនជាកន្លែងកេងប្រវ័ញ្ចឡើយ។
-
-Slide 01 · Opening Deck: Welcome participants to the Digital Safety & Preventing OCSEA workshop. Emphasize that the internet must be a world of learning, not a venue for exploitation.",
-      "ស្លាយ 02 · គោលបំណង៖ បង្ហាញសមត្ថភាពស្នូលទាំង ៤ ដែលសិក្ខាកាមនឹងទទួលបាន — យល់ដឹងច្បាស់ពី OCSEA, ស្គាល់ ៦ ប្រភេទ & សញ្ញាព្រមាន, ចេះកំណត់ Privacy/2FA, និងអនុវត្តរូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់។
-
-Slide 02 · Objectives: Outline the 4 actionable takeaways — legal clarity, spotting 6 threat types & warning signs, 2FA/privacy hardening, and the 4-step emergency protocol.",
-      "ស្លាយ 03 · និយមន័យ OCSEA & គោលការណ៍ច្បាប់៖ ពន្យល់ ៥ សសរស្តម្ភ (O-C-S-E-A)។ សង្កត់ធ្ងន់គោលការណ៍ច្បាប់ដាច់ខាត៖ កុមារក្រោម ១៨ ឆ្នាំ គ្មានសមត្ថភាពគតិយុត្តិផ្តល់ការយល់ព្រមឡើយ។ ហាមបន្ទោសកុមារជាដាច់ខាត។
-
-Slide 03 · Core Definition & Legal Rule: Break down O-C-S-E-A. Stress the inviolable legal principle under Cambodian law: children under 18 CANNOT give legal consent. Zero victim-blaming.",
-      "ស្លាយ 04 · OCSEA ខុសពី Cybercrime៖ បែងចែករវាងការ Hack គណនី/Scam លុយ (ប៉ះពាល់ទ្រព្យសម្បត្តិ) ជាមួយ OCSEA (ការរំលោភបំពានសិទ្ធិលើរាងកាយ និងសេចក្តីថ្លៃថ្នូរកុមារ បន្សល់ទុករបួសផ្លូវចិត្តអស់មួយជីវិត)។
-
-Slide 04 · OCSEA vs Cybercrime: Contrast ordinary account hacking/scams (financial/data loss) with OCSEA (violation of bodily integrity and permanent psychological trauma).",
-      "ស្លាយ 05 · ដំណើរការ Grooming ៤ ដំណាក់កាល៖ ពន្យល់ ៤ ជំហាន (Targeting, Trust Building, Isolation, Exploitation) និងទម្រង់ជនល្មើស (តែងក្លែងបន្លំជាមិត្តរួមជំនាន់ ឬអ្នកបង្វឹក)។
-
-Slide 05 · Online Grooming Funnel: Detail the 4-stage coercion blueprint (Targeting, Trust Building, Isolation, Exploitation). Review offender profiles (often peers, coaches, fake romantic interests).",
-      "ស្លាយ 06 · ទម្រង់គ្រោះថ្នាក់ទាំង ៦៖ ពន្យល់ Grooming, Sextortion, CSAM, Live-Streaming Abuse, Financial lures (ដោះដូរ Game skin/កាតទូរស័ព្ទ), និង AI Deepfakes។
-
-Slide 06 · 6 Threat Typologies: Walk through Grooming, Sextortion, CSAM, Live-Streaming Abuse, Financial lures (game skins, phone credits), and AI Deepfakes.",
-      "ស្លាយ 07 · ទិន្នន័យជាក់ស្តែងនៅកម្ពុជា៖ លើកឡើងស្ថិតិ Disrupting Harm Cambodia, ការកើនឡើងស្មាតហ្វូនជាង ៨០%, និងប្រតិបត្តិការបង្ក្រាបក្រុម Telegram CSAM របស់នគរបាលជាតិ។
-
-Slide 07 · Cambodia Realities: Present national data — over 80% internet penetration; Disrupting Harm findings; Telegram CSAM channel dismantling operations.",
-      "ស្លាយ 08 · សញ្ញាព្រមាន៖ បង្ហាញសញ្ញាអាកប្បកិរិយា (ភ័យស្លន់ស្លោពេល Notification រោទ៍, ឯកោ) និងសញ្ញាលើឧបករណ៍ (ផ្កាប់ទូរស័ព្ទ, លួច Call យប់ជ្រៅ, ប្រើ Vault apps)។
-
-Slide 08 · Warning Signs: Review behavioral red flags (anxiety upon notifications, withdrawal) and device red flags (secret vault apps, device tilting, late-night secretive video calls).",
-      "ស្លាយ 09 · ការអប់រំគាំទ្រក្នុងគ្រួសារ៖ ណែនាំឪពុកម្តាយឱ្យស្តាប់ដោយស្ងប់ស្ងាត់ មិនបន្ទោសកុមារ។ ហាមរឹបអូសទូរស័ព្ទដោយកំហឹង ព្រោះបំផ្លាញទំនុកចិត្ត និងរុញកុមារឱ្យលាក់បាំង។
-
-Slide 09 · Supportive Parenting: Train parents and educators to listen calmly without scolding. Never violently confiscate phones, which destroys trust and drives communication underground.",
-      "ស្លាយ 10 · ការពារ Telegram៖ អនុវត្តផ្ទាល់ 2-Step Verification (Cloud Password + Email), កំណត់លេខទូរស័ព្ទ Nobody, Passcode Lock, និងពិនិត្យ Active Sessions ផ្តាច់ឧបករណ៍ចម្លែក។
-
-Slide 10 · Telegram Hardening: Walk through live setup of 2-Step Verification (Cloud Password + Email), Phone Number set to 'Nobody', and terminating unauthorized Active Sessions.",
-      "ស្លាយ 11 · ការពារ Facebook & Messenger៖ កំណត់ 2FA តាម Authenticator App (មិនប្រើ SMS OTP), បើក Lock Profile, កំណត់ Friend Requests ត្រឹម Friends of Friends។
-
-Slide 11 · Facebook & Messenger Hardening: Walk through 2FA via Authenticator apps (not SMS), Profile Locking, and restricting friend requests to 'Friends of Friends'.",
-      "ស្លាយ 12 · ការពារ TikTok & Gaming៖ ណែនាំមុខងារ Family Pairing, កំណត់ DM ត្រឹម Friends Only, គ្រប់គ្រង Screen Time, និងបិទ Chat ក្នុង Roblox/Free Fire។
-
-Slide 12 · TikTok & Gaming Security: Explain Family Pairing, restricting DMs to 'Friends only', setting screen time limits, and blocking stranger trades in Roblox and Free Fire.",
-      "ស្លាយ 13 · រូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់៖ ណែនាំ 🛑 STOP (កុំបង់លុយ) · 📸 RECORD (រក្សាភស្តុតាង) · 🚨 REPORT (រាយការណ៍) · 🤝 SUPPORT (គាំទ្រផ្លូវចិត្ត)។
-
-Slide 13 · 4-Step Emergency Protocol: Introduce the core formula — 🛑 Stop (never pay), 📸 Record (save evidence), 🚨 Report (police & helplines), 🤝 Support (psychosocial first aid).",
-      "ស្លាយ 14 · ការរក្សាភស្តុតាងត្រឹមត្រូវ៖ ថត Screenshot អេក្រង់ពេញ បង្ហាញកាលបរិច្ឆេទ ម៉ោង User ID, Username, URLs។ ហាម Forward CSAM ដាច់ខាតព្រោះខុសច្បាប់។
-
-Slide 14 · Evidence Preservation: Detail uncropped screenshot requirements (timestamps, URLs, account IDs). Emphasize that forwarding CSAM is strictly prohibited under law.",
-      "ស្លាយ 15 · ការឆ្លើយតបនឹង Sextortion៖ សង្កត់ធ្ងន់ថាការបង់ប្រាក់ជំរិត មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ ត្រូវផ្តាច់ការទាក់ទង និងស្វែងរកជំនួយ។
-
-Slide 15 · Sextortion Defense: Emphasize that paying blackmail money fails 100% of the time. Advise immediate communication cessation and seeking specialized assistance.",
-      "ស្លាយ 16 · ឧបករណ៍រាយការណ៍ & Take It Down៖ ណែនាំ takeitdown.ncmec.org ដែលបង្កើត Hash Cryptographic ដករូបភាពអាក្រាតកុមារចេញពី Internet ដោយឥតគិតថ្លៃ។
-
-Slide 16 · Platform Reporting: Demonstrate in-app takedown reporting and how takeitdown.ncmec.org generates cryptographic hashes to delete images globally.",
-      "ស្លាយ 17 · ក្របខ័ណ្ឌច្បាប់កម្ពុជា៖ ពន្យល់ក្រមព្រហ្មទណ្ឌ, ច្បាប់ប្រឆាំងការជួញដូរមនុស្ស ២០០៨, និងផែនការសកម្មភាពជាតិ ២០២៥–២០៣០ ស្តីពីការបញ្ចប់អំពើហិង្សាលើកុមារ។
-
-Slide 17 · Legal Framework: Review Cambodian Penal Code, 2008 Anti-Human Trafficking Law, and the National Action Plan 2025–2030 to End Violence Against Children.",
-      "ស្លាយ 18 · បញ្ជី Hotline បន្ទាន់ & A21៖ ណែនាំ A21 Child Advocacy Center (010 22 07 71), នគរបាលជាតិ (1288), Child Helpline (1280 ឥតគិតថ្លៃ ២៤/៧), APLE (092 311 511)។
-
-Slide 18 · National Helplines: Highlight A21 Child Advocacy Center (010 22 07 71), Anti-Trafficking Police 1288, Child Helpline 1280 (toll-free 24/7), and APLE.",
-      "ស្លាយ 19 · តួនាទីសហគមន៍៖ បង្ហាញការចូលរួមពីលោកគ្រូ-អ្នកគ្រូ, សាលារៀន, ព្រះសង្ឃ, អាជ្ញាធរមូលដ្ឋាន, និងអ្នកមានឥទ្ធិពលលើបណ្តាញសង្គម។
-
-Slide 19 · Community Responsibility: Clarify roles of teachers, school directors, Buddhist monks, commune officials, and public social media influencers.",
-      "ស្លាយ 20 · ឯកសារយោង & សារបិទ៖ បង្ហាញប្រភពស្រាវជ្រាវផ្លូវការជាតិ-អន្តរជាតិ និងបិទបទបង្ហាញដោយសារគន្លឹះ៖ «អ៊ីនធឺណិតគួរតែជាពិភពនៃការរៀនសូត្រ... មិនមែនកន្លែងកេងប្រវ័ញ្ចឡើយ»។
-
-Slide 20 · Citations & Closing Keynote: Review official research citations. Deliver closing message: 'The internet must be a world of learning and growth, not a hunting ground for exploitation.'"
-    ];
+  "ស្លាយ 01 · បើកបទបង្ហាញ៖ ស្វាគមន៍សិក្ខាកាមមកកាន់សិក្ខាសាលាស្តីពីសុវត្ថិភាពឌីជីថល និងការទប់ស្កាត់ OCSEA។ លើកឡើងសារគន្លឹះ៖ អ៊ីនធឺណិតគួរតែជាពិភពនៃការរៀនសូត្រ និងការរីកចម្រើនរបស់កុមារ — មិនមែនជាកន្លែងកេងប្រវ័ញ្ចឡើយ។\\n\\nSlide 01 · Opening Deck: Welcome participants to the Digital Safety & Preventing OCSEA workshop. Emphasize that the internet must be a world of learning, not a venue for exploitation.",
+  "ស្លាយ 02 · គោលបំណង៖ បង្ហាញសមត្ថភាពស្នូលទាំង ៤ ដែលសិក្ខាកាមនឹងទទួលបាន — យល់ដឹងច្បាស់ពី OCSEA, ស្គាល់ ៦ ប្រភេទ & សញ្ញាព្រមាន, ចេះកំណត់ Privacy/2FA, និងអនុវត្តរូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់។\\n\\nSlide 02 · Objectives: Outline the 4 actionable takeaways — legal clarity, spotting 6 threat types & warning signs, 2FA/privacy hardening, and the 4-step emergency protocol.",
+  "ស្លាយ 03 · និយមន័យ OCSEA & គោលការណ៍ច្បាប់៖ ពន្យល់ ៥ សសរស្តម្ភ (O-C-S-E-A)។ សង្កត់ធ្ងន់គោលការណ៍ច្បាប់ដាច់ខាត៖ កុមារក្រោម ១៨ ឆ្នាំ គ្មានសមត្ថភាពគតិយុត្តិផ្តល់ការយល់ព្រមឡើយ។ ហាមបន្ទោសកុមារជាដាច់ខាត។\\n\\nSlide 03 · Core Definition & Legal Rule: Break down O-C-S-E-A. Stress the inviolable legal principle under Cambodian law: children under 18 CANNOT give legal consent. Zero victim-blaming.",
+  "ស្លាយ 04 · OCSEA ខុសពី Cybercrime៖ បែងចែករវាងការ Hack គណនី/Scam លុយ (ប៉ះពាល់ទ្រព្យសម្បត្តិ) ជាមួយ OCSEA (ការរំលោភបំពានសិទ្ធិលើរាងកាយ និងសេចក្តីថ្លៃថ្នូរកុមារ បន្សល់ទុករបួសផ្លូវចិត្តអស់មួយជីវិត)។\\n\\nSlide 04 · OCSEA vs Cybercrime: Contrast ordinary account hacking/scams (financial/data loss) with OCSEA (violation of bodily integrity and permanent psychological trauma).",
+  "ស្លាយ 05 · ដំណើរការ Grooming ៤ ដំណាក់កាល៖ ពន្យល់ ៤ ជំហាន (Targeting, Trust Building, Isolation, Exploitation) និងទម្រង់ជនល្មើស (តែងក្លែងបន្លំជាមិត្តរួមជំនាន់ ឬអ្នកបង្វឹក)។\\n\\nSlide 05 · Online Grooming Funnel: Detail the 4-stage coercion blueprint (Targeting, Trust Building, Isolation, Exploitation). Review offender profiles (often peers, coaches, fake romantic interests).",
+  "ស្លាយ 06 · ទម្រង់គ្រោះថ្នាក់ទាំង ៦៖ ពន្យល់ Grooming, Sextortion, CSAM, Live-Streaming Abuse, Financial lures (ដោះដូរ Game skin/កាតទូរស័ព្ទ), និង AI Deepfakes។\\n\\nSlide 06 · 6 Threat Typologies: Walk through Grooming, Sextortion, CSAM, Live-Streaming Abuse, Financial lures (game skins, phone credits), and AI Deepfakes.",
+  "ស្លាយ 07 · ទិន្នន័យជាក់ស្តែងនៅកម្ពុជា៖ លើកឡើងស្ថិតិ Disrupting Harm Cambodia, ការកើនឡើងស្មាតហ្វូនជាង ៨០%, និងប្រតិបត្តិការបង្ក្រាបក្រុម Telegram CSAM របស់នគរបាលជាតិ។\\n\\nSlide 07 · Cambodia Realities: Present national data — over 80% internet penetration; Disrupting Harm findings; Telegram CSAM channel dismantling operations.",
+  "ស្លាយ 08 · សញ្ញាព្រមាន៖ បង្ហាញសញ្ញាអាកប្បកិរិយា (ភ័យស្លន់ស្លោពេល Notification រោទ៍, ឯកោ) និងសញ្ញាលើឧបករណ៍ (ផ្កាប់ទូរស័ព្ទ, លួច Call យប់ជ្រៅ, ប្រើ Vault apps)។\\n\\nSlide 08 · Warning Signs: Review behavioral red flags (anxiety upon notifications, withdrawal) and device red flags (secret vault apps, device tilting, late-night secretive video calls).",
+  "ស្លាយ 09 · ការអប់រំគាំទ្រក្នុងគ្រួសារ៖ ណែនាំឪពុកម្តាយឱ្យស្តាប់ដោយស្ងប់ស្ងាត់ មិនបន្ទោសកុមារ។ ហាមរឹបអូសទូរស័ព្ទដោយកំហឹង ព្រោះបំផ្លាញទំនុកចិត្ត និងរុញកុមារឱ្យលាក់បាំង។\\n\\nSlide 09 · Supportive Parenting: Train parents and educators to listen calmly without scolding. Never violently confiscate phones, which destroys trust and drives communication underground.",
+  "ស្លាយ 10 · ការពារ Telegram៖ អនុវត្តផ្ទាល់ 2-Step Verification (Cloud Password + Email), កំណត់លេខទូរស័ព្ទ Nobody, Passcode Lock, និងពិនិត្យ Active Sessions ផ្តាច់ឧបករណ៍ចម្លែក។\\n\\nSlide 10 · Telegram Hardening: Walk through live setup of 2-Step Verification (Cloud Password + Email), Phone Number set to 'Nobody', and terminating unauthorized Active Sessions.",
+  "ស្លាយ 11 · ការពារ Facebook & Messenger៖ កំណត់ 2FA តាម Authenticator App (មិនប្រើ SMS OTP), បើក Lock Profile, កំណត់ Friend Requests ត្រឹម Friends of Friends។\\n\\nSlide 11 · Facebook & Messenger Hardening: Walk through 2FA via Authenticator apps (not SMS), Profile Locking, and restricting friend requests to 'Friends of Friends'.",
+  "ស្លាយ 12 · ការពារ TikTok & Gaming៖ ណែនាំមុខងារ Family Pairing, កំណត់ DM ត្រឹម Friends Only, គ្រប់គ្រង Screen Time, និងបិទ Chat ក្នុង Roblox/Free Fire។\\n\\nSlide 12 · TikTok & Gaming Security: Explain Family Pairing, restricting DMs to 'Friends only', setting screen time limits, and blocking stranger trades in Roblox and Free Fire.",
+  "ស្លាយ 13 · រូបមន្ត ៤ ជំហានឆ្លើយតបបន្ទាន់៖ ណែនាំ 🛑 STOP (កុំបង់លុយ) · 📸 RECORD (រក្សាភស្តុតាង) · 🚨 REPORT (រាយការណ៍) · 🤝 SUPPORT (គាំទ្រផ្លូវចិត្ត)។\\n\\nSlide 13 · 4-Step Emergency Protocol: Introduce the core formula — 🛑 Stop (never pay), 📸 Record (save evidence), 🚨 Report (police & helplines), 🤝 Support (psychosocial first aid).",
+  "ស្លាយ 14 · ការរក្សាភស្តុតាងត្រឹមត្រូវ៖ ថត Screenshot អេក្រង់ពេញ បង្ហាញកាលបរិច្ឆេទ ម៉ោង User ID, Username, URLs។ ហាម Forward CSAM ដាច់ខាតព្រោះខុសច្បាប់។\\n\\nSlide 14 · Evidence Preservation: Detail uncropped screenshot requirements (timestamps, URLs, account IDs). Emphasize that forwarding CSAM is strictly prohibited under law.",
+  "ស្លាយ 15 · ការឆ្លើយតបនឹង Sextortion៖ សង្កត់ធ្ងន់ថាការបង់ប្រាក់ជំរិត មិនធ្វើឱ្យជនល្មើសលុបរូបទេ តែធ្វើឱ្យពួកគេទារកាន់តែច្រើន។ ត្រូវផ្តាច់ការទាក់ទង និងស្វែងរកជំនួយ។\\n\\nSlide 15 · Sextortion Defense: Emphasize that paying blackmail money fails 100% of the time. Advise immediate communication cessation and seeking specialized assistance.",
+  "ស្លាយ 16 · ឧបករណ៍រាយការណ៍ & Take It Down៖ ណែនាំ takeitdown.ncmec.org ដែលបង្កើត Hash Cryptographic ដករូបភាពអាក្រាតកុមារចេញពី Internet ដោយឥតគិតថ្លៃ។\\n\\nSlide 16 · Platform Reporting: Demonstrate in-app takedown reporting and how takeitdown.ncmec.org generates cryptographic hashes to delete images globally.",
+  "ស្លាយ 17 · ក្របខ័ណ្ឌច្បាប់កម្ពុជា៖ ពន្យល់ក្រមព្រហ្មទណ្ឌ, ច្បាប់ប្រឆាំងការជួញដូរមនុស្ស ២០០៨, និងផែនការសកម្មភាពជាតិ ២០២៥–២០៣០ ស្តីពីការបញ្ចប់អំពើហិង្សាលើកុមារ។\\n\\nSlide 17 · Legal Framework: Review Cambodian Penal Code, 2008 Anti-Human Trafficking Law, and the National Action Plan 2025–2030 to End Violence Against Children.",
+  "ស្លាយ 18 · បញ្ជី Hotline បន្ទាន់ & A21៖ ណែនាំ A21 Child Advocacy Center (010 22 07 71), នគរបាលជាតិ (1288), Child Helpline (1280 ឥតគិតថ្លៃ ២៤/៧), APLE (092 311 511)។\\n\\nSlide 18 · National Helplines: Highlight A21 Child Advocacy Center (010 22 07 71), Anti-Trafficking Police 1288, Child Helpline 1280 (toll-free 24/7), and APLE.",
+  "ស្លាយ 19 · តួនាទីសហគមន៍៖ បង្ហាញការចូលរួមពីលោកគ្រូ-អ្នកគ្រូ, សាលារៀន, ព្រះសង្ឃ, អាជ្ញាធរមូលដ្ឋាន, និងអ្នកមានឥទ្ធិពលលើបណ្តាញសង្គម។\\n\\nSlide 19 · Community Responsibility: Clarify roles of teachers, school directors, Buddhist monks, commune officials, and public social media influencers.",
+  "ស្លាយ 20 · ឯកសារយោង & សារបិទ៖ បង្ហាញប្រភពស្រាវជ្រាវផ្លូវការជាតិ-អន្តរជាតិ និងបិទបទបង្ហាញដោយសារគន្លឹះ៖ «អ៊ីនធឺណិតគួរតែជាពិភពនៃការរៀនសូត្រ... មិនមែនកន្លែងកេងប្រវ័ញ្ចឡើយ»។\\n\\nSlide 20 · Citations & Closing Keynote: Review official research citations. Deliver closing message: 'The internet must be a world of learning and growth, not a hunting ground for exploitation.'"
+];
 
     const slides = document.querySelectorAll('.slide');
     const stage = document.getElementById('stage');
@@ -2846,6 +2753,9 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
     const themeIcon = document.getElementById('theme-icon');
     const themeText = document.getElementById('theme-text');
     const themeTextEn = document.getElementById('theme-text-en');
+    const laserPointer = document.getElementById('laser-pointer');
+    const pointerBtn = document.getElementById('btn-pointer');
+    const pointerLabel = document.getElementById('pointer-label');
 
     // Dual-Mode Adaptive Stage Engine
     function isWidescreen() {
@@ -2857,8 +2767,9 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       if (isWidescreen()) {
         const w = window.innerWidth;
         const h = window.innerHeight;
-        const scale = Math.min((w - 48) / 1600, (h - 80) / 900);
-        stage.style.transform = `scale(${Math.max(scale, 0.35)})`;
+        // Float bar takes ~70px at bottom
+        const scale = Math.min((w - 40) / 1600, (h - 80) / 900);
+        stage.style.transform = `scale(${Math.max(scale, 0.45)})`;
         stage.style.transformOrigin = 'center center';
       } else {
         stage.style.transform = '';
@@ -2874,7 +2785,7 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       if (!toast) return;
       toast.textContent = msg;
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2400);
+      setTimeout(() => toast.classList.remove('show'), 2200);
     }
 
     // URL Hash Helper: #1..#20
@@ -2915,11 +2826,15 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
     }
 
     function nextSlide() {
-      if (currentSlide < totalSlides) goToSlide(currentSlide + 1);
+      if (currentSlide < totalSlides) {
+        goToSlide(currentSlide + 1);
+      }
     }
 
     function prevSlide() {
-      if (currentSlide > 1) goToSlide(currentSlide - 1);
+      if (currentSlide > 1) {
+        goToSlide(currentSlide - 1);
+      }
     }
 
     // Sync when user clicks browser back/forward buttons or modifies hash
@@ -2931,6 +2846,18 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       }
     });
 
+    // Screen Click Navigation (Pitch style: click left 30% for prev, right 70% for next)
+    document.getElementById('viewport-container')?.addEventListener('click', (e) => {
+      if (pointerActive) return; // Do not flip while using pointer
+      if (e.target.closest('a, button, input, .floating-control-bar, .notes-drawer')) return;
+      const x = e.clientX / window.innerWidth;
+      if (x < 0.3) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
+    });
+
     // Mobile Touch Gesture Support (Horizontal Swipe)
     let touchStartX = 0;
     let touchStartY = 0;
@@ -2938,6 +2865,17 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       if (e.touches && e.touches.length === 1) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
+        if (pointerActive && laserPointer) {
+          laserPointer.style.left = touchStartX + 'px';
+          laserPointer.style.top = touchStartY + 'px';
+        }
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (pointerActive && laserPointer && e.touches && e.touches[0]) {
+        laserPointer.style.left = e.touches[0].clientX + 'px';
+        laserPointer.style.top = e.touches[0].clientY + 'px';
       }
     }, { passive: true });
 
@@ -2945,27 +2883,35 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       if (e.changedTouches && e.changedTouches.length === 1) {
         const diffX = e.changedTouches[0].clientX - touchStartX;
         const diffY = e.changedTouches[0].clientY - touchStartY;
-        // Check if horizontal swipe is prominent and exceeds 55px
-        if (Math.abs(diffX) > 55 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+        // Check if horizontal swipe is prominent and exceeds 50px
+        if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
           if (diffX < 0) nextSlide();
           else prevSlide();
         }
       }
     }, { passive: true });
 
-    // Desktop Auto-Hide Floating Control Bar
-    let hideTimer = null;
-    function resetControlBarTimer() {
-      if (!isWidescreen() || !controlBar) return;
-      controlBar.classList.remove('autohide');
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => {
-        controlBar.classList.add('autohide');
-      }, 3500);
-    }
+    // Laser Pointer Movement
+    window.addEventListener('mousemove', (e) => {
+      if (pointerActive && laserPointer) {
+        laserPointer.style.left = e.clientX + 'px';
+        laserPointer.style.top = e.clientY + 'px';
+      }
+    });
 
-    window.addEventListener('mousemove', resetControlBarTimer);
-    window.addEventListener('keydown', resetControlBarTimer);
+    function togglePointer() {
+      pointerActive = !pointerActive;
+      if (laserPointer) {
+        laserPointer.classList.toggle('active', pointerActive);
+      }
+      if (pointerBtn) {
+        pointerBtn.classList.toggle('primary', pointerActive);
+      }
+      if (pointerLabel) {
+        pointerLabel.textContent = pointerActive ? 'Laser ON' : 'Pointer';
+      }
+      showToast(pointerActive ? '🔴 Laser Pointer Active (Press P)' : 'Pointer Disabled');
+    }
 
     // Theme Switcher
     function toggleTheme() {
@@ -3031,14 +2977,15 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       }
     }
 
-    // Attach Button Click Handlers
-    document.getElementById('btn-prev')?.addEventListener('click', prevSlide);
-    document.getElementById('btn-next')?.addEventListener('click', nextSlide);
-    document.getElementById('btn-theme')?.addEventListener('click', toggleTheme);
-    document.getElementById('btn-lang')?.addEventListener('click', toggleLanguage);
-    document.getElementById('btn-pdf')?.addEventListener('click', triggerPrintHandbook);
-    document.getElementById('btn-notes')?.addEventListener('click', toggleNotes);
-    document.getElementById('btn-fullscreen')?.addEventListener('click', toggleFullscreen);
+    // Attach Button Click Handlers safely
+    document.getElementById('btn-prev')?.addEventListener('click', (e) => { e.stopPropagation(); prevSlide(); });
+    document.getElementById('btn-next')?.addEventListener('click', (e) => { e.stopPropagation(); nextSlide(); });
+    document.getElementById('btn-theme')?.addEventListener('click', (e) => { e.stopPropagation(); toggleTheme(); });
+    document.getElementById('btn-pointer')?.addEventListener('click', (e) => { e.stopPropagation(); togglePointer(); });
+    document.getElementById('btn-lang')?.addEventListener('click', (e) => { e.stopPropagation(); toggleLanguage(); });
+    document.getElementById('btn-pdf')?.addEventListener('click', (e) => { e.stopPropagation(); triggerPrintHandbook(); });
+    document.getElementById('btn-notes')?.addEventListener('click', (e) => { e.stopPropagation(); toggleNotes(); });
+    document.getElementById('btn-fullscreen')?.addEventListener('click', (e) => { e.stopPropagation(); toggleFullscreen(); });
 
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
@@ -3054,12 +3001,12 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       } else if (e.key === 'End') {
         e.preventDefault();
         goToSlide(totalSlides);
-      } else if (e.key.toLowerCase() === 't') {
+      } else if (e.key.toLowerCase() === 'd') {
         toggleTheme();
-      } else if (e.key.toLowerCase() === 'l') {
+      } else if (e.key.toLowerCase() === 'l' || e.key.toLowerCase() === 'k' || e.key.toLowerCase() === 'e') {
         toggleLanguage();
       } else if (e.key.toLowerCase() === 'p') {
-        triggerPrintHandbook();
+        togglePointer();
       } else if (e.key.toLowerCase() === 'n') {
         toggleNotes();
       } else if (e.key.toLowerCase() === 'f') {
@@ -3097,7 +3044,6 @@ Slide 20 · Citations & Closing Keynote: Review official research citations. Del
       currentSlide = getHashSlide();
       updatePresentation();
       scaleStage();
-      resetControlBarTimer();
     });
   </script>
 </body>
